@@ -20,5 +20,6 @@ mkdir /Users/Plex/Sites
 cd /Users/Plex/Sites
 git clone https://github.com/Gyran/PlexWWWatch.git
 chmod 777 /Users/Plex/Sites/PlexWWWatch/settings
-sudo ln -s /Users/Plex/Sites/PlexWWWatch/ /Library/Server/Web/Data/Sites/Default/plexwwwatch
+sudo ln -s /Users/Plex/Sites/PlexWWWatch/public /Library/Server/Web/Data/Sites/Default/plexwwwatch
 
+plexwatchdb: /Users/Plex/plexWatch/plexWatch.db
