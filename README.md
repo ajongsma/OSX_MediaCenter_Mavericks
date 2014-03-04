@@ -13,7 +13,7 @@ https://code.google.com/p/autosub-bootstrapbill/
 
 ----------------
 
-PlexWWatch
+PlexWWWatch
 https://forums.plex.tv/index.php/topic/98005-plexwwwatch/
 
 mkdir /Users/Plex/Sites
