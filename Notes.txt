@@ -1,16 +1,24 @@
 Sickbeard
-Copy sickbeard.db, config.ini, and autoProcessTV/autoProcessTV.cfg etc. (if you're using it) to the new folder
+=====
+cp sickbeard.db
+cp config.ini
+cp autoProcessTV/autoProcessTV.cfg etc. (if you're using it) to the new folder
+
 
 CouchPotato
+=====
 
 
 SabNZBD
+=====
 
 
 SpotWeb
+=====
 
 
 NewzNAB
+=====
 mysqldump --opt -u username -p newznab > ~/newznab_backup.sql
 cp defaults.sh
 
