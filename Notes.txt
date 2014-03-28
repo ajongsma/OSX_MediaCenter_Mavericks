@@ -12,4 +12,6 @@ SpotWeb
 
 NewzNAB
 mysqldump --opt -u username -p newznab > ~/newznab_backup.sql
+cp defaults.sh
+
 mysql -u username -p newznab < ~/newznab_backup.sql
