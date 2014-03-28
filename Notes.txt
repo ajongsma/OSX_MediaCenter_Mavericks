@@ -1,0 +1,14 @@
+Sickbeard
+Copy sickbeard.db, config.ini, and autoProcessTV/autoProcessTV.cfg etc. (if you're using it) to the new folder
+
+CouchPotato
+
+
+SabNZBD
+
+
+SpotWeb
+
+
+NewzNAB
+
