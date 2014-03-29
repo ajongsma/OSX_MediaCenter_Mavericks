@@ -1,7 +1,6 @@
 OSX Media Center
 ===============
-
-OS X Media Center - Mavericks Edition
+Mavericks Edition
 
 
 Notes
