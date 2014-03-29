@@ -23,6 +23,8 @@ https://forums.plex.tv/index.php/topic/72552-plexwatch-plex-notify-script-send-p
 PlexWatch/Web
 https://forums.plex.tv/index.php/topic/82819-plexwatchweb-a-web-front-end-for-plexwatch/
 
+OS X Server
+
 SabNZBD
 
 SickBeard
