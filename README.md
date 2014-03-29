@@ -7,9 +7,6 @@ OS X Media Center - Mavericks Edition
 Notes
 ===============
 
-Plex
------
-
 Plex Media Server
 
 Plex Home Theater
