@@ -1,4 +1,4 @@
-OSX_MediaCenter
+OSX Media Center
 ===============
 
 OS X Media Center - Mavericks Edition
