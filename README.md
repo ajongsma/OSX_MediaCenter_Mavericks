@@ -47,6 +47,20 @@ https://code.google.com/p/autosub-bootstrapbill/
 
 ----------------
 
+Launch Control
+http://www.soma-zone.com/LaunchControl/
+
+-----
+
+HandBrake
+http://handbrake.fr
+
+-----
+
+Path Finder
+
+----------------
+
 PlexWWWatch
 https://forums.plex.tv/index.php/topic/98005-plexwwwatch/
 
