@@ -11,7 +11,10 @@ echo "# Installing CPAN plus modules"
 echo "#------------------------------------------------------------------------------"
 ##https://forums.plex.tv/index.php/topic/72552-plexwatch-plex-notify-script-send-push-alerts-on-new-sessions-and-stopped/page-7
 
-printf "$PRINTF_MASK" "Select No for default values" "$YELLOW" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "Would you like to configure as much as possible automatically? -> yes" "$YELLOW" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "What approach do you want? -> local::lib" "$YELLOW" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "Would you like me to automatically choose some CPAN mirror sites for you?? -> yes" "$YELLOW" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "After CPAN has finished, enter Q to exit" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
