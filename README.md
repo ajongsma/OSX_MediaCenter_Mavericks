@@ -67,6 +67,12 @@ https://code.google.com/p/autosub-bootstrapbill/
 
 ----------------
 
+iTerm 2
+http://www/iterm2.com
+
+Xlog
+https://itunes.apple.com/us/app/xlog/id430304898?mt=12&ign-mpt=uo%3D4
+
 Launch Control
 http://www.soma-zone.com/LaunchControl/
 
@@ -79,11 +85,7 @@ DaisyDisk
 
 Path Finder
 
-iTerm
-
 MacPar Deluxe
-
-Xlog
 
 Xcode
 
