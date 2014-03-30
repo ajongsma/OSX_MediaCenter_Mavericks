@@ -10,7 +10,7 @@ echo "#-------------------------------------------------------------------------
 echo "# Installing OS X Server"
 echo "#------------------------------------------------------------------------------"
 
-if [ -e /Applications/Server.app ] ; then
+if [ ! -e /Applications/Server.app ] ; then
   printf "$PRINTF_MASK" "OS X Server not installed, please install..." "$RED" "[FAIL]" "$RESET"
   #open https://itunes.apple.com/nl/app/os-x-server/id537441259?mt=12
   open https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12
