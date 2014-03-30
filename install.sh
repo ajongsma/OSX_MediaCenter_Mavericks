@@ -82,11 +82,11 @@ check_system
 # Keep-alive: update existing sudo time stamp until finished
 #------------------------------------------------------------------------------
 # Ask for the administrator password upfront
-echo "--------------------------------------"
-echo "| Please enter the root password     |"
-echo "--------------------------------------"
+echo "---------------------------------------------------"
+echo "| Please enter the root password                  |"
+echo "---------------------------------------------------"
 sudo -v
-echo "--------------------------------------"
+echo "---------------------------------------------------"
 
 # Keep-alive: update existing `sudo` time stamp until finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
@@ -96,9 +96,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #------------------------------------------------------------------------------
 ## Run software update and reboot
 if [[ $INST_OSX_UPDATES == "true" ]]; then
-    echo "--------------------------------------"
-    echo "| Installing OS X software updates   |"
-    echo "--------------------------------------"
+    echo "---------------------------------------------------"
+    echo "| Checking and installing OS X software updates   |"
+    echo "---------------------------------------------------"
     sudo softwareupdate --list
     sudo softwareupdate --install --all
 fi
