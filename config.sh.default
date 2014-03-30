@@ -52,4 +52,4 @@ INST_PLEX_HOME_THEATER="true"
 ## Install Plex Watch
 #https://github.com/ljunkie/plexWatch
 INST_PLEXWATCH="true"
-INST_PLEXWATCH_PATH="/Users/Plex/Plexwatch"
+INST_PLEXWATCH_PATH="/Users/Plex"
