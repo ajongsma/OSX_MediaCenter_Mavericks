@@ -35,6 +35,7 @@ sudo cpan install JSON
 ## Only required if you use Email
 #sudo cpan install Net::SMTPS
 
+#./plexWatch.pl --test_notify=start
 echo "#------------------------------------------------------------------------------"
 echo "# Installing CPAN plus modules - Complete"
 echo "#=============================================================================="
