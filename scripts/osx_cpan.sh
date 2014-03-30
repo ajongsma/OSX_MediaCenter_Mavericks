@@ -23,12 +23,13 @@ cpan
 printf "$PRINTF_MASK" "-----------------------------------" "$GREY" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "Installing extra modules..." "$GREY" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "-----------------------------------" "$GREY" "[WAIT]" "$RESET"
-#sudo cpan install Time::Duration
-#sudo cpan install Time::ParseDate
+sudo cpan install Time::Duration
+sudo cpan install JSON
+sudo cpan install Time::ParseDate
+
 #sudo cpan install LWP::UserAgent
 #sudo cpan install XML::Simple
 #sudo cpan install DBI
-#sudo cpan install JSON
 
 ## Only required if you use GNTP
 #sudo cpan install Growl::GNTP
