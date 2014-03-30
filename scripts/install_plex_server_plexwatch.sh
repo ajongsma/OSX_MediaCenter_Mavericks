@@ -18,8 +18,8 @@ fi
 cd $INST_PLEXWATCH_PATH
 git clone https://github.com/ljunkie/plexWatch.git
 
-chmod 777 plexWatch
-chmod 755 plexWatch.pl
+chmod 777 plexWatch/plexWatch
+chmod 755 plexWatch/plexWatch.pl
 
 cp config.pl-dist config.pl
 
