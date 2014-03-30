@@ -38,7 +38,7 @@ echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 pico config.pl
 
-cp /config/launchctl/com.plexserver.plexwatch.plist $HOME/Library/LaunchAgents
+cp config/launchctl/com.plexserver.plexwatch.plist $HOME/Library/LaunchAgents
 
 
 #if [ ! -e /Applications/iterm.app ] ; then
