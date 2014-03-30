@@ -17,6 +17,9 @@ echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 cpan
 
+printf "$PRINTF_MASK" "-----------------------------------" "$GREY" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "Installing extra modules..." "$GREY" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "-----------------------------------" "$GREY" "[WAIT]" "$RESET"
 sudo cpan install Time::Duration
 sudo cpan install Time::ParseDate
 sudo cpan install LWP::UserAgent
