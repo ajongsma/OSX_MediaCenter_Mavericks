@@ -7,7 +7,7 @@ else
 fi
 
 echo "#------------------------------------------------------------------------------"
-echo "# Enable Tap to Click for this user and for the login screen"
+echo "# Enabling Tap to Click for this user and for the login screen"
 echo "#------------------------------------------------------------------------------"
 
 # Trackpad: enable tap to click for this user and for the login screen
