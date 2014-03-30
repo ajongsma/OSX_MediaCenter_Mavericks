@@ -13,7 +13,7 @@ echo "#-------------------------------------------------------------------------
 if [ ! -e /Applications/Plex\ Media\ Server.app ] ; then
   printf "$PRINTF_MASK" "Plex Media Server not installed, please install..." "$RED" "[FAIL]" "$RESET"
   open https://plex.tv/downloads
-  while ( [ ! -e /Applications/PlexMediaServer.app ] )
+  while ( [ ! -e /Applications/Plex\ Media\ Server.app ] )
   do
     printf "$PRINTF_MASK" "Waiting for Plex Media Server to be installed…" "$YELLOW" "[WAIT]" "$RESET"
     sleep 15
