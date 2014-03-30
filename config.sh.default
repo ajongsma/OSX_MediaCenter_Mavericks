@@ -27,7 +27,6 @@ INST_FOLDER_MUSIC_COMPLETE="$HOME/Music"
 #INST_APACHE_SYSTEM_WEB_ROOT='/Library/WebServer/Documents/'
 INST_APACHE_SYSTEM_WEB_ROOT="/Library/Server/Web/Data/Sites/Default"
 
-INST_PLEXWATCH_PATH="/Users/Plex/Plexwatch"
 
 # ===========================================================
 # | INSTALLS                                                |
@@ -49,3 +48,8 @@ INST_PLEX_MEDIA_SERVER="true"
 
 ## Install Plex Home Theater (http://www.plex.tv) - (true/false)
 INST_PLEX_HOME_THEATER="true"
+
+## Install Plex Watch
+#https://github.com/ljunkie/plexWatch
+INST_PLEXWATCH="true"
+INST_PLEXWATCH_PATH="/Users/Plex/Plexwatch"
