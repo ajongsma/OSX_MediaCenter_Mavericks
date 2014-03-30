@@ -53,15 +53,26 @@ https://code.google.com/p/autosub-bootstrapbill/
 Launch Control
 http://www.soma-zone.com/LaunchControl/
 
------
-
 HandBrake
 http://handbrake.fr
 
------
+GitHub
+
+DaisyDisk
 
 Path Finder
 
+iTerm
+
+MacPar Deluxe
+
+Xlog
+
+Xcode
+
+Transmission
+
+Unison
 ----------------
 
 PlexWWWatch
