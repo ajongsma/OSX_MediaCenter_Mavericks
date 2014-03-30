@@ -7,7 +7,7 @@ else
 fi
 
 echo "#------------------------------------------------------------------------------"
-echo "# Install OS X Server"
+echo "# Installing OS X Server"
 echo "#------------------------------------------------------------------------------"
 
 if [ ! -e /Applications/Server.app ] ; then
@@ -16,8 +16,8 @@ if [ ! -e /Applications/Server.app ] ; then
   open https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12
   while ( [ ! -e /Applications/Server.app ] )
   do
-      printf "$PRINTF_MASK" "Waiting for OS X Server to be installed…" "$YELLOW" "[WAIT]" "$RESET"
-      sleep 15
+    printf "$PRINTF_MASK" "Waiting for OS X Server to be installed…" "$YELLOW" "[WAIT]" "$RESET"
+    sleep 15
   done
   printf "$PRINTF_MASK" "Please enable:" "$YELLOW" "[WAIT]" "$RESET"
   printf "$PRINTF_MASK" "- Websites…" "$YELLOW" "[WAIT]" "$RESET"
@@ -48,5 +48,5 @@ else
 fi
 
 echo "#------------------------------------------------------------------------------"
-echo "# Install OS X Server - Complete"
+echo "# Installing OS X Server - Complete"
 echo "#------------------------------------------------------------------------------"
