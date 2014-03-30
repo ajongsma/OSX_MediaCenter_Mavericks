@@ -33,9 +33,7 @@ echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 pico config.pl
 
-
-## Can't locate Time/Duration.pm
-
+cp /config/launchctl/com.plexserver.plexwatch.plist $HOME/Library/LaunchAgents
 
 
 #if [ ! -e /Applications/iterm.app ] ; then
