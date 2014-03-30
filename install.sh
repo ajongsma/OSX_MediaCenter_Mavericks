@@ -103,5 +103,25 @@ if [[ $INST_OSX_UPDATES == "true" ]]; then
     sudo softwareupdate --install --all
 fi
 
+#------------------------------------------------------------------------------
+# Show the ~/Library folder
+#------------------------------------------------------------------------------
+#chflags nohidden ~/Library
+if [[ $ENABLE_LIBRARY_UNHIDE == "true" ]]; then
+    echo "---------------------------------------------------"
+    echo "| Unhiding hidden Library folder                  |"
+    echo "---------------------------------------------------"
+    chflags nohidden ~/Library
+fi
+
+#------------------------------------------------------------------------------
+# Enable Tap to Click for this user and for the login screen
+#------------------------------------------------------------------------------
+if [[ $ENABLE_MOUSE_TAPTOCLICK == "true" ]]; then
+    echo "---------------------------------------------------"
+    echo "| Enabling mouse/trackpad tap-to-click            |"
+    echo "---------------------------------------------------"
+    source "$DIR/scripts/osx_mouse_taptoclick_enable.sh"
+fi
 
 
