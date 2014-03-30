@@ -32,6 +32,10 @@ read -n 1 -s
 pico config.pl
 
 
+## Can't locate Time/Duration.pm
+
+
+
 #if [ ! -e /Applications/iterm.app ] ; then
 #  printf "$PRINTF_MASK" "iTerm not installed, please install..." "$RED" "[FAIL]" "$RESET"
 #  open http://www.iterm2.com
