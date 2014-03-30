@@ -8,7 +8,7 @@
 ##############################################################
 
 ## Check and install OS X Updates
-INST_OSX_UPDATES="false"
+INST_OSX_UPDATES="true"
 
 #-----------------------------------------------------------
 ## OSX Settings
