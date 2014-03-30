@@ -12,7 +12,8 @@ echo "#-------------------------------------------------------------------------
 
 if [ ! -e /Applications/Server.app ] ; then
   printf "$PRINTF_MASK" "OS X Server not installed, please install..." "$RED" "[FAIL]" "$RESET"
-  open https://itunes.apple.com/nl/app/os-x-server/id537441259?mt=12
+  #open https://itunes.apple.com/nl/app/os-x-server/id537441259?mt=12
+  open https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12
   while ( [ ! -e /Applications/Server.app ] )
   do
       printf "$PRINTF_MASK" "Waiting for OS X Server to be installed…" "$YELLOW" "[WAIT]" "$RESET"
