@@ -19,9 +19,8 @@ if [ ! -e /Applications/xlog.app ] ; then
     sleep 15
   done
   
-#  printf "$PRINTF_MASK" "Please enable:" "$YELLOW" "[WAIT]" "$RESET"
-#  printf "$PRINTF_MASK" "- Websites…" "$YELLOW" "[WAIT]" "$RESET"
-#  printf "$PRINTF_MASK" "- PHP Web Applications…" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Please enable:" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "- Launch Console at user login…" "$YELLOW" "[WAIT]" "$RESET"
   open /Applications/Xlog.app
   
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
