@@ -15,7 +15,8 @@ if [ ! -d $INST_PLEXWATCH_PATH ] ; then
     sudo mkdir -p $INST_PLEXWATCH_PATH
     sudo chown `whoami` $INST_PLEXWATCH_PATH
 fi
-
+cd $INST_PLEXWATCH_PATH
+git clone https://github.com/ljunkie/plexWatch.git
 
 #if [ ! -e /Applications/iterm.app ] ; then
 #  printf "$PRINTF_MASK" "iTerm not installed, please install..." "$RED" "[FAIL]" "$RESET"
