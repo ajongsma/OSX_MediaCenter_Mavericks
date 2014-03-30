@@ -6,11 +6,21 @@ else
   source config.sh
 fi
 
-echo "#------------------------------------------------------------------------------"
+echo "#=============================================================================="
 echo "# Installing CPAN plus modules"
 echo "#------------------------------------------------------------------------------"
 ##https://forums.plex.tv/index.php/topic/72552-plexwatch-plex-notify-script-send-push-alerts-on-new-sessions-and-stopped/page-7
 
+printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "Select Settings -> Connect" "$YELLOW" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "Enter your user credentials" "$YELLOW" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "Click Sign In" "$YELLOW" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
+
+
+
+echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+read -n 1 -s
 cpan
 
 sudo cpan install Time::Duration
@@ -23,4 +33,4 @@ sudo cpan install JSON
 
 echo "#------------------------------------------------------------------------------"
 echo "# Installing CPAN plus modules - Complete"
-echo "#------------------------------------------------------------------------------"
+echo "#=============================================================================="
