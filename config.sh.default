@@ -8,7 +8,7 @@
 ##############################################################
 
 ## Check and install OS X Updates
-INST_OSX_UPDATES="true"
+INST_OSX_UPDATES="false"
 
 #-----------------------------------------------------------
 ## OSX Settings
@@ -31,7 +31,7 @@ INST_APACHE_SYSTEM_WEB_ROOT="/Library/Server/Web/Data/Sites/Default"
 # | INSTALLS                                                |
 # ===========================================================
 ## Install OS X Server (https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12) - (true/false)
-INSTALL_OSX_SERVER="false"
+INSTALL_OSX_SERVER="true"
 
 ## Install NewzNAB (http://www.newznab.com) - (true/false)
 INST_NEWZNAB="false"
