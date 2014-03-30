@@ -13,7 +13,7 @@ echo "#-------------------------------------------------------------------------
 
 if [ ! -d $INST_PLEXWATCH_PATH ] ; then
     sudo mkdir -p $INST_PLEXWATCH_PATH
-    sudo chown `whoami` $INST_PLEXWATCH_PATH
+    sudo chown `whoami`:staff $INST_PLEXWATCH_PATH
 fi
 cd $INST_PLEXWATCH_PATH
 git clone https://github.com/ljunkie/plexWatch.git
