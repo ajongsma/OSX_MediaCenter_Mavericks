@@ -42,6 +42,49 @@ if [ ! -e /Applications/Plex\ Media\ Server.app ] ; then
   done
 
   open /Applications/Plex\ Media\ Server.app
+  
+  ##http://plex.tv/web/app#!/setup
+  printf "$PRINTF_MASK" "Verify the Friendly Name" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Check if Connect to Plex is enabled" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-> Click Next" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Add Library" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Movies" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Verify the name of the Movies library" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Add Folder" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Select Media -> Movies" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Add" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Add Library" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Add Library" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click TV Shows" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Verify the name of the TV Shows library" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Add Folder" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Select Media -> Series" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Add" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Add Library" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Next" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Select channels if needed" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Next" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Done" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
+  
+
+  open http://plex.tv/web/app#!/settings/server
+  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Select Settings -> Connect" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Enter your user credentials" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click Sign In" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
+  
+  
+  
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+
 else
   printf "$PRINTF_MASK" "Plex Media Server found" "$GREEN" "[OK]" "$RESET"
 fi
