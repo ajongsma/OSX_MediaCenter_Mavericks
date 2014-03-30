@@ -3,12 +3,13 @@ OSX Media Center - Mavericks Edition
 
 Note: A clean install will erase all of the contents on your disk drive. Make sure to back up your important files, settings and apps before proceeding. If needed, upgrade the system to Mavericks (https://itunes.apple.com/us/app/os-x-mavericks/id675248567?mt=12)
 
-Perform a clean install:
-1 Restart your Mac and hold down the Command key and the R key (cmd⌘+R). Press and hold these keys until the Apple logo appears.
-2 For a clean install, open up Disk Utility and erase your main hard drive. Once you've done so, you can go back to the Install OS X Mavericks disk and choose "Install a new copy of OS X."
+Performing a clean install:
+
+1. Restart your Mac and hold down the Command key and the R key (cmd⌘+R). Press and hold these keys until the Apple logo appears.
+
+2. For a clean install, open up Disk Utility and erase your main hard drive. Once you've done so, you can go back to the Install OS X Mavericks disk and choose "Install a new copy of OS X."
 
 
-Installeer eerst de Mavericks update, wanneer dit proces is voltooid herstart je Mac en houdt hierbij de cmd⌘ + R toets ingedrukt tot je het 'boing' (opstart)geluid hoort.
 
 
 Notes
