@@ -10,6 +10,9 @@ Performing a clean install:
 2. For a clean install, open up Disk Utility and erase your main hard drive. Once you've done so, you can go back to the Install OS X Mavericks disk and choose "Install a new copy of OS X."
 
 
+Install
+OS X Server (https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12)
+
 
 
 Notes
