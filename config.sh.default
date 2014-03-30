@@ -45,5 +45,5 @@ INST_NEWZNAB="false"
 ## Install Plex Media Server (http://www.plex.tv) - (true/false)
 INST_PLEX_MEDIA_SERVER="true"
 
-## Install Plex Media Server (http://www.plex.tv) - (true/false)
+## Install Plex Home Theater (http://www.plex.tv) - (true/false)
 INST_PLEX_HOME_THEATER="true"
