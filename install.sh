@@ -118,9 +118,6 @@ fi
 # Enable Tap to Click for this user and for the login screen
 #------------------------------------------------------------------------------
 if [[ $ENABLE_MOUSE_TAPTOCLICK == "true" ]]; then
-    echo "---------------------------------------------------"
-    echo "| Enabling mouse/trackpad tap-to-click            |"
-    echo "---------------------------------------------------"
     source "$DIR/scripts/osx_mouse_taptoclick_enable.sh"
 fi
 
