@@ -13,9 +13,6 @@ echo "#-------------------------------------------------------------------------
 
 printf "$PRINTF_MASK" "Select No for default values" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
-
-
-
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 cpan
