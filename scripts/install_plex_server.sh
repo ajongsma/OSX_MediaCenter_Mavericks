@@ -10,35 +10,35 @@ echo "#-------------------------------------------------------------------------
 echo "# Installing Plex Media Server"
 echo "#------------------------------------------------------------------------------"
 
-if [ ! -e /Applications/PlexMediaServer.app ] ; then
+if [ ! -e /Applications/Plex\ Media\ Server.app ] ; then
   printf "$PRINTF_MASK" "Plex Media Server not installed, please install..." "$RED" "[FAIL]" "$RESET"
   open https://plex.tv/downloads
   while ( [ ! -e /Applications/PlexMediaServer.app ] )
   do
-#    printf "$PRINTF_MASK" "Waiting for Plex Media Server to be installed…" "$YELLOW" "[WAIT]" "$RESET"
-#    sleep 15
+    printf "$PRINTF_MASK" "Waiting for Plex Media Server to be installed…" "$YELLOW" "[WAIT]" "$RESET"
+    sleep 15
     
-    if [ ! -e ~/Downloads/PlexMediaServer-* ] ; then
-        echo "Plex Server not installed, please install..."
-        open http://www.plex.tv/getplex
-        while ( [ ! -e ~/Downloads/PlexMediaServer-* ] )
-        do
-            echo "Waiting for Plex Server to be downloaded..."
-            sleep 15
-        done
-    else
-        echo "Plex Server download found                           [OK]"
-    fi
-
-    for i in ~/Downloads/PlexMediaServer-*; do
-        if [ -f "$i" ]; then
-            #echo "Found : $i"
-            open $i
-            if [ -e /Volumes/PlexMediaServer/Plex\ Media\ Server.app ] ; then
-                cp -R /Volumes/PlexMediaServer/Plex\ Media\ Server.app/ /Applications/
-            fi
-        fi
-    done
+#    if [ ! -e ~/Downloads/PlexMediaServer-* ] ; then
+#        echo "Plex Server not installed, please install..."
+#        open http://www.plex.tv/getplex
+#        while ( [ ! -e ~/Downloads/PlexMediaServer-* ] )
+#        do
+#            echo "Waiting for Plex Server to be downloaded..."
+#            sleep 15
+#        done
+#    else
+#        echo "Plex Server download found                           [OK]"
+#    fi
+#
+#    for i in ~/Downloads/PlexMediaServer-*; do
+#        if [ -f "$i" ]; then
+#            #echo "Found : $i"
+#            open $i
+#            if [ -e /Volumes/PlexMediaServer/Plex\ Media\ Server.app ] ; then
+#                cp -R /Volumes/PlexMediaServer/Plex\ Media\ Server.app/ /Applications/
+#            fi
+#        fi
+#    done
   done
 
   open /Applications/PlexMediaServer.app
