@@ -30,6 +30,9 @@ INST_APACHE_SYSTEM_WEB_ROOT="/Library/Server/Web/Data/Sites/Default"
 # ===========================================================
 # | INSTALLS                                                |
 # ===========================================================
+## Install XLog (https://itunes.apple.com/nl/app/xlog/id430304898?l=en&mt=12) - (true/false)
+INSTALL_XLOG="true"
+
 ## Install OS X Server (https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12) - (true/false)
 INSTALL_OSX_SERVER="true"
 
