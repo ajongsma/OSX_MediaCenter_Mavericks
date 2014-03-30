@@ -154,5 +154,10 @@ if [[ $INST_PLEX_MEDIA_SERVER == "true" ]]; then
     source "$DIR/scripts/install_plex_server.sh"
 fi
 
-## Install Plex Media Server (http://www.plex.tv) - (true/false)
-#INST_PLEX_HOME_THEATER="true"
+#------------------------------------------------------------------------------
+# Install Plex Server
+#------------------------------------------------------------------------------
+if [[ $INST_PLEX_HOME_THEATER == "true" ]]; then
+    source "$DIR/scripts/install_plex_client.sh"
+fi
+
