@@ -10,7 +10,7 @@ echo "#-------------------------------------------------------------------------
 echo "# Installing Plex Media Server"
 echo "#------------------------------------------------------------------------------"
 
-if [ ! -e /Applications/iterm.app ] ; then
+if [ ! -e /Applications/PlexMediaServer.app ] ; then
   printf "$PRINTF_MASK" "Plex Media Server not installed, please install..." "$RED" "[FAIL]" "$RESET"
   open https://plex.tv/downloads
   while ( [ ! -e /Applications/PlexMediaServer.app ] )
