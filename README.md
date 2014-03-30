@@ -12,13 +12,20 @@ Performing a clean install:
 
 Install
 =====
-Open a terminal window, and enter the following command
+Open a terminal window (Finder, Applications, Utilities, Terminal), and enter the following command
 ```
 git
 ```
-A popup will show, asking to install the command line developers tools.
+A popup will show, asking permission to install the command line developers tools.
 
 Click Install -> Agree
+
+Return to the terminal window and download the install script by entering the following commands:
+```
+mkdir Mediacenter
+cd Mediacenter
+git clone https://github.com/ajongsma/OSX_MediaCenter.git
+```
 
 
 Notes
