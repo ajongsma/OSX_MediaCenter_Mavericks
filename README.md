@@ -11,6 +11,18 @@ Performing a clean install:
 
 
 Install
+=====
+Open a terminal window, and enter the following command
+```
+git
+```
+A popup will show, asking to install the command line developers tools.
+
+Click Install
+
+
+
+
 OS X Server (https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12)
 
 
