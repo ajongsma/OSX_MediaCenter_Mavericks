@@ -44,38 +44,25 @@ if [ ! -e /Applications/Plex\ Home\ Theater.app ] ; then
   open /Applications/Plex\ Home\ Theater.app
   
   ##http://plex.tv/web/app#!/setup
-  printf "$PRINTF_MASK" "Verify the Friendly Name" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Check if Connect to Plex is enabled" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Please note: only the keyboard functions (arrows, enter etc.)" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
   printf "$PRINTF_MASK" "-> Click Next" "$YELLOW" "[WAIT]" "$RESET"
   printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click Add Library" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click Movies" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Verify the name of the Movies library" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click Add Folder" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Select Media -> Movies" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click Add" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click Add Library" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Choose the correct audio output" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-> Click Next" "$YELLOW" "[WAIT]" "$RESET"
   printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click Add Library" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click TV Shows" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Verify the name of the TV Shows library" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click Add Folder" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Select Media -> Series" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click Add" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click Add Library" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click Next" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Select channels if needed" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click Next" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
-  printf "$PRINTF_MASK" "Click Done" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Authenticate the Plex Home Theater on Plex.tv" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-> Click Next" "$YELLOW" "[WAIT]" "$RESET"
   printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
   
+  open http://plex.tv/pin
+  printf "$PRINTF_MASK" "Enter the PIN on Plex.tv" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-> Click Next" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "Click OK" "$YELLOW" "[WAIT]" "$RESET"
   
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
-
 else
   printf "$PRINTF_MASK" "Plex Home Theater found" "$GREEN" "[OK]" "$RESET"
 fi
