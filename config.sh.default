@@ -12,6 +12,7 @@ INST_OSX_UPDATES="true"
 
 #-----------------------------------------------------------
 ## OSX Settings
+ENABLE_LIBRARY_UNHIDE="true"
 ENABLE_MOUSE_TAPTOCLICK="true"
 
 #-----------------------------------------------------------
