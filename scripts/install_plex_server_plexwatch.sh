@@ -18,6 +18,11 @@ fi
 cd $INST_PLEXWATCH_PATH
 git clone https://github.com/ljunkie/plexWatch.git
 
+chmod 777 plexWatch
+chmod 755 plexWatch.pl
+
+cp config.pl-dist config.pl
+
 #if [ ! -e /Applications/iterm.app ] ; then
 #  printf "$PRINTF_MASK" "iTerm not installed, please install..." "$RED" "[FAIL]" "$RESET"
 #  open http://www.iterm2.com
