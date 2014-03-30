@@ -11,8 +11,7 @@ echo "# Installing CPAN plus modules"
 echo "#------------------------------------------------------------------------------"
 ##https://forums.plex.tv/index.php/topic/72552-plexwatch-plex-notify-script-send-push-alerts-on-new-sessions-and-stopped/page-7
 
-printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
-printf "$PRINTF_MASK" "Select Settings -> Connect" "$YELLOW" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "Select No" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "Enter your user credentials" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "Click Sign In" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
@@ -29,7 +28,12 @@ sudo cpan install LWP::UserAgent
 sudo cpan install XML::Simple
 sudo cpan install DBI
 sudo cpan install JSON
+
+## Only Required if you use GNTP
 #sudo cpan install Growl::GNTP
+
+## Only required if you use Email
+#sudo cpan install Net::SMTPS
 
 echo "#------------------------------------------------------------------------------"
 echo "# Installing CPAN plus modules - Complete"
