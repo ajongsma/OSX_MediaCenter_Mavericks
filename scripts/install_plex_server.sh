@@ -41,7 +41,7 @@ if [ ! -e /Applications/Plex\ Media\ Server.app ] ; then
 #    done
   done
 
-  open /Applications/PlexMediaServer.app
+  open /Applications/Plex\ Media\ Server.app
 else
   printf "$PRINTF_MASK" "Plex Media Server found" "$GREEN" "[OK]" "$RESET"
 fi
