@@ -11,6 +11,8 @@ echo "# Installing PlexWatch"
 echo "#------------------------------------------------------------------------------"
 ##https://github.com/ljunkie/plexWatch
 
+[ -d /Users/Plex/Plexwatch ] || mkdir -p /Users/Plex/Plexwatch
+
 #if [ ! -e /Applications/iterm.app ] ; then
 #  printf "$PRINTF_MASK" "iTerm not installed, please install..." "$RED" "[FAIL]" "$RESET"
 #  open http://www.iterm2.com
