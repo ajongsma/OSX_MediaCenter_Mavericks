@@ -31,3 +31,74 @@ if [[ $AGREED == "no" ]]; then
   echo "Please edit the config.sh file"
   exit
 fi
+
+BLACK=$(tput setaf 0)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+MAGENTA=$(tput setaf 5)
+CYAN=$(tput setaf 6)
+WHITE=$(tput setaf 7)
+GREY=$(tput setaf 238)
+ORANGE=$(tput setaf 172)
+BOLD=$(tput bold)
+UNDERLINE=$(tput sgr 0 1)
+RESET=$(tput sgr0)
+
+NOTICE=$RESET$BOLD$BLUE
+SUCCESS=$RESET$BOLD$GREEN
+FAILURE=$RESET$BOLD$RED
+ATTENTION=$RESET$BOLD$ORANGE
+INFORMATION=$RESET$BOLD$GREY
+
+PRINTF_MASK="%-50s %s %10s %s\n"
+
+TIMESTAMP=`date +%Y%m%d%H%M%S`
+LOGFILE=$DIR/install-$TIMESTAMP.log
+
+# Set to non-zero value for debugging
+DEBUG=0
+
+
+##-----------------------------------------------------------------------------
+## Functions
+##-----------------------------------------------------------------------------
+function check_system() {
+    # Check for supported system
+    kernel=`uname -s`
+    case $kernel in
+        Darwin) ;;
+        *) fail "Sorry, $kernel is not supported." ;;
+    esac
+}
+
+##-----------------------------------------------------------------------------
+## PreFlight - Check OS
+##-----------------------------------------------------------------------------
+check_system
+
+#------------------------------------------------------------------------------
+# Keep-alive: update existing sudo time stamp until finished
+#------------------------------------------------------------------------------
+# Ask for the administrator password upfront
+echo "--------------------------------------"
+echo "| Please enter the root password     |"
+echo "--------------------------------------"
+sudo -v
+echo "--------------------------------------"
+
+# Keep-alive: update existing `sudo` time stamp until finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+#------------------------------------------------------------------------------
+# Checking if system is up-to-date
+#------------------------------------------------------------------------------
+## Run software update and reboot
+if [[ $INST_OSX_UPDATES == "true" ]]; then
+    sudo softwareupdate --list
+    sudo softwareupdate --install --all
+fi
+
+
+
