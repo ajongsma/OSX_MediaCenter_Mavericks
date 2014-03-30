@@ -26,6 +26,7 @@ printf "$PRINTF_MASK" "-----------------------------------" "$GREY" "[WAIT]" "$R
 sudo cpan install Time::Duration
 sudo cpan install JSON
 sudo cpan install Time::ParseDate
+sudo cpan install File::ReadBackwards
 
 #sudo cpan install LWP::UserAgent
 #sudo cpan install XML::Simple
