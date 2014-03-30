@@ -27,7 +27,7 @@ sudo cpan install XML::Simple
 sudo cpan install DBI
 sudo cpan install JSON
 
-## Only Required if you use GNTP
+## Only required if you use GNTP
 #sudo cpan install Growl::GNTP
 
 ## Only required if you use Email
