@@ -22,7 +22,7 @@ if [ ! -f config.sh ]; then
   clear
   echo "No config.sh found. Creating file, please edit the required values"
   cp config.sh.default config.sh
-  vi config.sh
+  pico config.sh
 fi
 
 source config.sh
