@@ -24,6 +24,16 @@ chmod 755 plexWatch/plexWatch.pl
 cd plexWatch
 cp config.pl-dist config.pl
 
+printf "$PRINTF_MASK" "Modify Variables as needed" "$YELLOW" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "server = 'localhost';" "$YELLOW" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "port   = 32400;" "$YELLOW" "[WAIT]" "$RESET"
+printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
+echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+read -n 1 -s
+
+pico config.pl
+
+
 #if [ ! -e /Applications/iterm.app ] ; then
 #  printf "$PRINTF_MASK" "iTerm not installed, please install..." "$RED" "[FAIL]" "$RESET"
 #  open http://www.iterm2.com
