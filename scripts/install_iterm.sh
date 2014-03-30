@@ -12,7 +12,7 @@ echo "#-------------------------------------------------------------------------
 
 if [ ! -e /Applications/iterm.app ] ; then
   printf "$PRINTF_MASK" "iTerm not installed, please install..." "$RED" "[FAIL]" "$RESET"
-  open https://www.iterm.com
+  open https://www.iterm2.com
   while ( [ ! -e /Applications/iterm.app ] )
   do
     printf "$PRINTF_MASK" "Waiting for iTerm to be installed…" "$YELLOW" "[WAIT]" "$RESET"
