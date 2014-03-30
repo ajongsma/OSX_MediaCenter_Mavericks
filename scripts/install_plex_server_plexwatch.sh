@@ -28,7 +28,6 @@ printf "$PRINTF_MASK" "port   = 32400;" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
-
 pico config.pl
 
 
