@@ -21,6 +21,7 @@ git clone https://github.com/ljunkie/plexWatch.git
 chmod 777 plexWatch
 chmod 755 plexWatch/plexWatch.pl
 
+cd plexWatch
 cp config.pl-dist config.pl
 
 #if [ ! -e /Applications/iterm.app ] ; then
