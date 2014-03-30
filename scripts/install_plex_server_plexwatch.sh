@@ -28,9 +28,6 @@ printf "$PRINTF_MASK" "$server_log = ".$HOME."'/Library/Logs/Plex Media Server.l
 printf "$PRINTF_MASK" "$log_client_ip = 1;" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "$myPlex_user = '".$MYPLEX_UID."';" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "$myPlex_user = '".$MYPLEX_PW."';" "$YELLOW" "[WAIT]" "$RESET"
-
-
-printf "$PRINTF_MASK" "port   = 32400;" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
