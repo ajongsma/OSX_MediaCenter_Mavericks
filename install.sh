@@ -96,6 +96,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #------------------------------------------------------------------------------
 ## Run software update and reboot
 if [[ $INST_OSX_UPDATES == "true" ]]; then
+    echo "--------------------------------------"
+    echo "| Installing OS X software updates   |"
+    echo "--------------------------------------"
     sudo softwareupdate --list
     sudo softwareupdate --install --all
 fi
