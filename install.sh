@@ -149,19 +149,7 @@ fi
 # Install Plex Server
 #------------------------------------------------------------------------------
 if [[ $INST_PLEX_MEDIA_SERVER == "true" ]]; then
-    if [ ! -e /Applications/Plex\ Media\ Server.app ] ; then
-        printf 'Plex Server not installed, installing…\n' "$RED" $col '[FAIL]' "$RESET"
-        source "$DIR/scripts/install_plex_server.sh"
-        while ( [ ! -e /Applications/Plex\ Media\ Server.app ] )
-        do
-            echo "Waiting for Plex Server to be installed..."
-            sleep 15
-        done
-    else
-        printf 'Plex Server found\n' "$GREEN" $col '[OK]' "$RESET"
-    fi
-else
-    printf "$PRINTF_MASK" "Plex Server excluded from install" "$GREY" "[SKIP]" "$RESET"
+    source "$DIR/scripts/install_plex_server.sh"
 fi
 
 ## Install Plex Media Server (http://www.plex.tv) - (true/false)
