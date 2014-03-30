@@ -18,17 +18,15 @@ git
 ```
 A popup will show, asking to install the command line developers tools.
 
-Click Install
-
-
-
-
-OS X Server (https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12)
-
+Click Install -> Agree
 
 
 Notes
 ===============
+
+OS X Server 
+https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12
+
 
 Plex Media Server
 
