@@ -20,7 +20,12 @@ git clone https://github.com/ljunkie/plexWatch.git
 chmod 777 plexWatch
 chmod 755 plexWatch/plexWatch.pl
 cd plexWatch
-cp config.pl-dist config.pl
+if [ ! -f config.pl ] ; then
+  printf "$PRINTF_MASK" "config.pl doesn't exists, copying..." "$YELLOW" "[WAIT]" "$RESET"
+  cp config.pl-dist config.pl
+else
+  printf "$PRINTF_MASK" "config.pl exists" "$GREEN" "[OK]" "$RESET"
+fi
 
 printf "$PRINTF_MASK" "Modify Variables as needed" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "\$data_dir = '/Users/Plex/plexWatch';" "$YELLOW" "[WAIT]" "$RESET"
