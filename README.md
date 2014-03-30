@@ -31,6 +31,12 @@ git clone https://github.com/ajongsma/OSX_MediaCenter.git
 Notes
 ===============
 
+iTerm 2
+http://www/iterm2.com
+
+Xlog
+https://itunes.apple.com/us/app/xlog/id430304898?mt=12&ign-mpt=uo%3D4
+
 OS X Server 
 https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12
 
@@ -42,7 +48,6 @@ Plex Home Theater
 Plex Unsupported (as in totally unofficial) Appstore
 https://forums.plex.tv/index.php/topic/25523-unsupported-as-in-totally-unofficial-appstore/
 
-
 Plex Media Scrobbler for TraktTV
 https://forums.plex.tv/index.php/topic/102818-rel-trakt/
 https://forums.plex.tv/index.php/topic/35626-plex-media-server-scrobbler-for-trakttv/
@@ -52,8 +57,6 @@ https://forums.plex.tv/index.php/topic/72552-plexwatch-plex-notify-script-send-p
 
 PlexWatch/Web
 https://forums.plex.tv/index.php/topic/82819-plexwatchweb-a-web-front-end-for-plexwatch/
-
-OS X Server
 
 SabNZBD
 
@@ -66,12 +69,6 @@ http://gathering.tweakers.net/forum/list_messages/1572892/0
 https://code.google.com/p/autosub-bootstrapbill/
 
 ----------------
-
-iTerm 2
-http://www/iterm2.com
-
-Xlog
-https://itunes.apple.com/us/app/xlog/id430304898?mt=12&ign-mpt=uo%3D4
 
 Launch Control
 http://www.soma-zone.com/LaunchControl/
