@@ -3,6 +3,7 @@
 echo "#------------------------------------------------------------------------------"
 echo "# Installing Trakt.TV for Plex"
 echo "#------------------------------------------------------------------------------"
+# https://forums.plex.tv/index.php/topic/102818-rel-trakt/
 
 if [ ! -f config.sh ]; then
   source ../config.sh
