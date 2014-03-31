@@ -34,7 +34,7 @@ cd OSX_MediaCenter
 ```
 
 
-The following applications will be installed if enabled
+Installed applications if enabled
 ===============
 
 iTerm 2
