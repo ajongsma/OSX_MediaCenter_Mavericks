@@ -28,8 +28,7 @@ else
 fi
 
 echo "=-=-=-=-=-="
-echo $SOURCE
-echo $DIR
+echo $DIR"/"$SOURCE
 echo "=-=-=-=-=-="
 
 if [[ -z $MYPLEX_UID ]] || [[ $MYPLEX_PW == "" ]]; then
