@@ -57,6 +57,9 @@ ToDo
 
 Plex Unsupported (as in totally unofficial) Appstore
 https://forums.plex.tv/index.php/topic/25523-unsupported-as-in-totally-unofficial-appstore/
+https://github.com/mikedm139/UnSupportedAppstore.bundle
+~/Library/Application Support/Plex Media Server/Plug-ins
+
 
 Plex Media Scrobbler for TraktTV
 https://forums.plex.tv/index.php/topic/102818-rel-trakt/
