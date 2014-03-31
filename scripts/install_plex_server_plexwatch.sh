@@ -12,8 +12,11 @@ echo "#-------------------------------------------------------------------------
 ##https://github.com/ljunkie/plexWatch
 
 if [ ! -d $INST_PLEXWATCH_PATH ] ; then
-    sudo mkdir -p $INST_PLEXWATCH_PATH
-    sudo chown `whoami`:staff $INST_PLEXWATCH_PATH
+  printf "$PRINTF_MASK" $INST_PLEXWATCH_PATH" doesn't exists, copying..." "$YELLOW" "[WAIT]" "$RESET"
+  sudo mkdir -p $INST_PLEXWATCH_PATH
+  sudo chown `whoami`:staff $INST_PLEXWATCH_PATH
+else
+  printf "$PRINTF_MASK" $INST_PLEXWATCH_PATH" exists" "$GREEN" "[OK]" "$RESET"
 fi
 cd $INST_PLEXWATCH_PATH
 git clone https://github.com/ljunkie/plexWatch.git
