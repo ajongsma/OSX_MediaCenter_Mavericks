@@ -38,7 +38,8 @@ echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 open -a /Applications/TextWrangler.app config.pl
 
-cp $DIR"/config/launchctl/com.plexserver.plexwatch.plist" $HOME/Library/LaunchAgents
+pwd
+cp config/launchctl/com.plexserver.plexwatch.plist $HOME/Library/LaunchAgents
 
 
 #if [ ! -e /Applications/iterm.app ] ; then
