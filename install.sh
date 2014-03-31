@@ -73,6 +73,11 @@ function check_system() {
     esac
 }
 
+function echo_fancy() {
+  printf "\n%b\n" "$1"
+}
+#fancy_echo "Sample Updating Stuff ..."
+
 ##-----------------------------------------------------------------------------
 ## PreFlight - Check OS
 ##-----------------------------------------------------------------------------
