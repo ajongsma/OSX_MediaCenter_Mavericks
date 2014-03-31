@@ -11,11 +11,11 @@ echo "# Installing Textwrangler"
 echo "#------------------------------------------------------------------------------"
 
 if [ ! -e /Applications/textwrangler.app ] ; then
-  printf "$PRINTF_MASK" "Plex Home Theater not installed, please install..." "$RED" "[FAIL]" "$RESET"
+  printf "$PRINTF_MASK" "Textwrangler not installed, please install..." "$RED" "[FAIL]" "$RESET"
   open https://itunes.apple.com/nl/app/textwrangler/id404010395?l=en&mt=12
   while ( [ ! -e /Applications/textwrangler.app ] )
   do
-    printf "$PRINTF_MASK" "Waiting for Plex Home Theater to be installed…" "$YELLOW" "[WAIT]" "$RESET"
+    printf "$PRINTF_MASK" "Waiting for Textwrangler to be installed…" "$YELLOW" "[WAIT]" "$RESET"
     sleep 15
   done
 
