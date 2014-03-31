@@ -38,11 +38,12 @@ if [[ -z $MYPLEX_UID ]] || [[ $MYPLEX_PW == "" ]]; then
   echo "| MYPLEX_PW  : Password"
   echo "-----------------------------------------------------------"
   
-  if [ ! -f config.sh ]; then
-    open -a /Applications/TextWrangler.app ../config.sh
-  else
-    open -a /Applications/TextWrangler.app config.sh
-  fi
+#  if [ ! -f config.sh ]; then
+#    open -a /Applications/TextWrangler.app ../config.sh
+#  else
+#    open -a /Applications/TextWrangler.app config.sh
+#  fi
+  open -a /Applications/TextWrangler.app $DIR"/"$SOURCE
 
   while ( [[ $MYPLEX_UID == "" ]] || [[ $MYPLEX_PW == "" ]] )
   do
