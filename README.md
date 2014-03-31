@@ -22,8 +22,8 @@ Click Install -> Agree
 
 Return to the terminal window and download the install script by entering the following commands:
 ```
-mkdir Mediacenter
-cd Mediacenter
+mkdir ~/Github
+cd ~/Github
 git clone https://github.com/ajongsma/OSX_MediaCenter.git
 ```
 
