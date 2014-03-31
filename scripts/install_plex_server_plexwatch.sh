@@ -51,6 +51,7 @@ open -a /Applications/TextWrangler.app config.pl
 if [ ! -f $HOME/Library/LaunchAgents/com.plexserver.plexwatch.plist ] ; then
   printf "$PRINTF_MASK" "com.plexserver.plexwatch.plist doesn't exists, copying..." "$YELLOW" "[WAIT]" "$RESET"
   cp ./config/launchctl/com.plexserver.plexwatch.plist $HOME/Library/LaunchAgents
+  launchctl load ~/Library/LaunchAgents/com.plexserver.plexwatch.plist
 else
   printf "$PRINTF_MASK" "com.plexserver.plexwatch.plist exists" "$GREEN" "[OK]" "$RESET"
 fi
