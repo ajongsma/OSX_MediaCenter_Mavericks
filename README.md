@@ -14,7 +14,7 @@ Install
 =====
 Open a terminal window (Finder -> Applications -> Utilities -> Terminal), and enter the following command
 ```
-git
+xcode-select --install
 ```
 A popup will show, asking permission to install the Xcode Command Line Tools.  
 Click Install -> Agree
