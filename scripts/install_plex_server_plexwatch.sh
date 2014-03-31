@@ -27,6 +27,10 @@ else
   printf "$PRINTF_MASK" "config.pl exists" "$GREEN" "[OK]" "$RESET"
 fi
 
+echo "=-=-=-=-=-="
+echo $SOURCE
+echo "=-=-=-=-=-="
+
 if [[ -z $MYPLEX_UID ]] || [[ $MYPLEX_PW == "" ]]; then
   echo "-----------------------------------------------------------"
   echo "| Please provide the Plex username and password:"
