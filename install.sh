@@ -159,14 +159,15 @@ fi
 # Install Plex Server
 #------------------------------------------------------------------------------
 if [[ $INST_PLEX_MEDIA_SERVER == "true" ]]; then
-    source "$DIR/scripts/install_plex_server.sh"
+  source "$DIR/scripts/install_plex_server.sh"
 fi
 
 #------------------------------------------------------------------------------
 # Install Plex Watch
 #------------------------------------------------------------------------------
 if [[ $INST_PLEXWATCH == "true" ]]; then
-    source "$DIR/scripts/install_plex_server_plexwatch.sh"
+  source "$DIR/scripts/osx_cpan.sh"
+  source "$DIR/scripts/install_plex_server_plexwatch.sh"
 fi
 
 
@@ -174,6 +175,6 @@ fi
 # Install Plex Server
 #------------------------------------------------------------------------------
 if [[ $INST_PLEX_HOME_THEATER == "true" ]]; then
-    source "$DIR/scripts/install_plex_client.sh"
+  source "$DIR/scripts/install_plex_client.sh"
 fi
 
