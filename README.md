@@ -47,10 +47,10 @@ OS X Server
 https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12
 
 Plex Media Server
-http[://plex.tv
+http://plex.tv
 
 Plex Home Theater
-http[://plex.tv
+http://plex.tv
 
 
 ToDo
