@@ -27,6 +27,22 @@ else
   printf "$PRINTF_MASK" "config.pl exists" "$GREEN" "[OK]" "$RESET"
 fi
 
+if [[ -z $MYPLEX_UID ]] || [[ $MYPLEX_PW == "" ]]; then
+    echo "-----------------------------------------------------------"
+    echo "| Please provide the Plex username and password:"
+    echo "| MYPLEX_UID : Username"
+    echo "| MYPLEX_PW  : Password"
+    echo "-----------------------------------------------------------"
+    open -a /Applications/TextWrangler.app ../config.sh
+
+    while ( [[ $MYPLEX_UID == "" ]] || [[ $MYPLEX_PW == "" ]] )
+    do
+      printf 'Waiting for the Plex information to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
+	    sleep 3
+	    source ../config.sh
+    done
+fi
+
 printf "$PRINTF_MASK" "Modify Variables as needed" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "\$data_dir = '/Users/Plex/plexWatch';" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "\$server_log = '"$HOME"/Library/Logs/Plex Media Server.log';" "$YELLOW" "[WAIT]" "$RESET"
