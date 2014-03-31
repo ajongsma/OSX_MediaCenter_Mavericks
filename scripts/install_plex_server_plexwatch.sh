@@ -19,9 +19,16 @@ else
   printf "$PRINTF_MASK" $INST_PLEXWATCH_PATH" exists" "$GREEN" "[OK]" "$RESET"
 fi
 cd $INST_PLEXWATCH_PATH
-git clone https://github.com/ljunkie/plexWatch.git
-chmod 777 plexWatch
-chmod 755 plexWatch/plexWatch.pl
+
+if [ ! -d $INST_PLEXWATCH_PATH/plexwatch ] ; then
+  printf "$PRINTF_MASK" "PlexWatch doesn't exists, downloading respository..." "$YELLOW" "[WAIT]" "$RESET"
+  git clone https://github.com/ljunkie/plexWatch.git
+  chmod 777 plexWatch
+  chmod 755 plexWatch/plexWatch.pl
+else
+  printf "$PRINTF_MASK" "PlexWatch exists" "$GREEN" "[OK]" "$RESET"
+fi
+
 cd plexWatch
 if [ ! -f config.pl ] ; then
   printf "$PRINTF_MASK" "config.pl doesn't exists, copying..." "$YELLOW" "[WAIT]" "$RESET"
