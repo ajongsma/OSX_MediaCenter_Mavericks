@@ -37,7 +37,9 @@ if [[ -z $MYPLEX_UID ]] || [[ $MYPLEX_PW == "" ]]; then
   echo "| MYPLEX_UID : Username"
   echo "| MYPLEX_PW  : Password"
   echo "-----------------------------------------------------------"
-  
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+
 #  if [ ! -f config.sh ]; then
 #    open -a /Applications/TextWrangler.app ../config.sh
 #  else
@@ -60,12 +62,11 @@ printf "$PRINTF_MASK" "\$log_client_ip = 1;" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "\$myPlex_user = '"$MYPLEX_UID"';" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "\$myPlex_user = '"$MYPLEX_PW"';" "$YELLOW" "[WAIT]" "$RESET"
 printf "$PRINTF_MASK" "-----------------------------------" "$YELLOW" "[WAIT]" "$RESET"
-
-open -a /Applications/TextWrangler.app config.pl
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
+open -a /Applications/TextWrangler.app config.pl
 
-cp config/launchctl/com.plexserver.plexwatch.plist $HOME/Library/LaunchAgents
+cp $DIR"/config/launchctl/com.plexserver.plexwatch.plist" $HOME/Library/LaunchAgents
 
 
 #if [ ! -e /Applications/iterm.app ] ; then
