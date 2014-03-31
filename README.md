@@ -10,13 +10,13 @@ Performing a clean install:
 2. For a clean install, open up Disk Utility and erase your main hard drive. Once you've done so, you can go back to the Install OS X Mavericks disk and choose "Install a new copy of OS X."
 
 
-Install
+Install 
 =====
-Open a terminal window (Finder, Applications, Utilities, Terminal), and enter the following command
+Open a terminal window (Finder -> Applications -> Utilities -> Terminal), and enter the following command
 ```
 git
 ```
-A popup will show, asking permission to install the command line developers tools.
+A popup will show, asking permission to install the Xcode command line developers tools.
 
 Click Install -> Agree
 
@@ -27,12 +27,18 @@ cd ~/Github
 git clone https://github.com/ajongsma/OSX_MediaCenter.git
 ```
 
+After the repository has been downloaded, enter the following commands:
+```
+cd OSX_MediaCenter
+./install.sh
+```
+
 
 Notes
 ===============
 
 iTerm 2
-http://www/iterm2.com
+http://www.iterm2.com
 
 Xlog
 https://itunes.apple.com/us/app/xlog/id430304898?mt=12&ign-mpt=uo%3D4
@@ -40,10 +46,15 @@ https://itunes.apple.com/us/app/xlog/id430304898?mt=12&ign-mpt=uo%3D4
 OS X Server 
 https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12
 
-
 Plex Media Server
+http[://plex.tv
 
 Plex Home Theater
+http[://plex.tv
+
+
+ToDo
+===============
 
 Plex Unsupported (as in totally unofficial) Appstore
 https://forums.plex.tv/index.php/topic/25523-unsupported-as-in-totally-unofficial-appstore/
