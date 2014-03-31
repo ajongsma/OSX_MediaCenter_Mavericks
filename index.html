@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Osx mediacenter : OS X Media Center - Mavericks Edition" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Osx mediacenter</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ajongsma/OSX_MediaCenter">View on GitHub</a>
+
+          <h1 id="project_title">Osx mediacenter</h1>
+          <h2 id="project_tagline">OS X Media Center - Mavericks Edition</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ajongsma/OSX_MediaCenter/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ajongsma/OSX_MediaCenter/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="osx-media-center---mavericks-edition" class="anchor" href="#osx-media-center---mavericks-edition"><span class="octicon octicon-link"></span></a>OSX Media Center - Mavericks Edition</h1>
+
+<p>Note: A clean install will erase all of the contents on your disk drive. Make sure to back up your important files, settings and apps before proceeding. If needed, upgrade the system to Mavericks (<a href="https://itunes.apple.com/us/app/os-x-mavericks/id675248567?mt=12">https://itunes.apple.com/us/app/os-x-mavericks/id675248567?mt=12</a>)</p>
+
+<p>Performing a clean install:</p>
+
+<ol>
+<li><p>Restart your Mac and hold down the Command key and the R key (cmd⌘+R). Press and hold these keys until the Apple logo appears.</p></li>
+<li><p>For a clean install, open up Disk Utility and erase your main hard drive. Once you've done so, you can go back to the Install OS X Mavericks disk and choose "Install a new copy of OS X."</p></li>
+</ol><h1>
+<a name="install-" class="anchor" href="#install-"><span class="octicon octicon-link"></span></a>Install </h1>
+
+<p>Open a terminal window (Finder -&gt; Applications -&gt; Utilities -&gt; Terminal), enter the following command and follow the instructions to accept the XCode agreement</p>
+
+<pre><code>xcodebuild -license
+</code></pre>
+
+<p>After this, enter the following command:</p>
+
+<pre><code>xcode-select --install
+</code></pre>
+
+<p>A popup will show, asking permission to install the Xcode Command Line Tools.<br>
+Click Install -&gt; Agree</p>
+
+<p>Return to the terminal window and download the install script by entering the following commands:</p>
+
+<pre><code>mkdir ~/Github
+cd ~/Github
+git clone https://github.com/ajongsma/OSX_MediaCenter.git
+</code></pre>
+
+<p>After the repository has been downloaded, enter the following commands:</p>
+
+<pre><code>cd OSX_MediaCenter
+./install.sh
+</code></pre>
+
+<h3>
+<a name="installed-applications-if-enabled" class="anchor" href="#installed-applications-if-enabled"><span class="octicon octicon-link"></span></a>Installed applications (if enabled)</h3>
+
+<h1></h1>
+
+<p>iTerm 2
+<a href="http://www.iterm2.com">http://www.iterm2.com</a></p>
+
+<p>Xlog
+<a href="https://itunes.apple.com/us/app/xlog/id430304898?mt=12&amp;ign-mpt=uo%3D4">https://itunes.apple.com/us/app/xlog/id430304898?mt=12&amp;ign-mpt=uo%3D4</a></p>
+
+<p>OS X Server 
+<a href="https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&amp;mt=12">https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&amp;mt=12</a></p>
+
+<p>Plex Media Server
+<a href="http://plex.tv">http://plex.tv</a></p>
+
+<p>Plex Home Theater
+<a href="http://plex.tv">http://plex.tv</a></p>
+
+<h1>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>ToDo</h1>
+
+<p>Plex Unsupported (as in totally unofficial) Appstore
+<a href="https://forums.plex.tv/index.php/topic/25523-unsupported-as-in-totally-unofficial-appstore/">https://forums.plex.tv/index.php/topic/25523-unsupported-as-in-totally-unofficial-appstore/</a>
+<a href="https://github.com/mikedm139/UnSupportedAppstore.bundle">https://github.com/mikedm139/UnSupportedAppstore.bundle</a>
+~/Library/Application Support/Plex Media Server/Plug-ins</p>
+
+<p>Plex Media Scrobbler for TraktTV
+<a href="https://forums.plex.tv/index.php/topic/102818-rel-trakt/">https://forums.plex.tv/index.php/topic/102818-rel-trakt/</a>
+<a href="https://forums.plex.tv/index.php/topic/35626-plex-media-server-scrobbler-for-trakttv/">https://forums.plex.tv/index.php/topic/35626-plex-media-server-scrobbler-for-trakttv/</a></p>
+
+<p>PlexWatch
+<a href="https://forums.plex.tv/index.php/topic/72552-plexwatch-plex-notify-script-send-push-alerts-on-new-sessions-and-stopped/">https://forums.plex.tv/index.php/topic/72552-plexwatch-plex-notify-script-send-push-alerts-on-new-sessions-and-stopped/</a></p>
+
+<p>PlexWatch/Web
+<a href="https://forums.plex.tv/index.php/topic/82819-plexwatchweb-a-web-front-end-for-plexwatch/">https://forums.plex.tv/index.php/topic/82819-plexwatchweb-a-web-front-end-for-plexwatch/</a></p>
+
+<p>SabNZBD</p>
+
+<p>SickBeard</p>
+
+<p>CouchPotato</p>
+
+<p>Auto-Sub Bootstrap Bill
+<a href="http://gathering.tweakers.net/forum/list_messages/1572892/0">http://gathering.tweakers.net/forum/list_messages/1572892/0</a>
+<a href="https://code.google.com/p/autosub-bootstrapbill/">https://code.google.com/p/autosub-bootstrapbill/</a></p>
+
+<hr><p>Launch Control
+<a href="http://www.soma-zone.com/LaunchControl/">http://www.soma-zone.com/LaunchControl/</a></p>
+
+<p>HandBrake
+<a href="http://handbrake.fr">http://handbrake.fr</a></p>
+
+<p>GitHub</p>
+
+<p>DaisyDisk</p>
+
+<p>Path Finder</p>
+
+<p>MacPar Deluxe</p>
+
+<p>Xcode</p>
+
+<p>Transmission</p>
+
+<p>Unison</p>
+
+<p>plexwatchdb: /Users/Plex/plexWatch/plexWatch.db</p>
+
+<h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+
+<h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Osx mediacenter maintained by <a href="https://github.com/ajongsma">ajongsma</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
