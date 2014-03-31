@@ -39,7 +39,7 @@ read -n 1 -s
 open -a /Applications/TextWrangler.app config.pl
 
 pwd
-cp config/launchctl/com.plexserver.plexwatch.plist $HOME/Library/LaunchAgents
+cp ./config/launchctl/com.plexserver.plexwatch.plist $HOME/Library/LaunchAgents
 
 
 #if [ ! -e /Applications/iterm.app ] ; then
