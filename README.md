@@ -12,7 +12,11 @@ Performing a clean install:
 
 Install 
 =====
-Open a terminal window (Finder -> Applications -> Utilities -> Terminal), and enter the following command
+Open a terminal window (Finder -> Applications -> Utilities -> Terminal), enter the following command and follow the instructions to accept the XCode agreement
+```
+xcodebuild -license
+```
+After this, enter the following command:
 ```
 xcode-select --install
 ```
