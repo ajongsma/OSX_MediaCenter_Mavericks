@@ -38,9 +38,12 @@ echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 open -a /Applications/TextWrangler.app config.pl
 
-pwd
-cp ./config/launchctl/com.plexserver.plexwatch.plist $HOME/Library/LaunchAgents
-
+if [ ! -f $HOME/Library/LaunchAgents/com.plexserver.plexwatch.plist ] ; then
+  printf "$PRINTF_MASK" "com.plexserver.plexwatch.plist doesn't exists, copying..." "$YELLOW" "[WAIT]" "$RESET"
+  cp ./config/launchctl/com.plexserver.plexwatch.plist $HOME/Library/LaunchAgents
+else
+  printf "$PRINTF_MASK" "com.plexserver.plexwatch.plist exists" "$GREEN" "[OK]" "$RESET"
+fi
 
 #if [ ! -e /Applications/iterm.app ] ; then
 #  printf "$PRINTF_MASK" "iTerm not installed, please install..." "$RED" "[FAIL]" "$RESET"
