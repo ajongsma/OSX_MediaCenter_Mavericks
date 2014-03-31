@@ -47,6 +47,10 @@ if [[ -z $MYPLEX_UID ]] || [[ $MYPLEX_PW == "" ]]; then
   do
     printf 'Waiting for the Plex information to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
     sleep 3
+    echo "==-=-=-=-=-=-=-"
+    echo $DIR
+    echo $SOURCE
+    echo "==-=-=-=-=-=-=-"
     source $DIR"/"$SOURCE
   done
 fi
