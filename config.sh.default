@@ -61,7 +61,9 @@ INST_PLEXWATCH="true"
 # ===========================================================
 # | SETTINGS                                                |
 # ===========================================================
-## News Server Provider
+# -----------------------------------------------------------
+# | News Server Provider
+# -----------------------------------------------------------
 INST_NEWSSERVER_NAME='XsNews'
 INST_NEWSSERVER_SERVER='reader.xsnews.nl'
 INST_NEWSSERVER_SERVER_UID=''
