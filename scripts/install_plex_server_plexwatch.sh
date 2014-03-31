@@ -28,19 +28,24 @@ else
 fi
 
 if [[ -z $MYPLEX_UID ]] || [[ $MYPLEX_PW == "" ]]; then
-    echo "-----------------------------------------------------------"
-    echo "| Please provide the Plex username and password:"
-    echo "| MYPLEX_UID : Username"
-    echo "| MYPLEX_PW  : Password"
-    echo "-----------------------------------------------------------"
+  echo "-----------------------------------------------------------"
+  echo "| Please provide the Plex username and password:"
+  echo "| MYPLEX_UID : Username"
+  echo "| MYPLEX_PW  : Password"
+  echo "-----------------------------------------------------------"
+  
+  if [ ! -f config.sh ]; then
     open -a /Applications/TextWrangler.app ../config.sh
+  else
+    open -a /Applications/TextWrangler.app config.sh
+  fi
 
-    while ( [[ $MYPLEX_UID == "" ]] || [[ $MYPLEX_PW == "" ]] )
-    do
-      printf 'Waiting for the Plex information to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
-	    sleep 3
-	    source ../config.sh
-    done
+  while ( [[ $MYPLEX_UID == "" ]] || [[ $MYPLEX_PW == "" ]] )
+  do
+    printf 'Waiting for the Plex information to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
+    sleep 3
+    source ../config.sh
+  done
 fi
 
 printf "$PRINTF_MASK" "Modify Variables as needed" "$YELLOW" "[WAIT]" "$RESET"
