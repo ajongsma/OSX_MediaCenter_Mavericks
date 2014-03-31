@@ -16,8 +16,7 @@ Open a terminal window (Finder -> Applications -> Utilities -> Terminal), and en
 ```
 git
 ```
-A popup will show, asking permission to install the Xcode Command Line Tools.
-
+A popup will show, asking permission to install the Xcode Command Line Tools.  
 Click Install -> Agree
 
 Return to the terminal window and download the install script by entering the following commands:
