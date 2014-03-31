@@ -37,13 +37,13 @@ else
   printf "$PRINTF_MASK" "config.pl exists" "$GREEN" "[OK]" "$RESET"
 fi
 
-printf "$PRINTF_MASK" "Modify Variables as needed" "$GREEN" "|" "$RESET"
-printf "$PRINTF_MASK" "\$data_dir = '/Users/Plex/plexWatch';" "$GREEN" "|" "$RESET"
-printf "$PRINTF_MASK" "\$server_log = '"$HOME"/Library/Logs/Plex Media Server.log';" "$GREEN" "|" "$RESET"
-printf "$PRINTF_MASK" "\$log_client_ip = 1;" "$GREEN" "|" "$RESET"
-printf "$PRINTF_MASK" "\$myPlex_user = <Plex Username>';" "$GREEN" "|" "$RESET"
-printf "$PRINTF_MASK" "\$myPlex_user = <Plex Password>';" "$GREEN" "|" "$RESET"
-printf "$PRINTF_MASK" "-----------------------------------" "$GREEN" "|" "$RESET"
+printf "$PRINTF_MASK" "Modify Variables as needed" "$GREY" "|" "$RESET"
+printf "$PRINTF_MASK" "\$data_dir = '/Users/Plex/plexWatch';" "$GREY" "|" "$RESET"
+printf "$PRINTF_MASK" "\$server_log = '"$HOME"/Library/Logs/Plex Media Server.log';" "$GREY" "|" "$RESET"
+printf "$PRINTF_MASK" "\$log_client_ip = 1;" "$GREY" "|" "$RESET"
+printf "$PRINTF_MASK" "\$myPlex_user = <Plex Username>';" "$GREY" "|" "$RESET"
+printf "$PRINTF_MASK" "\$myPlex_user = <Plex Password>';" "$GREY" "|" "$RESET"
+printf "$PRINTF_MASK" "-----------------------------------" "$GREY" "|" "$RESET"
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 open -a /Applications/TextWrangler.app config.pl
