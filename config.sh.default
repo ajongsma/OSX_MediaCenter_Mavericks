@@ -37,6 +37,9 @@ INSTALL_XLOG="true"
 ## Install iTerm 2 (http://www.iterm2.com) - (true/false)
 INST_ITERM2="true"
 
+## Install Textwrangler (https://itunes.apple.com/nl/app/textwrangler/id404010395?mt=12) - (true/false)
+INST_TEXTWRANGLER="true"
+
 ## Install OS X Server (https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12) - (true/false)
 INSTALL_OSX_SERVER="true"
 
