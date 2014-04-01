@@ -76,7 +76,7 @@ function check_system() {
 function echo_fancy() {
   printf "\n%b\n" "$1"
 }
-#fancy_echo "Sample Updating Stuff ..."
+#echo_fancy "Sample Updating Stuff ..."
 
 ##-----------------------------------------------------------------------------
 ## PreFlight - Check OS
