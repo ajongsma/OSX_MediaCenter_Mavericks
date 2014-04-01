@@ -11,6 +11,7 @@ else
   source config.sh
 fi
 
+echo "!"$INST_TRAKT_PATH
 if [ ! -e $INST_TRAKT_PATH/Trakttv.bundle ] ; then
   if [ ! -d $INST_TRAKT_PATH ] ; then
     printf "$PRINTF_MASK" "TraktTV base path doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
