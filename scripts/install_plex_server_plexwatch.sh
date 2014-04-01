@@ -11,10 +11,6 @@ echo "# Installing PlexWatch"
 echo "#------------------------------------------------------------------------------"
 ##https://github.com/ljunkie/plexWatch
 
-echo "------------>"
-echo $DIR
-echo "------------>"
-
 if [ ! -d $INST_PLEXWATCH_PATH ] ; then
   printf "$PRINTF_MASK" $INST_PLEXWATCH_PATH" doesn't exists, copying..." "$YELLOW" "[WAIT]" "$RESET"
   sudo mkdir -p $INST_PLEXWATCH_PATH
@@ -60,9 +56,7 @@ else
   printf "$PRINTF_MASK" "com.plexserver.plexwatch.plist exists" "$GREEN" "[OK]" "$RESET"
 fi
 
+cd $DIR
 echo "#------------------------------------------------------------------------------"
 echo "# Installing PlexWatch - Complete"
 echo "#------------------------------------------------------------------------------"
-echo "------------>"
-echo $DIR
-echo "------------>"
