@@ -17,23 +17,38 @@ git clone https://github.com/trakt/Plex-Trakt-Scrobbler.git
 ln -s Plex-Trakt-Scrobbler/Trakttv.bundle/ ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/
 
 if [[ -z $INST_TRAKT_KEY_API ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]]; then
-    echo "-----------------------------------------------------------"
-    echo "| Log on TraktTV "
-    echo "| - Go to Settings, "
-    echo "| - Select API"
-    echo "| INST_TRAKT_KEY_UID : Username"
-    echo "| INST_TRAKT_KEY_PW  : Password"
-    echo "| INST_TRAKT_KEY_API : <copy/paste the shown API KEY>"
-    echo "-----------------------------------------------------------"
-    open http://trakt.tv/settings/api
-    pico ../config.sh
+#  echo "-----------------------------------------------------------"
+#  echo "| Log on TraktTV "
+#  echo "| - Go to Settings, "
+#  echo "| - Select API"
+#  echo "| INST_TRAKT_KEY_UID : Username"
+#  echo "| INST_TRAKT_KEY_PW  : Password"
+#  echo "| INST_TRAKT_KEY_API : <copy/paste the shown API KEY>"
+#  echo "-----------------------------------------------------------"
 
-    while ( [[ $INST_TRAKT_UID == "" ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]] )
-    do
-      printf 'Waiting for the Trakt information to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
-	    sleep 3
-	    source ../config.sh
-    done
+  echo_fancy "-----------------------------------------------------------"
+  echo_fancy "| Log on TraktTV "
+  echo_fancy "| - Go to Settings, "
+  echo_fancy "| - Select API"
+  echo_fancy "| INST_TRAKT_KEY_UID : Username"
+  echo_fancy "| INST_TRAKT_KEY_PW  : Password"
+  echo_fancy "| INST_TRAKT_KEY_API : <copy/paste the shown API KEY>"
+  echo_fancy "-----------------------------------------------------------"
+
+  open http://trakt.tv/settings/api
+
+  if [ ! -d Applications/TextWrangler.app ]; then
+    pico ../config.sh
+  else
+    open -a /Applications/TextWrangler.app config.sh
+  fi
+
+  while ( [[ $INST_TRAKT_UID == "" ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]] )
+  do
+    printf 'Waiting for the Trakt information to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
+    sleep 3
+    source ../config.sh
+  done
 fi
 
 echo " -----------------------------------------------------------"
