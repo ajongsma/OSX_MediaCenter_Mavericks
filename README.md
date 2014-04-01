@@ -39,7 +39,6 @@ cd OSX_MediaCenter
 
 ###Installed applications (if enabled)
 ===============
-
 iTerm 2
 http://www.iterm2.com
 
