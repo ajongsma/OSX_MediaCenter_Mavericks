@@ -31,6 +31,7 @@ cd $INST_TRAKT_PATH
 echo "Softlink doesn't exist, creating..." 
 ln -s Plex-Trakt-Scrobbler/Trakttv.bundle/ ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/
 
+cd $DIR
 if [[ -z $INST_TRAKT_KEY_API ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]]; then
 #  echo "-----------------------------------------------------------"
 #  echo "| Log on TraktTV "
@@ -104,7 +105,6 @@ echo " -----------------------------------------------------------"
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
-cd $DIR
 echo "#------------------------------------------------------------------------------"
 echo "# Install Trakt.TV for Plex - Complete"
 echo "#------------------------------------------------------------------------------"
