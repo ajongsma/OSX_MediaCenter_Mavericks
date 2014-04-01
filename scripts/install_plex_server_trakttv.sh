@@ -20,6 +20,7 @@ if [ ! -d $INST_TRAKT_PATH/Plex-Trakt-Scrobbler ] ; then
     printf "$PRINTF_MASK" "TraktTV base path exists" "$GREEN" "[OK]" "$RESET"
   fi
   printf "$PRINTF_MASK" "TraktTV doesn't exists, downloading respository..." "$YELLOW" "[WAIT]" "$RESET"
+  cd $INST_TRAKT_PATH
   git clone https://github.com/trakt/Plex-Trakt-Scrobbler.git
 else
   printf "$PRINTF_MASK" "TraktTV exists: "$INST_TRAKT_PATH"/Plex-Trakt-Scrobbler" "$GREEN" "[OK]" "$RESET"
