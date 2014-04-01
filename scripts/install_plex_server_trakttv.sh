@@ -52,7 +52,7 @@ if [[ -z $INST_TRAKT_KEY_API ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_
 
   open http://trakt.tv/settings/api
 
-  if [ ! -d Applications/TextWrangler.app ]; then
+  if [ ! -d /Applications/TextWrangler.app ]; then
     pico ../config.sh
   else
     open -a /Applications/TextWrangler.app config.sh
@@ -104,6 +104,7 @@ echo " -----------------------------------------------------------"
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
+cd $DIR
 echo "#------------------------------------------------------------------------------"
 echo "# Install Trakt.TV for Plex - Complete"
 echo "#------------------------------------------------------------------------------"
