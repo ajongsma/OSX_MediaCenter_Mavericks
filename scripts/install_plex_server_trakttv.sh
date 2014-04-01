@@ -11,9 +11,20 @@ else
   source config.sh
 fi
 
-cd $INST_TRAKT_PATH
-git clone https://github.com/trakt/Plex-Trakt-Scrobbler.git
+if [ ! -e $INST_TRAKT_PATH/Trakttv.bundle ] ; then
+  if [ ! -d $INST_TRAKT_PATH ] ; then
+    printf "$PRINTF_MASK" "TraktTV base path doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    mkdir -p $INST_TRAKT_PATH
+  else
+    printf "$PRINTF_MASK" "TraktTV base path exists" "$GREEN" "[OK]" "$RESET"
+  fi
+  printf "$PRINTF_MASK" "TraktTV doesn't exists, downloading respository..." "$YELLOW" "[WAIT]" "$RESET"
+  git clone https://github.com/trakt/Plex-Trakt-Scrobbler.git
+else
+  printf "$PRINTF_MASK" "TraktTV exists" "$GREEN" "[OK]" "$RESET"
+fi
 
+cd $INST_TRAKT_PATH
 ln -s Plex-Trakt-Scrobbler/Trakttv.bundle/ ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/
 
 if [[ -z $INST_TRAKT_KEY_API ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]]; then
