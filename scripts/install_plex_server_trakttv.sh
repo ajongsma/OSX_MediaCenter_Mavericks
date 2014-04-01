@@ -12,7 +12,7 @@ else
 fi
 
 echo "!"$INST_TRAKT_PATH
-if [ ! -e $INST_TRAKT_PATH/Plex-Trakt-Scrobbler ] ; then
+if [ ! -d $INST_TRAKT_PATH/Plex-Trakt-Scrobbler ] ; then
   if [ ! -d $INST_TRAKT_PATH ] ; then
     printf "$PRINTF_MASK" "TraktTV base path doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
     mkdir -p $INST_TRAKT_PATH
@@ -22,7 +22,7 @@ if [ ! -e $INST_TRAKT_PATH/Plex-Trakt-Scrobbler ] ; then
   printf "$PRINTF_MASK" "TraktTV doesn't exists, downloading respository..." "$YELLOW" "[WAIT]" "$RESET"
   git clone https://github.com/trakt/Plex-Trakt-Scrobbler.git
 else
-  printf "$PRINTF_MASK" "TraktTV exists" "$GREEN" "[OK]" "$RESET"
+  printf "$PRINTF_MASK" "TraktTV exists: "$INST_TRAKT_PATH"/Plex-Trakt-Scrobbler" "$GREEN" "[OK]" "$RESET"
 fi
 
 echo "cd "$INST_TRAKT_PATH
