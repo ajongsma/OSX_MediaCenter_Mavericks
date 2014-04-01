@@ -44,7 +44,7 @@ if [[ -z $INST_TRAKT_KEY_API ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_
   open http://trakt.tv/settings/api
 
   if [ ! -d /Applications/TextWrangler.app ]; then
-    pico ../config.sh
+    pico config.sh
   else
     open -a /Applications/TextWrangler.app config.sh
   fi
@@ -53,7 +53,7 @@ if [[ -z $INST_TRAKT_KEY_API ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_
   do
     printf 'Waiting for the Trakt information to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
     sleep 5
-    source ../config.sh
+    source config.sh
   done
 fi
 
