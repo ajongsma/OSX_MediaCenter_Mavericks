@@ -169,6 +169,13 @@ if [[ $INST_PLEX_MEDIA_SERVER == "true" ]]; then
 fi
 
 #------------------------------------------------------------------------------
+# Install Plex Server - TraktTV
+#------------------------------------------------------------------------------
+if [[ $INST_PLEX_MEDIA_SERVER_TRAKT == "true" ]]; then
+  source "$DIR/scripts/install_plex_server_trakttv.sh"
+fi
+
+#------------------------------------------------------------------------------
 # Install Plex Watch
 #------------------------------------------------------------------------------
 if [[ $INST_PLEXWATCH == "true" ]]; then
