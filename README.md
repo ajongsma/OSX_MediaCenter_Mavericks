@@ -43,14 +43,14 @@ cd OSX_MediaCenter
 
 ###Installed applications (if enabled)
 ===============
-##### OS X
+#### OS X
 OS X Server 
 https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12
 
 CPAN
 http://www.cpan.org
 
-##### Utilities
+#### Utilities
 iTerm 2
 http://www.iterm2.com
 
