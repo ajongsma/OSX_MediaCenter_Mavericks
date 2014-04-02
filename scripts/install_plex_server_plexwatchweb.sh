@@ -12,6 +12,12 @@ echo "#-------------------------------------------------------------------------
 #https://github.com/ecleese/plexWatchWeb.git
 
 
+if [ ! -f $INST_PLEXWATCH_PATH/plexWatchWeb/index.php ] ; then
+
+else
+
+fi
+
 if [ ! -d $INST_PLEXWATCHWEB_PATH ] ; then
   printf "$PRINTF_MASK" $INST_PLEXWATCHWEB_PATH" doesn't exists, copying..." "$YELLOW" "[WAIT]" "$RESET"
   sudo mkdir -p $INST_PLEXWATCHWEB_PATH
