@@ -61,6 +61,9 @@ https://forums.plex.tv/index.php/topic/35626-plex-media-server-scrobbler-for-tra
 PlexWatch
 https://forums.plex.tv/index.php/topic/72552-plexwatch-plex-notify-script-send-push-alerts-on-new-sessions-and-stopped/
 
+PlexWatch/Web
+https://forums.plex.tv/index.php/topic/82819-plexwatchweb-a-web-front-end-for-plexwatch/
+
 Plex Home Theater
 http://plex.tv
 
@@ -72,10 +75,6 @@ Plex Unsupported (as in totally unofficial) Appstore
 https://forums.plex.tv/index.php/topic/25523-unsupported-as-in-totally-unofficial-appstore/
 https://github.com/mikedm139/UnSupportedAppstore.bundle
 ~/Library/Application Support/Plex Media Server/Plug-ins
-
-
-PlexWatch/Web
-https://forums.plex.tv/index.php/topic/82819-plexwatchweb-a-web-front-end-for-plexwatch/
 
 SabNZBD
 
