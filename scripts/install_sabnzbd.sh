@@ -15,8 +15,6 @@ else
     printf "$PRINTF_MASK" "." "$YELLOW" "[WAIT]" "$RESET"
     sleep 15
   done
-else
-    echo "SABnzbd found                               [OK]"
 fi
 
 
