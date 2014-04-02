@@ -63,7 +63,8 @@ INST_PLEXWATCHWEB="true"
 ## Install Plex Home Theater (http://www.plex.tv) - (true/false)
 INST_PLEX_HOME_THEATER="true"
 
-
+## Install SABnzbd (http://sabnzbd.org) - (true/false)
+INST_SABNZBD="true"
 
 
 # ===========================================================
