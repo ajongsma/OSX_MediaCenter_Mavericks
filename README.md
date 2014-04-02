@@ -43,6 +43,14 @@ cd OSX_MediaCenter
 
 ###Installed applications (if enabled)
 ===============
+##### OS X
+OS X Server 
+https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12
+
+CPAN
+http://www.cpan.org
+
+##### Utilities
 iTerm 2
 http://www.iterm2.com
 
@@ -52,9 +60,7 @@ https://itunes.apple.com/us/app/xlog/id430304898?mt=12&ign-mpt=uo%3D4
 Textwrangler
 https://itunes.apple.com/nl/app/textwrangler/id404010395?mt=12
 
-OS X Server 
-https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12
-
+##### Plex
 Plex Media Server
 http://plex.tv
 
