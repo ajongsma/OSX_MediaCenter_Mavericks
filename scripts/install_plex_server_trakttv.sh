@@ -21,21 +21,12 @@ else
   printf "$PRINTF_MASK" "TraktTV exists: "$INST_TRAKT_PATH"/Plex-Trakt-Scrobbler" "$GREEN" "[OK]" "$RESET"
 fi
 
-if [ ! -h ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bundle ] ; then
-echo "1111"
+if [ -h ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bundle ] ; then
+  printf "$PRINTF_MASK" "Symbolic link to Trakttv.bundle exist" "$GREEN" "[OK]" "$RESET"
 else
-echo "2222"
+  printf "$PRINTF_MASK" "Symbolic link to Trakttv.bundle doesn't exit, creating..." "$YELLOW" "[WAIT]" "$RESET"
+  ln -s $INST_TRAKT_PATH/Plex-Trakt-Scrobbler/Trakttv.bundle/ ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bundle
 fi
-
-if [ ! -d ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bundle ] ; then
-echo "3333"
-else
-echo "4444"
-fi
-
-
-echo "Symbolic link doesn't exist, creating..." 
-ln -s $INST_TRAKT_PATH/Plex-Trakt-Scrobbler/Trakttv.bundle/ ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bundle
 
 cd $DIR
 if [[ -z $INST_TRAKT_KEY_API ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]]; then
