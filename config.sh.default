@@ -52,13 +52,18 @@ INST_PLEX_MEDIA_SERVER="true"
 ## Install Plex Media Server Trakt.TV integration (http://http://trakt.tv) - (true/false)
 INST_PLEX_MEDIA_SERVER_TRAKT="true"
 
+## Install Plex Watch
+#https://github.com/ljunkie/plexWatch
+INST_PLEXWATCH="true"
+
+## Install Plex Watch
+#https://github.com/ljunkie/plexWatch
+INST_PLEXWATCHWEB="true"
 
 ## Install Plex Home Theater (http://www.plex.tv) - (true/false)
 INST_PLEX_HOME_THEATER="true"
 
-## Install Plex Watch
-#https://github.com/ljunkie/plexWatch
-INST_PLEXWATCH="true"
+
 
 
 # ===========================================================
