@@ -30,10 +30,27 @@ if [ ! -f $INST_PLEXWATCHWEB_PATH/plexWatchWeb/index.php ] ; then
     git clone https://github.com/ecleese/plexWatchWeb.git
   else
     printf "$PRINTF_MASK" "PlexWatchWeb exists" "$GREEN" "[OK]" "$RESET"
-  fi  
-  
+  fi
+
+if [ ! -d /Library/Server/Web/Data/Sites/Default ] ; then
+
+
+echo -e "${RED}-----------------------------------------------------------"
+echo -e "${RED}| ERROR"
+echo -e "${RED}-----------------------------------------------------------"
+echo -e "${RED}| OS X Server Webdirectory not found"
+echo -e "${RED}-----------------------------------------------------------"
+
+echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+read -n 1 -s
+exit 1
+
+
+
   
 else
+
+sudo ln -s $INST_PLEXWATCHWEB_PATH/plexWatchWeb /Library/Server/Web/Data/Sites/Default/plexWatchWeb
 
 fi
 
