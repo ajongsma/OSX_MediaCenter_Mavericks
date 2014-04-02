@@ -1,27 +1,40 @@
 #!/usr/bin/env bash
 
-echo "#------------------------------------------------------------------------------"
-echo "# Install SabNZBD"
-echo "#------------------------------------------------------------------------------"
-## http://www.newznabforums.com
+source config.sh
 
-source ../config.sh
-
-mkdir -p $INST_FOLDER_USENET_INCOMPLETE
-mkdir -p $INST_FOLDER_USENET_COMPLETE
-mkdir -p $INST_FOLDER_USENET_WATCH
-
-if [ ! -e /Applications/SABnzbd.app ] ; then
-    echo "SABnzbd not installed, please install..."
-    open http://sabnzbd.org/
-    while ( [ ! -e /Applications/SABnzbd.app ] )
-    do
-        echo "Waiting for SABnzbd to be installed..."
-        sleep 15
-    done
+if [ -e /Applications/SABnzbd.app ] ; then
+  printf "$PRINTF_MASK" "-> SABnzbd is installed" "$GREEN" "[OK]" "$RESET"
+else
+  echo "#------------------------------------------------------------------------------"
+  echo "# Install SabNZBD"
+  echo "#------------------------------------------------------------------------------"
+  printf "$PRINTF_MASK" "SABnzbd is not installed, please install..." "$YELLOW" "[WAIT]" "$RESET"
+  open http://sabnzbd.org/
+  while ( [ ! -e /Applications/SABnzbd.app ] )
+  do
+    printf "$PRINTF_MASK" "." "$YELLOW" "[WAIT]" "$RESET"
+    sleep 15
+  done
 else
     echo "SABnzbd found                               [OK]"
 fi
+
+
+
+
+############# TESTING ########
+exit 0
+############# TESTING ########
+
+
+
+
+
+[ -d $INST_FOLDER_USENET_WATCH ] || mkdir -p $INST_FOLDER_USENET_WATCH
+[ -d $INST_FOLDER_USENET_INCOMPLETE ] || mkdir -p $INST_FOLDER_USENET_INCOMPLETE
+[ -d $INST_FOLDER_USENET_COMPLETE ] || mkdir -p $INST_FOLDER_USENET_COMPLETE
+
+
 
 echo "-----------------------------------------------------------"
 echo "| News Server Setup:"
