@@ -3,7 +3,7 @@
 source config.sh
 
 if [ -h ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bundle ] ; then
-  printf "$PRINTF_MASK" "Trakttv.bundle is installed" "$GREEN" "[OK]" "$RESET"
+  printf "$PRINTF_MASK" "-> Trakttv.bundle is installed" "$GREEN" "[OK]" "$RESET"
 else
   echo "#------------------------------------------------------------------------------"
   echo "# Installing Trakt.TV for Plex"
