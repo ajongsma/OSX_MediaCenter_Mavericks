@@ -29,6 +29,7 @@ if [ ! -f /Library/Server/Web/Data/Sites/Default/plexWatch/index.php ] ; then
     printf "$PRINTF_MASK" "PlexWatchWeb doesn't exists, downloading respository..." "$YELLOW" "[WAIT]" "$RESET"
     cd $INST_PLEXWATCHWEB_PATH
     git clone https://github.com/ecleese/plexWatchWeb.git
+    chmod 777 $INST_PLEXWATCHWEB_PATH/plexWatchWeb/config/
     cd $DIR
   else
     printf "$PRINTF_MASK" "PlexWatchWeb exists" "$GREEN" "[OK]" "$RESET"
@@ -51,6 +52,31 @@ if [ ! -f /Library/Server/Web/Data/Sites/Default/plexWatch/index.php ] ; then
       sudo ln -s $INST_PLEXWATCHWEB_PATH/plexWatchWeb /Library/Server/Web/Data/Sites/Default/plexWatch
     fi
   fi
+  
+  open http://127.0.0.1/plexwatch
+  
+  echo "-----------------------------------------------------------"
+  echo "| General"
+  echo "|   Date Format        : d/m/Y"
+  echo "|   Time Format        : g:i a"
+  echo "| Plex Media Server and Database Settings"
+  echo "|   PMS IP address     : 127.0.0.1"
+  echo "|   PMS Web Port       : 32400"
+  echo "|   PMS Secure Web Port: 32443"
+  echo "|   PlexWatch Database : /Users/Plex/plexWatch/plexWatch.db"
+  echo "| Plex Authentication"
+  echo "|   Username           : <Plex Username>"
+  echo "|   Password           : <Plex Password>"
+  echo "| Grouping Settings"
+  echo "|   Global History     : Enable"
+  echo "|   User History       : Enable"
+  echo "|   Charts             : Enable"
+  echo "-----------------------------------------------------------"
+  echo "| Save settings"
+  echo " -----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
   echo "#------------------------------------------------------------------------------"
   echo "# Installing PlexWatchWeb - Complete"
   echo "#------------------------------------------------------------------------------"
