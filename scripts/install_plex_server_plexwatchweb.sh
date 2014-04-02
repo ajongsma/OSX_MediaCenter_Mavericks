@@ -54,7 +54,6 @@ if [ ! -f /Library/Server/Web/Data/Sites/Default/plexWatch/index.php ] ; then
   fi
   
   open http://127.0.0.1/plexwatch
-  
   echo "-----------------------------------------------------------"
   echo "| General"
   echo "|   Date Format        : d/m/Y"
