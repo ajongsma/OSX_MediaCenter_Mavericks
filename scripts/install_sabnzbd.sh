@@ -8,6 +8,35 @@ else
   echo "#------------------------------------------------------------------------------"
   echo "# Install SabNZBD"
   echo "#------------------------------------------------------------------------------"
+  
+  if [ -d $INST_FOLDER_USENET_WATCH ] ; then
+    printf "$PRINTF_MASK" $INST_FOLDER_USENET_WATCH" exists" "$GREEN" "[OK]" "$RESET"
+  else
+    printf "$PRINTF_MASK" $INST_FOLDER_USENET_WATCH" doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    mkdir -p $INST_FOLDER_USENET_WATCH
+  fi
+  
+  if [ -d $INST_FOLDER_USENET_INCOMPLETE ] ; then
+    printf "$PRINTF_MASK" $INST_FOLDER_USENET_INCOMPLETE" exists" "$GREEN" "[OK]" "$RESET"
+  else
+    printf "$PRINTF_MASK" $INST_FOLDER_USENET_INCOMPLETE" doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    mkdir -p $INST_FOLDER_USENET_INCOMPLETE
+  fi
+  
+  if [ -d $INST_FOLDER_USENET_INCOMPLETE ] ; then
+    printf "$PRINTF_MASK" $INST_FOLDER_USENET_COMPLETE" exists" "$GREEN" "[OK]" "$RESET"
+  else
+    printf "$PRINTF_MASK" $INST_FOLDER_USENET_COMPLETE" doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    mkdir -p $INST_FOLDER_USENET_COMPLETE
+  fi
+  if [ -d ~/Library/Application\ Support/scripts ] ; then
+    printf "$PRINTF_MASK" "~/Library/Application\ Support/scripts exists" "$GREEN" "[OK]" "$RESET"
+  else
+    printf "$PRINTF_MASK" "~/Library/Application\ Support/scripts doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    mkdir ~/Library/Application\ Support/scripts
+  fi
+  
+
   printf "$PRINTF_MASK" "SABnzbd is not installed, please install..." "$YELLOW" "[WAIT]" "$RESET"
   open http://sabnzbd.org/
   while ( [ ! -e /Applications/SABnzbd.app ] )
@@ -15,6 +44,11 @@ else
     printf "$PRINTF_MASK" "." "$YELLOW" "[WAIT]" "$RESET"
     sleep 15
   done
+  
+  
+  
+  
+  
 fi
 
 
@@ -24,13 +58,6 @@ fi
 exit 0
 ############# TESTING ########
 
-
-
-
-
-[ -d $INST_FOLDER_USENET_WATCH ] || mkdir -p $INST_FOLDER_USENET_WATCH
-[ -d $INST_FOLDER_USENET_INCOMPLETE ] || mkdir -p $INST_FOLDER_USENET_INCOMPLETE
-[ -d $INST_FOLDER_USENET_COMPLETE ] || mkdir -p $INST_FOLDER_USENET_COMPLETE
 
 
 
@@ -54,7 +81,7 @@ open /Applications/SABnzbd.app
 #echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 #read -n 1 -s
 
-mkdir /Users/Andries/Library/Application\ Support/scripts
+
 echo "-----------------------------------------------------------"
 echo "| Folders:"
 echo "| Temporary Download Folder               : $INST_FOLDER_USENET_INCOMPLETE"
@@ -102,7 +129,7 @@ open http://localhost:8080/sabnzbd/config/categories/
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
-source ../config.sh
+source config.sh
 #if [[ $INST_SABNZBD_KEY_API == "" ]] || [[ $INST_SABNZBD_KEY_NZB == "" ]]; then
 if [[ -z $INST_SABNZBD_KEY_API ]] || [[ -z $INST_SABNZBD_KEY_NZB ]]; then
     echo "-----------------------------------------------------------"
@@ -113,13 +140,14 @@ if [[ -z $INST_SABNZBD_KEY_API ]] || [[ -z $INST_SABNZBD_KEY_NZB ]]; then
     echo "-----------------------------------------------------------"
     #open http://localhost/newznab/admin/site-edit.php
     open http://localhost:8080/config/general/
-    subl ../config.sh
+    subl config.sh
 
+    printf 'Waiting for SabNZBD API and NZB key to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
     while ( [[ $INST_SABNZBD_KEY_API == "" ]] || [[ $INST_SABNZBD_KEY_NZB == "" ]])
     do
-        printf 'Waiting for SabNZBD API and NZB key to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
+        printf '.' "YELLOW" $col '[WAIT]' "$RESET"
         sleep 2
-        source ../config.sh
+        source config.sh
     done
 fi
 
