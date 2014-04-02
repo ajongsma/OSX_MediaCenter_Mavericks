@@ -183,9 +183,15 @@ if [[ $INST_PLEXWATCH == "true" ]]; then
   source "$DIR/scripts/install_plex_server_plexwatch.sh"
 fi
 
+#------------------------------------------------------------------------------
+# Install Plex Watch Web
+#------------------------------------------------------------------------------
+if [[ $INST_PLEXWATCHWEB == "true" ]]; then
+  source "$DIR/scripts/install_plex_server_plexwatchweb.sh"
+fi
 
 #------------------------------------------------------------------------------
-# Install Plex Server
+# Install Plex Home Theater
 #------------------------------------------------------------------------------
 if [[ $INST_PLEX_HOME_THEATER == "true" ]]; then
   source "$DIR/scripts/install_plex_client.sh"
