@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
 
-if [ ! -f config.sh ]; then
-  source ../config.sh
-else
-  source config.sh
-fi
-
-echo "#------------------------------------------------------------------------------"
-echo "# Installing PlexWatch/Web"
-echo "#------------------------------------------------------------------------------"
+#if [ ! -f config.sh ]; then
+#  source ../config.sh
+#else
+#  source config.sh
+#fi
+source ../config.sh
 #https://github.com/ecleese/plexWatchWeb.git
 
-
 if [ ! -f $INST_PLEXWATCH_PATH/plexWatchWeb/index.php ] ; then
-
+  echo "#------------------------------------------------------------------------------"
+  echo "# Installing PlexWatch/Web"
+  echo "#------------------------------------------------------------------------------"
 else
 
 fi
