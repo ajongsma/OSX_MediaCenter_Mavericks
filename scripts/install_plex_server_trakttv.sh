@@ -3,6 +3,32 @@
 source config.sh
 
 if [ -h ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bundle ] ; then
+  if [[ -z $INST_TRAKT_KEY_API ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]]; then
+    echo "-----------------------------------------------------------"
+    echo "| Log on TraktTV "
+    echo "| - Go to Settings, "
+    echo "| - Select API"
+    echo "| INST_TRAKT_KEY_UID : Username"
+    echo "| INST_TRAKT_KEY_PW  : Password"
+    echo "| INST_TRAKT_KEY_API : <copy/paste the shown API KEY>"
+    echo "-----------------------------------------------------------"
+    open http://trakt.tv/settings/api
+  
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+  
+    while ( [[ $INST_TRAKT_UID == "" ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]] )
+    printf 'Waiting for the Trakt information to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
+    do
+      printf '.' "YELLOW" $col '[WAIT]' "$RESET"
+      sleep 5
+      source config.sh
+    done
+  fi
+  
   printf "$PRINTF_MASK" "-> Trakttv.bundle is installed" "$GREEN" "[OK]" "$RESET"
 else
   echo "#------------------------------------------------------------------------------"
