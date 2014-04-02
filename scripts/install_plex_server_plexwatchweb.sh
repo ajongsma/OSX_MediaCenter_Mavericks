@@ -15,31 +15,37 @@ if [ ! -f $INST_PLEXWATCHWEB_PATH/plexWatchWeb/index.php ] ; then
   echo "#------------------------------------------------------------------------------"
   echo "# Installing PlexWatchWeb"
   echo "#------------------------------------------------------------------------------"
+
+  if [ ! -d $INST_PLEXWATCHWEB_PATH ] ; then
+    printf "$PRINTF_MASK" $INST_PLEXWATCHWEB_PATH" doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    sudo mkdir -p $INST_PLEXWATCHWEB_PATH
+    sudo chown `whoami`:staff $INST_PLEXWATCHWEB_PATH
+  else
+    printf "$PRINTF_MASK" $INST_PLEXWATCHWEB_PATH" exists" "$GREEN" "[OK]" "$RESET"
+  fi
+  
+  if [ ! -d $INST_PLEXWATCHWEB_PATH/plexWatchWeb ] ; then
+    printf "$PRINTF_MASK" "PlexWatchWeb doesn't exists, downloading respository..." "$YELLOW" "[WAIT]" "$RESET"
+    cd $INST_PLEXWATCHWEB_PATH
+    git clone https://github.com/ecleese/plexWatchWeb.git
+  else
+    printf "$PRINTF_MASK" "PlexWatchWeb exists" "$GREEN" "[OK]" "$RESET"
+  fi  
+  
+  
 else
 
 fi
 
-if [ ! -d $INST_PLEXWATCHWEB_PATH ] ; then
-  printf "$PRINTF_MASK" $INST_PLEXWATCHWEB_PATH" doesn't exists, copying..." "$YELLOW" "[WAIT]" "$RESET"
-  sudo mkdir -p $INST_PLEXWATCHWEB_PATH
-  sudo chown `whoami`:staff $INST_PLEXWATCHWEB_PATH
-else
-  printf "$PRINTF_MASK" $INST_PLEXWATCHWEB_PATH" exists" "$GREEN" "[OK]" "$RESET"
-fi
-cd $INST_PLEXWATCHWEB_PATH
+
+
+
 
 
 
 ##################### TESTING #####################
 
-if [ ! -d $INST_PLEXWATCHWEB_PATH/plexwatch ] ; then
-  printf "$PRINTF_MASK" "PlexWatch doesn't exists, downloading respository..." "$YELLOW" "[WAIT]" "$RESET"
-  git clone https://github.com/ljunkie/plexWatch.git
-  chmod 777 plexWatch
-  chmod 755 plexWatch/plexWatch.pl
-else
-  printf "$PRINTF_MASK" "PlexWatch exists" "$GREEN" "[OK]" "$RESET"
-fi
+
 
 cd plexWatch
 if [ ! -f config.pl ] ; then
