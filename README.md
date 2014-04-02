@@ -1,6 +1,6 @@
 OSX Media Center - Mavericks Edition
 ===============
-![Mavericks](http://a1.mzstatic.com/us/r30/Purple4/v4/f5/1b/55/f51b5542-0181-ff3d-6e05-52929d08ecfa/icon_256.png)
+![Mavericks](http://idevicedailys.com/wp-content/uploads/2013/11/OnyX-For-Mac-Mavericks_Logo.png)
 
 
 Note:
