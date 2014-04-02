@@ -60,7 +60,7 @@ https://itunes.apple.com/us/app/xlog/id430304898?mt=12&ign-mpt=uo%3D4
 Textwrangler
 https://itunes.apple.com/nl/app/textwrangler/id404010395?mt=12
 
-##### Plex
+#### Plex
 Plex Media Server
 http://plex.tv
 
