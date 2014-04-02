@@ -9,6 +9,7 @@ else
   echo "# Installing Trakt.TV for Plex"
   echo "#------------------------------------------------------------------------------"
   # https://forums.plex.tv/index.php/topic/102818-rel-trakt/
+  # ~/Library/Logs/PMS Plugin Logs/com.plexapp.plugins.trakttv.log
 
   if [ ! -d $INST_TRAKT_PATH/Plex-Trakt-Scrobbler ] ; then
     if [ ! -d $INST_TRAKT_PATH ] ; then
