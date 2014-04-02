@@ -12,7 +12,7 @@ source config.sh
 ## - php5-curl
 ## - php5-json
 
-if [ ! -f $INST_PLEXWATCHWEB_PATH/plexWatchWeb/index.php ] ; then
+if [ ! -f /Library/Server/Web/Data/Sites/Default/plexWatch/index.php ] ; then
   echo "#------------------------------------------------------------------------------"
   echo "# Installing PlexWatchWeb"
   echo "#------------------------------------------------------------------------------"
@@ -44,14 +44,16 @@ if [ ! -f $INST_PLEXWATCHWEB_PATH/plexWatchWeb/index.php ] ; then
     read -n 1 -s
     exit 1
   else
-    if [ -h /Library/Server/Web/Data/Sites/Default/plexWatchWeb ] ; then
+    if [ -h /Library/Server/Web/Data/Sites/Default/plexWatch ] ; then
       printf "$PRINTF_MASK" "Symbolic link to PlexWatchWeb exist" "$GREEN" "[OK]" "$RESET"
     else
       printf "$PRINTF_MASK" "Symbolic link to PlexWatchWeb doesn't exit, creating..." "$YELLOW" "[WAIT]" "$RESET"
-      sudo ln -s $INST_PLEXWATCHWEB_PATH/plexWatchWeb /Library/Server/Web/Data/Sites/Default/plexWatchWeb
+      sudo ln -s $INST_PLEXWATCHWEB_PATH/plexWatchWeb /Library/Server/Web/Data/Sites/Default/plexWatch
     fi
   fi
   echo "#------------------------------------------------------------------------------"
   echo "# Installing PlexWatchWeb - Complete"
   echo "#------------------------------------------------------------------------------"
+else
+  printf "$PRINTF_MASK" "-> PlexWatchWeb is installed" "$GREEN" "[OK]" "$RESET"
 fi
