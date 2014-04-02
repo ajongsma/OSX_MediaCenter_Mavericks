@@ -27,6 +27,13 @@ else
 echo "2222"
 fi
 
+if [ ! -d ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bundle ] ; then
+echo "3333"
+else
+echo "4444"
+fi
+
+
 echo "Symbolic link doesn't exist, creating..." 
 ln -s $INST_TRAKT_PATH/Plex-Trakt-Scrobbler/Trakttv.bundle/ ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bundle
 
