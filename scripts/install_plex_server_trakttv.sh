@@ -5,13 +5,8 @@ echo "# Installing Trakt.TV for Plex"
 echo "#------------------------------------------------------------------------------"
 # https://forums.plex.tv/index.php/topic/102818-rel-trakt/
 
-if [ ! -f config.sh ]; then
-  source ../config.sh
-else
-  source config.sh
-fi
+source ../config.sh
 
-echo "!"$INST_TRAKT_PATH
 if [ ! -d $INST_TRAKT_PATH/Plex-Trakt-Scrobbler ] ; then
   if [ ! -d $INST_TRAKT_PATH ] ; then
     printf "$PRINTF_MASK" "TraktTV base path doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
@@ -26,10 +21,13 @@ else
   printf "$PRINTF_MASK" "TraktTV exists: "$INST_TRAKT_PATH"/Plex-Trakt-Scrobbler" "$GREEN" "[OK]" "$RESET"
 fi
 
-echo "cd "$INST_TRAKT_PATH
-cd $INST_TRAKT_PATH
+if [ ! -h ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bundle ] ; then
+echo "1111"
+else
+echo "2222"
+fi
 
-echo "Softlink doesn't exist, creating..." 
+echo "Symbolic link doesn't exist, creating..." 
 ln -s $INST_TRAKT_PATH/Plex-Trakt-Scrobbler/Trakttv.bundle/ ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bundle
 
 cd $DIR
