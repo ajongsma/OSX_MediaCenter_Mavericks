@@ -54,6 +54,13 @@ https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12
 Plex Media Server
 http://plex.tv
 
+Plex Media Scrobbler for TraktTV
+https://forums.plex.tv/index.php/topic/102818-rel-trakt/
+https://forums.plex.tv/index.php/topic/35626-plex-media-server-scrobbler-for-trakttv/
+
+PlexWatch
+https://forums.plex.tv/index.php/topic/72552-plexwatch-plex-notify-script-send-push-alerts-on-new-sessions-and-stopped/
+
 Plex Home Theater
 http://plex.tv
 
@@ -66,13 +73,6 @@ https://forums.plex.tv/index.php/topic/25523-unsupported-as-in-totally-unofficia
 https://github.com/mikedm139/UnSupportedAppstore.bundle
 ~/Library/Application Support/Plex Media Server/Plug-ins
 
-
-Plex Media Scrobbler for TraktTV
-https://forums.plex.tv/index.php/topic/102818-rel-trakt/
-https://forums.plex.tv/index.php/topic/35626-plex-media-server-scrobbler-for-trakttv/
-
-PlexWatch
-https://forums.plex.tv/index.php/topic/72552-plexwatch-plex-notify-script-send-push-alerts-on-new-sessions-and-stopped/
 
 PlexWatch/Web
 https://forums.plex.tv/index.php/topic/82819-plexwatchweb-a-web-front-end-for-plexwatch/
