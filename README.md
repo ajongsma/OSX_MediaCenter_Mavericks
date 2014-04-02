@@ -44,38 +44,27 @@ cd OSX_MediaCenter
 ###Installed applications (if enabled)
 ===============
 #### OS X
-OS X Server 
-https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12
+[OS X Server](https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12)
 
-CPAN
-http://www.cpan.org
+[CPAN](http://www.cpan.org)
 
 #### Utilities
-iTerm 2
-http://www.iterm2.com
+[iTerm 2](http://www.iterm2.com)
 
-Xlog
-https://itunes.apple.com/us/app/xlog/id430304898?mt=12&ign-mpt=uo%3D4
+[Xlog](https://itunes.apple.com/us/app/xlog/id430304898?mt=12&ign-mpt=uo%3D4)
 
-Textwrangler
-https://itunes.apple.com/nl/app/textwrangler/id404010395?mt=12
+[Textwrangler](https://itunes.apple.com/nl/app/textwrangler/id404010395?mt=12)
 
 #### Plex
-Plex Media Server
-http://plex.tv
+[Plex Media Server](http://plex.tv)
 
-Plex Media Scrobbler for TraktTV
-https://forums.plex.tv/index.php/topic/102818-rel-trakt/
-https://forums.plex.tv/index.php/topic/35626-plex-media-server-scrobbler-for-trakttv/
+[Plex Media Scrobbler for TraktTV](https://forums.plex.tv/index.php/topic/102818-rel-trakt/)
 
-PlexWatch
-https://forums.plex.tv/index.php/topic/72552-plexwatch-plex-notify-script-send-push-alerts-on-new-sessions-and-stopped/
+[PlexWatch](https://forums.plex.tv/index.php/topic/72552-plexwatch-plex-notify-script-send-push-alerts-on-new-sessions-and-stopped/)
 
-PlexWatch/Web
-https://forums.plex.tv/index.php/topic/82819-plexwatchweb-a-web-front-end-for-plexwatch/
+[PlexWatch/Web](https://forums.plex.tv/index.php/topic/82819-plexwatchweb-a-web-front-end-for-plexwatch/)
 
-Plex Home Theater
-http://plex.tv
+[Plex Home Theater](http://plex.tv)
 
 
 ToDo
