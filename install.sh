@@ -197,3 +197,10 @@ if [[ $INST_PLEX_HOME_THEATER == "true" ]]; then
   source "$DIR/scripts/install_plex_client.sh"
 fi
 
+
+#------------------------------------------------------------------------------
+# Install Plex Home Theater
+#------------------------------------------------------------------------------
+if [[ $INST_SABNZBD == "true" ]]; then
+  source "$DIR/scripts/install_sabnzbd.sh"
+fi
