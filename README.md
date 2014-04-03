@@ -66,6 +66,9 @@ cd OSX_MediaCenter
 
 [Plex Home Theater](http://plex.tv)
 
+#### Other
+SabNZBD
+
 
 ToDo
 ===============
@@ -75,8 +78,6 @@ https://forums.plex.tv/index.php/topic/25523-unsupported-as-in-totally-unofficia
 https://github.com/mikedm139/UnSupportedAppstore.bundle
 ~/Library/Application Support/Plex Media Server/Plug-ins
 
-SabNZBD
-
 SickBeard
 
 CouchPotato
@@ -84,6 +85,9 @@ CouchPotato
 Auto-Sub Bootstrap Bill
 http://gathering.tweakers.net/forum/list_messages/1572892/0
 https://code.google.com/p/autosub-bootstrapbill/
+
+SpotWEB
+http://gathering.tweakers.net/forum/list_messages/1478602
 
 ----------------
 
