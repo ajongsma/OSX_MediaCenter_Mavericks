@@ -160,7 +160,6 @@ else
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
 
-
   echo "-----------------------------------------------------------"
   echo "| IF applicable:"
   echo "| OZnzb Integration                       : Enable"
@@ -170,9 +169,15 @@ else
   read -n 1 -s
   
   echo "-----------------------------------------------------------"
+  echo "| Wait for SABnzbd to be restarted..."
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
+  echo "-----------------------------------------------------------"
   echo "| Folders:"
   echo "| Temporary Download Folder               : $INST_FOLDER_USENET_INCOMPLETE"
-  echo "| Minimum Free Space                      : 1G"
+  echo "| Minimum Free Space                      : 30G"
   echo "| Completed Download Folder               : $INST_FOLDER_USENET_COMPLETE"
   echo "| Watched Folder                          : $INST_FOLDER_USENET_WATCH"
   echo "| Watched Folder Scan Speed               : 300"
