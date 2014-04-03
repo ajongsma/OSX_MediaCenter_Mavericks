@@ -77,8 +77,6 @@ else
     else
       open -a /Applications/TextWrangler.app config.sh
     fi
-    echo -e "${BLUE} --- press any key to continue --- ${RESET}"
-    read -n 1 -s
     while ( [[ $INST_NEWSSERVER_SERVER == "" ]] || [[ $INST_NEWSSERVER_SERVER_PORT_SSL == "" ]] || [[ $INST_NEWSSERVER_SERVER_UID == "" ]] || [[ $INST_NEWSSERVER_SERVER_PW == "" ]] || [[ $INST_SABNZBD_UID == "" ]] || [[ $INST_SABNZBD_PW == "" ]] )
     do
       printf '.'
