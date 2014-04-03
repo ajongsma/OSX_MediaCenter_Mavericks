@@ -21,7 +21,7 @@ if [ -e /Applications/SABnzbd.app ] ; then
     fi
     while ( [[ $INST_SABNZBD_KEY_API == "" ]] || [[ $INST_SABNZBD_KEY_NZB == "" ]])
     do
-      printf '.' "YELLOW" $col '[WAIT]' "$RESET"
+      printf '.'
       sleep 2
       source config.sh
     done
@@ -64,7 +64,7 @@ else
   open http://sabnzbd.org/
   while ( [ ! -e /Applications/SABnzbd.app ] )
   do
-    printf "$PRINTF_MASK" "." "$YELLOW" "[WAIT]" "$RESET"
+    printf "."
     sleep 15
   done
   
