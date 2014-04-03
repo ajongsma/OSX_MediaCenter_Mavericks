@@ -96,6 +96,11 @@ INST_NEWZNAB_KEY_API_COUCHPOTATO=""
 INST_NEWZNAB_KEY_API_HEADPHONES=""
 
 # -----------------------------------------------------------
+# | OZNZB (see https://www.oznzb.com/profile)
+# -----------------------------------------------------------
+INST_OZNZB_API=""
+
+# -----------------------------------------------------------
 # | SpotWeb
 # -----------------------------------------------------------
 INST_SPOTWEB_PATH="/Users/Spotweb/Sites/spotweb"
