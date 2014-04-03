@@ -111,4 +111,6 @@ Transmission
 
 Unison
 
+nzbdrone
+
 plexwatchdb: /Users/Plex/plexWatch/plexWatch.db
