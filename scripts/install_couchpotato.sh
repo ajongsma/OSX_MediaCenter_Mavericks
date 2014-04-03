@@ -13,9 +13,9 @@ else
 
 fi
 
-
+#### TESTING ####
 exit 1
-
+#### TESTING ####
 
 echo "#------------------------------------------------------------------------------"
 echo "# Installing CouchPotato"
