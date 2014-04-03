@@ -195,11 +195,8 @@ else
   echo "| Pause Downloading durig post-processing : Enable"
   echo "|"
   echo "| Post processing:"
-  echo "| Ignore Samples                          : Delete"
+  echo "| Ignore Samples                          : Do not download"
   echo "| Post-Process Only Verified Jobs         : Disable"
-  echo "|"
-  echo "| Special:"
-  echo "| Empty_postproc                          : Enable"
   echo "-----------------------------------------------------------"
   open http://localhost:8080/config/switches/
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
