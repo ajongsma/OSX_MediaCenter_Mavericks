@@ -28,6 +28,7 @@ if [ -h ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bund
       source config.sh
     done
   fi
+  printf '.\n' "GREEN" $col '[OK]' "$RESET"
   
   printf "$PRINTF_MASK" "-> Trakttv.bundle is installed" "$GREEN" "[OK]" "$RESET"
 else
