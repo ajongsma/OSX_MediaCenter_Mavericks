@@ -72,6 +72,12 @@ function check_system() {
         Darwin) ;;
         *) fail "Sorry, $kernel is not supported." ;;
     esac
+    
+    OS_VERSION=`sw_vers -productVersion`
+    if [ $OS_VERSION != "10.9" ]; then
+      echo "The operating system is not 10.9 Mavericks, exiting..."
+      exit 1
+    fi
 }
 
 function echo_fancy() {
