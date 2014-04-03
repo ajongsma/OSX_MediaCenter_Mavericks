@@ -85,6 +85,7 @@ else
       source config.sh
     done
   fi
+  printf '.\n' "GREEN" $col '[OK]' "$RESET"
   
   echo " -----------------------------------------------------------"
   echo "| Installed  Trakttv.bundle to:"
