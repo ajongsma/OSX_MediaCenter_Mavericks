@@ -44,9 +44,9 @@ printf "$PRINTF_MASK" "\$log_client_ip = 1;" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "\$myPlex_user = <Plex Username>';" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "\$myPlex_user = <Plex Password>';" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "-----------------------------------" "$GREY" "|" "$RESET"
+open -a /Applications/TextWrangler.app config.pl
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
-open -a /Applications/TextWrangler.app config.pl
 
 if [ ! -f $HOME/Library/LaunchAgents/com.plexserver.plexwatch.plist ] ; then
   printf "$PRINTF_MASK" "com.plexserver.plexwatch.plist doesn't exists, copying..." "$YELLOW" "[WAIT]" "$RESET"
