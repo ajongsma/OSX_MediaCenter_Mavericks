@@ -68,6 +68,8 @@ else
     sleep 2
   done
   
+  xattr -d com.apple.quarantine /Applications/SABnzbd.app
+  
   echo "-----------------------------------------------------------"
   echo "| News Server Setup:"
   echo "| Server                                  : $INST_NEWSSERVER_SERVER"
