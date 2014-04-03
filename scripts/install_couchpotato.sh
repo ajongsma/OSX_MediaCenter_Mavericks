@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 source ../config.sh
 
-function check_settings() {
+function check_config() {
   echo "| username          : $INST_COUCHPOTATO_UID"
   echo "| password          : $INST_COUCHPOTATO_PW"
   echo "| port              : $INST_COUCHPOTATO_PORT"
 }
 
 if [ -e /Applications/SABnzbd.app ] ; then
-
+  check_config
 else
-
+  check_config
 fi
 
 #### TESTING ####
