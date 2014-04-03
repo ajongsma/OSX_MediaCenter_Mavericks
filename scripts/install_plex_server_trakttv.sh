@@ -20,8 +20,8 @@ if [ -h ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bund
       open -a /Applications/TextWrangler.app config.sh
     fi
   
-    while ( [[ $INST_TRAKT_UID == "" ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]] )
     printf 'Waiting for the Trakt information to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
+    while ( [[ $INST_TRAKT_UID == "" ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]] )
     do
       printf '.' "YELLOW" $col '[WAIT]' "$RESET"
       sleep 5
@@ -75,9 +75,9 @@ else
     else
       open -a /Applications/TextWrangler.app config.sh
     fi
-  
-    while ( [[ $INST_TRAKT_UID == "" ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]] )
+    
     printf 'Waiting for the Trakt information to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
+    while ( [[ $INST_TRAKT_UID == "" ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]] )
     do
       printf '.' "YELLOW" $col '[WAIT]' "$RESET"
       sleep 5
