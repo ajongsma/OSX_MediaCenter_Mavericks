@@ -23,12 +23,12 @@ if [ -h ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Trakttv.bund
     printf 'Waiting for the Trakt information to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
     while ( [[ $INST_TRAKT_UID == "" ]] || [[ $INST_TRAKT_PW == "" ]] || [[ $INST_TRAKT_KEY_API == "" ]] )
     do
-      printf '.' "YELLOW" $col '[WAIT]' "$RESET"
+      printf '.'
       sleep 5
       source config.sh
     done
   fi
-  printf '.\n' "GREEN" $col '[OK]' "$RESET"
+  printf '.\n' "$GREEN" $col '[OK]' "$RESET"
   
   printf "$PRINTF_MASK" "-> Trakttv.bundle is installed" "$GREEN" "[OK]" "$RESET"
 else
