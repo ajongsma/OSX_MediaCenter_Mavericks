@@ -65,7 +65,7 @@ else
   while ( [ ! -e /Applications/SABnzbd.app ] )
   do
     printf "."
-    sleep 15
+    sleep 2
   done
   
   echo "-----------------------------------------------------------"
