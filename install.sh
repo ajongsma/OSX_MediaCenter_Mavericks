@@ -10,14 +10,6 @@ do
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-if [ $HOSTNAME != "pooky.local" ]; then
-    if [ -L config.sh ]; then
-      rm config.sh
-    fi
-else
-    echo "=> Pooky found"
-fi
-
 if [ ! -f config.sh ]; then
   clear
   echo "No config.sh found. Creating file, please edit the required values"
@@ -61,7 +53,6 @@ LOGFILE=$DIR/install-$TIMESTAMP.log
 # Set to non-zero value for debugging
 DEBUG=0
 
-
 ##-----------------------------------------------------------------------------
 ## Functions
 ##-----------------------------------------------------------------------------
@@ -73,11 +64,6 @@ function check_system() {
         *) fail "Sorry, $kernel is not supported." ;;
     esac
 }
-
-function echo_fancy() {
-  printf "\n%b\n" "$1"
-}
-#echo_fancy "Sample Updating Stuff ..."
 
 ##-----------------------------------------------------------------------------
 ## PreFlight - Check OS
@@ -196,7 +182,6 @@ fi
 if [[ $INST_PLEX_HOME_THEATER == "true" ]]; then
   source "$DIR/scripts/install_plex_client.sh"
 fi
-
 
 #------------------------------------------------------------------------------
 # Install Plex Home Theater
