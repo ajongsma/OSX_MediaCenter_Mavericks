@@ -3,6 +3,39 @@
 source config.sh
 
 if [ -e /Applications/SABnzbd.app ] ; then
+  if [[ -z $INST_NEWSSERVER_SERVER ]] || [[ -z $INST_NEWSSERVER_SERVER_PORT_SSL ]] || [[ -z $INST_NEWSSERVER_SERVER_UID ]] || [[ -z $INST_NEWSSERVER_SERVER_PW ]] || [[ -z $INST_SABNZBD_UID ]] || [[ -z $INST_SABNZBD_PW ]]; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "-----------------------------------------------------------"
+    echo "| News Server:"
+    echo "| Server                                  : \$INST_NEWSSERVER_SERVER"
+    echo "| Port                                    : \$INST_NEWSSERVER_SERVER_PORT_SSL"
+    echo "| User Name                               : \$INST_NEWSSERVER_SERVER_UID"
+    echo "| Password                                : \$INST_NEWSSERVER_SERVER_PW"
+    echo "| SABnzbd:"
+    echo "| SABnzbd User Name                       : \$INST_SABNZBD_UID"
+    echo "| SABnzbd Password                        : \$INST_SABNZBD_PW"
+    echo "-----------------------------------------------------------"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_NEWSSERVER_SERVER == "" ]] || [[ $INST_NEWSSERVER_SERVER_PORT_SSL == "" ]] || [[ $INST_NEWSSERVER_SERVER_UID == "" ]] || [[ $INST_NEWSSERVER_SERVER_PW == "" ]] || [[ $INST_SABNZBD_UID == "" ]] || [[ $INST_SABNZBD_PW == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  else
+    printf "$PRINTF_MASK" "- Value for INST_NEWSSERVER_SERVER found" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" "- Value for INST_NEWSSERVER_SERVER_PORT_SSL found" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" "- Value for INST_NEWSSERVER_SERVER_UID found" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" "- Value for INST_NEWSSERVER_SERVER_PW found" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" "- Value for INST_SABNZBD_UID found" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" "- Value for INST_SABNZBD_PW found" "$GREEN" "[OK]" "$RESET"
+  fi
+  
   if [[ -z $INST_SABNZBD_KEY_API ]] || [[ -z $INST_SABNZBD_KEY_NZB ]]; then
     echo "-----------------------------------------------------------"
     echo "| SABnzbd Web Server:"
@@ -25,6 +58,9 @@ if [ -e /Applications/SABnzbd.app ] ; then
       sleep 2
       source config.sh
     done
+  else
+    printf "$PRINTF_MASK" "- Value for INST_SABNZBD_KEY_API found" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" "- Value for INST_SABNZBD_KEY_NZB found" "$GREEN" "[OK]" "$RESET"
   fi
   
   printf "$PRINTF_MASK" "-> SABnzbd is installed" "$GREEN" "[OK]" "$RESET"
