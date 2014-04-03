@@ -102,5 +102,5 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Install testing launcher
 #------------------------------------------------------------------------------
 if [[ $INST_SABNZBD == "true" ]]; then
-  source "$DIR/scripts/install_sabnzbd.sh"
+  source "$DIR/scripts/install_couchpotato.sh"
 fi
