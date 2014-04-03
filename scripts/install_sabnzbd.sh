@@ -160,6 +160,15 @@ else
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
 
+
+  echo "-----------------------------------------------------------"
+  echo "| IF applicable:"
+  echo "| OZnzb Integration                       : Enable"
+  echo "| OZnzb Site API Key                      : $INST_OZNZB_API"
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
   echo "-----------------------------------------------------------"
   echo "| Folders:"
   echo "| Temporary Download Folder               : $INST_FOLDER_USENET_INCOMPLETE"
