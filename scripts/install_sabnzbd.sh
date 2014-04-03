@@ -248,14 +248,14 @@ else
   if [ -f ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT ] ; then
     printf "$PRINTF_MASK" "LaunchAgents $INST_FILE_LAUNCHAGENT exist" "$GREEN" "[OK]" "$RESET"
   else
-    if [ -f $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
+    if [ -f $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
       echo "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT"
-      cp $DIR/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
+      cp $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
       if [ "$?" != "0" ]; then
         echo -e "${RED}  ============================================== ${RESET}"
         echo -e "${RED} | ERROR ${RESET}"
         echo -e "${RED} | Copy failed: ${RESET}"
-        echo -e "${RED} | $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
+        echo -e "${RED} | $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
         echo -e "${RED} | --- press any key to continue --- ${RESET}"
         echo -e "${RED}  ============================================== ${RESET}"
         read -n 1 -s
@@ -265,7 +265,7 @@ else
       echo -e "${RED}  ============================================== ${RESET}"
       echo -e "${RED} | ERROR ${RESET}"
       echo -e "${RED} | LaunchAgent file not found: ${RESET}"
-      echo -e "${RED} | $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
+      echo -e "${RED} | $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
       echo -e "${RED} | --- press any key to continue --- ${RESET}"
       echo -e "${RED}  ============================================== ${RESET}"
       read -n 1 -s
