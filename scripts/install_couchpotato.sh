@@ -7,10 +7,24 @@ function check_config() {
   echo "| port              : $INST_COUCHPOTATO_PORT"
 }
 
-if [ -e /Applications/SABnzbd.app ] ; then
+if [ -e /Applications/CouchPotato.app ] ; then
+  printf "$PRINTF_MASK" "-> SABnzbd is installed" "$GREEN" "[OK]" "$RESET"
   check_config
 else
+  printf "$PRINTF_MASK" "-> SABnzbd is not installed, installing..." "$YELLOW" "[WAIT]" "$RESET"
   check_config
+  
+  if [ -d $INST_FOLDER_MOVIES_COMPLETE ] ; then
+    printf "$PRINTF_MASK" $INST_FOLDER_MOVIES_COMPLETE" exists" "$GREEN" "[OK]" "$RESET"
+  else
+    printf "$PRINTF_MASK" $INST_FOLDER_MOVIES_COMPLETE" doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    mkdir -p $INST_FOLDER_MOVIES_COMPLETE
+  fi
+  
+  
+  
+  
+  
 fi
 
 #### TESTING ####
@@ -22,22 +36,21 @@ echo "# Installing CouchPotato"
 echo "#------------------------------------------------------------------------------"
 ## http://christopher-williams.net/2011/02/automating-your-movie-downloads-with-sabnzbd-and-couchpotato/
 
-
-
-[ -d $INST_FOLDER_MOVIES_COMPLETE ] || mkdir -p $INST_FOLDER_MOVIES_COMPLETE
-
 echo "Download the latest CouchPotato from http://couchpotatoapp.com"
 open http://couchpotatoapp.com
 #open https://couchpota.to/updates/latest/osx/
 #http://www.downloadbestsoft.com/download/CouchPotato-2.0.6.1.macosx-10_6-intel.zip
 
 #cd ~/Downloads
+printf 'Waiting for CouchPotato to be downloaded…\n' "YELLOW" $col '[WAIT]' "$RESET"
 while ( [ ! -e ~/Downloads/CouchPotato.app ] )
 do
-    printf 'Waiting for CouchPotato to be downloaded…\n' "YELLOW" $col '[WAIT]' "$RESET"
-    sleep 15
+    printf '.'
+    sleep 3
 done
-sleep 3
+printf ".\n"
+printf 'Download found, moving file…\n' "YELLOW" $col '[WAIT]' "$RESET"
+sleep 5
 sudo mv ~/Downloads/CouchPotato.app /Applications
 
 open /Applications/CouchPotato.app
@@ -106,7 +119,6 @@ echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
 source ../config.sh
-#if [[ $INST_COUCHPOTATOD_API == "" ]]; then
 if [[ -z $INST_COUCHPOTATOD_API ]] ; then
     echo "-----------------------------------------------------------"
     echo "| Main Site Settings, API:"
@@ -126,28 +138,28 @@ if [[ -z $INST_COUCHPOTATOD_API ]] ; then
 fi
 
 INST_FILE_LAUNCHAGENT="com.couchpotato.couchpotato.plist"
-if [ -f $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
-    echo "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT"
-    cp $DIR/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
-    if [ "$?" != "0" ]; then
-        echo -e "${RED}  ============================================== ${RESET}"
-        echo -e "${RED} | ERROR ${RESET}"
-        echo -e "${RED} | Copy failed: ${RESET}"
-        echo -e "${RED} | $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
-        echo -e "${RED} | --- press any key to continue --- ${RESET}"
-        echo -e "${RED}  ============================================== ${RESET}"
-        read -n 1 -s
-        exit 1
-    fi
+if [ -f $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
+  echo "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT"
+  cp $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
+  if [ "$?" != "0" ]; then
+    echo -e "${RED}  ============================================== ${RESET}"
+    echo -e "${RED} | ERROR ${RESET}"
+    echo -e "${RED} | Copy failed: ${RESET}"
+    echo -e "${RED} | $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
+    echo -e "${RED} | --- press any key to continue --- ${RESET}"
+    echo -e "${RED}  ============================================== ${RESET}"
+    read -n 1 -s
+    exit 1
+  fi
 else
     echo -e "${RED}  ============================================== ${RESET}"
     echo -e "${RED} | ERROR ${RESET}"
     echo -e "${RED} | LaunchAgent file not found: ${RESET}"
-    echo -e "${RED} | $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
+    echo -e "${RED} | $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
     echo -e "${RED} | --- press any key to continue --- ${RESET}"
     echo -e "${RED}  ============================================== ${RESET}"
     read -n 1 -s
-    sudo mv /tmp/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
+#    sudo mv /tmp/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
 fi
 launchctl load ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
 
