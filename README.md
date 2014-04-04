@@ -1,7 +1,6 @@
 OSX Media Center - Mavericks Edition
 ===============
-![Mavericks](http://idevicedailys.com/wp-content/uploads/2013/11/OnyX-For-Mac-Mavericks_Logo.png)  ![Server](https://www.macupdate.com/util/iconlg/39488.png)  ![Plex](http://www.systemagnostic.com/wp-uploads/2010/11/iconPlex9_128x128.png)  ![Trakt](http://lh5.ggpht.com/HjL_gLtFt5iZwEOMip9XwCjaiSg2WNbFZBDsMffsCDTo5l7Q4weaEV8bxCPIALfxJV4=w128)
-
+![Mavericks](http://idevicedailys.com/wp-content/uploads/2013/11/OnyX-For-Mac-Mavericks_Logo.png)  ![Server](https://www.macupdate.com/util/iconlg/39488.png)  ![Plex](http://www.systemagnostic.com/wp-uploads/2010/11/iconPlex9_128x128.png)  ![Trakt](http://lh5.ggpht.com/HjL_gLtFt5iZwEOMip9XwCjaiSg2WNbFZBDsMffsCDTo5l7Q4weaEV8bxCPIALfxJV4=w128)  ![SABnzbd](https://rnxtras.com/wp-content/uploads/edd/2013/08/sabnzbd_logo.png)
 
 Note:
 =====
