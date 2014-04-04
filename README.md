@@ -87,6 +87,9 @@ https://code.google.com/p/autosub-bootstrapbill/
 SpotWEB
 http://gathering.tweakers.net/forum/list_messages/1478602
 
+NewzNAB
+http://forums.sabnzbd.org/viewtopic.php?f=6&t=12557&sid=269049b5a017f34a3329cc9c075b7998
+
 ----------------
 
 Launch Control
