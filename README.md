@@ -66,8 +66,7 @@ cd OSX_MediaCenter
 [Plex Home Theater](http://plex.tv)
 
 #### Other
-SABnzbd
-
+[SABnzbd](http://sabnzbd.org/)
 
 ToDo
 ===============
