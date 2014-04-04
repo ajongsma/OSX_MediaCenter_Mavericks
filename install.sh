@@ -197,3 +197,10 @@ if [[ $INST_COUCHPOTATO == "true" ]]; then
   source "$DIR/scripts/install_couchpotato.sh"
 fi
 
+#------------------------------------------------------------------------------
+# Install CouchPotato
+#------------------------------------------------------------------------------
+if [[ $INST_SICKBEARD == "true" ]]; then
+  source "$DIR/scripts/install_sickbeard.sh"
+fi
+
