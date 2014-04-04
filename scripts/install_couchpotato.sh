@@ -7,6 +7,11 @@ function check_config_defaults() {
   echo "| port              : $INST_COUCHPOTATO_PORT"
 }
 
+function check_config_defaults() {
+  echo "| API               : $INST_COUCHPOTATOD_API "
+}
+
+
 if [ -e /Applications/CouchPotato.app ] ; then
   printf "$PRINTF_MASK" "-> CouchPotato is installed" "$GREEN" "[OK]" "$RESET"
   check_config_defaults
@@ -127,14 +132,21 @@ if [[ -z $INST_COUCHPOTATOD_API ]] ; then
     echo "| INST_COUCHPOTATOD_API : <copy/paste the shown API KEY>"
     echo "-----------------------------------------------------------"
     open http://localhost:5050/settings/general
-    subl ../config.sh
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
 
+    printf 'Waiting for the CouchPotato API key to be added to config.sh...\n' "$YELLOW" $col '[WAIT]' "$RESET"
     while ( [[ $INST_COUCHPOTATOD_API == "" ]] )
     do
-        printf 'Waiting for the CouchPotato API key to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
+        printf '.'
         sleep 15
-        source ../config.sh
+        source config.sh
     done
+    printf '.\n' "$GREEN" $col '[OK]' "$RESET"
+    
 fi
 
 INST_FILE_LAUNCHAGENT="com.couchpotato.couchpotato.plist"
