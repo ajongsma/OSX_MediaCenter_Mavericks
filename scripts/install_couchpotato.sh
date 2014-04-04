@@ -190,7 +190,7 @@ else
     printf 'LaunchAgent not found, installing...\n' "$YELLOW" $col '[WAIT]' "$RESET"
   
     if [ -f $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
-      echo "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT"
+      printf 'Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT' "$YELLOW" $col '[WAIT]' "$RESET"
       cp $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
       if [ "$?" != "0" ]; then
         echo -e "${RED}  ============================================== ${RESET}"
