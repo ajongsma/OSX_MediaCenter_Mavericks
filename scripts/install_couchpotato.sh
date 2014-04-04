@@ -84,19 +84,36 @@ else
   echo "| port              : $INST_COUCHPOTATO_PORT"
   echo "| Lauch Browser     : Uncheck"
   echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
   echo "| Download Apps:"
   echo "| "
   echo "| Black Hole        : Disable"
-  echo "| SABNnzbd          : Enable"
-  echo "| SABnzbd URL       : localhost:$INST_SABNZBD_PORT"
-  echo "| SABnzbd API Key   : INST_SABNZBD_KEY_API=<paste value>"
-  echo "| SABnzbd Category  : movies"
-  echo "| Delete Failed     : Disable (Sabnzbd only)"
+  
+  if [[ $INST_SABNZBD == "true" ]]; then
+    echo "| SABNnzbd          : Enable"
+    echo "| SABnzbd URL       : localhost:$INST_SABNZBD_PORT"
+    echo "| SABnzbd API Key   : $INST_SABNZBD_KEY_API"
+    echo "| SABnzbd Category  : movies"
+    echo "| Delete Failed     : Disable (Sabnzbd only)"
+  fi
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
   echo "-----------------------------------------------------------"
   echo "| Registered at sites:"
   echo "| "
-  echo "| Torrent related   : Disable all"
+  echo "| Torrent Providers   : Disable all"
+  echo "| Usenet Providers    : Enable Nzbindex"
+  echo "| Usenet Providers    : Disable Newznab"
+  echo "| Usenet Providers    : Enable Nzbclub"
+  echo "| Usenet Providers    : Enable Binsearch"
   echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
   echo "| Move and rename the movies:"
   echo "| "
   echo "| => Enable: Show Advanced Settings"
