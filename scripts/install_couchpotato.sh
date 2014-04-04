@@ -116,12 +116,18 @@ else
   
   echo "| Move and rename the movies:"
   echo "| "
-  echo "| => Enable: Show Advanced Settings"
-  echo "| "
   echo "| Rename downloaded movies : Enable"
   echo "| From              : $INST_FOLDER_USENET_COMPLETE"
   echo "| To                : $INST_FOLDER_MOVIES_COMPLETE"
   echo "| Cleanup           : Enable"
+  echo "-----------------------------------------------------------"
+  echo "| Click Finish Up"
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
+  
+  
   echo "| "
   echo "| Run Every         : 1440 (e.g. 24 hours)"
   echo "| Force Every       : 24 (e.g. 24 hours)"
