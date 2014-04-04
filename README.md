@@ -68,6 +68,10 @@ cd OSX_MediaCenter
 #### Other
 [SABnzbd](http://sabnzbd.org/)
 
+[CouchPotato](https://couchpota.to)
+
+
+
 ToDo
 ===============
 
@@ -77,8 +81,6 @@ https://github.com/mikedm139/UnSupportedAppstore.bundle
 ~/Library/Application Support/Plex Media Server/Plug-ins
 
 SickBeard
-
-CouchPotato
 
 Auto-Sub Bootstrap Bill
 http://gathering.tweakers.net/forum/list_messages/1572892/0
