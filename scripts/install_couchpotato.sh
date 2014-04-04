@@ -72,7 +72,7 @@ else
   #sleep 2
   sudo mv ~/Downloads/CouchPotato.app /Applications
   #sleep 1
-  #xattr -d com.apple.quarantine /Applications/CouchPotato.app
+  xattr -d com.apple.quarantine /Applications/CouchPotato.app
   open /Applications/CouchPotato.app
 
   echo "-----------------------------------------------------------"
