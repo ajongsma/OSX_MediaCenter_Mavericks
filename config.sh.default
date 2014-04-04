@@ -66,6 +66,9 @@ INST_PLEX_HOME_THEATER="true"
 ## Install SABnzbd (http://sabnzbd.org) - (true/false)
 INST_SABNZBD="true"
 
+## Install CouchPotato (https://couchpota.to) - (true/false)
+INST_COUCHPOTATO="true"
+
 
 # ===========================================================
 # | SETTINGS                                                |
