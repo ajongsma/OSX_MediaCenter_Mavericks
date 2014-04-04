@@ -57,7 +57,7 @@ else
     mkdir -p $INST_FOLDER_MOVIES_COMPLETE
   fi
   
-  echo "Download the latest CouchPotato from http://couchpotatoapp.com"
+  printf "$PRINTF_MASK" "Download the latest CouchPotato from http://couchpotatoapp.com" "$YELLOW" "[WAIT]" "$RESET"
   open http://couchpotatoapp.com
   
   printf 'Waiting for CouchPotato to be downloaded…\n' "YELLOW" $col '[WAIT]' "$RESET"
