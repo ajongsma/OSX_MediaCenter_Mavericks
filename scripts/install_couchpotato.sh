@@ -215,16 +215,9 @@ else
   else
     printf 'LaunchAgent found' "$GREEN" $col '[OK]' "$RESET"
   fi
-
+  printf "$PRINTF_MASK" "-> CouchPotato installed" "$GREEN" "[OK]" "$RESET"
 fi
 
-#### TESTING ####
-exit 1
-#### TESTING ####
-
-echo "#------------------------------------------------------------------------------"
-echo "# Installing CouchPotato"
-echo "#------------------------------------------------------------------------------"
 ## http://christopher-williams.net/2011/02/automating-your-movie-downloads-with-sabnzbd-and-couchpotato/
 #open https://couchpota.to/updates/latest/osx/
 #http://www.downloadbestsoft.com/download/CouchPotato-2.0.6.1.macosx-10_6-intel.zip
@@ -237,7 +230,3 @@ echo "#-------------------------------------------------------------------------
 #??
 # python ~/Downloads/CouchPotato.app/CouchPotato.py -d
 #??
-
-echo "#------------------------------------------------------------------------------"
-echo "# Install CouchPotato - Complete"
-echo "#------------------------------------------------------------------------------"
