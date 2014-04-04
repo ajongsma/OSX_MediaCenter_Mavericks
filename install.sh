@@ -184,8 +184,16 @@ if [[ $INST_PLEX_HOME_THEATER == "true" ]]; then
 fi
 
 #------------------------------------------------------------------------------
-# Install Plex Home Theater
+# Install SABnzbd
 #------------------------------------------------------------------------------
 if [[ $INST_SABNZBD == "true" ]]; then
   source "$DIR/scripts/install_sabnzbd.sh"
 fi
+
+#------------------------------------------------------------------------------
+# Install CouchPotato
+#------------------------------------------------------------------------------
+if [[ $INST_COUCHPOTATO == "true" ]]; then
+  source "$DIR/scripts/install_couchpotato.sh"
+fi
+
