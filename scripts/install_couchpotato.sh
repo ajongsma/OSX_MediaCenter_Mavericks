@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../config.sh
+source config.sh
 
 function check_config_defaults() {
   if [[ -z $INST_COUCHPOTATO_UID ]] || [[ -z $INST_COUCHPOTATO_PW ]] || [[ -z $INST_COUCHPOTATO_PORT ]]; then
