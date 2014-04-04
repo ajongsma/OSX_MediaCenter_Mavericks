@@ -23,7 +23,7 @@ function check_config_defaults() {
 }
 
 function check_config_var() {
-  if [[ -z $INST_COUCHPOTATOD_API ]] ; then
+  if [[ -z $INST_COUCHPOTATO_KEY_API ]] ; then
     printf 'CouchPotato API key was not detected in config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
     echo "| API               : $INST_COUCHPOTATOD_API "
     if [ ! -d /Applications/TextWrangler.app ]; then
@@ -31,7 +31,7 @@ function check_config_var() {
     else
       open -a /Applications/TextWrangler.app config.sh
     fi
-    while ( [[ $INST_COUCHPOTATOD_API == "" ]] )
+    while ( [[ $INST_COUCHPOTATO_KEY_API == "" ]] )
     do
       printf '.'
       sleep 2
@@ -159,11 +159,9 @@ else
   echo "-----------------------------------------------------------"
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
-  
 
-  
   source config.sh
-  if [[ -z $INST_COUCHPOTATOD_API ]] ; then
+  if [[ -z $INST_COUCHPOTATO_KEY_API ]] ; then
     echo "-----------------------------------------------------------"
     echo "| Main Site Settings, API:"
     echo "| Click Show Advanced settings"
@@ -178,7 +176,7 @@ else
     fi
     
     printf 'Waiting for the CouchPotato API key to be added to config.sh...\n' "$YELLOW" $col '[WAIT]' "$RESET"
-    while ( [[ $INST_COUCHPOTATOD_API == "" ]] )
+    while ( [[ $INST_COUCHPOTATO_KEY_API == "" ]] )
     do
         printf '.'
         sleep 15
