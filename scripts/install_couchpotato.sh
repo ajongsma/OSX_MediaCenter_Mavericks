@@ -25,7 +25,7 @@ function check_config_defaults() {
 function check_config_var() {
   if [[ -z $INST_COUCHPOTATO_KEY_API ]] ; then
     printf 'CouchPotato API key was not detected in config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
-    echo "| API               : $INST_COUCHPOTATOD_API "
+    echo "| API               : $INST_COUCHPOTATO_KEY_API "
     if [ ! -d /Applications/TextWrangler.app ]; then
       pico config.sh
     else
