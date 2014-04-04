@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 source ../config.sh
 
-function check_config() {
+function check_config_defaults() {
   echo "| username          : $INST_COUCHPOTATO_UID"
   echo "| password          : $INST_COUCHPOTATO_PW"
   echo "| port              : $INST_COUCHPOTATO_PORT"
 }
 
 if [ -e /Applications/CouchPotato.app ] ; then
-  printf "$PRINTF_MASK" "-> SABnzbd is installed" "$GREEN" "[OK]" "$RESET"
-  check_config
+  printf "$PRINTF_MASK" "-> CouchPotato is installed" "$GREEN" "[OK]" "$RESET"
+  check_config_defaults
 else
-  printf "$PRINTF_MASK" "-> SABnzbd is not installed, installing..." "$YELLOW" "[WAIT]" "$RESET"
-  check_config
+  printf "$PRINTF_MASK" "-> CouchPotato is not installed, installing..." "$YELLOW" "[WAIT]" "$RESET"
+  check_config_defaults
   
   if [ -d $INST_FOLDER_MOVIES_COMPLETE ] ; then
     printf "$PRINTF_MASK" $INST_FOLDER_MOVIES_COMPLETE" exists" "$GREEN" "[OK]" "$RESET"
