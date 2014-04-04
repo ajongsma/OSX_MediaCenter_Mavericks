@@ -14,6 +14,8 @@ else
       printf 'export PATH="/usr/local/bin:$PATH"\n' >> ~/.zshrc
       export PATH="/usr/local/bin:$PATH"
   fi
+  printf "$PRINTF_MASK" "Updating Homebrew formulas..." "$YELLOW" "[WAIT]" "$RESET"
+  brew update
 fi
 
 
