@@ -69,6 +69,8 @@ INST_SABNZBD="true"
 ## Install CouchPotato (https://couchpota.to) - (true/false)
 INST_COUCHPOTATO="true"
 
+## Install SickBeard (http://sickbeard.com) - (true/false)
+INST_SICKBEARD="true"
 
 # ===========================================================
 # | SETTINGS                                                |
