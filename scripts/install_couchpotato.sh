@@ -138,6 +138,7 @@ else
   echo "| Searcher"
   echo "|   First search    : Usenet"
   echo "|   Retention       : $INST_NEWSSERVER_RETENTION"
+  echo "|"
   echo "| Searcher, Categories"
   echo "|   Preferredd Words: dutch, nl subs, nlsubs"
   echo "|   Ignored Words   : <remove dutch>"
@@ -147,18 +148,17 @@ else
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
 
-
-#  echo "| "
-#  echo "| Run Every         : 1440 (e.g. 24 hours)"
-#  echo "| Force Every       : 24 (e.g. 24 hours)"
-#  echo "| Next On_failed    : Disable"
-#  echo "| Download Subtitles: Enable"
-#  echo "| Language          : nl"
-#  echo "-----------------------------------------------------------"
-#  echo "| Save settings"
-#  echo "-----------------------------------------------------------"
-#  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
-#  read -n 1 -s
+  echo "-----------------------------------------------------------"
+  echo "| Renamer"
+  echo "|   Advanced Settings: Enable"
+  echo "|   Run Every       : 1440 (e.g. 24 hours)"
+  echo "|   Force Every     : 24 (e.g. 24 hours)"
+  echo "|"
+  echo "| Download Subtitles: Enable"
+  echo "| Language          : nl"
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
   
 
   
