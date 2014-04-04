@@ -126,34 +126,41 @@ else
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
   
-  
-  
-  echo "| "
-  echo "| Run Every         : 1440 (e.g. 24 hours)"
-  echo "| Force Every       : 24 (e.g. 24 hours)"
-  echo "| Next On_failed    : Disable"
-  echo "| Download Subtitles: Enable"
-  echo "| Language          : nl"
   echo "-----------------------------------------------------------"
-  echo "| Save settings"
+  echo "| Login to CouchPotato"
+  echo "| username          : $INST_COUCHPOTATO_UID"
+  echo "| password          : $INST_COUCHPOTATO_PW"
   echo "-----------------------------------------------------------"
-  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
-  read -n 1 -s
-  
   echo ""
   echo "-----------------------------------------------------------"
   echo "| Settings (Click top-right gear icon)"
   echo "-----------------------------------------------------------"
-  echo "| Searcher :"
-  echo "| Preferredd Words   : dutch"
-  echo "| Ignored Words      : <remove dutch>"
-  echo "| First search       : Usenet"
-  echo "| Retention          : $INST_NEWSSERVER_RETENTION"
+  echo "| Searcher"
+  echo "|   First search    : Usenet"
+  echo "|   Retention       : $INST_NEWSSERVER_RETENTION"
+  echo "| Searcher, Categories"
+  echo "|   Preferredd Words: dutch, nl subs, nlsubs"
+  echo "|   Ignored Words   : <remove dutch>"
   echo "-----------------------------------------------------------"
   #open http://localhost:5050/settings/
   #open http://localhost:8082
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
+
+
+#  echo "| "
+#  echo "| Run Every         : 1440 (e.g. 24 hours)"
+#  echo "| Force Every       : 24 (e.g. 24 hours)"
+#  echo "| Next On_failed    : Disable"
+#  echo "| Download Subtitles: Enable"
+#  echo "| Language          : nl"
+#  echo "-----------------------------------------------------------"
+#  echo "| Save settings"
+#  echo "-----------------------------------------------------------"
+#  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+#  read -n 1 -s
+  
+
   
   source config.sh
   if [[ -z $INST_COUCHPOTATOD_API ]] ; then
