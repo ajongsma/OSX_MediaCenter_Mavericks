@@ -1,8 +1,56 @@
 #!/usr/bin/env bash
-source ../config.sh
+source config.sh
+
+function check_config_defaults() {
+  if [[ -z $INST_SICKBEARD_UID ]] || [[ -z $INST_SICKBEARD_PW ]] || [[ -z $INST_SICKBEARD_PORT ]]; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| username          : $INST_SICKBEARD_UID"
+    echo "| password          : $INST_SICKBEARD_PW"
+    echo "| port              : $INST_SICKBEARD_PORT"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_SICKBEARD_UID == "" ]] || [[ $INST_SICKBEARD_PW == "" ]] || [[ $INST_SICKBEARD_PORT == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  fi
+}
+
+function check_config_var() {
+  if [[ -z $INST_SICKBEARD_KEY_API ]] ; then
+    printf 'SickBeard API key was not detected in config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| API               : $INST_SICKBEARD_KEY_API "
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_SICKBEARD_KEY_API == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  fi
+}
 
 
 
+
+if [ -d /Applications/Sick-Beard/ ] ; then
+  printf "$PRINTF_MASK" "-> SickBeard detected" "$GREEN" "[OK]" "$RESET"
+  check_config_defaults
+  check_config_var
+else
+
+fi
 
 
 
