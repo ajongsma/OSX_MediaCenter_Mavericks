@@ -114,6 +114,15 @@ else
     mkdir -p ~/Library/Application\ Support/SABnzbd/scripts/
   fi
 
+  if [ ! -e /usr/local/bin/cheetah ] ; then
+    printf 'Cheetah not installed, error' "$RED" $col '[FAIL]' "$RESET"
+    echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+    read -n 1 -s
+    exit 1
+  else
+    printf 'Cheetah found' "$GREEN" $col '[OK]' "$RESET"
+  fi
+
   cd /Applications
   sudo git clone git://github.com/midgetspy/Sick-Beard.git
   sudo chown -R `whoami`:wheel /Applications/Sick-Beard/
