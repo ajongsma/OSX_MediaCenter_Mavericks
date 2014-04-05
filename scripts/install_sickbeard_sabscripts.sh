@@ -7,19 +7,18 @@ else
   printf "$PRINTF_MASK" "-> SickBeard to SABnzbd config not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
 
   if [ -f ~/Library/Application\ Support/SABnzbd/scripts/sabToSickBeard.py ] ; then
-    printf 'Sickbeard default SABnzbd scripts installed\n' "$GREEN" $col '[OK]' "$RESET"
+    printf "$PRINTF_MASK" "Sickbeard default SABnzbd scripts detected" "$GREEN" "[OK]" "$RESET"
   else
-    printf 'Sickbeard default SABnzbd scripts installed not installed\n' "$RED" $col '[FAIL]' "$RESET"
+    printf "$PRINTF_MASK" "Sickbeard default SABnzbd scripts not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
     cp -iv /Applications/Sick-Beard/autoProcessTV/* ~/Library/Application\ Support/SABnzbd/scripts/
   fi
   
   if [ -f ~/Library/Application\ Support/SABnzbd/scripts/autoProcessTV.cfg ] ; then
-    printf 'Sickbeard config file installed\n' "$GREEN" $col '[OK]' "$RESET"
+    printf "$PRINTF_MASK" "Sickbeard config file detected" "$GREEN" "[OK]" "$RESET"
   else
-    printf 'Sickbeard config file scripts installed not installed\n' "$RED" $col '[FAIL]' "$RESET"
+    printf "$PRINTF_MASK" "Sickbeard config file not detected, creating..." "$GREEN" "[OK]" "$RESET"
     cp -iv /Applications/Sick-Beard/autoProcessTV/* ~/Library/Application\ Support/SABnzbd/scripts/
-      
-      
+
     echo "-----------------------------------------------------------"
     echo "| Add the following to [SickBeard]:"
     echo "| host                                    : localhost"
