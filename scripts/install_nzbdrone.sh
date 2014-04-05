@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 source config.sh
 
+## Download and install the Mono framework
+## http://www.go-mono.com/mono-downloads/download.html
+curl -O http://download.mono-project.com/archive/3.4.0/macos-10-x86/MonoFramework-MRE-3.4.0.macos10.xamarin.x86.pkg
+open MonoFramework-MRE-3.4.0.macos10.xamarin.x86.pkg
 
+## Download and install NzbDrone
+curl -O http://update.nzbdrone.com/v2/master/osx/NzbDrone.master.osx.tar.gz
+tar -xvzf NzbDrone.master.osx.tar.gz
 
+mono --debug NzbDrone/NzbDrone.exe
 
-
-
-
+open http://localhost:8989
 
 
 
