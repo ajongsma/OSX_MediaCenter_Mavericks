@@ -2,17 +2,17 @@
 source config.sh
 
 function check_config_defaults() {
-#  if [[ -z $INST_SICKBEARD_UID ]] || [[ -z $INST_SICKBEARD_PW ]] || [[ -z $INST_SICKBEARD_PORT ]]; then
+#  if [[ -z $INST_COUCHPOTATO_UID ]] || [[ -z $INST_COUCHPOTATO_PW ]] || [[ -z $INST_COUCHPOTATO_PORT ]]; then
 #    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
-#    echo "| SickBeard username: INST_SICKBEARD_UID"
-#    echo "| SickBeard password: INST_SICKBEARD_PW"
-#    echo "| SickBeard port    : INST_SICKBEARD_PORT"
+#    echo "| username          : $INST_COUCHPOTATO_UID"
+#    echo "| password          : $INST_COUCHPOTATO_PW"
+#    echo "| port              : $INST_COUCHPOTATO_PORT"
 #    if [ ! -d /Applications/TextWrangler.app ]; then
 #      pico config.sh
 #    else
 #      open -a /Applications/TextWrangler.app config.sh
 #    fi
-#    while ( [[ $INST_SICKBEARD_UID == "" ]] || [[ $INST_SICKBEARD_PW == "" ]] || [[ $INST_SICKBEARD_PORT == "" ]] )
+#    while ( [[ $INST_COUCHPOTATO_UID == "" ]] || [[ $INST_COUCHPOTATO_PW == "" ]] || [[ $INST_COUCHPOTATO_PORT == "" ]] )
 #    do
 #      printf '.'
 #      sleep 2
@@ -22,11 +22,13 @@ function check_config_defaults() {
 #  fi
 }
 
+
 if [ -e /usr/local/bin/cheetah ] ; then
   printf "$PRINTF_MASK" "-> Cheetah detected" "$GREEN" "[OK]" "$RESET"
   check_config_defaults
 else
   printf "$PRINTF_MASK" "-> Cheetah not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+  check_config_defaults
 
   echo "Download latest Cheetah from http://www.cheetahtemplate.org/download"
   open http://www.cheetahtemplate.org/download
