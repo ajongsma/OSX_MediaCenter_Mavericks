@@ -49,7 +49,8 @@ if [ -d /Applications/Sick-Beard/ ] ; then
   check_config_defaults
   check_config_var
 else
-
+  printf "$PRINTF_MASK" "-> SickBeard not detected, installing..." "$GREEN" "[OK]" "$RESET"
+  check_config_defaults
 fi
 
 
