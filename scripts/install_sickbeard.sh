@@ -174,6 +174,7 @@ else
     printf '.\n' "$GREEN" $col '[OK]' "$RESET"
   fi
   
+  echo "-----------------------------------------------------------"
   echo "| Config, Search Settings, NZB Search:"
   echo "| Search Frequency  : 15"
   echo "| Usenet Retention  : $INST_NEWSSERVER_RETENTION"
@@ -184,13 +185,21 @@ else
   echo "| SABnzbd Password  : $INST_SABNZBD_PW"
   echo "| SABnzbd API Key   : $INST_SABNZBD_KEY_API"
   echo "| SABnzbd Category  : tv"
-  echo "|-------------------"
+  echo "-----------------------------------------------------------"
   echo "| Test and Save Changes"
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
   echo "-----------------------------------------------------------"
   echo "| Config, Search Providers"
   echo "| Sick Beard Index  : Enable"
   echo "|-------------------"
   echo "| Save Changes"
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
   echo "-----------------------------------------------------------"
   echo "| Config, Post Processing"
   echo "| Keep original files : Uncheck"
@@ -199,6 +208,10 @@ else
   echo "| Multi-Episode       : Extend"
   echo "|-------------------"
   echo "| Save Changes"
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
   echo "-----------------------------------------------------------"
   echo "| Home, Add Show"
   echo "| - Add Existing Show"
