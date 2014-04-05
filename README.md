@@ -4,6 +4,13 @@ OSX Media Center - Mavericks Edition
 
 
 ![CouchPotato](img/couchpotato_64x64.png)
+![OSX_Mavericks](img/osx_mavericks_64x64.jpg)
+![OSX_Server](img/osx_server_64x64.jpeg)
+![Plex_Client](img/plex_client_64x64.jpeg)
+![Plex_Server](img/plex_server_64x64.png)
+![SABnzbd](img/sabnzbd_64x64.png)
+![SickBeard](img/sickBeard_64x64.png)
+
 
 Note:
 =====
