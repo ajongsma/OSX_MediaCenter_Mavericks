@@ -18,7 +18,7 @@ function check_config_defaults() {
       sleep 2
       source config.sh
     done
-    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" ".\n" "$GREEN" "[OK]" "$RESET"
   fi
   
   if [[ -z $INST_SABNZBD_UID ]] || [[ -z $INST_SABNZBD_PW ]] || [[ -z $INST_SABNZBD_KEY_API ]]; then
@@ -37,7 +37,7 @@ function check_config_defaults() {
       sleep 2
       source config.sh
     done
-    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" ".\n" "$GREEN" "[OK]" "$RESET"
   fi
   
   if [[ -z $INST_NEWSSERVER_RETENTION ]]; then
@@ -54,7 +54,7 @@ function check_config_defaults() {
       sleep 2
       source config.sh
     done
-    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" ".\n" "$GREEN" "[OK]" "$RESET"
   fi
 }
 
@@ -73,7 +73,7 @@ function check_config_var() {
       sleep 2
       source config.sh
     done
-    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" ".\n" "$GREEN" "[OK]" "$RESET"
   fi
 }
 
@@ -94,33 +94,33 @@ function check_config_var() {
 ### ----------------------------------------
 
 if [ -d /Applications/Sick-Beard/ ] ; then
-  printf "$PRINTF_MASK" "-> SickBeard detected" "$GREEN" "[OK]" "$RESET"
+  printf "$PRINTF_MASK" "-> SickBeard detected\n" "$GREEN" "[OK]" "$RESET"
   check_config_defaults
   check_config_var
 else
-  printf "$PRINTF_MASK" "-> SickBeard not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-> SickBeard not detected, installing...\n" "$YELLOW" "[WAIT]" "$RESET"
   check_config_defaults
   
   if [ -d $INST_FOLDER_SERIES_COMPLETE ] ; then
-    printf "$PRINTF_MASK" $INST_FOLDER_SERIES_COMPLETE" exists" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" $INST_FOLDER_SERIES_COMPLETE" exists\n" "$GREEN" "[OK]" "$RESET"
   else
-    printf "$PRINTF_MASK" $INST_FOLDER_SERIES_COMPLETE" doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    printf "$PRINTF_MASK" $INST_FOLDER_SERIES_COMPLETE" doesn't exists, creating...\n" "$YELLOW" "[WAIT]" "$RESET"
     mkdir -p $INST_FOLDER_SERIES_COMPLETE
   fi
   if [ -d ~/Library/Application\ Support/SABnzbd/scripts/ ] ; then
-    printf "$PRINTF_MASK" "~/Library/Application\ Support/SABnzbd/scripts/ exists" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" "~/Library/Application\ Support/SABnzbd/scripts/ exists\n" "$GREEN" "[OK]" "$RESET"
   else
-    printf "$PRINTF_MASK" "~/Library/Application\ Support/SABnzbd/scripts/ doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    printf "$PRINTF_MASK" "~/Library/Application\ Support/SABnzbd/scripts/ doesn't exists, creating...\n" "$YELLOW" "[WAIT]" "$RESET"
     mkdir -p ~/Library/Application\ Support/SABnzbd/scripts/
   fi
 
   if [ ! -e /usr/local/bin/cheetah ] ; then
-    printf 'Cheetah not installed, error' "$RED" $col '[FAIL]' "$RESET"
+    printf 'Cheetah not installed, error\n' "$RED" $col '[FAIL]' "$RESET"
     echo -e "${BLUE} --- press any key to continue --- ${RESET}"
     read -n 1 -s
     exit 1
   else
-    printf 'Cheetah found' "$GREEN" $col '[OK]' "$RESET"
+    printf 'Cheetah found\n' "$GREEN" $col '[OK]' "$RESET"
   fi
 
   cd /Applications
@@ -215,10 +215,10 @@ else
   
   INST_FILE_LAUNCHAGENT="com.sickbeard.sickbeard.plist"
   if [ -f $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
-    printf 'LaunchAgent found' "$GREEN" $col '[OK]' "$RESET"
+    printf 'LaunchAgent found\n' "$GREEN" $col '[OK]' "$RESET"
   
   else
-    printf 'LaunchAgent not found, installing...' "$YELLOW" $col '[WAIT]' "$RESET"
+    printf 'LaunchAgent not found, installing...\n' "$YELLOW" $col '[WAIT]' "$RESET"
   
     if [ -f $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
         echo "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT"
