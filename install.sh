@@ -195,6 +195,7 @@ fi
 #------------------------------------------------------------------------------
 if [[ $INST_COUCHPOTATO == "true" ]]; then
   source "$DIR/scripts/install_couchpotato.sh"
+  source "$DIR/scripts/install_couchpotato_pms.sh"
 fi
 
 #------------------------------------------------------------------------------
