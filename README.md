@@ -2,6 +2,9 @@ OSX Media Center - Mavericks Edition
 ===============
 ![Mavericks](http://idevicedailys.com/wp-content/uploads/2013/11/OnyX-For-Mac-Mavericks_Logo.png)  ![Server](https://www.macupdate.com/util/iconlg/39488.png)  ![Plex](http://www.systemagnostic.com/wp-uploads/2010/11/iconPlex9_128x128.png)  ![Trakt](http://lh5.ggpht.com/HjL_gLtFt5iZwEOMip9XwCjaiSg2WNbFZBDsMffsCDTo5l7Q4weaEV8bxCPIALfxJV4=w128)  ![SABnzbd](https://www.macupdate.com/util/iconlg/29705.png)  ![CouchPotato](http://img.informer.com/icons_mac/png/128/240/240709.png)
 
+
+![CouchPotato](img/couchpotato_64x64.png)
+
 Note:
 =====
 A clean install will erase all of the contents on your disk drive. Make sure to back up your important files, settings and apps before proceeding. If needed, upgrade the system to Mavericks (https://itunes.apple.com/us/app/os-x-mavericks/id675248567?mt=12)
