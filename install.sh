@@ -201,6 +201,7 @@ fi
 # Install CouchPotato
 #------------------------------------------------------------------------------
 if [[ $INST_SICKBEARD == "true" ]]; then
+  source "$DIR/scripts/install_cheetah.sh"
   source "$DIR/scripts/install_sickbeard.sh"
 fi
 
