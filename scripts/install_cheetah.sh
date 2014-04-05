@@ -2,9 +2,9 @@
 source config.sh
 
 if [ -e /usr/local/bin/cheetah ] ; then
-  printf "$PRINTF_MASK" "-> Cheetah detected\n" "$GREEN" "[OK]" "$RESET"
+  printf "$PRINTF_MASK" "-> Cheetah detected" "$GREEN" "[OK]" "$RESET"
 else
-  printf "$PRINTF_MASK" "-> Cheetah not detected, installing...\n" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-> Cheetah not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
 
   echo "Download latest Cheetah from http://www.cheetahtemplate.org/download"
   open http://www.cheetahtemplate.org/download
@@ -22,9 +22,9 @@ else
   sudo python setup.py install
 
   if [ -e /usr/local/bin/cheetah ] ; then
-    printf "$PRINTF_MASK" "-> Cheetah installed\n" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" "-> Cheetah installed" "$GREEN" "[OK]" "$RESET"
   else
-    printf "$PRINTF_MASK" "-> Cheetah not installed\n" "$RED" "[ERR]" "$RESET"
+    printf "$PRINTF_MASK" "-> Cheetah not installed" "$RED" "[ERR]" "$RESET"
     echo -e "${BLUE} --- press any key to continue --- ${RESET}"
     read -n 1 -s
     exit 1
