@@ -77,8 +77,10 @@ cd OSX_MediaCenter
 [SABnzbd](http://sabnzbd.org/)
 
 [CouchPotato](https://couchpota.to)
+- Trakt Integration
 
-
+[SickBeard](http://sickbeard.com)
+- Trakt Integration
 
 ToDo
 ===============
@@ -88,7 +90,7 @@ https://forums.plex.tv/index.php/topic/25523-unsupported-as-in-totally-unofficia
 https://github.com/mikedm139/UnSupportedAppstore.bundle
 ~/Library/Application Support/Plex Media Server/Plug-ins
 
-SickBeard
+
 
 Auto-Sub Bootstrap Bill
 http://gathering.tweakers.net/forum/list_messages/1572892/0
