@@ -235,13 +235,13 @@ else
   sudo cp /Applications/Sick-Beard/autoProcessTV/* ~/Library/Application\ Support/SABnzbd/scripts/
   
   INST_FILE_LAUNCHAGENT="com.sickbeard.sickbeard.plist"
-  if [ -f $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
+  if [ -f ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT ] ; then
     printf 'LaunchAgent found\n' "$GREEN" $col '[OK]' "$RESET"
   
   else
     printf 'LaunchAgent not found, installing...\n' "$YELLOW" $col '[WAIT]' "$RESET"
   
-    if [ -f $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
+    if [ -f $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
         echo "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT"
         cp $DIR/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
         if [ "$?" != "0" ]; then
@@ -262,7 +262,6 @@ else
         echo -e "${RED} | --- press any key to continue --- ${RESET}"
         echo -e "${RED}  ============================================== ${RESET}"
         read -n 1 -s
-        sudo mv /tmp/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
     fi
     launchctl load ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
   fi
