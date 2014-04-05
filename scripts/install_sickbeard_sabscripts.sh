@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
-source ../config.sh
+source config.sh
+
+if [ -f ~/Library/Application\ Support/SABnzbd/scripts/autoProcessTV.cfg ] ; then
+  printf "$PRINTF_MASK" "-> SickBeard to SABnzbd config detected\n" "$GREEN" "[OK]" "$RESET"
+#  check_config_defaults
+#  check_config_var
+else
+  printf "$PRINTF_MASK" "-> SickBeard to SABnzbd config not detected, installing...\n" "$YELLOW" "[WAIT]" "$RESET"
+#  check_config_defaults
 
 
+
+fi
 
 ##### TESTING #####
 exit 0
