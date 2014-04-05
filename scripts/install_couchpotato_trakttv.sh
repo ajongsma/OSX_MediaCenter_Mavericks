@@ -32,9 +32,19 @@ echo "| - API Key             : $INST_TRAKT_KEY_API"
 echo "| - Username            : $INST_TRAKT_UID"
 echo "| - Password            : $INST_TRAKT_PW"
 echo "-----------------------------------------------------------"
-echo "| Test, Save"
-echo "-----------------------------------------------------------"
 open http://127.0.0.1:8082/settings/automation/
+echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+read -n 1 -s
+
+echo "-----------------------------------------------------------"
+echo "| Settings -> Notifications"
+echo "-----------------------------------------------------------"
+echo "| Trakt                 : Enable"
+echo "| Remove from watchlist : Enable"
+echo "-----------------------------------------------------------"
+echo "| Test"
+echo "-----------------------------------------------------------"
+open http://127.0.0.1:8082/settings/notifications/
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
