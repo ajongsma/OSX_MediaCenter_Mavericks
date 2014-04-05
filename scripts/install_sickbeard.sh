@@ -72,6 +72,19 @@ else
     mkdir -p $INST_FOLDER_SERIES_COMPLETE
   fi
   
+  cd /Applications
+  sudo git clone git://github.com/midgetspy/Sick-Beard.git
+  sudo chown -R `whoami`:wheel /Applications/Sick-Beard/
+  cd Sick-Beard
+  #?? python /Applications/Sick-Beard/CouchPotato.py sickbeard.py  -d -q
+  
+  osascript -e 'tell app "Terminal"
+      do script "python /Applications/Sick-Beard/sickbeard.py"
+  end tell'
+  
+  
+  
+  
 fi
 
 
@@ -87,15 +100,7 @@ echo "# Installing Sick-Beard"
 echo "#------------------------------------------------------------------------------"
 
 
-cd /Applications
-sudo git clone git://github.com/midgetspy/Sick-Beard.git
-sudo chown -R `whoami`:wheel /Applications/Sick-Beard/
-cd Sick-Beard
-#?? python /Applications/Sick-Beard/CouchPotato.py sickbeard.py  -d -q
 
-osascript -e 'tell app "Terminal"
-    do script "python /Applications/Sick-Beard/sickbeard.py"
-end tell'
 #python /Applications/Sick-Beard/sickbeard.py
 
 echo "-----------------------------------------------------------"
