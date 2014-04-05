@@ -41,32 +41,6 @@ function check_config_var() {
   fi
 }
 
-
-
-
-if [ -d /Applications/Sick-Beard/ ] ; then
-  printf "$PRINTF_MASK" "-> SickBeard detected" "$GREEN" "[OK]" "$RESET"
-  check_config_defaults
-  check_config_var
-else
-  printf "$PRINTF_MASK" "-> SickBeard not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
-  check_config_defaults
-fi
-
-
-
-
-
-##### TESTING #####
-exit 0
-##### TESTING #####
-
-
-
-echo "#------------------------------------------------------------------------------"
-echo "# Installing Sick-Beard"
-echo "#------------------------------------------------------------------------------"
-
 ### ----------------------------------------
 ### http://jetshred.com/2012/07/26/installing-sickbeard-on-os-x-10-dot-8/
 ### Since daemon mode is what’s not working all that’s necessary to get around the bug is to not use daemon mode. Here it is:
@@ -83,10 +57,35 @@ echo "#-------------------------------------------------------------------------
 ##do shell script "python " & pathToSickBeard & "/SickBeard.py > /dev/null 2>&1 &"
 ### ----------------------------------------
 
+if [ -d /Applications/Sick-Beard/ ] ; then
+  printf "$PRINTF_MASK" "-> SickBeard detected" "$GREEN" "[OK]" "$RESET"
+  check_config_defaults
+  check_config_var
+else
+  printf "$PRINTF_MASK" "-> SickBeard not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+  check_config_defaults
+  
+  if [ -d $INST_FOLDER_SERIES_COMPLETE ] ; then
+    printf "$PRINTF_MASK" $INST_FOLDER_SERIES_COMPLETE" exists" "$GREEN" "[OK]" "$RESET"
+  else
+    printf "$PRINTF_MASK" $INST_FOLDER_SERIES_COMPLETE" doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    mkdir -p $INST_FOLDER_SERIES_COMPLETE
+  fi
+  
+fi
 
 
-[ -d ~/Github ] || mkdir -p ~/Github
-[ -d $INST_FOLDER_SERIES_COMPLETE ] || mkdir -p $INST_FOLDER_SERIES_COMPLETE
+
+
+
+##### TESTING #####
+exit 0
+##### TESTING #####
+
+echo "#------------------------------------------------------------------------------"
+echo "# Installing Sick-Beard"
+echo "#------------------------------------------------------------------------------"
+
 
 cd /Applications
 sudo git clone git://github.com/midgetspy/Sick-Beard.git
