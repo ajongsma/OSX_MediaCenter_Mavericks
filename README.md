@@ -77,10 +77,14 @@ cd OSX_MediaCenter
 [SABnzbd](http://sabnzbd.org/)
 
 [CouchPotato](https://couchpota.to)
-- Trakt Integration
+- SABnzbd Integrated
+- Trakt Integrated
+- Plex Media Server Integrated
 
 [SickBeard](http://sickbeard.com)
-- Trakt Integration
+- SABnzbd Integrated
+- Trakt Integrated
+- Plex Media Server Integrated
 
 ToDo
 ===============
