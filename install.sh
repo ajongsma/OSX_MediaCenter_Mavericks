@@ -206,5 +206,6 @@ if [[ $INST_SICKBEARD == "true" ]]; then
   source "$DIR/scripts/install_sickbeard_sabscripts.sh"
   source "$DIR/scripts/install_sabnzbd_sickbeard.sh"
   source "$DIR/scripts/install_sickbeard_pms.sh"
+  source "$DIR/scripts/install_sickbeard_trakttv.sh"
 fi
 
