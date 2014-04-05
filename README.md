@@ -55,6 +55,8 @@ cd OSX_MediaCenter
 
 [CPAN](http://www.cpan.org)
 
+[Cheetah](http://www.cheetahtemplate.org)
+
 #### Utilities
 [iTerm 2](http://www.iterm2.com)
 
