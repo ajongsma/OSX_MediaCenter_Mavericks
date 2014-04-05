@@ -34,7 +34,7 @@ echo "| - Password            : $INST_TRAKT_PW"
 echo "-----------------------------------------------------------"
 echo "| Test, Save"
 echo "-----------------------------------------------------------"
-open http://pooky.local:8082/settings/automation/
+open http://127.0.0.1:8082/settings/automation/
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
