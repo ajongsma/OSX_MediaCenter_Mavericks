@@ -14,8 +14,26 @@ mono --debug NzbDrone/NzbDrone.exe
 
 open http://localhost:8989
 
+echo "-------------"
+echo "Advanced Settings: Enable"
+echo "-------------"
 
+echo "Settings -> Download Client"
+echo "Add -> SABnzbd"
+echo "Name:"
+echo "Enable: Yes"
+echo "Host:"
+echo "Port: $INST_SABNZBD_PORT"
+echo "API:  $INST_SABNZBD_API_KEY"
+echo "UserName: $INST_SABNZBD_USERID"
+echo "Password: $INST_SABNZBD_PW"
+echo "Category: TV"
+echo "-------------"
+echo "Test -> Save"
+echo "-------------"
 
+echo "Drone Factory: $INST_FOLDER_USENET_COMPLETE"
+echo "Drone Factory Interval: 5"
 
 ##### TESTING #####
 exit 1
