@@ -17,12 +17,24 @@ else
     printf "$PRINTF_MASK" "Sickbeard config file detected" "$GREEN" "[OK]" "$RESET"
   else
     printf "$PRINTF_MASK" "Sickbeard config file not detected, creating..." "$GREEN" "[OK]" "$RESET"
-    cp -iv /Applications/Sick-Beard/autoProcessTV/* ~/Library/Application\ Support/SABnzbd/scripts/
-
+    cp -iv ~/Library/Application\ Support/SABnzbd/scripts/autoProcessTV.cfg.sample ~/Library/Application\ Support/SABnzbd/scripts/autoProcessTV.cfg
+    if [ "$?" != "0" ]; then
+      echo -e "${RED}  ============================================== ${RESET}"
+      echo -e "${RED} | ERROR ${RESET}"
+      echo -e "${RED} | Copy failed: ${RESET}"
+      echo -e "${RED} | $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
+      echo -e "${RED} | --- press any key to continue --- ${RESET}"
+      echo -e "${RED}  ============================================== ${RESET}"
+      read -n 1 -s
+      exit 1
+    else
+      printf "$PRINTF_MASK" "autoProcessTV.cfg copied" "$GREEN" "[OK]" "$RESET"
+    fi
+    
     echo "-----------------------------------------------------------"
     echo "| Add the following to [SickBeard]:"
     echo "| host                                    : localhost"
-    echo "| Port                                    : 8081"
+    echo "| Port                                    : $INST_SICKBEARD_PORT"
     echo "| username                                : $INST_SICKBEARD_UID"
     echo "| password                                : $INST_SICKBEARD_PW"
     echo "-----------------------------------------------------------"
@@ -31,11 +43,9 @@ else
     else
       open -a /Applications/TextWrangler.app ~/Library/Application\ Support/SABnzbd/scripts/autoProcessTV.cfg
     fi
-    
     echo -e "${BLUE} --- press any key to continue --- ${RESET}"
     read -n 1 -s
   fi
-
 fi
 
 ##### TESTING #####
