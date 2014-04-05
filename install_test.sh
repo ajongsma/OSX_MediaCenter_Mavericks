@@ -105,4 +105,5 @@ if [[ $INST_SICKBEARD == "true" ]]; then
   source "$DIR/scripts/install_cheetah.sh"
   source "$DIR/scripts/install_sickbeard.sh"
   source "$DIR/scripts/install_sickbeard_sabscripts.sh"
+  source "$DIR/scripts/install_sabnzbd_sickbeard.sh"
 fi
