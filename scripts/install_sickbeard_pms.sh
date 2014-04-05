@@ -18,4 +18,4 @@ open http://pooky.local:8081/config/notifications/
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
-printf "$PRINTF_MASK" "-> Configuring SABnzbd to SickBeard - Complete" "$GREEN" "[OK]" "$RESET"
+printf "$PRINTF_MASK" "-> Configuring SickBeard to Plex Media Server - Complete" "$GREEN" "[OK]" "$RESET"
