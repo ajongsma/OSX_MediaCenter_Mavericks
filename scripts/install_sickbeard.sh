@@ -4,9 +4,9 @@ source config.sh
 function check_config_defaults() {
   if [[ -z $INST_SICKBEARD_UID ]] || [[ -z $INST_SICKBEARD_PW ]] || [[ -z $INST_SICKBEARD_PORT ]]; then
     printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
-    echo "| username          : $INST_SICKBEARD_UID"
-    echo "| password          : $INST_SICKBEARD_PW"
-    echo "| port              : $INST_SICKBEARD_PORT"
+    echo "| SickBeard username: INST_SICKBEARD_UID"
+    echo "| SickBeard password: INST_SICKBEARD_PW"
+    echo "| SickBeard port    : INST_SICKBEARD_PORT"
     if [ ! -d /Applications/TextWrangler.app ]; then
       pico config.sh
     else
@@ -20,12 +20,48 @@ function check_config_defaults() {
     done
     printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
   fi
+  
+  if [[ -z $INST_SABNZBD_UID ]] || [[ -z $INST_SABNZBD_PW ]] || [[ -z $INST_SABNZBD_KEY_API ]]; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| SABNzbd username  : INST_SABNZBD_UID"
+    echo "| SABnzbd password  : INST_SABNZBD_PW"
+    echo "| SABnzbd API Key   : INST_SABNZBD_KEY_API"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_SABNZBD_UID == "" ]] || [[ $INST_SABNZBD_PW == "" ]] || [[ $INST_SABNZBD_KEY_API == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  fi
+  
+  if [[ -z $INST_NEWSSERVER_RETENTION ]]; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| Newsserver Retention          : INST_NEWSSERVER_RETENTION"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_NEWSSERVER_RETENTION == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  fi
 }
 
 function check_config_var() {
   if [[ -z $INST_SICKBEARD_KEY_API ]] ; then
     printf 'SickBeard API key was not detected in config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
-    echo "| API               : $INST_SICKBEARD_KEY_API "
+    echo "| API               : INST_SICKBEARD_KEY_API "
     if [ ! -d /Applications/TextWrangler.app ]; then
       pico config.sh
     else
@@ -77,14 +113,90 @@ else
   sudo chown -R `whoami`:wheel /Applications/Sick-Beard/
   cd Sick-Beard
   #?? python /Applications/Sick-Beard/CouchPotato.py sickbeard.py  -d -q
+  #python /Applications/Sick-Beard/sickbeard.py
   
   osascript -e 'tell app "Terminal"
       do script "python /Applications/Sick-Beard/sickbeard.py"
   end tell'
   
+  echo "-----------------------------------------------------------"
+  echo "| Config, General:"
+  echo "| Launch Browser    : disable"
+  echo "| User Name         : $INST_SICKBEARD_UID"
+  echo "| Password          : $INST_SICKBEARD_PW"
+  echo "| Enable API        : enable"
+  echo "| Enable API        : Generate"
+  echo "-----------------------------------------------------------"
+  echo "| Save Changes"
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
   
+  echo "-----------------------------------------------------------"
+  echo "| >> Copy the generated API key into $DIR/config.sh <<"
+  echo "-----------------------------------------------------------"
+  source config.sh
+  if [[ -z $INST_SICKBEARD_KEY_API ]]; then
+    echo "-----------------------------------------------------------"
+    echo "| Add the Sickbeard API key to config.sh"
+    echo "| API Key                              : INST_SICKBEARD_KEY_API=<paste value>"
+    echo "-----------------------------------------------------------"
+    #open http://localhost/newznab/admin/site-edit.php
+    http://localhost:8081/config/general/
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    
+    printf 'Waiting for Sick-Beard API key to be added to config.sh...\n' "$YELLOW" $col '[WAIT]' "$RESET"
+    while ( [[ -z $INST_SICKBEARD_KEY_API ]])
+    do
+      printf '.'
+      sleep 3
+      source config.sh
+    done
+    printf '.\n' "$GREEN" $col '[OK]' "$RESET"
+  fi
   
-  
+  echo "| Config, Search Settings, NZB Search:"
+  echo "| Search Frequency  : 15"
+  echo "| Usenet Retention  : $INST_NEWSSERVER_RETENTION"
+  echo "| Search NZB        : enable"
+  echo "| NZBMethod         : SABnzbd"
+  echo "| SABnzbd URL       : http://localhost:8080"
+  echo "| SABnzbd Username  : $INST_SABNZBD_UID"
+  echo "| SABnzbd Password  : $INST_SABNZBD_PW"
+  echo "| SABnzbd API Key   : $INST_SABNZBD_KEY_API"
+  echo "| SABnzbd Category  : tv"
+  echo "|-------------------"
+  echo "| Test and Save Changes"
+  echo "-----------------------------------------------------------"
+  echo "| Config, Search Providers"
+  echo "| Sick Beard Index  : Enable"
+  echo "|-------------------"
+  echo "| Save Changes"
+  echo "-----------------------------------------------------------"
+  echo "| Config, Post Processing"
+  echo "| Keep original files : Uncheck"
+  echo "| Name Pattern        : Custom"
+  echo "|                     : Season %0S/%SN S%0SE%0E %QN-%RG"
+  echo "| Multi-Episode       : Extend"
+  echo "|-------------------"
+  echo "| Save Changes"
+  echo "-----------------------------------------------------------"
+  echo "| Home, Add Show"
+  echo "| - Add Existing Show"
+  echo "|   - New"
+  echo "| Choose Directory    : $INST_FOLDER_SERIES_COMPLETE"
+  echo "|-------------------"
+  echo "| Submit"
+  echo "-----------------------------------------------------------"
+  open http://localhost:8081
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+
+  sudo cp /Applications/Sick-Beard/autoProcessTV/* ~/Library/Application\ Support/SABnzbd/scripts/
 fi
 
 
@@ -101,79 +213,7 @@ echo "#-------------------------------------------------------------------------
 
 
 
-#python /Applications/Sick-Beard/sickbeard.py
 
-echo "-----------------------------------------------------------"
-echo "| Config, General:"
-echo "| Launch Browser    : disable"
-echo "| User Name         : $INST_SICKBEARD_UID"
-echo "| Password          : $INST_SICKBEARD_PW"
-echo "| Enable API        : enable"
-echo "| Enable API        : Generate"
-echo "|-------------------"
-echo "| Save Changes"
-echo "-----------------------------------------------------------"
-echo "| >> Copy the generated API key into $DIR/config.sh <<"
-echo "-----------------------------------------------------------"
-echo "| Config, Search Settings, NZB Search:"
-echo "| Search Frequency  : 15"
-echo "| Usenet Retention  : $INST_NEWSSERVER_RETENTION"
-echo "| Search NZB        : enable"
-echo "| NZBMethod         : SABnzbd"
-echo "| SABnzbd URL       : http://localhost:8080"
-echo "| SABnzbd Username  : $INST_SABNZBD_UID"
-echo "| SABnzbd Password  : $INST_SABNZBD_PW"
-echo "| SABnzbd API Key   : $INST_SABNZBD_KEY_API"
-echo "| SABnzbd Category  : tv"
-echo "|-------------------"
-echo "| Test and Save Changes"
-echo "-----------------------------------------------------------"
-echo "| Config, Search Providers"
-echo "| Sick Beard Index  : Enable"
-echo "|-------------------"
-echo "| Save Changes"
-echo "-----------------------------------------------------------"
-echo "| Config, Post Processing"
-echo "| Keep original files : Uncheck"
-echo "| Name Pattern        : Custom"
-echo "|                     : Season %0S/%SN S%0SE%0E %QN-%RG"
-echo "| Multi-Episode       : Extend"
-echo "|-------------------"
-echo "| Save Changes"
-echo "-----------------------------------------------------------"
-echo "| Home, Add Show"
-echo "| - Add Existing Show"
-echo "|   - New"
-echo "| Choose Directory    : $INST_FOLDER_SERIES_COMPLETE"
-echo "|-------------------"
-echo "| Submit"
-echo "-----------------------------------------------------------"
-open http://localhost:8081
-echo -e "${BLUE} --- press any key to continue --- ${RESET}"
-read -n 1 -s
-
-source ../config.sh
-#if [[ $INST_SABNZBD_KEY_API == "" ]] || [[ $INST_SABNZBD_KEY_NZB == "" ]]; then
-if [[ -z $INST_SICKBEARD_KEY_API ]]; then
-    echo "-----------------------------------------------------------"
-    echo "| API:"
-    echo "| Please add the Sickbeard API key to config.sh"
-    echo "| API Key                              : INST_SICKBEARD_KEY_API=<paste value>"
-    echo "-----------------------------------------------------------"
-    #open http://localhost/newznab/admin/site-edit.php
-    http://localhost:8081/config/general/
-    subl ../config.sh
-
-    while ( [[ -z $INST_SICKBEARD_KEY_API ]])
-    do
-        printf 'Waiting for Sick-Beard API key to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
-        sleep 3
-        source ../config.sh
-    done
-fi
-
-
-sudo cp /Applications/Sick-Beard/autoProcessTV/* ~/Library/Application\ Support/SABnzbd/scripts/
 
 ###
 #autoProcessTV.cfg.sample
