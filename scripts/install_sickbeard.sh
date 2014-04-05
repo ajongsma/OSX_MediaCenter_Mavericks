@@ -94,11 +94,11 @@ function check_config_var() {
 ### ----------------------------------------
 
 if [ -d /Applications/Sick-Beard/ ] ; then
-  printf "$PRINTF_MASK" "-> SickBeard detected\n" "$GREEN" "[OK]" "$RESET"
+  printf "$PRINTF_MASK" "-> SickBeard detected" "$GREEN" "[OK]" "$RESET"
   check_config_defaults
   check_config_var
 else
-  printf "$PRINTF_MASK" "-> SickBeard not detected, installing...\n" "$YELLOW" "[WAIT]" "$RESET"
+  printf "$PRINTF_MASK" "-> SickBeard not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
   check_config_defaults
   
   if [ -d $INST_FOLDER_SERIES_COMPLETE ] ; then
@@ -108,14 +108,14 @@ else
     mkdir -p $INST_FOLDER_SERIES_COMPLETE
   fi
   if [ -d ~/Library/Application\ Support/SABnzbd/scripts/ ] ; then
-    printf "$PRINTF_MASK" "~/Library/Application\ Support/SABnzbd/scripts/ exists\n" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" "~/Library/Application\ Support/SABnzbd/scripts/ exists" "$GREEN" "[OK]" "$RESET"
   else
-    printf "$PRINTF_MASK" "~/Library/Application\ Support/SABnzbd/scripts/ doesn't exists, creating...\n" "$YELLOW" "[WAIT]" "$RESET"
+    printf "$PRINTF_MASK" "~/Library/Application\ Support/SABnzbd/scripts/ doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
     mkdir -p ~/Library/Application\ Support/SABnzbd/scripts/
   fi
 
   if [ ! -e /usr/local/bin/cheetah ] ; then
-    printf 'Cheetah not installed, error\n' "$RED" $col '[FAIL]' "$RESET"
+    printf 'Cheetah not installed, error' "$RED" $col '[FAIL]' "$RESET"
     echo -e "${BLUE} --- press any key to continue --- ${RESET}"
     read -n 1 -s
     exit 1
@@ -261,22 +261,6 @@ else
   fi
 fi
 
-
-
-
-
-##### TESTING #####
-exit 0
-##### TESTING #####
-
-echo "#------------------------------------------------------------------------------"
-echo "# Installing Sick-Beard"
-echo "#------------------------------------------------------------------------------"
-
-
-
-
-
 ###
 #autoProcessTV.cfg.sample
 #autoProcessTV.py
@@ -323,10 +307,3 @@ echo "#-------------------------------------------------------------------------
 
 #sudo python /Applications/Sick-Beard/sickbeard.py –d
 #sudo python /Applications/Sick-Beard/sickbeard.py -q --nolaunch
-
-
-
-
-echo "#------------------------------------------------------------------------------"
-echo "# Installing Sick-Beard - Complete"
-echo "#------------------------------------------------------------------------------"
