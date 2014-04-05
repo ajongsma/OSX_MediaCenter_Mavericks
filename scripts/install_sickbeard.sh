@@ -107,7 +107,13 @@ else
     printf "$PRINTF_MASK" $INST_FOLDER_SERIES_COMPLETE" doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
     mkdir -p $INST_FOLDER_SERIES_COMPLETE
   fi
-  
+  if [ -d ~/Library/Application\ Support/SABnzbd/scripts/ ] ; then
+    printf "$PRINTF_MASK" "~/Library/Application\ Support/SABnzbd/scripts/ exists" "$GREEN" "[OK]" "$RESET"
+  else
+    printf "$PRINTF_MASK" "~/Library/Application\ Support/SABnzbd/scripts/ doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    mkdir -p ~/Library/Application\ Support/SABnzbd/scripts/
+  fi
+
   cd /Applications
   sudo git clone git://github.com/midgetspy/Sick-Beard.git
   sudo chown -R `whoami`:wheel /Applications/Sick-Beard/
@@ -197,6 +203,39 @@ else
   read -n 1 -s
 
   sudo cp /Applications/Sick-Beard/autoProcessTV/* ~/Library/Application\ Support/SABnzbd/scripts/
+  
+  INST_FILE_LAUNCHAGENT="com.sickbeard.sickbeard.plist"
+  if [ -f $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
+    printf 'LaunchAgent found' "$GREEN" $col '[OK]' "$RESET"
+  
+  else
+    printf 'LaunchAgent not found, installing...' "$YELLOW" $col '[WAIT]' "$RESET"
+  
+    if [ -f $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
+        echo "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT"
+        cp $DIR/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
+        if [ "$?" != "0" ]; then
+            echo -e "${RED}  ============================================== ${RESET}"
+            echo -e "${RED} | ERROR ${RESET}"
+            echo -e "${RED} | Copy failed: ${RESET}"
+            echo -e "${RED} | $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
+            echo -e "${RED} | --- press any key to continue --- ${RESET}"
+            echo -e "${RED}  ============================================== ${RESET}"
+            read -n 1 -s
+            exit 1
+        fi
+    else
+        echo -e "${RED}  ============================================== ${RESET}"
+        echo -e "${RED} | ERROR ${RESET}"
+        echo -e "${RED} | LaunchAgent file not found: ${RESET}"
+        echo -e "${RED} | $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
+        echo -e "${RED} | --- press any key to continue --- ${RESET}"
+        echo -e "${RED}  ============================================== ${RESET}"
+        read -n 1 -s
+        sudo mv /tmp/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
+    fi
+    launchctl load ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
+  fi
 fi
 
 
@@ -262,31 +301,7 @@ echo "#-------------------------------------------------------------------------
 #sudo python /Applications/Sick-Beard/sickbeard.py –d
 #sudo python /Applications/Sick-Beard/sickbeard.py -q --nolaunch
 
-INST_FILE_LAUNCHAGENT="com.sickbeard.sickbeard.plist"
-if [ -f $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
-    echo "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT"
-    cp $DIR/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
-    if [ "$?" != "0" ]; then
-        echo -e "${RED}  ============================================== ${RESET}"
-        echo -e "${RED} | ERROR ${RESET}"
-        echo -e "${RED} | Copy failed: ${RESET}"
-        echo -e "${RED} | $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
-        echo -e "${RED} | --- press any key to continue --- ${RESET}"
-        echo -e "${RED}  ============================================== ${RESET}"
-        read -n 1 -s
-        exit 1
-    fi
-else
-    echo -e "${RED}  ============================================== ${RESET}"
-    echo -e "${RED} | ERROR ${RESET}"
-    echo -e "${RED} | LaunchAgent file not found: ${RESET}"
-    echo -e "${RED} | $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
-    echo -e "${RED} | --- press any key to continue --- ${RESET}"
-    echo -e "${RED}  ============================================== ${RESET}"
-    read -n 1 -s
-    sudo mv /tmp/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
-fi
-launchctl load ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
+
 
 
 echo "#------------------------------------------------------------------------------"
