@@ -157,7 +157,7 @@ else
     echo "| API Key                              : INST_SICKBEARD_KEY_API=<paste value>"
     echo "-----------------------------------------------------------"
     #open http://localhost/newznab/admin/site-edit.php
-    http://localhost:8081/config/general/
+    open http://localhost:8081/config/general/
     if [ ! -d /Applications/TextWrangler.app ]; then
       pico config.sh
     else
