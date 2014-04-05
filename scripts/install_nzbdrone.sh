@@ -34,6 +34,13 @@ echo "-------------"
 
 echo "Drone Factory: $INST_FOLDER_USENET_COMPLETE"
 echo "Drone Factory Interval: 5"
+echo "-------------"
+echo "Save"
+echo "-------------"
+
+
+
+
 
 ##### TESTING #####
 exit 1
