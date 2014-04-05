@@ -175,9 +175,11 @@ else
   fi
   
   echo "-----------------------------------------------------------"
-  echo "| Config, Search Settings, NZB Search:"
-  echo "| Search Frequency  : 15"
+  echo "| Config, Search Settings"
+  echo "| Episode Search:"
+  echo "| Search Frequency  : 40"
   echo "| Usenet Retention  : $INST_NEWSSERVER_RETENTION"
+  echo "| Ignored Words     : german,french,core2hd,swedish,480p"
   echo "| Search NZB        : enable"
   echo "| NZBMethod         : SABnzbd"
   echo "| SABnzbd URL       : http://localhost:8080"
