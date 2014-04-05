@@ -126,14 +126,14 @@ else
   cd /Applications
   sudo git clone git://github.com/midgetspy/Sick-Beard.git
   sudo chown -R `whoami`:wheel /Applications/Sick-Beard/
-  cd Sick-Beard
+  cd $DIR
+  
   #?? python /Applications/Sick-Beard/CouchPotato.py sickbeard.py  -d -q
   #python /Applications/Sick-Beard/sickbeard.py
-  
   osascript -e 'tell app "Terminal"
       do script "python /Applications/Sick-Beard/sickbeard.py"
   end tell'
-  
+
   echo "-----------------------------------------------------------"
   echo "| Config, General:"
   echo "| Launch Browser    : disable"
