@@ -237,7 +237,7 @@ else
   INST_FILE_LAUNCHAGENT="com.sickbeard.sickbeard.plist"
   if [ -f ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT ] ; then
     printf 'LaunchAgent found\n' "$GREEN" $col '[OK]' "$RESET"
-  
+
   else
     printf 'LaunchAgent not found, installing...\n' "$YELLOW" $col '[WAIT]' "$RESET"
   
