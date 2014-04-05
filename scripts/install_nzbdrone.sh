@@ -18,6 +18,7 @@ echo "-------------"
 echo "Advanced Settings: Enable"
 echo "-------------"
 
+echo "-------------"
 echo "Settings -> Download Client"
 echo "Add -> SABnzbd"
 echo "Name:"
@@ -38,7 +39,12 @@ echo "-------------"
 echo "Save"
 echo "-------------"
 
-
+echo "-------------"
+echo "Settings -> Indexers"
+echo "Add"
+echo "Name: NZBPlanet"
+echo "URL: http://nzbplanet.net"
+echo "API: <http://nzbplanet.net/profile>"
 
 
 
