@@ -15,6 +15,7 @@ INST_OSX_UPDATES="false"
 ENABLE_LIBRARY_UNHIDE="true"
 ENABLE_MOUSE_TAPTOCLICK="true"
 
+
 #-----------------------------------------------------------
 ## Generic Folders locations
 INST_FOLDER_USENET_WATCH="$HOME/Downloads/Usenet/Watch"
@@ -27,10 +28,12 @@ INST_FOLDER_MUSIC_COMPLETE="$HOME/Music"
 #INST_APACHE_SYSTEM_WEB_ROOT='/Library/WebServer/Documents/'
 INST_APACHE_SYSTEM_WEB_ROOT="/Library/Server/Web/Data/Sites/Default"
 
-
 # ===========================================================
 # | INSTALLS                                                |
 # ===========================================================
+## Install Homebrew (http://brew.sh)
+INSTALL_HOMEBREW="true"
+
 ## Install XLog (https://itunes.apple.com/nl/app/xlog/id430304898?l=en&mt=12) - (true/false)
 INSTALL_XLOG="true"
 
