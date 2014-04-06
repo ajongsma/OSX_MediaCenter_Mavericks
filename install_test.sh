@@ -102,10 +102,5 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Install testing launcher
 #------------------------------------------------------------------------------
 if [[ $INST_SICKBEARD == "true" ]]; then
-  source "$DIR/scripts/install_cheetah.sh"
-  source "$DIR/scripts/install_sickbeard.sh"
-  source "$DIR/scripts/install_sickbeard_sabscripts.sh"
-  source "$DIR/scripts/install_sabnzbd_sickbeard.sh"
-  source "$DIR/scripts/install_sickbeard_pms.sh"
-  source "$DIR/scripts/install_sickbeard_trakttv.sh"
+  source "$DIR/scripts/osx_homebrew.sh"
 fi
