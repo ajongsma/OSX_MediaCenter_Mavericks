@@ -8,7 +8,12 @@ if [ ! -e /usr/local/bin/brew ] ; then
   exit 1
 fi
 
-brew install hg
+if [ ! -e /usr/local/bin/hg ] ; then
+  printf "$PRINTF_MASK" "HG not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+  brew install hg
+else
+  printf "$PRINTF_MASK" "HG detected" "$GREEN" "[OK]" "$RESET"
+fi
 
 
 ##### TESTING #####
