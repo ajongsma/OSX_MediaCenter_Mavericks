@@ -90,6 +90,9 @@ cd OSX_MediaCenter
 - Trakt Integrated
 - Plex Media Server Integrated
 
+[Auto-Sub Bootstrap Bill](https://code.google.com/p/autosub-bootstrapbill)
+
+
 ToDo
 ===============
 
@@ -97,12 +100,6 @@ Plex Unsupported (as in totally unofficial) Appstore
 https://forums.plex.tv/index.php/topic/25523-unsupported-as-in-totally-unofficial-appstore/
 https://github.com/mikedm139/UnSupportedAppstore.bundle
 ~/Library/Application Support/Plex Media Server/Plug-ins
-
-
-
-Auto-Sub Bootstrap Bill
-http://gathering.tweakers.net/forum/list_messages/1572892/0
-https://code.google.com/p/autosub-bootstrapbill/
 
 SpotWEB
 http://gathering.tweakers.net/forum/list_messages/1478602
