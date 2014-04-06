@@ -60,7 +60,7 @@ else
     fi
     launchctl load ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
   else
-    printf "$PRINTF_MASK" "Launch Agent detected" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" "Launch Agent $INST_FILE_LAUNCHAGENT detected" "$GREEN" "[OK]" "$RESET"
   fi
 
   cd $DIR
