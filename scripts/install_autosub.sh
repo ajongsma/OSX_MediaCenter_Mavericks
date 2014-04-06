@@ -66,20 +66,3 @@ else
   cd $DIR
   printf "$PRINTF_MASK" "Auto-Sub installed" "$GREEN" "[OK]" "$RESET"
 fi
-
-##### TESTING #####
-exit 0
-##### TESTING #####
-
-#AutoSub.py  ExamplePostProcess.py  README.txt  autosub changelog.xml  cherrypy  init.ubuntu  interface  library
-
-#echo "Download latest Auto-Sub from http://code.google.com/p/auto-sub/"
-#open http://code.google.com/p/auto-sub/downloads/list
-#
-#while ( [ ! -e ~/Downloads/auto-sub ] )
-#do
-#    printf 'Waiting for Auto-Sub to be downloaded…\n' "YELLOW" $col '[WAIT]' "$RESET"
-#    sleep 15
-#done
-#sleep 3
-#sudo mv ~/Downloads/auto-sub /Applications/
