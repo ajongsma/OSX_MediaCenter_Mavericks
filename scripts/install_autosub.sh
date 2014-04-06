@@ -8,19 +8,28 @@ if [ ! -e /usr/local/bin/brew ] ; then
   exit 1
 fi
 
-if [ ! -e /usr/local/bin/hg ] ; then
+if [ -e /usr/local/bin/hg ] ; then
+  printf "$PRINTF_MASK" "HG detected" "$GREEN" "[OK]" "$RESET"
+else
   printf "$PRINTF_MASK" "HG not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
   brew install hg
-else
-  printf "$PRINTF_MASK" "HG detected" "$GREEN" "[OK]" "$RESET"
 fi
+
+if [ -d /Applications/auto-sub ] ; then
+  printf "$PRINTF_MASK" "Auto-Sub detected" "$GREEN" "[OK]" "$RESET"
+else
+  printf "$PRINTF_MASK" "Auto-Sub not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+fi
+
 
 
 ##### TESTING #####
 exit 0
 ##### TESTING #####
 
-
+cd /Applications
+hg clone https://code.google.com/p/auto-sub/
+sudo chown `whoami`:wheel -R /Applications/auto-sub
 
 
 
@@ -40,9 +49,7 @@ echo "#-------------------------------------------------------------------------
 #sleep 3
 #sudo mv ~/Downloads/auto-sub /Applications/
 
-cd /Applications
-hg clone https://code.google.com/p/auto-sub/
-sudo chown `whoami`:wheel -R /Applications/auto-sub
+
 
 echo "-----------------------------------------------------------"
 echo "| Click main menu item Config (niet sub-menu item(s)), General:"
