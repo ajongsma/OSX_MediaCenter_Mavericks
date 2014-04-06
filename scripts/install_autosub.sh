@@ -22,6 +22,7 @@ else
   cd /Applications
   hg clone https://code.google.com/p/auto-sub/
   sudo chown `whoami`:wheel -R /Applications/auto-sub
+  cd /Applications/auto-sub
   
   echo "-----------------------------------------------------------"
   echo "| Click main menu item Config (niet sub-menu item(s)), General:"
