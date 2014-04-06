@@ -101,6 +101,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #------------------------------------------------------------------------------
 # Install testing launcher
 #------------------------------------------------------------------------------
-if [[ $INST_SICKBEARD == "true" ]]; then
-  source "$DIR/scripts/osx_homebrew.sh"
+if [[ $INST_AUTOSUB == "true" ]]; then
+  source "$DIR/scripts/install_autosub.sh"
 fi
