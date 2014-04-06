@@ -45,7 +45,7 @@ else
   read -n 1 -s
 
   INST_FILE_LAUNCHAGENT="com.autosub.autosub.plist"
-  if [ -f ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT ] ; then
+  if [ ! -f ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT ] ; then
     printf "$PRINTF_MASK" "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$YELLOW" "[WAIT]" "$RESET"
     cp $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
     if [ "$?" != "0" ]; then
