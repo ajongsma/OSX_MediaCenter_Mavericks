@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 source config.sh
 
+## https://code.google.com/p/autosub-bootstrapbill
+## http://gathering.tweakers.net/forum/list_messages/1572892/22
+
 if [ ! -e /usr/local/bin/brew ] ; then
   printf "$PRINTF_MASK" "Homebrew not detected" "$RED" "[ERR]" "$RESET"
   read -n 1 -s
