@@ -2,7 +2,8 @@
 
 source config.sh
  
-if ! which brew &>/dev/null; then
+#if ! which brew &>/dev/null; then
+if [ -e /usr/local/bin/brew ] ; then
  printf "$PRINTF_MASK" "Homebrew detected" "$GREEN" "[OK]" "$RESET"
 else
   printf "$PRINTF_MASK" "Homebrew not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
