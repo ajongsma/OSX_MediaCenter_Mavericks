@@ -83,6 +83,19 @@ INST_AUTOSUB="true"
 # | SETTINGS                                                |
 # ===========================================================
 # -----------------------------------------------------------
+# | Website OZNZB (see https://www.oznzb.com/profile)
+# -----------------------------------------------------------
+INST_OZNZB_UID=""
+INST_OZNZB_PW=""
+INST_OZNZB_API=""
+
+# -----------------------------------------------------------
+# | Website Addic7ed (see https://www.oznzb.com/profile)
+# -----------------------------------------------------------
+INST_ADDIC7ED_UID=""
+INST_ADDIC7ED_PW=""
+
+# -----------------------------------------------------------
 # | News Server Provider
 # -----------------------------------------------------------
 INST_NEWSSERVER_NAME='XsNews'
@@ -108,21 +121,19 @@ INST_NEWZNAB_KEY_API_COUCHPOTATO=""
 INST_NEWZNAB_KEY_API_HEADPHONES=""
 
 # -----------------------------------------------------------
-# | OZNZB (see https://www.oznzb.com/profile)
-# -----------------------------------------------------------
-INST_OZNZB_API=""
-
-# -----------------------------------------------------------
 # | SpotWeb
 # -----------------------------------------------------------
 INST_SPOTWEB_PATH="/Users/Spotweb/Sites/spotweb"
 INST_SPOTWEB_UID="spotweb"
-INST_SPOTWEB_PSQL_DB="spotweb_db"
-INST_SPOTWEB_PSQL_UID="spotweb_usr"
-INST_SPOTWEB_PSQL_PW="mini"
+INST_SPOTWEB_PW="mini"
+#INST_SPOTWEB_PSQL_DB="spotweb_db"
+#INST_SPOTWEB_PSQL_UID="spotweb_usr"
+#INST_SPOTWEB_PSQL_PW="mini"
+INST_SPOTWEB_MYSQL_DB="spotweb_db"
+INST_SPOTWEB_MYSQL_UID="spotweb_usr"
+INST_SPOTWEB_MYSQL_PW="mini"
 INST_SPOTWEB_KEY_API_SICKBEARD=""
 INST_SPOTWEB_KEY_API_COUCHPOTATO=""
-#INST_SPOTWEB_KEY_API_HEADPHONES=""
 
 # -----------------------------------------------------------
 # | SABnzbd
@@ -166,8 +177,6 @@ INST_PLEXWATCH_PATH="/Users/Plex"
 # | PlexWatch/Web
 # -----------------------------------------------------------
 INST_PLEXWATCHWEB_PATH="/Users/Plex"
-
-
 
 
 ############################################################
