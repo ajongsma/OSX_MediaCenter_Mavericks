@@ -219,3 +219,9 @@ if [[ $INST_SICKBEARD == "true" ]]; then
   source "$DIR/scripts/install_sickbeard_trakttv.sh"
 fi
 
+#------------------------------------------------------------------------------
+# Install Auto-Sub
+#------------------------------------------------------------------------------
+if [[ $INST_AUTOSUB == "true" ]]; then
+  source "$DIR/scripts/install_autosub.sh"
+fi
