@@ -3,17 +3,60 @@ source config.sh
 
 ## http://gathering.tweakers.net/forum/list_messages/1478602
 
-# INST_SPOTWEB_PATH="/Users/Spotweb/Sites/spotweb"
-# INST_SPOTWEB_UID="spotweb"
 # INST_SPOTWEB_PSQL_DB="spotweb_db"
 # INST_SPOTWEB_PSQL_UID="spotweb_usr"
 # INST_SPOTWEB_PSQL_PW="mini"
-# INST_SPOTWEB_KEY_API_SICKBEARD=""
-# INST_SPOTWEB_KEY_API_COUCHPOTATO=""
+
 #
 # INST_APACHE_SYSTEM_WEB_ROOT="/Library/Server/Web/Data/Sites/Default"
 
+function check_config_defaults() {
+  if [[ -z $INST_SPOTWEB_UID ]] || [[ -z $INST_SPOTWEB_PW ]] || [[ -z $INST_SPOTWEB_PATH ]]; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| Spotweb Username            : $INST_SPOTWEB_UID"
+    echo "| Spotweb Password            : $INST_SPOTWEB_PW"
+    echo "| Spotweb Path                : $INST_SPOTWEB_PATH"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_SPOTWEB_UID == "" ]] || [[ $INST_SPOTWEB_PW == "" ]] || [[ $INST_SPOTWEB_PATH == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  fi
+}
 
+function check_config_var() {
+  if [[ -z $INST_SPOTWEB_KEY_API_SICKBEARD ]] || [[ -z $INST_SPOTWEB_KEY_API_COUCHPOTATO ]] ; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| Spotweb Sickbeard API Key   : $INST_SPOTWEB_KEY_API_SICKBEARD"
+    echo "| Spotweb CouchPotati API Key : $INST_SPOTWEB_KEY_API_COUCHPOTATO"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_SPOTWEB_KEY_API_SICKBEARD == "" ]] || [[ $INST_SPOTWEB_KEY_API_COUCHPOTATO == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  fi
+}
+
+if [ -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
+  printf "$PRINTF_MASK" "-> Spotweb detected" "$GREEN" "[OK]" "$RESET"
+  #check_config_defaults
+  #check_config_var
+else
+fi
 
 
 
