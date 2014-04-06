@@ -65,7 +65,7 @@ else
   echo "| Username            : <UserID Addic7ted>"
   echo "| Password            : <Password Addic7ted>"
   echo "-----------------------------------------------------------"
-  echo "| Save Changes"
+  echo "| Test Addic7ed, Save Changes"
   echo "-----------------------------------------------------------"
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
