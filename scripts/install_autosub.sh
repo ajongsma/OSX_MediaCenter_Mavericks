@@ -20,7 +20,7 @@ else
   fi
   
   cd /Applications
-  hg clone https://code.google.com/p/autosub-bootstrapbill/
+  hg clone https://code.google.com/p/autosub-bootstrapbill/ /Applications/auto-sub
   sudo chown `whoami`:wheel -R /Applications/auto-sub
   #cd /Applications/auto-sub
   
