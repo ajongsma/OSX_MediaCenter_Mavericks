@@ -58,6 +58,8 @@ cd OSX_MediaCenter
 [Cheetah](http://www.cheetahtemplate.org)
 
 #### Utilities
+[Homebrew](http://brew.sh)
+
 [iTerm 2](http://www.iterm2.com)
 
 [Xlog](https://itunes.apple.com/us/app/xlog/id430304898?mt=12&ign-mpt=uo%3D4)
