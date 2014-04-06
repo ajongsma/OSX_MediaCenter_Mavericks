@@ -75,6 +75,10 @@ INST_COUCHPOTATO="true"
 ## Install SickBeard (http://sickbeard.com) - (true/false)
 INST_SICKBEARD="true"
 
+## Install AutoSub (https://code.google.com/p/autosub-bootstrapbill/source/checkout) - (true/false)
+INST_AUTOSUB="true"
+
+
 # ===========================================================
 # | SETTINGS                                                |
 # ===========================================================
@@ -163,6 +167,10 @@ INST_PLEXWATCH_PATH="/Users/Plex"
 # -----------------------------------------------------------
 INST_PLEXWATCHWEB_PATH="/Users/Plex"
 
+# -----------------------------------------------------------
+# | Auto-Sub
+# -----------------------------------------------------------
+INST_AUTOSUB_PATH="/Users/Autosub"
 
 ############################################################
 
