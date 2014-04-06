@@ -114,6 +114,14 @@ if [[ $ENABLE_MOUSE_TAPTOCLICK == "true" ]]; then
 fi
 
 #------------------------------------------------------------------------------
+# Install HomeBrew
+#------------------------------------------------------------------------------
+if [[ $INSTALL_HOMEBREW == "true" ]]; then
+  source "$DIR/scripts/osx_homebrew.sh"
+fi
+
+
+#------------------------------------------------------------------------------
 # Checking existence directories
 #------------------------------------------------------------------------------
 source "$DIR/scripts/osx_folders_usenet.sh"
