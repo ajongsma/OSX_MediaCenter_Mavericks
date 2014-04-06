@@ -22,7 +22,7 @@ else
   cd /Applications
   hg clone https://code.google.com/p/auto-sub/
   sudo chown `whoami`:wheel -R /Applications/auto-sub
-  cd /Applications/auto-sub
+  #cd /Applications/auto-sub
   
   echo "-----------------------------------------------------------"
   echo "| Click main menu item Config (niet sub-menu item(s)), General:"
@@ -38,7 +38,7 @@ else
   echo "| Save"
   echo "-----------------------------------------------------------"
   osascript -e 'tell app "Terminal"
-      do script "python /Applications/auto-sub/AutoSub.py"
+      do script "cd /Applications/auto-sub && python /Applications/auto-sub/AutoSub.py"
   end tell'
   #sudo python /Applications/auto-sub/AutoSub.py
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
