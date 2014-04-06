@@ -43,12 +43,11 @@ else
   #sudo python /Applications/auto-sub/AutoSub.py
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
-  
-  
+
   INST_FILE_LAUNCHAGENT="com.autosub.autosub.plist"
   if [ -f ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT ] ; then
     printf "$PRINTF_MASK" "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$YELLOW" "[WAIT]" "$RESET"
-    cp $DIR/launchctl/config/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
+    cp $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
     if [ "$?" != "0" ]; then
       echo -e "${RED}  ============================================== ${RESET}"
       echo -e "${RED} | ERROR ${RESET}"
