@@ -183,7 +183,7 @@ INST_PLEXWATCHWEB_PATH="/Users/Plex"
 
 ## By using this script you understand that the programmer is not responsible for any loss of data, users, or sanity.
 ## You also agree that you were smart enough to make a backup of your database and files. Do you agree? yes/no
-AGREED="yes"
+AGREED="no"
 
 ##############################################################
 ######################## END OF EDITS ########################
