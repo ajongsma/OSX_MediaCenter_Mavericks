@@ -123,7 +123,7 @@ INST_NEWZNAB_KEY_API_HEADPHONES=""
 # -----------------------------------------------------------
 # | SpotWeb
 # -----------------------------------------------------------
-INST_SPOTWEB_PATH="/Users/Spotweb/Sites/spotweb"
+INST_SPOTWEB_PATH="/Users/Spotweb/Sites"
 INST_SPOTWEB_UID="spotweb"
 INST_SPOTWEB_PW="mini"
 #INST_SPOTWEB_PSQL_DB="spotweb_db"
