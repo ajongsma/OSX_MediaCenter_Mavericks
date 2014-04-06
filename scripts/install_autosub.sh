@@ -4,6 +4,8 @@ source config.sh
 
 if [ ! -e /usr/local/bin/brew ] ; then
   printf "$PRINTF_MASK" "Homebrew not detected" "$RED" "[ERR]" "$RESET"
+  read -n 1 -s
+  exit 1
 fi
 
 
