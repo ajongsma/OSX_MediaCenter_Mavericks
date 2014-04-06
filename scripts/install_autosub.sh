@@ -7,7 +7,7 @@ if [ ! -e /usr/local/bin/brew ] ; then
   exit 1
 fi
 
-if [ -d /Applications/auto-sub ] ; then
+if [ ! -d /Applications/auto-sub ] ; then
   printf "$PRINTF_MASK" "Auto-Sub detected" "$GREEN" "[OK]" "$RESET"
 else
   printf "$PRINTF_MASK" "Auto-Sub not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
