@@ -3,6 +3,18 @@ source config.sh
 
 ## http://gathering.tweakers.net/forum/list_messages/1478602
 
+# INST_SPOTWEB_PATH="/Users/Spotweb/Sites/spotweb"
+# INST_SPOTWEB_UID="spotweb"
+# INST_SPOTWEB_PSQL_DB="spotweb_db"
+# INST_SPOTWEB_PSQL_UID="spotweb_usr"
+# INST_SPOTWEB_PSQL_PW="mini"
+# INST_SPOTWEB_KEY_API_SICKBEARD=""
+# INST_SPOTWEB_KEY_API_COUCHPOTATO=""
+#
+# INST_APACHE_SYSTEM_WEB_ROOT="/Library/Server/Web/Data/Sites/Default"
+
+
+
 
 
 
