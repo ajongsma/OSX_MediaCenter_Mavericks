@@ -8,6 +8,8 @@ if [ ! -e /usr/local/bin/brew ] ; then
   exit 1
 fi
 
+brew install hg
+
 
 ##### TESTING #####
 exit 0
@@ -21,10 +23,6 @@ echo "#-------------------------------------------------------------------------
 echo "# Installing Auto-Sub"
 echo "#------------------------------------------------------------------------------"
 #AutoSub.py  ExamplePostProcess.py  README.txt  autosub changelog.xml  cherrypy  init.ubuntu  interface  library
-
-
-
-brew install hg
 
 #echo "Download latest Auto-Sub from http://code.google.com/p/auto-sub/"
 #open http://code.google.com/p/auto-sub/downloads/list
