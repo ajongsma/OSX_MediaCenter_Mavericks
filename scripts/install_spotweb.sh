@@ -53,15 +53,34 @@ function check_config_var() {
 
 if [ -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
   printf "$PRINTF_MASK" "-> Spotweb detected" "$GREEN" "[OK]" "$RESET"
-  #check_config_defaults
-  #check_config_var
+  check_config_defaults
+  check_config_var
 else
+  printf "$PRINTF_MASK" "-> Spotweb not detected, installing..." "$GREEN" "[OK]" "$RESET"
+  check_config_defaults
+
+  if [ ! -d $INST_SPOTWEB_PATH ] ; then
+    printf "$PRINTF_MASK" $INST_SPOTWEB_PATH" does't exists, creating" "$YELLOW" "[WAIT]" "$RESET"
+    sudo mkdir -p $INST_SPOTWEB_PATH
+    sudo chown `whoami` $INST_SPOTWEB_PATH
+  else
+    printf "$PRINTF_MASK" $INST_SPOTWEB_PATH" exists" "$GREEN" "[OK]" "$RESET"
+  fi
+  
+  cd $INST_SPOTWEB_PATH
+  if [ ! -d $INST_SPOTWEB_PATH/spotweb ] ; then
+    printf "$PRINTF_MASK" $INST_SPOTWEB_PATH"/spotweb does't exists, downloading..." "$YELLOW" "[WAIT]" "$RESET"
+    git clone https://github.com/spotweb/spotweb.git
+  else
+    printf "$PRINTF_MASK" $INST_SPOTWEB_PATH"/spotweb exists, updating..." "$YELLOW" "[WAIT]" "$RESET"
+    git pull https://github.com/spotweb/spotweb.git
+  fi
+
+
+  ln -s $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
+
+  cd $DIR
 fi
-
-
-
-
-
 
 ##### TESTING #####
 exit 1
@@ -91,15 +110,6 @@ sudo -u andries psql -c "ALTER USER $INST_NEWZNAB_PSQL_UID SET PASSWORD '"$INST_
 #sudo git clone https://github.com/spotweb/spotweb.git
 #subl /Library/WebServer/Documents/spotweb/dbsettings.inc.php
 
-if [ ! -d $INST_SPOTWEB_PATH ] ; then
-    sudo mkdir -p $INST_SPOTWEB_PATH    
-fi
-cd $INST_SPOTWEB_PATH/../
-sudo rmdir spotweb
-
-sudo git clone https://github.com/spotweb/spotweb.git
-sudo chown `whoami` $INST_SPOTWEB_PATH
-
 #echo "----------------------------------------------------------"
 #echo "| Add an alias and enable htaccess for NewzNAB to the default website:"
 #echo "| Create alias in Server Website"
@@ -111,7 +121,11 @@ sudo chown `whoami` $INST_SPOTWEB_PATH
 #echo " --- press any key to continue ---"
 #read -n 1 -s
 
-sudo ln -s /Users/Spotweb/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
+
+
+
+
+sudo ln -s $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
 #sudo ln -s /Users/Spotweb/Sites/spotweb/ /Library/WebServer/Documents/spotweb
 
 echo "-----------------------------------------------------------"
