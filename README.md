@@ -127,6 +127,8 @@ Xcode
 
 Transmission
 
+http://www.sequelpro.com/
+
 Unison
 
 nzbdrone
