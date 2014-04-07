@@ -87,6 +87,7 @@ else
 
 #################### 
 ## http://www.macminivault.com/mysql-mavericks/
+## https://github.com/CiTroNaK/Installation-guide-for-GitLab-on-OS-X
 #################### 
 #/usr/bin/mysqladmin ping| grep 'mysqld is alive' > /dev/null 2>&1
 #if [ $? != 0 ]
