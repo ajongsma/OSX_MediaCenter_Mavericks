@@ -1,10 +1,31 @@
 #!/usr/bin/env bash
 source config.sh
 
+function check_config_var() {
+  if [[ -z $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW ]]; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| username          : $INST_MYSQL_UID"
+    echo "| password          : $INST_MYSQL_PW"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_MYSQL_UID == "" ]] || [[ $INST_MYSQL_PW == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  fi
+}
+
 if [ ! -e /usr/local/bin/brew ] ; then
  printf "$PRINTF_MASK" "Homebrew not detected" "$RED" "[ERR]" "$RESET"
   exit 1
 fi
+check_config_var
 
 if [ ! -e /usr/local/bin/mysql ] ; then
   printf "$PRINTF_MASK" "Homebrew detected, updating..." "$YELLOW" "[WAIT]" "$RESET"
@@ -34,7 +55,23 @@ if [ ! -e /usr/local/bin/mysql ] ; then
   fi
   
   printf "$PRINTF_MASK" "Securing MySQL installation..." "$YELLOW" "[WAIT]" "$RESET"
-  mysql_secure_installation 
+  mysql_secure_installation
+  
+  printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+  echo "| MySQL Username    : INST_MYSQL_UID"
+  echo "| MySQL Password    : INST_MYSQL_PW"
+  if [ ! -d /Applications/TextWrangler.app ]; then
+    pico config.sh
+  else
+    open -a /Applications/TextWrangler.app config.sh
+  fi
+  while ( [[ $INST_MYSQL_UID == "" ]] || [[ $INST_MYSQL_PW == "" ]] )
+  do
+    printf '.'
+    sleep 2
+    source config.sh
+  done
+  printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
 else
   printf "$PRINTF_MASK" "MySQL detected" "$GREEN" "[OK]" "$RESET"
 fi
