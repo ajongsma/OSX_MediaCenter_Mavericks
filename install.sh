@@ -107,6 +107,14 @@ if [[ $ENABLE_LIBRARY_UNHIDE == "true" ]]; then
 fi
 
 #------------------------------------------------------------------------------
+# Enable the locate database
+#------------------------------------------------------------------------------
+if [[ $ENABLE_LOCATE_DATABASE == "true" ]]; then
+  sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+fi
+
+
+#------------------------------------------------------------------------------
 # Enable Tap to Click for this user and for the login screen
 #------------------------------------------------------------------------------
 if [[ $ENABLE_MOUSE_TAPTOCLICK == "true" ]]; then
