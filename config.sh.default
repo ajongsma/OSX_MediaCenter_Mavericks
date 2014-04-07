@@ -14,7 +14,7 @@ INST_OSX_UPDATES="false"
 ## OSX Settings
 ENABLE_LIBRARY_UNHIDE="true"
 ENABLE_MOUSE_TAPTOCLICK="true"
-
+ENABLE_LOCATE_DATABASE="true"
 
 #-----------------------------------------------------------
 ## Generic Folders locations
