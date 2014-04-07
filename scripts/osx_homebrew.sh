@@ -36,7 +36,7 @@ else
 fi
 
 ##### NOTE #####
-## ash completion has been installed to:
+## Bash completion has been installed to:
 ##  /usr/local/etc/bash_completion.d
 ##
 ## zsh completion has been installed to:
