@@ -104,6 +104,9 @@ else
     printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
   fi
 
+
+  open http://localhost/spotweb/install
+
 #################### 
 ## http://www.macminivault.com/mysql-mavericks/
 ## https://github.com/CiTroNaK/Installation-guide-for-GitLab-on-OS-X
@@ -153,7 +156,7 @@ else
 ####################
 
 
-open http://localhost/spotweb
+
 
 
 
