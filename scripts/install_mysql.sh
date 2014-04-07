@@ -32,7 +32,7 @@ mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --
 exit 0
 ##### TESTING #####
 
-
+## http://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/
 ## http://hivelogic.com/articles/installing-mysql-on-mac-os-x/
 ## http://theablefew.com/blog/very-simple-homebrew-mysql-and-rails
 ## --------------------
@@ -51,8 +51,6 @@ exit 0
 
 #/usr/local/Cellar/mysql/5.5.29/bin/mysqladmin -u root password 'YOUR_NEW_PASSWORD'
 #/usr/local/Cellar/mysql/5.5.29/bin/mysqladmin -u root password '$MYSQL_PASSWORD'
-
-
 
 
 mkdir -p ~/Library/LaunchAgents
