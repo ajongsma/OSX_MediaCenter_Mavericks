@@ -30,6 +30,25 @@ function check_config_defaults() {
     done
     printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
   fi
+
+  if [[ -z $INST_SPOTWEB_MYSQL_UID ]] || [[ -z $INST_SPOTWEB_MYSQL_PW ]] || [[ -z $INST_SPOTWEB_MYSQL_DB ]]; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| Spotweb Username            : $INST_SPOTWEB_MYSQL_UID"
+    echo "| Spotweb Password            : $INST_SPOTWEB_MYSQL_PW"
+    echo "| Spotweb Path                : $INST_SPOTWEB_MYSQL_DB"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_SPOTWEB_MYSQL_UID == "" ]] || [[ $INST_SPOTWEB_MYSQL_PW == "" ]] || [[ $INST_SPOTWEB_MYSQL_DB == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  fi
 }
 
 function check_config_var() {
