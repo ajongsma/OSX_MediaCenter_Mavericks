@@ -53,23 +53,17 @@ if [ ! -f ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT ] ; then
     read -n 1 -s
     exit 1
   fi
+  printf "$PRINTF_MASK" "Loading Launch Agent $INST_FILE_LAUNCHAGENT" "$YELLOW" "[WAIT]" "$RESET"
   launchctl load ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
 else
   printf "$PRINTF_MASK" "Launch Agent $INST_FILE_LAUNCHAGENT detected" "$GREEN" "[OK]" "$RESET"
 fi
 
-
-##### TESTING #####
-exit 0
-##### TESTING #####
-
-
-
-
-
-
-
 ##### NOTES #####
+## http://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/
+## http://hivelogic.com/articles/installing-mysql-on-mac-os-x/
+## http://theablefew.com/blog/very-simple-homebrew-mysql-and-rails
+#####
 ##  A "/etc/my.cnf" from another install may interfere with a Homebrew-built server starting up correctly.
 ## 
 ## To connect:
@@ -81,16 +75,6 @@ exit 0
 ##     launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 ## Or, if you don't want/need launchctl, you can just run:
 ##     mysql.server start
-    
-
-##### TESTING #####
-exit 0
-##### TESTING #####
-
-## http://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/
-## http://hivelogic.com/articles/installing-mysql-on-mac-os-x/
-## http://theablefew.com/blog/very-simple-homebrew-mysql-and-rails
-## --------------------
 
 ## /usr/local/opt/mysql/bin/mysqladmin -u root password 'new-password'
 ## /usr/local/opt/mysql/bin/mysqladmin -u root -h Pooky.local password 'new-password'
@@ -107,18 +91,8 @@ exit 0
 #/usr/local/Cellar/mysql/5.5.29/bin/mysqladmin -u root password 'YOUR_NEW_PASSWORD'
 #/usr/local/Cellar/mysql/5.5.29/bin/mysqladmin -u root password '$MYSQL_PASSWORD'
 
-
 #cp /usr/local/Cellar/mysql/5.5.29/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/
 #launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-
-ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-
-/usr/local/Cellar/mysql/5.5.29/bin/mysql_secure_installation
-
-sudo mkdir /var/mysql
-sudo ln -s /private/tmp/mysql.sock /var/mysql/mysql.sock
-
 
 ## ??? ERROR DUE TO MY.CONF ???
 #if [ ! -e $DIR/conf/my.conf ] ; then
@@ -137,7 +111,3 @@ sudo ln -s /private/tmp/mysql.sock /var/mysql/mysql.sock
 #    echo "| ?? group_concat_max_len = 8192 ??"
 #    sudo subl /etc/my.cnf
 #fi
-
-mysql.server start
-
-mysql.server status
