@@ -76,8 +76,15 @@ else
     git pull https://github.com/spotweb/spotweb.git
   fi
 
+  if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
+    printf "$PRINTF_MASK" "Symbolic link not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    ln -s $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
+  else
+    printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
+  fi
 
-  ln -s $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
+open http://localhost/spotweb
+
 
   cd $DIR
 fi
