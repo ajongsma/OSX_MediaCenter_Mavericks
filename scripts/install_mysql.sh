@@ -11,10 +11,16 @@ else
   exit 1
 fi
 
-if [ -f /etc/my.cnf ] ; then
-  printf "$PRINTF_MASK" "/etc/my.cnf file detected, renaming file..." "$YELLOW" "[WAIT]" "$RESET"
+if [ ! -e /usr/local/bin/mysql ] ; then
+  printf "$PRINTF_MASK" "MySQL not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+  if [ -f /etc/my.cnf ] ; then
+    printf "$PRINTF_MASK" "/etc/my.cnf file detected, renaming file..." "$YELLOW" "[WAIT]" "$RESET"
+  else
+    printf "$PRINTF_MASK" "/etc/my.cnf not detected" "$GREEN" "[OK]" "$RESET"
+  fi
+  brew install mysql
 else
-  printf "$PRINTF_MASK" "/etc/my.cnf not detected" "$GREEN" "[OK]" "$RESET"
+  printf "$PRINTF_MASK" "MySQL detected" "$GREEN" "[OK]" "$RESET"
 fi
 
 
@@ -24,8 +30,6 @@ fi
 exit 0
 ##### TESTING #####
 
-printf "$PRINTF_MASK" "MySQL not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
-brew install mysql
 
 printf "$PRINTF_MASK" "Starting up MySQL..." "$YELLOW" "[WAIT]" "$RESET"
 mysql.server restart
