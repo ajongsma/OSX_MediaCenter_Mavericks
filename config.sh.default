@@ -46,6 +46,15 @@ INST_ITERM2="true"
 ## Install Textwrangler (https://itunes.apple.com/nl/app/textwrangler/id404010395?mt=12) - (true/false)
 INST_TEXTWRANGLER="true"
 
+## Install MacPAR deLuxe (http://gp.home.xs4all.nl/Site/MacPAR_deLuxe.html)
+INST_MACPAR="false"
+
+## Install Launch Control (http://www.soma-zone.com/LaunchControl/)
+INST_LAUNCHCONTROL="false"
+
+## Install HandBrake (http://handbrake.fr)
+INST_HANDBRAKE="false"
+
 ## Install OS X Server (https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12) - (true/false)
 INSTALL_OSX_SERVER="true"
 
@@ -55,14 +64,20 @@ INST_NEWZNAB="false"
 ## Install Plex Media Server (http://www.plex.tv) - (true/false)
 INST_PLEX_MEDIA_SERVER="true"
 
-## Install Plex Media Server Trakt.TV integration (http://http://trakt.tv) - (true/false)
+## Install Plex Media Server Trakt.TV integration (http://trakt.tv) - (true/false)
 INST_PLEX_MEDIA_SERVER_TRAKT="true"
+
+## Install Plex Media Server Unsupported AppStore (https://github.com/mikedm139) - (true/false)
+INST_PLEX_MEDIA_SERVER_APPSTORE="false"
+
+## Install Plex Media Server iTV (https://forums.plex.tv/index.php/topic/83028-kpn-itvonline/) - (true/false)
+INST_PLEX_MEDIA_SERVER_ITV="false"
 
 ## Install Plex Watch
 #https://github.com/ljunkie/plexWatch
 INST_PLEXWATCH="true"
 
-## Install Plex Watch
+## Install Plex Watch Web
 #https://github.com/ljunkie/plexWatch
 INST_PLEXWATCHWEB="true"
 
