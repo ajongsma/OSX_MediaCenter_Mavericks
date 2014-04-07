@@ -19,21 +19,44 @@ if [ ! -e /usr/local/bin/mysql ] ; then
     printf "$PRINTF_MASK" "/etc/my.cnf not detected" "$GREEN" "[OK]" "$RESET"
   fi
   brew install mysql
+  
+  printf "$PRINTF_MASK" "Configuring allow MySQL to run under current account" "$YELLOW" "[WAIT]" "$RESET"
+  ## Allow MySQL to run under the current account:
+  unset TMPDIR
+  mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
+  
+  /usr/local/bin/mysqladmin ping| grep 'mysqld is alive' > /dev/null 2>&1
+  if [ $? != 0 ]; then
+    printf "$PRINTF_MASK" "Starting up MySQL..." "$YELLOW" "[WAIT]" "$RESET"
+    mysql.server start
+  else
+    printf "$PRINTF_MASK" "MySQL started" "$GREEN" "[OK]" "$RESET"
+  fi
+  
+  printf "$PRINTF_MASK" "Securing MySQL installation..." "$YELLOW" "[WAIT]" "$RESET"
+  mysql_secure_installation 
 else
   printf "$PRINTF_MASK" "MySQL detected" "$GREEN" "[OK]" "$RESET"
 fi
 
-
-/usr/local/bin/mysqladmin ping| grep 'mysqld is alive' > /dev/null 2>&1
-if [ $? != 0 ]; then
-  printf "$PRINTF_MASK" "Starting up MySQL..." "$YELLOW" "[WAIT]" "$RESET"
-  mysql.server start
+INST_FILE_LAUNCHAGENT="homebrew.mxcl.mysql.plist"
+if [ ! -f ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT ] ; then
+  printf "$PRINTF_MASK" "Creating symbolic link to Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$YELLOW" "[WAIT]" "$RESET"
+  ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+  if [ "$?" != "0" ]; then
+    echo -e "${RED}  ============================================== ${RESET}"
+    echo -e "${RED} | ERROR ${RESET}"
+    echo -e "${RED} | Copy failed: ${RESET}"
+    echo -e "${RED} | $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
+    echo -e "${RED} | --- press any key to continue --- ${RESET}"
+    echo -e "${RED}  ============================================== ${RESET}"
+    read -n 1 -s
+    exit 1
+  fi
+  launchctl load ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
 else
-  printf "$PRINTF_MASK" "MySQL started" "$GREEN" "[OK]" "$RESET"
+  printf "$PRINTF_MASK" "Launch Agent $INST_FILE_LAUNCHAGENT detected" "$GREEN" "[OK]" "$RESET"
 fi
-
-printf "$PRINTF_MASK" "Securing MySQL installation..." "$YELLOW" "[WAIT]" "$RESET"
-mysql_secure_installation
 
 
 ##### TESTING #####
@@ -44,10 +67,6 @@ exit 0
 
 
 
-printf "$PRINTF_MASK" "Configuring allow MySQL to run under current account" "$YELLOW" "[WAIT]" "$RESET"
-## Allow MySQL to run under the current account:
-unset TMPDIR
-mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
 
 
 ##### NOTES #####
@@ -89,7 +108,6 @@ exit 0
 #/usr/local/Cellar/mysql/5.5.29/bin/mysqladmin -u root password '$MYSQL_PASSWORD'
 
 
-mkdir -p ~/Library/LaunchAgents
 #cp /usr/local/Cellar/mysql/5.5.29/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/
 #launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 
