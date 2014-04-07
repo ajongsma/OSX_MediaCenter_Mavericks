@@ -34,6 +34,9 @@ INST_APACHE_SYSTEM_WEB_ROOT="/Library/Server/Web/Data/Sites/Default"
 ## Install Homebrew (http://brew.sh)
 INSTALL_HOMEBREW="true"
 
+## Install MySQL (http://www.mysql.com/)
+INST_MYSQL="true"
+
 ## Install XLog (https://itunes.apple.com/nl/app/xlog/id430304898?l=en&mt=12) - (true/false)
 INSTALL_XLOG="true"
 
