@@ -27,7 +27,7 @@ fi
 /usr/local/bin/mysqladmin ping| grep 'mysqld is alive' > /dev/null 2>&1
 if [ $? != 0 ]; then
   printf "$PRINTF_MASK" "Starting up MySQL..." "$YELLOW" "[WAIT]" "$RESET"
-  mysql.server restart
+  mysql.server start
 else
   printf "$PRINTF_MASK" "MySQL started" "$GREEN" "[OK]" "$RESET"
 fi
