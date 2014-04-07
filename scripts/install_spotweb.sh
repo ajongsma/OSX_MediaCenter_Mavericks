@@ -104,6 +104,13 @@ else
     printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
   fi
 
+echo "OSX Server -> Websites"
+echo "Select  : Server Website"
+echo "Click   : Edit"
+echo "Click   : Edit Advanced Settings"
+echo "Allow overrides using .htaccess: Enable"
+echo "Click   : OK"
+echo "Click   : OK"
 
   open http://localhost/spotweb/install
 
