@@ -61,7 +61,6 @@ LOGFILE=$DIR/install-$TIMESTAMP.log
 # Set to non-zero value for debugging
 DEBUG=0
 
-
 ##-----------------------------------------------------------------------------
 ## Functions
 ##-----------------------------------------------------------------------------
@@ -73,11 +72,6 @@ function check_system() {
         *) fail "Sorry, $kernel is not supported." ;;
     esac
 }
-
-function echo_fancy() {
-  printf "\n%b\n" "$1"
-}
-#echo_fancy "Sample Updating Stuff ..."
 
 ##-----------------------------------------------------------------------------
 ## PreFlight - Check OS
@@ -102,5 +96,5 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Install testing launcher
 #------------------------------------------------------------------------------
 if [[ $INST_SPOTWEB == "true" ]]; then
-  source "$DIR/scripts/install_spotweb.sh"
+  source "$DIR/scripts/install_mysql.sh"
 fi
