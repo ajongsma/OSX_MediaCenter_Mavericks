@@ -2,7 +2,7 @@
 source config.sh
 
 if [ -e /usr/local/bin/brew ] ; then
- printf "$PRINTF_MASK" "Homebrew detected" "$GREEN" "[OK]" "$RESET"
+ printf "$PRINTF_MASK" "Homebrew detected, updating..." "$YELLOW" "[WAIT]" "$RESET"
  brew update
  brew doctor
  brew upgrade
@@ -11,16 +11,16 @@ else
   exit 1
 fi
 
-printf "$PRINTF_MASK" "MySQL not detected, installing..." "$RED" "[ERR]" "$RESET"
+printf "$PRINTF_MASK" "MySQL not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
 brew install mysql
 
-printf "$PRINTF_MASK" "Starting up MySQL..." "$RED" "[ERR]" "$RESET"
+printf "$PRINTF_MASK" "Starting up MySQL..." "$YELLOW" "[WAIT]" "$RESET"
 mysql.server restart
 
-printf "$PRINTF_MASK" "Securing MySQL installation..." "$RED" "[ERR]" "$RESET"
+printf "$PRINTF_MASK" "Securing MySQL installation..." "$YELLOW" "[WAIT]" "$RESET"
 mysql_secure_installation
 
-printf "$PRINTF_MASK" "Configuring allow MySQL to run under current account" "$RED" "[ERR]" "$RESET"
+printf "$PRINTF_MASK" "Configuring allow MySQL to run under current account" "$YELLOW" "[WAIT]" "$RESET"
 ## Allow MySQL to run under the current account:
 unset TMPDIR
 mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
