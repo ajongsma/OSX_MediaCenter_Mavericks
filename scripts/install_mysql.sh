@@ -11,6 +11,10 @@ else
   exit 1
 fi
 
+##### TESTING #####
+exit 0
+##### TESTING #####
+
 printf "$PRINTF_MASK" "MySQL not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
 brew install mysql
 
