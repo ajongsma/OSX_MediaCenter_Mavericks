@@ -34,3 +34,14 @@ else
     printf "$PRINTF_MASK" "Homebrew installed" "$GREEN" "[OK]" "$RESET"
   fi
 fi
+
+##### NOTE #####
+## ash completion has been installed to:
+##  /usr/local/etc/bash_completion.d
+##
+## zsh completion has been installed to:
+##  /usr/local/share/zsh/site-functions
+##
+## If you need Python to find the installed site-packages:
+##  mkdir -p ~/Library/Python/2.7/lib/python/site-packages
+##  echo '/usr/local/lib/python2.7/site-packages' > ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
