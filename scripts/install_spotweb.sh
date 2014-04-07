@@ -98,7 +98,7 @@ else
 
   if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
     printf "$PRINTF_MASK" "Symbolic link not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
-    sudo ln -sfv $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
+    sudo ln -sfv $INST_SPOTWEB_PATH/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
     #sudo ln -s $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
   else
     printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
@@ -112,7 +112,7 @@ echo "Allow overrides using .htaccess: Enable"
 echo "Click   : OK"
 echo "Click   : OK"
 
-  open http://localhost/spotweb/install
+  open http://localhost/spotweb/install.php
 
 #################### 
 ## http://www.macminivault.com/mysql-mavericks/
