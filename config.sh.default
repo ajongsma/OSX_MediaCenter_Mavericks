@@ -101,17 +101,17 @@ INST_AUTOSUB="true"
 # | SETTINGS                                                |
 # ===========================================================
 # -----------------------------------------------------------
+# | Website Addic7ed (see https://www.addic7ed.com)
+# -----------------------------------------------------------
+INST_ADDIC7ED_UID=""
+INST_ADDIC7ED_PW=""
+
+# -----------------------------------------------------------
 # | Website OZNZB (see https://www.oznzb.com/profile)
 # -----------------------------------------------------------
 INST_OZNZB_UID=""
 INST_OZNZB_PW=""
 INST_OZNZB_API=""
-
-# -----------------------------------------------------------
-# | Website Addic7ed (see https://www.oznzb.com/profile)
-# -----------------------------------------------------------
-INST_ADDIC7ED_UID=""
-INST_ADDIC7ED_PW=""
 
 # -----------------------------------------------------------
 # | News Server Provider
@@ -136,7 +136,7 @@ INST_NEWZNAB_MYSQL_PW="mini"
 INST_NEWZNAB_KEY_API=""
 INST_NEWZNAB_KEY_API_SICKBEARD=""
 INST_NEWZNAB_KEY_API_COUCHPOTATO=""
-INST_NEWZNAB_KEY_API_HEADPHONES=""
+#INST_NEWZNAB_KEY_API_HEADPHONES=""
 
 # -----------------------------------------------------------
 # | SpotWeb
@@ -147,9 +147,9 @@ INST_SPOTWEB_PW="mini"
 #INST_SPOTWEB_PSQL_UID="spotweb_usr"
 #INST_SPOTWEB_PSQL_PW="mini"
 #INST_SPOTWEB_PSQL_DB="spotweb_db"
-INST_SPOTWEB_MYSQL_UID="spotweb_usr"
+INST_SPOTWEB_MYSQL_UID="spotweb"
 INST_SPOTWEB_MYSQL_PW="mini"
-INST_SPOTWEB_MYSQL_DB="spotweb_db"
+INST_SPOTWEB_MYSQL_DB="spotweb"
 INST_SPOTWEB_KEY_API_SICKBEARD=""
 INST_SPOTWEB_KEY_API_COUCHPOTATO=""
 
