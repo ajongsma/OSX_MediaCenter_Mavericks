@@ -30,7 +30,19 @@ unset TMPDIR
 mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
 
 
-
+##### NOTES #####
+##  A "/etc/my.cnf" from another install may interfere with a Homebrew-built server starting up correctly.
+## 
+## To connect:
+##     mysql -uroot
+## 
+## To have launchd start mysql at login:
+##     ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+## Then to load mysql now:
+##     launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+## Or, if you don't want/need launchctl, you can just run:
+##     mysql.server start
+    
 
 ##### TESTING #####
 exit 0
