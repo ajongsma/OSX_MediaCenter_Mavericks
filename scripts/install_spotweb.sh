@@ -112,10 +112,15 @@ echo "Allow overrides using .htaccess: Enable"
 echo "Click   : OK"
 echo "Click   : OK"
 
+# gettext                       -> not OK
+brew install gettext
+# gmp                           -> not OK
+brew install gmp
+
+apachectl restart
+
   open http://localhost/spotweb/install.php
 
-# gettext                       -> not OK
-# gmp                           -> not OK
 # Cache directory is writable?  -> Not OK
 # Own settings file (optional)  -> Not OK
 
