@@ -79,7 +79,7 @@ else
 
   if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
     printf "$PRINTF_MASK" "Symbolic link not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
-    ln -s $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
+    sudo ln -s $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
   else
     printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
   fi
@@ -218,3 +218,17 @@ fi
 #------------------------------------------------------------------------------
 # Install Spotweb - Complete
 #------------------------------------------------------------------------------
+
+## sudo apt-get install apache2 php5 php5-curl php5-gd php5-gmp
+## sudo sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php5/*/php.ini
+## sudo apt-get install mysql-server mysql-client php5-mysql
+
+## sudo mysql
+## CREATE DATABASE spotweb;
+## GRANT ALL PRIVILEGES ON spotweb.* TO "spotweb"@"localhost" IDENTIFIED BY "DB_Verander_Mij_!";
+## \q
+
+## php /var/www/spotweb/retrieve.php
+## /usr/share/spotweb/scripts/retrieve.sh
+
+
