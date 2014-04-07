@@ -84,7 +84,17 @@ else
     printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
   fi
 
-
+#################### 
+## http://www.macminivault.com/mysql-mavericks/
+#################### 
+#/usr/bin/mysqladmin ping| grep 'mysqld is alive' > /dev/null 2>&1
+#if [ $? != 0 ]
+#then
+#  /etc/init.d/mysqld stop
+#  /etc/init.d/mysqld start
+#    echo Starting at `date`
+#fi
+#################### 
 #MYSQL_UP=$(pgrep mysql | wc -l);
 #if [ "$MYSQL_UP" -ne 1 ]; then
 #  echo "MySQL is down."
@@ -92,7 +102,6 @@ else
 #else
 #  echo "MySQL is up."
 #fi
-
 #################### 
 # echo -n "Enter the MySQL root password: "
 # read -s rootpw
