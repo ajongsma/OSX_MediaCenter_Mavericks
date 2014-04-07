@@ -2,7 +2,7 @@
 source config.sh
 
 if [ -e /usr/local/bin/brew ] ; then
- printf "$PRINTF_MASK" "Homebrew detected, updating..." "$YELLOW" "[WAIT]" "$RESET"
+ printf "$PRINTF_MASK" "Homebrew detected" "$GREEN" "[OK]" "$RESET"
 else
   printf "$PRINTF_MASK" "Homebrew not detected" "$RED" "[ERR]" "$RESET"
   exit 1
