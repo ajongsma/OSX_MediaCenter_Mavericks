@@ -87,6 +87,8 @@ else
 open http://localhost/spotweb
 
 
+
+
   cd $DIR
 fi
 
@@ -128,13 +130,31 @@ sudo -u andries psql -c "ALTER USER $INST_NEWZNAB_PSQL_UID SET PASSWORD '"$INST_
 #open /Applications/Server.app
 #echo " --- press any key to continue ---"
 #read -n 1 -s
-
-
-
-
-
-sudo ln -s $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
+#sudo ln -s $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
 #sudo ln -s /Users/Spotweb/Sites/spotweb/ /Library/WebServer/Documents/spotweb
+
+#echo "Make sure everything is OK, except DB::pgsql and 'Own settings file', they may be 'NOT OK'."
+#
+#echo "Database Settings"
+#echo "Enter the password you used to prepare the database here."
+#echo "Select: Verify database"
+#
+#echo "Usenet server settings"
+#echo "Usenet server: (select your usenet provider here"
+#echo "username: (fill in your usenet username here)"
+#echo "password: (fill in your provider password here)"
+#echo "Select: Verify usenet server"
+#
+#echo "Spotweb type"
+#echo "Select the best "type", according to the settings you wish to have"
+#echo "Fill in the Administrative user.
+#echo "Select: Create system"
+#
+#echo "Installation succesful"
+#echo "Copy the whole displayed text, including the <?php"
+#echo "Edit the file below and paste the text there."
+#echo "vi /var/www/spotweb/dbsettings.inc.php"
+#echo "You can now close the install website"
 
 echo "-----------------------------------------------------------"
 echo "| Paste the information as seen in the installer:"
@@ -173,7 +193,7 @@ echo "| API key for SABnzbd                       : $INST_SABNZBD_KEY_API"
 echo "-----------------------------------------------------------"
 echo "| Change"
 echo "-----------------------------------------------------------"
-open http://localhost/spotweb
+open http://localhost/spotweb/install.php
 
 echo " --- press any key to continue ---"
 read -n 1 -s
@@ -223,10 +243,18 @@ fi
 ## sudo sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php5/*/php.ini
 ## sudo apt-get install mysql-server mysql-client php5-mysql
 
+##### MySQL - HMMM 1 #####
 ## sudo mysql
 ## CREATE DATABASE spotweb;
 ## GRANT ALL PRIVILEGES ON spotweb.* TO "spotweb"@"localhost" IDENTIFIED BY "DB_Verander_Mij_!";
 ## \q
+##########################
+##### MySQL - HMMM 2 #####
+## mysqladmin -u root password YOURPASSWORD
+## mysql -u root --password="YOURPASSWORD" -e "CREATE DATABASE spotweb;"
+## mysql -u root --password="YOURPASSWORD" -e "CREATE USER 'spotweb'@'localhost' IDENTIFIED BY 'spotweb';"
+## mysql -u root --password="YOURPASSWORD" -e "GRANT ALL PRIVILEGES ON spotweb.* TO spotweb @'localhost' IDENTIFIED BY 'spotweb';"
+##########################
 
 ## php /var/www/spotweb/retrieve.php
 ## /usr/share/spotweb/scripts/retrieve.sh
