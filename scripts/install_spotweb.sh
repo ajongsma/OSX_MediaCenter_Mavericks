@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 source config.sh
 
+## https://github.com/spotweb/spotweb/wiki
 ## http://gathering.tweakers.net/forum/list_messages/1478602
 
 # INST_SPOTWEB_PSQL_DB="spotweb_db"
