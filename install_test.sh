@@ -95,6 +95,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #------------------------------------------------------------------------------
 # Install testing launcher
 #------------------------------------------------------------------------------
-if [[ $INST_SPOTWEB == "true" ]]; then
+if [[ $INST_MYSQL == "true" ]]; then
   source "$DIR/scripts/install_mysql.sh"
 fi
