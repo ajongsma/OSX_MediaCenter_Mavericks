@@ -23,6 +23,13 @@ else
   printf "$PRINTF_MASK" "MySQL detected" "$GREEN" "[OK]" "$RESET"
 fi
 
+/usr/local/bin/mysqladmin ping| grep 'mysqld is alive' > /dev/null 2>&1
+if [ $? != 0 ]; then
+  printf "$PRINTF_MASK" "Starting up MySQL..." "$YELLOW" "[WAIT]" "$RESET"
+  mysql.server restart
+else
+  printf "$PRINTF_MASK" "MySQL started" "$GREEN" "[OK]" "$RESET"
+fi
 
 
 
@@ -31,8 +38,7 @@ exit 0
 ##### TESTING #####
 
 
-printf "$PRINTF_MASK" "Starting up MySQL..." "$YELLOW" "[WAIT]" "$RESET"
-mysql.server restart
+
 
 printf "$PRINTF_MASK" "Securing MySQL installation..." "$YELLOW" "[WAIT]" "$RESET"
 mysql_secure_installation
