@@ -3,11 +3,27 @@ source config.sh
 
 if [ -e /usr/local/bin/brew ] ; then
  printf "$PRINTF_MASK" "Homebrew detected" "$GREEN" "[OK]" "$RESET"
+ brew update
+ brew doctor
+ brew upgrade
 else
   printf "$PRINTF_MASK" "Homebrew not detected" "$RED" "[ERR]" "$RESET"
   exit 1
 fi
 
+printf "$PRINTF_MASK" "MySQL not detected, installing..." "$RED" "[ERR]" "$RESET"
+brew install mysql
+
+printf "$PRINTF_MASK" "Starting up MySQL..." "$RED" "[ERR]" "$RESET"
+mysql.server restart
+
+printf "$PRINTF_MASK" "Securing MySQL installation..." "$RED" "[ERR]" "$RESET"
+mysql_secure_installation
+
+printf "$PRINTF_MASK" "Configuring allow MySQL to run under current account" "$RED" "[ERR]" "$RESET"
+## Allow MySQL to run under the current account:
+unset TMPDIR
+mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
 
 
 
@@ -37,9 +53,7 @@ exit 0
 #/usr/local/Cellar/mysql/5.5.29/bin/mysqladmin -u root password '$MYSQL_PASSWORD'
 
 
-brew install mysql
-unset TMPDIR
-mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
+
 
 mkdir -p ~/Library/LaunchAgents
 #cp /usr/local/Cellar/mysql/5.5.29/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/
