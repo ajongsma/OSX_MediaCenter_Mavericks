@@ -120,6 +120,12 @@ if [[ $INSTALL_HOMEBREW == "true" ]]; then
   source "$DIR/scripts/osx_homebrew.sh"
 fi
 
+#------------------------------------------------------------------------------
+# Install MySQL
+#------------------------------------------------------------------------------
+if [[ $INST_MYSQL == "true" ]]; then
+  source "$DIR/scripts/install_mysql.sh"
+fi
 
 #------------------------------------------------------------------------------
 # Checking existence directories
