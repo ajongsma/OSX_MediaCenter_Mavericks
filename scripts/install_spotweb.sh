@@ -85,6 +85,13 @@ else
   fi
 
 
+#MYSQL_UP=$(pgrep mysql | wc -l);
+#if [ "$MYSQL_UP" -ne 1 ]; then
+#  echo "MySQL is down."
+#  #sudo service mysql start
+#else
+#  echo "MySQL is up."
+#fi
 
 #################### 
 # echo -n "Enter the MySQL root password: "
