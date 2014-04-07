@@ -53,9 +53,12 @@ cd OSX_MediaCenter
 #### OS X
 [OS X Server](https://itunes.apple.com/nl/app/os-x-server/id714547929?l=en&mt=12)
 
+[MySQL](http://www.mysql.com)
+
 [CPAN](http://www.cpan.org)
 
 [Cheetah](http://www.cheetahtemplate.org)
+
 
 #### Utilities
 [Homebrew](http://brew.sh)
