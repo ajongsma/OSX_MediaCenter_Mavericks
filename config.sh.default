@@ -62,7 +62,7 @@ INSTALL_OSX_SERVER="true"
 INST_NEWZNAB="false"
 
 ## Install SpotWEB (https://github.com/spotweb/spotweb/wiki) - (true/false)
-INST_SPOTWEB="false"
+INST_SPOTWEB="true"
 
 ## Install Plex Media Server (http://www.plex.tv) - (true/false)
 INST_PLEX_MEDIA_SERVER="true"
