@@ -23,6 +23,7 @@ else
   printf "$PRINTF_MASK" "MySQL detected" "$GREEN" "[OK]" "$RESET"
 fi
 
+
 /usr/local/bin/mysqladmin ping| grep 'mysqld is alive' > /dev/null 2>&1
 if [ $? != 0 ]; then
   printf "$PRINTF_MASK" "Starting up MySQL..." "$YELLOW" "[WAIT]" "$RESET"
@@ -31,6 +32,8 @@ else
   printf "$PRINTF_MASK" "MySQL started" "$GREEN" "[OK]" "$RESET"
 fi
 
+printf "$PRINTF_MASK" "Securing MySQL installation..." "$YELLOW" "[WAIT]" "$RESET"
+mysql_secure_installation
 
 
 ##### TESTING #####
@@ -40,8 +43,6 @@ exit 0
 
 
 
-printf "$PRINTF_MASK" "Securing MySQL installation..." "$YELLOW" "[WAIT]" "$RESET"
-mysql_secure_installation
 
 printf "$PRINTF_MASK" "Configuring allow MySQL to run under current account" "$YELLOW" "[WAIT]" "$RESET"
 ## Allow MySQL to run under the current account:
