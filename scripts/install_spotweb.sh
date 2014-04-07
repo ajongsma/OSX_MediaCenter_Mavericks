@@ -84,6 +84,38 @@ else
     printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
   fi
 
+
+
+#################### 
+# echo -n "Enter the MySQL root password: "
+# read -s rootpw
+# echo -n "Enter database name: "
+# read dbname
+# echo -n "Enter database username: "
+# read dbuser
+# echo -n "Enter database user password: "
+# read dbpw
+#db="create database $dbname;GRANT ALL PRIVILEGES ON $dbname.* TO $dbuser@localhost IDENTIFIED BY '$dbpw';FLUSH PRIVILEGES;"
+#mysql -u root -p$rootpw -e "$db"
+# 
+#if [ $? != "0" ]; then
+# echo "[Error]: Database creation failed"
+# exit 1
+#else
+# echo "------------------------------------------"
+# echo " Database has been created successfully "
+# echo "------------------------------------------"
+# echo " DB Info: "
+# echo ""
+# echo " DB Name: $dbname"
+# echo " DB User: $dbuser"
+# echo " DB Pass: $dbpw"
+# echo ""
+# echo "------------------------------------------"
+#fi
+####################
+
+
 open http://localhost/spotweb
 
 
@@ -108,6 +140,16 @@ exit 1
 sudo -u andries psql postgres -c "create database $INST_NEWZNAB_PSQL_DB"
 sudo -u andries psql postgres -c "create user $INST_NEWZNAB_PSQL_UID with password '"$INST_NEWZNAB_PSQL_PW"'"
 sudo -u andries psql postgres -c "grant all privileges on database $INST_NEWZNAB_PSQL_DB to $INST_NEWZNAB_PSQL_UID"
+
+
+###!/bin/bash
+##mysql -u root -pSeCrEt << EOF
+##use mysql;
+##show tables;
+##EOF
+
+
+## mysql -h 192.168.1.10 -u root -pSeCrEt -e "show databases"
 
 ### ERROR:  syntax error at or near "'mini_spotweb'"
 ### sudo -u andries psql -c ALTER USER spotweb_usr SET PASSWORD 'mini_spotweb';
