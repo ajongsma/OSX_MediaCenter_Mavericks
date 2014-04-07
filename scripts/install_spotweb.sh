@@ -114,6 +114,17 @@ echo "Click   : OK"
 
   open http://localhost/spotweb/install.php
 
+# gettext                       -> not OK
+# gmp                           -> not OK
+# Cache directory is writable?  -> Not OK
+# Own settings file (optional)  -> Not OK
+
+
+
+
+
+
+
 #################### 
 ## http://www.macminivault.com/mysql-mavericks/
 ## https://github.com/CiTroNaK/Installation-guide-for-GitLab-on-OS-X
