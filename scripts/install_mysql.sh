@@ -11,6 +11,15 @@ else
   exit 1
 fi
 
+if [ -f /etc/my.cnf ] ; then
+  printf "$PRINTF_MASK" "/etc/my.cnf file detected, renaming file..." "$YELLOW" "[WAIT]" "$RESET"
+else
+  printf "$PRINTF_MASK" "/etc/my.cnf not detected" "$GREEN" "[OK]" "$RESET"
+fi
+
+
+
+
 ##### TESTING #####
 exit 0
 ##### TESTING #####
