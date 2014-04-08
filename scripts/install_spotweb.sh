@@ -130,46 +130,35 @@ else
     printf "$PRINTF_MASK" $INST_SPOTWEB_PATH"/spotweb cache directory exists" "$GREEN" "[OK]" "$RESET"
   fi
 
-
-# echo -n "Enter the MySQL root password: "
-# read -s rootpw
-# $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW
-# echo -n "Enter database name: "
-# read dbname
-# echo -n "Enter database username: "
-# read dbuser
-# echo -n "Enter database user password: "
-# read dbpw
-#$INST_SPOTWEB_MYSQL_UID ]] || [[ -z $INST_SPOTWEB_MYSQL_PW ]] || [[ -z $INST_SPOTWEB_MYSQL_DB
-
-#DBNAME=$INST_SPOTWEB_MYSQL_DB
-DBEXISTS=$(mysql -u root -p$INST_MYSQL_PW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$INST_SPOTWEB_MYSQL_DB"';" | grep "$INST_SPOTWEB_MYSQL_DB" > /dev/null; echo "$?")
-if [ $DBEXISTS -eq 0 ];then
-  echo "A database with the name $DBNAME already exists. exiting"
-  printf "$PRINTF_MASK" "Spotweb database $INST_SPOTWEB_MYSQL_DB exists" "$GREEN" "[OK]" "$RESET"
-else
-  printf "$PRINTF_MASK" "Spotweb database $INST_SPOTWEB_MYSQL_DB doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
-
-  DB="create database $INST_SPOTWEB_MYSQL_DB;GRANT ALL PRIVILEGES ON $INST_SPOTWEB_MYSQL_DB.* TO $INST_SPOTWEB_MYSQL_UID@localhost IDENTIFIED BY '$INST_SPOTWEB_MYSQL_PW';FLUSH PRIVILEGES;"
-  echo "-> DB: " $DB
-  echo "-> PW: " $INST_MYSQL_PW
-  mysql -u root -p$INST_MYSQL_PW -e "$DB"
-  if [ $? != "0" ]; then
-    echo "[Error]: Database creation failed"
-    exit 1
+  DBEXISTS=$(mysql -u root -p$INST_MYSQL_PW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$INST_SPOTWEB_MYSQL_DB"';" | grep "$INST_SPOTWEB_MYSQL_DB" > /dev/null; echo "$?")
+  if [ $DBEXISTS -eq 0 ];then
+    echo "A database with the name $DBNAME already exists. exiting"
+    printf "$PRINTF_MASK" "Spotweb database $INST_SPOTWEB_MYSQL_DB exists" "$GREEN" "[OK]" "$RESET"
   else
-    echo "------------------------------------------"
-    echo " Database has been created successfully "
-    echo "------------------------------------------"
-    echo " DB Info: "
-    echo ""
-    echo " DB Name: $INST_SPOTWEB_MYSQL_DB"
-    echo " DB User: $INST_SPOTWEB_MYSQL_UID"
-    echo " DB Pass: $INST_SPOTWEB_MYSQL_PW"
-    echo ""
-    echo "------------------------------------------"
+    printf "$PRINTF_MASK" "Spotweb database $INST_SPOTWEB_MYSQL_DB doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+  
+    DB="create database $INST_SPOTWEB_MYSQL_DB;GRANT ALL PRIVILEGES ON $INST_SPOTWEB_MYSQL_DB.* TO $INST_SPOTWEB_MYSQL_UID@localhost IDENTIFIED BY '$INST_SPOTWEB_MYSQL_PW';FLUSH PRIVILEGES;"
+    echo "-> DB: " $DB
+    echo "-> PW: " $INST_MYSQL_PW
+    mysql -u root -p$INST_MYSQL_PW -e "$DB"
+    if [ $? != "0" ]; then
+      echo "[Error]: Database creation failed"
+      exit 1
+    else
+      echo "------------------------------------------"
+      echo " Database has been created successfully "
+      echo "------------------------------------------"
+      echo " DB Info: "
+      echo ""
+      echo " DB Name: $INST_SPOTWEB_MYSQL_DB"
+      echo " DB User: $INST_SPOTWEB_MYSQL_UID"
+      echo " DB Pass: $INST_SPOTWEB_MYSQL_PW"
+      echo ""
+      echo "------------------------------------------"
+    fi
   fi
-fi
+
+
 
 
 #echo "OSX Server -> Websites"
@@ -203,39 +192,6 @@ fi
 #  echo "MySQL is up."
 #fi
 #################### 
-# echo -n "Enter the MySQL root password: "
-# read -s rootpw
-# echo -n "Enter database name: "
-# read dbname
-# echo -n "Enter database username: "
-# read dbuser
-# echo -n "Enter database user password: "
-# read dbpw
-#db="create database $dbname;GRANT ALL PRIVILEGES ON $dbname.* TO $dbuser@localhost IDENTIFIED BY '$dbpw';FLUSH PRIVILEGES;"
-#mysql -u root -p$rootpw -e "$db"
-# 
-#if [ $? != "0" ]; then
-# echo "[Error]: Database creation failed"
-# exit 1
-#else
-# echo "------------------------------------------"
-# echo " Database has been created successfully "
-# echo "------------------------------------------"
-# echo " DB Info: "
-# echo ""
-# echo " DB Name: $dbname"
-# echo " DB User: $dbuser"
-# echo " DB Pass: $dbpw"
-# echo ""
-# echo "------------------------------------------"
-#fi
-####################
-
-
-
-
-
-
 
   cd $DIR
 fi
