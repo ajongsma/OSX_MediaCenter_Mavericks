@@ -229,7 +229,8 @@ else
   echo " --- press any key to continue ---"
   read -n 1 -s
 
-  INST_FILE_LAUNCHAGENT="com.tmux.spotweb.plist"
+  #INST_FILE_LAUNCHAGENT="com.tmux.spotweb.plist"
+  INST_FILE_LAUNCHAGENT="com.spotweb.spotweb.plist"
   if [ -f $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
     printf "$PRINTF_MASK" "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$YELLOW" "[WAIT]" "$RESET"
     cp $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
