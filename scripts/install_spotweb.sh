@@ -274,6 +274,11 @@ else
     printf "$PRINTF_MASK" "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$GREEN" "[OK]" "$RESET"
   fi
 
+######
+## ERROR
+## Fatal error: Cannot redeclare _() in /Users/Spotweb/Sites/spotweb/lib/SpotTranslation.php on line 34
+######
+
   osascript -e 'tell app "Terminal"
       do script "php $INST_SPOTWEB_PATH/spotweb/retrieve.php"
   end tell'
