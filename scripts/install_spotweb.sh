@@ -260,6 +260,10 @@ else
     printf "$PRINTF_MASK" "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$GREEN" "[OK]" "$RESET"
   fi
 
+  osascript -e 'tell app "Terminal"
+      do script "php $INST_SPOTWEB_PATH/spotweb/retrieve.php"
+  end tell'
+
   cd $DIR
   printf "$PRINTF_MASK" "-> Spotweb installed" "$GREEN" "[OK]" "$RESET"
 fi
