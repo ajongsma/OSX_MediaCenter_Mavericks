@@ -137,3 +137,8 @@ Unison
 nzbdrone
 
 plexwatchdb: /Users/Plex/plexWatch/plexWatch.db
+
+
+Random info to check and verify
+===============
+http://coolestguidesontheplanet.com/install-mcrypt-php-mac-osx-10-9-mavericks-development-server/
