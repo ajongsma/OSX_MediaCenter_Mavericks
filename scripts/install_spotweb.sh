@@ -13,9 +13,9 @@ source config.sh
 function check_config_defaults() {
   if [[ -z $INST_SPOTWEB_UID ]] || [[ -z $INST_SPOTWEB_PW ]] || [[ -z $INST_SPOTWEB_PATH ]]; then
     printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
-    echo "| Spotweb Username            : $INST_SPOTWEB_UID"
-    echo "| Spotweb Password            : $INST_SPOTWEB_PW"
-    echo "| Spotweb Path                : $INST_SPOTWEB_PATH"
+    echo "| Spotweb Username            : INST_SPOTWEB_UID"
+    echo "| Spotweb Password            : INST_SPOTWEB_PW"
+    echo "| Spotweb Path                : INST_SPOTWEB_PATH"
     if [ ! -d /Applications/TextWrangler.app ]; then
       pico config.sh
     else
@@ -29,12 +29,30 @@ function check_config_defaults() {
     done
     printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
   fi
-
+  
+  if [[ -z $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW ]] ; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| MySQL Username              : INST_MYSQL_UID"
+    echo "| MySQL Password              : INST_MYSQL_PW"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_SPOTWEB_MYSQL_UID == "" ]] || [[ $INST_SPOTWEB_MYSQL_PW == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  fi
+  
   if [[ -z $INST_SPOTWEB_MYSQL_UID ]] || [[ -z $INST_SPOTWEB_MYSQL_PW ]] || [[ -z $INST_SPOTWEB_MYSQL_DB ]]; then
     printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
-    echo "| Spotweb Username            : $INST_SPOTWEB_MYSQL_UID"
-    echo "| Spotweb Password            : $INST_SPOTWEB_MYSQL_PW"
-    echo "| Spotweb Path                : $INST_SPOTWEB_MYSQL_DB"
+    echo "| Spotweb Username            : INST_SPOTWEB_MYSQL_UID"
+    echo "| Spotweb Password            : INST_SPOTWEB_MYSQL_PW"
+    echo "| Spotweb Path                : INST_SPOTWEB_MYSQL_DB"
     if [ ! -d /Applications/TextWrangler.app ]; then
       pico config.sh
     else
@@ -111,6 +129,7 @@ else
     printf "$PRINTF_MASK" $INST_SPOTWEB_PATH"/spotweb cache directory exists" "$GREEN" "[OK]" "$RESET"
   fi
 
+
 echo "OSX Server -> Websites"
 echo "Select  : Server Website"
 echo "Click   : Edit"
@@ -118,25 +137,7 @@ echo "Click   : Edit Advanced Settings"
 echo "Allow overrides using .htaccess: Enable"
 echo "Click   : OK"
 echo "Click   : OK"
-
-# gettext                       -> not OK
-#brew install gettext
-## RESOLVED => INSTALL_PHP_GETTEXT.SH
-
-# gmp                           -> not OK
-brew install gmp
-
-apachectl restart
-
-  open http://localhost/spotweb/install.php
-
-# Cache directory is writable?  -> Not OK
-# Own settings file (optional)  -> Not OK
-
-
-
-
-
+open /Applications/Server.app
 
 
 #################### 
