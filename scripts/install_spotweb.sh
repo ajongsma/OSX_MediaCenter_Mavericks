@@ -3,13 +3,12 @@ source config.sh
 
 ## https://github.com/spotweb/spotweb/wiki
 ## http://gathering.tweakers.net/forum/list_messages/1478602
-
-# INST_SPOTWEB_PSQL_DB="spotweb_db"
-# INST_SPOTWEB_PSQL_UID="spotweb_usr"
-# INST_SPOTWEB_PSQL_PW="mini"
-
 #
-# INST_APACHE_SYSTEM_WEB_ROOT="/Library/Server/Web/Data/Sites/Default"
+# INST_APACHE_SYSTEM_WEB_ROOT   : "/Library/Server/Web/Data/Sites/Default"
+# extension_dir                 : /usr/lib/php/extensions/no-debug-non-zts-20100525
+# Loaded Configuration File     : /etc/php.ini
+# Additional .ini files parsed  : /Library/Server/Web/Config/php/php.ini
+
 
 function check_config_defaults() {
   if [[ -z $INST_SPOTWEB_UID ]] || [[ -z $INST_SPOTWEB_PW ]] || [[ -z $INST_SPOTWEB_PATH ]]; then
