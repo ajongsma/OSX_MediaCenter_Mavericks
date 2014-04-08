@@ -1,4 +1,11 @@
 
+# INST_APACHE_SYSTEM_WEB_ROOT   : "/Library/Server/Web/Data/Sites/Default"
+# extension_dir                 : /usr/lib/php/extensions/no-debug-non-zts-20100525
+# Loaded Configuration File     : /etc/php.ini
+# Additional .ini files parsed  : /Library/Server/Web/Config/php/php.ini
+
+# extension=/usr/lib/php/extensions/no-debug-non-zts-20100525/gettext.so
+
 brew update
 brew install autoconf
 brew install gettext
