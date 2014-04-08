@@ -143,3 +143,4 @@ Random info to check and verify
 ===============
 - http://codedmemes.com/lib/mavericks-server-pitfalls-fixes/
 - http://coolestguidesontheplanet.com/install-mcrypt-php-mac-osx-10-9-mavericks-development-server/
+- http://www.gigoblog.com/2013/11/14/rebuilding-php-extensions-to-work-with-mac-os-x-mavericks-server-and-php-5-4/
