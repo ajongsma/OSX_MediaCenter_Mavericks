@@ -102,6 +102,14 @@ else
   else
     printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
   fi
+  
+  if [ ! -d $INST_SPOTWEB_PATH/spotweb/cache ] ; then
+    printf "$PRINTF_MASK" $INST_SPOTWEB_PATH"/spotweb cache directory does't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    mkdir $INST_SPOTWEB_PATH/spotweb/cache
+    chmod 777 $INST_SPOTWEB_PATH/spotweb/cache
+  else
+    printf "$PRINTF_MASK" $INST_SPOTWEB_PATH"/spotweb cache directory exists" "$GREEN" "[OK]" "$RESET"
+  fi
 
 echo "OSX Server -> Websites"
 echo "Select  : Server Website"
@@ -112,7 +120,9 @@ echo "Click   : OK"
 echo "Click   : OK"
 
 # gettext                       -> not OK
-brew install gettext
+#brew install gettext
+## RESOLVED => INSTALL_PHP_GETTEXT.SH
+
 # gmp                           -> not OK
 brew install gmp
 
