@@ -250,7 +250,7 @@ else
   echo "-----------------------------------------------------------"
   echo "| Change"
   echo "-----------------------------------------------------------"
-  open http://localhost/spotweb/install.php
+  open http://localhost/spotweb
   echo " --- press any key to continue ---"
   read -n 1 -s
 
