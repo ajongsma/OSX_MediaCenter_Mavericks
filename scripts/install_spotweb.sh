@@ -200,7 +200,7 @@ else
   echo "-----------------------------------------------------------"
   echo "| Usenet Server                 : $INST_NEWSSERVER_NAME"
   echo "| User Name                     : $INST_NEWSSERVER_SERVER_UID"
-  echo "| User Name                     : $INST_NEWSSERVER_SERVER_PW"
+  echo "| User Password                 : $INST_NEWSSERVER_SERVER_PW"
   echo "-----------------------------------------------------------"
   echo "| Verify usenet server"
   echo "-----------------------------------------------------------"
@@ -208,6 +208,21 @@ else
   echo " --- press any key to continue ---"
   read -n 1 -s
   
+  echo "-----------------------------------------------------------"
+  echo "| Spotweb type                  : Public"
+  echo "| Spotweb Username              : $INST_SPOTWEB_UID"
+  echo "| Spotweb Password              : $INST_SPOTWEB_PW"
+  echo "| Spotweb Password (confirm)    : $INST_SPOTWEB_PW"
+  echo "| First Name                    : <First Name>"
+  echo "| Last Name                     : <Last Name>"
+  echo "| Email address                 : <email address>"
+  echo "-----------------------------------------------------------"
+  echo "| Create system"
+  echo "-----------------------------------------------------------"
+  #open http://localhost/spotweb/install.php
+  echo " --- press any key to continue ---"
+  read -n 1 -s
+
   echo "-----------------------------------------------------------"
   echo "| After finishing all steps, copy/paste all the information as shown during the last phase"
   if [ ! -f $INST_SPOTWEB_PATH/dbsettings.inc.php ]; then
