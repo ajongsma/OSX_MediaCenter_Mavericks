@@ -276,7 +276,8 @@ else
 
 ######
 ## ERROR
-## Fatal error: Cannot redeclare _() in /Users/Spotweb/Sites/spotweb/lib/SpotTranslation.php on line 34
+## Fatal error    : Cannot redeclare _() in /Users/Spotweb/Sites/spotweb/lib/SpotTranslation.php on line 34
+## PHP Fatal error: Cannot redeclare _() in /Users/Spotweb/Sites/spotweb/lib/SpotTranslation.php on line 34
 ######
 
   osascript -e 'tell app "Terminal"
