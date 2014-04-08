@@ -106,7 +106,7 @@ else
   fi
   
   cd $INST_SPOTWEB_PATH
-  if [ ! -d $INST_SPOTWEB_PATH/spotweb ] ; then
+  if [ ! -d $INST_SPOTWEB_PATH/spotweb ]; then
     printf "$PRINTF_MASK" $INST_SPOTWEB_PATH"/spotweb does't exists, downloading..." "$YELLOW" "[WAIT]" "$RESET"
     git clone https://github.com/spotweb/spotweb.git
   else
@@ -114,7 +114,7 @@ else
     git pull https://github.com/spotweb/spotweb.git
   fi
 
-  if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
+  if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ]; then
     printf "$PRINTF_MASK" "Symbolic link not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
     sudo ln -sfv $INST_SPOTWEB_PATH/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
     #sudo ln -s $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
@@ -122,7 +122,7 @@ else
     printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
   fi
   
-  if [ ! -d $INST_SPOTWEB_PATH/spotweb/cache ] ; then
+  if [ ! -d $INST_SPOTWEB_PATH/spotweb/cache ]; then
     printf "$PRINTF_MASK" $INST_SPOTWEB_PATH"/spotweb cache directory does't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
     mkdir $INST_SPOTWEB_PATH/spotweb/cache
     chmod 777 $INST_SPOTWEB_PATH/spotweb/cache
@@ -131,8 +131,7 @@ else
   fi
 
   DBEXISTS=$(mysql -u root -p$INST_MYSQL_PW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$INST_SPOTWEB_MYSQL_DB"';" | grep "$INST_SPOTWEB_MYSQL_DB" > /dev/null; echo "$?")
-  if [ $DBEXISTS -eq 0 ];then
-    echo "A database with the name $DBNAME already exists. exiting"
+  if [ $DBEXISTS -eq 0 ]; then
     printf "$PRINTF_MASK" "Spotweb database $INST_SPOTWEB_MYSQL_DB exists" "$GREEN" "[OK]" "$RESET"
   else
     printf "$PRINTF_MASK" "Spotweb database $INST_SPOTWEB_MYSQL_DB doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
