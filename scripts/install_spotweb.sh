@@ -39,7 +39,7 @@ function check_config_defaults() {
     else
       open -a /Applications/TextWrangler.app config.sh
     fi
-    while ( [[ $INST_SPOTWEB_MYSQL_UID == "" ]] || [[ $INST_SPOTWEB_MYSQL_PW == "" ]] )
+    while ( [[ $INST_MYSQL_UID == "" ]] || [[ $INST_MYSQL_PW == "" ]] )
     do
       printf '.'
       sleep 2
@@ -130,14 +130,44 @@ else
   fi
 
 
-echo "OSX Server -> Websites"
-echo "Select  : Server Website"
-echo "Click   : Edit"
-echo "Click   : Edit Advanced Settings"
-echo "Allow overrides using .htaccess: Enable"
-echo "Click   : OK"
-echo "Click   : OK"
-open /Applications/Server.app
+# echo -n "Enter the MySQL root password: "
+# read -s rootpw
+# $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW
+# echo -n "Enter database name: "
+# read dbname
+# echo -n "Enter database username: "
+# read dbuser
+# echo -n "Enter database user password: "
+# read dbpw
+#$INST_SPOTWEB_MYSQL_UID ]] || [[ -z $INST_SPOTWEB_MYSQL_PW ]] || [[ -z $INST_SPOTWEB_MYSQL_DB
+
+db="create database $INST_SPOTWEB_MYSQL_DB;GRANT ALL PRIVILEGES ON $INST_SPOTWEB_MYSQL_DB.* TO $INST_SPOTWEB_MYSQL_UID@localhost IDENTIFIED BY '$INST_SPOTWEB_MYSQL_PW';FLUSH PRIVILEGES;"
+mysql -u root -p$INST_MYSQL_PW -e "$db"
+if [ $? != "0" ]; then
+  echo "[Error]: Database creation failed"
+  exit 1
+else
+  echo "------------------------------------------"
+  echo " Database has been created successfully "
+  echo "------------------------------------------"
+  echo " DB Info: "
+  echo ""
+  echo " DB Name: $INST_SPOTWEB_MYSQL_DB"
+  echo " DB User: $INST_SPOTWEB_MYSQL_UID"
+  echo " DB Pass: $INST_SPOTWEB_MYSQL_PW"
+  echo ""
+  echo "------------------------------------------"
+fi
+
+#echo "OSX Server -> Websites"
+#echo "Select  : Server Website"
+#echo "Click   : Edit"
+#echo "Click   : Edit Advanced Settings"
+#echo "Allow overrides using .htaccess: Enable"
+#echo "Click   : OK"
+#echo "Click   : OK"
+#open /Applications/Server.app
+
 
 
 #################### 
