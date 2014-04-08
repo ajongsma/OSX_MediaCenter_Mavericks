@@ -280,7 +280,7 @@ else
 ######
 
   osascript -e 'tell app "Terminal"
-      do script "php $INST_SPOTWEB_PATH/spotweb/retrieve.php"
+      do script "php '$INST_SPOTWEB_PATH'/spotweb/retrieve.php"
   end tell'
 
   cd $DIR
