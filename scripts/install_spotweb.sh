@@ -197,9 +197,6 @@ else
   echo " --- press any key to continue ---"
   read -n 1 -s
   
-  ## ERROR: SQLSTATE[HY000] [2002] No such file or directory 
-  
-  
   echo "-----------------------------------------------------------"
   echo "| Usenet Server                 : $INST_NEWSSERVER_NAME"
   echo "| User Name                     : $INST_NEWSSERVER_SERVER_UID"
