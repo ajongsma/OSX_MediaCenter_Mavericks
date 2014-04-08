@@ -71,8 +71,8 @@ function check_config_defaults() {
 function check_config_var() {
   if [[ -z $INST_SPOTWEB_KEY_API_SICKBEARD ]] || [[ -z $INST_SPOTWEB_KEY_API_COUCHPOTATO ]] ; then
     printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
-    echo "| Spotweb Sickbeard API Key   : $INST_SPOTWEB_KEY_API_SICKBEARD"
-    echo "| Spotweb CouchPotati API Key : $INST_SPOTWEB_KEY_API_COUCHPOTATO"
+    echo "| Spotweb Sickbeard API Key   : INST_SPOTWEB_KEY_API_SICKBEARD"
+    echo "| Spotweb CouchPotati API Key : INST_SPOTWEB_KEY_API_COUCHPOTATO"
     if [ ! -d /Applications/TextWrangler.app ]; then
       pico config.sh
     else
@@ -88,7 +88,8 @@ function check_config_var() {
   fi
 }
 
-if [ -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
+#if [ -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
+if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
   printf "$PRINTF_MASK" "-> Spotweb detected" "$GREEN" "[OK]" "$RESET"
   check_config_defaults
   check_config_var
