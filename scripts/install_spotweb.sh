@@ -187,10 +187,19 @@ else
   echo "-----------------------------------------------------------"
   echo "| Paste the information as seen in the installer:"
   echo "| Type                          : MySQL"
-  echo "| Server                        : localhost"
+  echo "| Server                        : 127.0.0.1"
   echo "| Database                      : $INST_SPOTWEB_MYSQL_DB"
   echo "| Username                      : $INST_SPOTWEB_MYSQL_UID"
   echo "| Password                      : $INST_SPOTWEB_MYSQL_PW"
+  echo "-----------------------------------------------------------"
+  echo "| Verify Database"
+  echo "-----------------------------------------------------------"
+  echo " --- press any key to continue ---"
+  read -n 1 -s
+  
+  ## ERROR: SQLSTATE[HY000] [2002] No such file or directory 
+  
+  
   echo "-----------------------------------------------------------"
   echo "| Usenet Server                 : $INST_NEWSSERVER_NAME"
   echo "| User Name                     : $INST_NEWSSERVER_SERVER_UID"
