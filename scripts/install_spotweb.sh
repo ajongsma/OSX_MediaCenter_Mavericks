@@ -175,8 +175,8 @@ else
   echo "| Verify if all settings are OK"
   echo "|"
   echo "| Please note the following:"
-  echo "| - OpenSSL -> gmp is optional if openssl is OK"
-  echo "| - Own settings file is optional"
+  echo "| - The OpenSSL gmp module is optional if the module openssl is OK"
+  echo "| - The Own settings file is optional"
   echo "-----------------------------------------------------------"
   open http://localhost/spotweb/install.php
   echo " --- press any key to continue ---"
