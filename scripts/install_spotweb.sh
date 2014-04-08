@@ -139,7 +139,6 @@ else
   echo "| Allow overrides using .htaccess           : Enable"
   echo "| Click                                     : OK"
   echo "| Click                                     : OK"
-  echo "| API key for SABnzbd                       : $INST_SABNZBD_KEY_API"
   echo "-----------------------------------------------------------"
   open /Applications/Server.app
   echo " --- press any key to continue ---"
