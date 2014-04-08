@@ -130,6 +130,21 @@ else
     printf "$PRINTF_MASK" $INST_SPOTWEB_PATH"/spotweb cache directory exists" "$GREEN" "[OK]" "$RESET"
   fi
 
+  echo "-----------------------------------------------------------"
+  echo "| OSX Server -> Websites"
+  echo "-----------------------------------------------------------"
+  echo "| Select                                    : Server Website"
+  echo "| Click                                     : Edit"
+  echo "| Click                                     : Edit Advanced Settings"
+  echo "| Allow overrides using .htaccess           : Enable"
+  echo "| Click                                     : OK"
+  echo "| Click                                     : OK"
+  echo "| API key for SABnzbd                       : $INST_SABNZBD_KEY_API"
+  echo "-----------------------------------------------------------"
+  open /Applications/Server.app
+  echo " --- press any key to continue ---"
+  read -n 1 -s
+
   DBEXISTS=$(mysql -u root -p$INST_MYSQL_PW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$INST_SPOTWEB_MYSQL_DB"';" | grep "$INST_SPOTWEB_MYSQL_DB" > /dev/null; echo "$?")
   if [ $DBEXISTS -eq 0 ]; then
     printf "$PRINTF_MASK" "Spotweb database $INST_SPOTWEB_MYSQL_DB exists" "$GREEN" "[OK]" "$RESET"
@@ -216,21 +231,6 @@ else
   else
     printf "$PRINTF_MASK" "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$GREEN" "[OK]" "$RESET"
   fi
-  
-  echo "-----------------------------------------------------------"
-  echo "| OSX Server -> Websites"
-  echo "-----------------------------------------------------------"
-  echo "| Select                                    : Server Website"
-  echo "| Click                                     : Edit"
-  echo "| Click                                     : Edit Advanced Settings"
-  echo "| Allow overrides using .htaccess           : Enable"
-  echo "| Click                                     : OK"
-  echo "| Click                                     : OK"
-  echo "| API key for SABnzbd                       : $INST_SABNZBD_KEY_API"
-  echo "-----------------------------------------------------------"
-  open /Applications/Server.app
-  echo " --- press any key to continue ---"
-  read -n 1 -s
 
   cd $DIR
   printf "$PRINTF_MASK" "-> Spotweb installed" "$GREEN" "[OK]" "$RESET"
