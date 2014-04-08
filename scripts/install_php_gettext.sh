@@ -1,4 +1,3 @@
-
 ### TESTING SUCCESFULL => TODO: CREATE PROPER SCRIPT
 
 # INST_APACHE_SYSTEM_WEB_ROOT   : "/Library/Server/Web/Data/Sites/Default"
@@ -21,8 +20,8 @@ phpize
 make
 sudo cp modules/gettext.so /usr/lib/php/extensions/no-debug-non-zts-20100525/
 
-#echo "Don't forget to add 'extension=gettext.so' to /etc/php.ini"
-sudo touch /Library/Server/Web/Config/php/php_gettext.ini
-sudo echo "extension=gettext.so" > php_gettext.ini
+echo "Don't forget to add 'extension=gettext.so' to /Library/Server/Web/Config/php/php_gettext.ini"
+#sudo touch /Library/Server/Web/Config/php/php_gettext.ini
+#sudo echo "extension=gettext.so" > php_gettext.ini
 
 sudo apachectl graceful
