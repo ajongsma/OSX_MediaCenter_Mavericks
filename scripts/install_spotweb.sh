@@ -203,6 +203,7 @@ else
   echo "-----------------------------------------------------------"
   echo "| Usenet Server                 : $INST_NEWSSERVER_NAME"
   echo "| User Name                     : $INST_NEWSSERVER_SERVER_UID"
+  echo "| User Name                     : $INST_NEWSSERVER_SERVER_PW"
   echo "-----------------------------------------------------------"
   #open http://localhost/spotweb/install.php
   echo " --- press any key to continue ---"
