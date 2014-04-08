@@ -225,16 +225,16 @@ else
 
   echo "-----------------------------------------------------------"
   echo "| After finishing all steps, copy/paste all the information as shown during the last phase"
-  if [ ! -f $INST_SPOTWEB_PATH/dbsettings.inc.php ]; then
+  if [ ! -f $INST_SPOTWEB_PATH/spotweb/dbsettings.inc.php ]; then
     printf "$PRINTF_MASK" "$INST_SPOTWEB_PATH/dbsettings.inc.php does not exist, creating..." "$YELLOW" "[WAIT]" "$RESET"
-    touch $INST_SPOTWEB_PATH/dbsettings.inc.php
+    touch $INST_SPOTWEB_PATH/spotweb/dbsettings.inc.php
   else
     printf "$PRINTF_MASK" "$INST_SPOTWEB_PATH/dbsettings.inc.php exists" "$GREEN" "[OK]" "$RESET"
   fi
   if [ ! -d /Applications/TextWrangler.app ]; then
-    pico $INST_SPOTWEB_PATH/dbsettings.inc.php
+    pico $INST_SPOTWEB_PATH/spotweb/dbsettings.inc.php
   else
-    open -a /Applications/TextWrangler.app $INST_SPOTWEB_PATH/dbsettings.inc.php
+    open -a /Applications/TextWrangler.app $INST_SPOTWEB_PATH/spotweb/dbsettings.inc.php
   fi
   echo " --- press any key to continue ---"
   read -n 1 -s
