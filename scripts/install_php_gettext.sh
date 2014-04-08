@@ -1,4 +1,3 @@
-
 # INST_APACHE_SYSTEM_WEB_ROOT   : "/Library/Server/Web/Data/Sites/Default"
 # extension_dir                 : /usr/lib/php/extensions/no-debug-non-zts-20100525
 # Loaded Configuration File     : /etc/php.ini
@@ -20,4 +19,6 @@ make
 sudo cp modules/gettext.so /usr/lib/php/extensions/no-debug-non-zts-20100525/
 
 echo "Don't forget to add 'extension=gettext.so' to /etc/php.ini"
- 
+
+
+sudo apachectl graceful
