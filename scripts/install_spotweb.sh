@@ -143,6 +143,8 @@ else
 #$INST_SPOTWEB_MYSQL_UID ]] || [[ -z $INST_SPOTWEB_MYSQL_PW ]] || [[ -z $INST_SPOTWEB_MYSQL_DB
 
 db="create database $INST_SPOTWEB_MYSQL_DB;GRANT ALL PRIVILEGES ON $INST_SPOTWEB_MYSQL_DB.* TO $INST_SPOTWEB_MYSQL_UID@localhost IDENTIFIED BY '$INST_SPOTWEB_MYSQL_PW';FLUSH PRIVILEGES;"
+echo "-> DB: " $db
+echo "-> PW: " $INST_MYSQL_PW
 mysql -u root -p$INST_MYSQL_PW -e "$db"
 if [ $? != "0" ]; then
   echo "[Error]: Database creation failed"
