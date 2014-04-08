@@ -141,4 +141,5 @@ plexwatchdb: /Users/Plex/plexWatch/plexWatch.db
 
 Random info to check and verify
 ===============
+http://codedmemes.com/lib/mavericks-server-pitfalls-fixes/
 http://coolestguidesontheplanet.com/install-mcrypt-php-mac-osx-10-9-mavericks-development-server/
