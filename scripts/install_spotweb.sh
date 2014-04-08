@@ -142,10 +142,17 @@ else
 # read dbpw
 #$INST_SPOTWEB_MYSQL_UID ]] || [[ -z $INST_SPOTWEB_MYSQL_PW ]] || [[ -z $INST_SPOTWEB_MYSQL_DB
 
-db="create database $INST_SPOTWEB_MYSQL_DB;GRANT ALL PRIVILEGES ON $INST_SPOTWEB_MYSQL_DB.* TO $INST_SPOTWEB_MYSQL_UID@localhost IDENTIFIED BY '$INST_SPOTWEB_MYSQL_PW';FLUSH PRIVILEGES;"
-echo "-> DB: " $db
+$DBNAME=$INST_SPOTWEB_MYSQL_DB
+DBEXISTS=$(mysql --batch --skip-column-names -e "SHOW DATABASES LIKE '"$DBNAME"';" | grep "$DBNAME" > /dev/null; echo "$?")
+if [ $DBEXISTS -eq 0 ];then
+    echo "A database with the name $DBNAME already exists. exiting"
+    exit;
+fi
+
+DB="create database $INST_SPOTWEB_MYSQL_DB;GRANT ALL PRIVILEGES ON $INST_SPOTWEB_MYSQL_DB.* TO $INST_SPOTWEB_MYSQL_UID@localhost IDENTIFIED BY '$INST_SPOTWEB_MYSQL_PW';FLUSH PRIVILEGES;"
+echo "-> DB: " $DB
 echo "-> PW: " $INST_MYSQL_PW
-mysql -u root -p$INST_MYSQL_PW -e "$db"
+mysql -u root -p$INST_MYSQL_PW -e "$DB"
 if [ $? != "0" ]; then
   echo "[Error]: Database creation failed"
   exit 1
