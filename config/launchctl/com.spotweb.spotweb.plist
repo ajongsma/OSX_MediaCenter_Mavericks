@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnableGlobbing</key>
+	<false/>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/usr/local/bin:/usr/local/sbin:/bin:/usr/local/opt/coreutils/libexec/gnubin</string>
+	</dict>
+	<key>Label</key>
+	<string>com.spotweb.spotweb</string>
+	<key>LowPriorityIO</key>
+	<true/>
+	<key>Nice</key>
+	<integer>1</integer>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/sh</string>
+		<string>/Users/Spotweb/bin/sync_spotweb.sh</string>
+	</array>
+	<key>StandardErrorPath</key>
+	<string>/var/log/spotweb/sync.stderr</string>
+	<key>StandardOutPath</key>
+	<string>/var/log/spotweb/sync.stdout</string>
+	<key>StartInterval</key>
+	<integer>1800</integer>
+</dict>
+</plist>
