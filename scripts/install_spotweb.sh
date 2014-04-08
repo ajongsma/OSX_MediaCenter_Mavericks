@@ -205,6 +205,8 @@ else
   echo "| User Name                     : $INST_NEWSSERVER_SERVER_UID"
   echo "| User Name                     : $INST_NEWSSERVER_SERVER_PW"
   echo "-----------------------------------------------------------"
+  echo "| Verify usenet server"
+  echo "-----------------------------------------------------------"
   #open http://localhost/spotweb/install.php
   echo " --- press any key to continue ---"
   read -n 1 -s
