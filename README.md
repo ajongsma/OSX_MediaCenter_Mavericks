@@ -143,5 +143,6 @@ Random info to check and verify
 ===============
 - http://codedmemes.com/lib/mavericks-server-pitfalls-fixes/
 - http://codedmemes.com/lib/php-performance-apc-os-x-server/
+- http://www.zeroiq.com/2013/01/20/php-modules-mcrypt-gettext-en-intl-toevoegen-aan-standaard-php-versie-mountain-lion-server/
 - http://coolestguidesontheplanet.com/install-mcrypt-php-mac-osx-10-9-mavericks-development-server/
 - http://www.gigoblog.com/2013/11/14/rebuilding-php-extensions-to-work-with-mac-os-x-mavericks-server-and-php-5-4/
