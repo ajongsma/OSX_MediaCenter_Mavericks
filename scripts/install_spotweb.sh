@@ -173,6 +173,17 @@ else
   fi
 
   echo "-----------------------------------------------------------"
+  echo "| Verify if all settings are OK"
+  echo "|"
+  echo "| Please note the following:"
+  echo "| - OpenSSL -> gmp is optional if openssl is OK"
+  echo "| - Own settings file is optional"
+  echo "-----------------------------------------------------------"
+  open http://localhost/spotweb/install.php
+  echo " --- press any key to continue ---"
+  read -n 1 -s
+  
+  echo "-----------------------------------------------------------"
   echo "| Paste the information as seen in the installer:"
   echo "| Type                          : MySQL"
   echo "| Server                        : localhost"
@@ -183,13 +194,18 @@ else
   echo "| Usenet Server                 : $INST_NEWSSERVER_NAME"
   echo "| User Name                     : $INST_NEWSSERVER_SERVER_UID"
   echo "-----------------------------------------------------------"
-  open http://localhost/spotweb/install.php
+  #open http://localhost/spotweb/install.php
   echo " --- press any key to continue ---"
   read -n 1 -s
   
   echo "-----------------------------------------------------------"
   echo "| After finishing all steps, copy/paste all the information as shown during the last phase"
-  touch $INST_SPOTWEB_PATH/dbsettings.inc.php
+  if [ ! -f $INST_SPOTWEB_PATH/dbsettings.inc.php ]; then
+    printf "$PRINTF_MASK" "$INST_SPOTWEB_PATH/dbsettings.inc.php does not exist, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    touch $INST_SPOTWEB_PATH/dbsettings.inc.php
+  else
+    printf "$PRINTF_MASK" "$INST_SPOTWEB_PATH/dbsettings.inc.php exists" "$GREEN" "[OK]" "$RESET"
+  fi
   if [ ! -d /Applications/TextWrangler.app ]; then
     pico $INST_SPOTWEB_PATH/dbsettings.inc.php
   else
