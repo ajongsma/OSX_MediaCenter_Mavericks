@@ -142,8 +142,8 @@ else
 # read dbpw
 #$INST_SPOTWEB_MYSQL_UID ]] || [[ -z $INST_SPOTWEB_MYSQL_PW ]] || [[ -z $INST_SPOTWEB_MYSQL_DB
 
-$DBNAME=$INST_SPOTWEB_MYSQL_DB
-DBEXISTS=$(mysql -u root -p$INST_MYSQL_PW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$DBNAME"';" | grep "$DBNAME" > /dev/null; echo "$?")
+#DBNAME=$INST_SPOTWEB_MYSQL_DB
+DBEXISTS=$(mysql -u root -p$INST_MYSQL_PW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$INST_SPOTWEB_MYSQL_DB"';" | grep "$INST_SPOTWEB_MYSQL_DB" > /dev/null; echo "$?")
 if [ $DBEXISTS -eq 0 ];then
     echo "A database with the name $DBNAME already exists. exiting"
     exit;
