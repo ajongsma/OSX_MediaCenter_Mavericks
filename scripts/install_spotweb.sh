@@ -145,8 +145,9 @@ else
 #DBNAME=$INST_SPOTWEB_MYSQL_DB
 DBEXISTS=$(mysql -u root -p$INST_MYSQL_PW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$INST_SPOTWEB_MYSQL_DB"';" | grep "$INST_SPOTWEB_MYSQL_DB" > /dev/null; echo "$?")
 if [ $DBEXISTS -eq 0 ];then
-    echo "A database with the name $DBNAME already exists. exiting"
-    exit;
+  echo "A database with the name $DBNAME already exists. exiting"
+  printf "$PRINTF_MASK" "Spotweb database $INST_SPOTWEB_MYSQL_DB exists" "$GREEN" "[OK]" "$RESET"
+  exit;
 fi
 
 DB="create database $INST_SPOTWEB_MYSQL_DB;GRANT ALL PRIVILEGES ON $INST_SPOTWEB_MYSQL_DB.* TO $INST_SPOTWEB_MYSQL_UID@localhost IDENTIFIED BY '$INST_SPOTWEB_MYSQL_PW';FLUSH PRIVILEGES;"
