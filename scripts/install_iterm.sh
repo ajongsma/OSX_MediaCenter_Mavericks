@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
+source config.sh
 
-if [ ! -f config.sh ]; then
-  source ../config.sh
-else
-  source config.sh
-fi
 
 echo "#------------------------------------------------------------------------------"
 echo "# Installing iTerm 2"
