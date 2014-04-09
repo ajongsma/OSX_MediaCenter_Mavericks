@@ -13,8 +13,8 @@ else
   printf 'Waiting for Cheetah to be downloaded…\n' "$YELLOW" $col '[WAIT]' "$RESET"
   while ( [ ! -e Cheetah-2.4.4.tar ] )
   do
-      printf '.'
-      sleep 2
+    printf '.'
+    sleep 2
   done
   printf 'Cheetah downloaded, installing...\n' "$YELLOW" $col '[WAIT]' "$RESET"
   tar xvzf Cheetah-2.4.4.tar
