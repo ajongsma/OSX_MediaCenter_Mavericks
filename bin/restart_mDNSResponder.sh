@@ -1,0 +1,6 @@
+echo Stopping mDNSResponder ...
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
+sleep 2
+echo Starting mDNSResponder ...
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
+echo Done
