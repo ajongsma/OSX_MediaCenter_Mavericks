@@ -11,8 +11,9 @@ if [ -e /Applications/MacPAR.app ] ; then
 else
   printf "$PRINTF_MASK" "MAcPAR Deluxe not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
 
-  cd ~/Downloads
-  curl -O http://www.xs4all.nl/~gp/MacPAR_deLuxe/MacPARdeLuxe.dmg
+  #cd ~/Downloads
+  #curl -O http://www.xs4all.nl/~gp/MacPAR_deLuxe/MacPARdeLuxe.dmg
+  open http://www.xs4all.nl/~gp/MacPAR_deLuxe
 
   printf "$PRINTF_MASK" "Waiting for MacPAR to be downloaded…" "$YELLOW" "[WAIT]" "$RESET"
   while ( [ ! -e ~/Downloads/MacPARdeLuxe.dmg ] )
