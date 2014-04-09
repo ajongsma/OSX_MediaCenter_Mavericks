@@ -24,7 +24,7 @@ else
   
   printf "$PRINTF_MASK" "MAcPAR Deluxe downloaded" "$GREEN" "[OK]" "$RESET"
 
-  hdiutil attach MacPARdeLuxe.dmg
+  hdiutil attach ~/Downloads/MacPARdeLuxe.dmg
   cd /Volumes/MacPARdeLuxe.pkg
   #installer -pkg MacPARdeLuxe.pkg -target "/"
   open MacPARdeLuxe.pkg
