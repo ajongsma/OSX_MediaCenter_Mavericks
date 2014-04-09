@@ -47,7 +47,7 @@ INST_ITERM2="true"
 INST_TEXTWRANGLER="true"
 
 ## Install MacPAR deLuxe (http://gp.home.xs4all.nl/Site/MacPAR_deLuxe.html)
-INST_MACPAR="false"
+INST_MACPAR="true"
 
 ## Install Launch Control (http://www.soma-zone.com/LaunchControl/)
 INST_LAUNCHCONTROL="false"
