@@ -26,14 +26,11 @@ else
   printf "$PRINTF_MASK" "MAcPAR Deluxe downloaded" "$GREEN" "[OK]" "$RESET"
 
   hdiutil attach ~/Downloads/MacPARdeLuxe.dmg
-  cd /Volumes/MacPARdeLuxe.pkg
-  #installer -pkg MacPARdeLuxe.pkg -target "/"
-  open MacPARdeLuxe.pkg
+  cp -R /Volumes/MacPAR\ deLuxe/MacPAR\ deLuxe.app/ /Applications/MacPAR\ deLuxe.app/
+  hdiutil detach /Volumes/MacPAR\ deLuxe/
   
-  hdiutil detach /Volumes/MacPARdeLuxe.pkg/
-    
-
-  cd $DIR
+  open /Applications/MacPAR\ deLuxe.app/
+  printf "$PRINTF_MASK" "MAcPAR Deluxe installed" "$GREEN" "[OK]" "$RESET"
 fi
 
 
