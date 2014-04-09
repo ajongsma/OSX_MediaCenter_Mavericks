@@ -6,7 +6,7 @@ source config.sh
 ######################################################################################
 
 
-if [ -e /Applications/MacPAR.app ] ; then
+if [ -d /Applications/MacPAR\ deLuxe.app ] ; then
   printf "$PRINTF_MASK" "MAcPAR Deluxe detected" "$GREEN" "[OK]" "$RESET"
 else
   printf "$PRINTF_MASK" "MAcPAR Deluxe not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
