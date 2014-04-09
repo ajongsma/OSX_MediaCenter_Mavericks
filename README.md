@@ -69,6 +69,8 @@ cd OSX_MediaCenter
 
 [Textwrangler](https://itunes.apple.com/nl/app/textwrangler/id404010395?mt=12)
 
+[MacPar Deluxe](http://gp.home.xs4all.nl/Site/MacPAR_deLuxe.html)
+
 #### Plex
 [Plex Media Server](http://plex.tv)
 
@@ -123,8 +125,6 @@ GitHub
 DaisyDisk
 
 Path Finder
-
-MacPar Deluxe
 
 Xcode
 
