@@ -96,6 +96,9 @@ INST_COUCHPOTATO="true"
 ## Install SickBeard (http://sickbeard.com) - (true/false)
 INST_SICKBEARD="true"
 
+## Install nzbToMedia (https://github.com/clinton-hall/nzbToMedia) - (true/false)
+NZBTOMEDIA="false"
+
 ## Install AutoSub (https://code.google.com/p/autosub-bootstrapbill/source/checkout) - (true/false)
 INST_AUTOSUB="true"
 
@@ -186,6 +189,11 @@ INST_COUCHPOTATO_UID="couchpotato"
 INST_COUCHPOTATO_PW="mini"
 INST_COUCHPOTATO_PORT="8082"
 INST_COUCHPOTATO_KEY_API=""
+
+# -----------------------------------------------------------
+# | nzbToMedia
+# -----------------------------------------------------------
+INST_NZBTOMEDIA_PATH="/Users/NzbToMedia"
 
 # -----------------------------------------------------------
 # | Trakt
