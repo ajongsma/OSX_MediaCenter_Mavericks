@@ -14,7 +14,7 @@ function check_config_defaults() {
     fi
     while ( [[ $INST_NZBTOMEDIA_PATH == "" ]] )
     do
-      printf '.'
+      printf '.\n'
       sleep 2
       source config.sh
     done
