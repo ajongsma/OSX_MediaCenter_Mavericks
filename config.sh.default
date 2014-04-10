@@ -97,7 +97,7 @@ INST_COUCHPOTATO="true"
 INST_SICKBEARD="true"
 
 ## Install nzbToMedia (https://github.com/clinton-hall/nzbToMedia) - (true/false)
-NZBTOMEDIA="false"
+NZBTOMEDIA="true"
 
 ## Install AutoSub (https://code.google.com/p/autosub-bootstrapbill/source/checkout) - (true/false)
 INST_AUTOSUB="true"
