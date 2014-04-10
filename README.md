@@ -114,6 +114,8 @@ http://forums.sabnzbd.org/viewtopic.php?f=6&t=12557&sid=269049b5a017f34a3329cc9c
 
 ----------------
 
+[Sequel Pro](http://www.sequelpro.com)
+
 Launch Control
 http://www.soma-zone.com/LaunchControl/
 
@@ -129,8 +131,6 @@ Path Finder
 Xcode
 
 Transmission
-
-http://www.sequelpro.com/
 
 Unison
 
