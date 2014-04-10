@@ -47,17 +47,6 @@ else
     printf "$PRINTF_MASK" "nzbToMedia detected" "$GREEN" "[OK]" "$RESET"
   fi
 
-
-##cp -R ~/Github/nzbToMedia/* ~/Library/Application\ Support/SABnzbd/scripts/
-#cp /Applications/Sick-Beard/autoProcessTV/* ~/Library/Application\ Support/SABnzbd/scripts/
-
-  if [ ! -h ~/Library/Application\ Support/SABnzbd/scripts/nzbToCouchPotato.py ]; then
-    printf "$PRINTF_MASK" "Symbolic link nzbToCouchPotato.py not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
-    sudo ln -sfv $INST_NZBTOMEDIA_PATH/nzbToMedia/nzbToCouchPotato.py ~/Library/Application\ Support/SABnzbd/scripts/nzbToCouchPotato.py
-  else
-    printf "$PRINTF_MASK" "Symbolic link nzbToCouchPotato.py detected" "$GREEN" "[OK]" "$RESET"
-  fi
-    
   if [ ! -f ~/Library/Application\ Support/SABnzbd/scripts/autoProcessMedia.cfg ] ; then
     printf "$PRINTF_MASK" "autoProcessMedia.cfg not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
     
@@ -87,39 +76,12 @@ else
     printf "$PRINTF_MASK" "autoProcessMedia.cfg detected" "$GREEN" "[OK]" "$RESET"
   fi
 
+  if [ ! -h ~/Library/Application\ Support/SABnzbd/scripts/nzbToCouchPotato.py ]; then
+    printf "$PRINTF_MASK" "Symbolic link nzbToCouchPotato.py not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    sudo ln -sfv $INST_NZBTOMEDIA_PATH/nzbToMedia/nzbToCouchPotato.py ~/Library/Application\ Support/SABnzbd/scripts/nzbToCouchPotato.py
+  else
+    printf "$PRINTF_MASK" "Symbolic link nzbToCouchPotato.py detected" "$GREEN" "[OK]" "$RESET"
+  fi
 
-
-
-
-  
   cd $DIR
 fi
-
-##### TESTING #####
-exit 0
-##### TESTING #####
-
-cd ~/Github/
-git clone https://github.com/clinton-hall/nzbToMedia.git
-cp -R ~/Github/nzbToMedia/* ~/Library/Application\ Support/SABnzbd/scripts/
-#cp /Applications/Sick-Beard/autoProcessTV/* ~/Library/Application\ Support/SABnzbd/scripts/
-
-cd ~/Library/Application\ Support/SABnzbd/scripts/
-if [ ! -f autoProcessMedia.cfg ] ; then
-    cp autoProcessMedia.cfg.sample autoProcessMedia.cfg
-fi
-
-#cp autoProcessTV.cfg.sample autoProcessTV.cfg
-#cp autoProcessMovie.cfg.sample autoProcessMovie.cfg
-#echo "-----------------------------------------------------------"
-#echo "| Modify the following:"
-#echo "| port=8081"
-#echo "| username=couchpotato"
-#echo "| password=<password>"
-#echo "| web_root="
-#echo "-----------------------------------------------------------"
-#subl autoProcessTV.cfg
-
-echo "#------------------------------------------------------------------------------"
-echo "# Installing SABnzbd - nzbToMedia - Complete"
-echo "#------------------------------------------------------------------------------"
