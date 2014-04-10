@@ -95,6 +95,9 @@ cd OSX_MediaCenter
 - Trakt Integrated
 - Plex Media Server Integrated
 
+[nzbToMedia](https://github.com/clinton-hall/nzbToMedia)
+- SABnzbd to CouchPotato Integrated
+
 [Auto-Sub Bootstrap Bill](https://code.google.com/p/autosub-bootstrapbill)
 
 
