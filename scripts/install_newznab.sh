@@ -105,27 +105,26 @@ else
     printf "$PRINTF_MASK" " NewzNAB does't exists, downloading" "$YELLOW" "[WAIT]" "$RESET"
     cd $INST_NEWZNAB_PATH
     svn co svn://svn.newznab.com/nn/branches/nnplus/ --username $INST_NEWZNAB_SVN_UID --password $INST_NEWZNAB_SVN_PW $INST_NEWZNAB_PATH
+  
+    if [ ! -d $INST_NEWZNAB_PATH/nzbfiles/tmpunrar ] ; then
+      printf "$PRINTF_MASK" $INST_NEWZNAB_PATH"/nzbfiles/tmpunrareating doesn't exist, creating" "$YELLOW" "[WAIT]" "$RESET"
+      mkdir -p $INST_NEWZNAB_PATH/nzbfiles/tmpunrar
+    else
+      printf "$PRINTF_MASK" $INST_NEWZNAB_PATH" exists" "$GREEN" "[OK]" "$RESET"
+    fi
+    sudo chmod 777 $INST_NEWZNAB_PATH/www/lib/smarty/templates_c
+    sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/movies
+    sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/anime
+    sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/music
+    sudo chmod 777 $INST_NEWZNAB_PATH/www
+    sudo chmod 777 $INST_NEWZNAB_PATH/www/install
+    sudo chmod 777 $INST_NEWZNAB_PATH/db
+    sudo chmod -R 777 $INST_NEWZNAB_PATH/nzbfiles/
   else
     printf "$PRINTF_MASK" "NewzNAB exists" "$GREEN" "[OK]" "$RESET"
   fi
-  
-  
-  if [ ! -d $INST_NEWZNAB_PATH/nzbfiles/tmpunrar ] ; then
-    printf "$PRINTF_MASK" $INST_NEWZNAB_PATH"/nzbfiles/tmpunrareating doesn't exist, creating" "$YELLOW" "[WAIT]" "$RESET"
-    mkdir -p $INST_NEWZNAB_PATH/nzbfiles/tmpunrar
-  else
-    printf "$PRINTF_MASK" $INST_NEWZNAB_PATH" exists" "$GREEN" "[OK]" "$RESET"
-  fi
-  
-  sudo chmod 777 $INST_NEWZNAB_PATH/www/lib/smarty/templates_c
-  sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/movies
-  sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/anime
-  sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/music
-  sudo chmod 777 $INST_NEWZNAB_PATH/www
-  sudo chmod 777 $INST_NEWZNAB_PATH/www/install
-  sudo chmod 777 $INST_NEWZNAB_PATH/db
-  sudo chmod -R 777 $INST_NEWZNAB_PATH/nzbfiles/
-  
+
+  cd $DIR
   if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/newznab ]; then
     printf "$PRINTF_MASK" "Symbolic link not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
     sudo ln -sfv $INST_NEWZNAB_PATH/www $INST_APACHE_SYSTEM_WEB_ROOT/newznab
@@ -182,7 +181,7 @@ else
   read -n 1 -s
   open http://localhost/newznab/admin/site-edit.php
   
-  
+  echo "-----------------------------------------------------------"
   echo "| Caching Setup:"
   echo "| Caching Type                  : Memcache"
   echo "-----------------------------------------------------------"
@@ -211,6 +210,93 @@ else
   read -n 1 -s
   #open http://localhost/newznab/admin/site-edit.php
   
+  echo "-----------------------------------------------------------"
+  echo "| Enable categories:"
+  echo "| a.b.teevee"
+  echo "|"
+  echo "| For extended testrun:"
+  echo "| a.b.multimedia"
+  echo "-----------------------------------------------------------"
+  open http://localhost/newznab/admin/group-list.php
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
+  echo "-----------------------------------------------------------"
+  echo "| Add the following newsgroup:"
+  echo "| Name                          : alt.binaries.nl"
+  echo "| Backfill Days                 : 1"
+  echo "-----------------------------------------------------------"
+  open http://localhost/newznab/admin/group-edit.php
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
+  echo "-----------------------------------------------------------"
+  echo "| Add the following RegEx:"
+  echo "| Group                         : alt.binaries.nl"
+  echo "| RegEx                         : /^.*?"(?P<name>.*?)\.(sample|mkv|Avi|mp4|vol|ogm|par|rar|sfv|nfo|nzb|web|rmvb|srt|ass|mpg|txt|zip|wmv|ssa|r\d{1,3}|7z|tar|cbr|cbz|mov|divx|m2ts|rmvb|iso|dmg|sub|idx|rm|t\d{1,2}|u\d{1,3})/iS""
+  echo "| Ordinal                       : 5"
+  echo "-----------------------------------------------------------"
+  http://localhost/newznab/admin/regex-edit.php?action=add
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+
+  source config.sh
+  if [[ $INST_NEWZNAB_KEY_API == "" ]]; then
+    echo "-----------------------------------------------------------"
+    echo "| Main Site Settings, API:"
+    echo "| Please add the NewzNAB API key to config.sh"
+    echo "-----------------------------------------------------------"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    open  http://localhost/newznab/admin/site-edit.php
+    
+    printf "$PRINTF_MASK" "NewzNAB API key not detected, please added to config.sh" "$YELLOW" "[WAIT]" "$RESET"
+    while ( [[ $INST_NEWZNAB_KEY_API == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "NewzNAB API key detected" "$GREEN" "[OK]" "$RESET"
+  fi
+
+  if [ -f $DIR/config/newznab/newznab_local.sh ] ; then
+    sudo cp $DIR/config/newznab/newznab_local.sh $INST_NEWZNAB_PATH/misc/update_scripts/nix_scripts/
+  else
+    echo "-----------------------------------------------------------"
+    echo "| Update the following:"
+    echo "| export NEWZNAB_PATH="$INST_NEWZNAB_PATH/misc/update_scripts""
+    echo "|"
+    echo "| Modify all PHP5 references"
+    echo "| /usr/bin/php5 ... => php ..."
+    cd $INST_NEWZNAB_PATH/misc/update_scripts/nix_scripts/
+    cp newznab_screen.sh newznab_local.sh
+    chmod +x newznab_local.sh
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico newznab_local.sh
+    else
+      open -a /Applications/TextWrangler.app newznab_local.sh
+    fi
+  fi
+  
+  echo "-----------------------------------------------------------"
+  echo "| Update file update_parsing.php:"
+  echo "| \$echo = true;                 : \$echo = false;"
+  echo "-----------------------------------------------------------"
+  if [ ! -d /Applications/TextWrangler.app ]; then
+    pico $INST_NEWZNAB_PATH/misc/testing/update_parsing.php
+  else
+    open -a /Applications/TextWrangler.app $INST_NEWZNAB_PATH/misc/testing/update_parsing.php
+  fi
+  
+  cd $INST_NEWZNAB_PATH/misc/update_scripts/nix_scripts/
+  sh ./newznab_local.sh
+
+
+  cd $DIR
 fi
 
 ##### TESTING #####
@@ -258,68 +344,7 @@ exit 0
 
 ## --- TESTING
 
-echo "-----------------------------------------------------------"
-echo "| Enable categories:"
-echo "| a.b.teevee"
-echo "|"
-echo "| For extended testrun:"
-echo "| a.b.multimedia"
-echo "-----------------------------------------------------------"
-open http://localhost/newznab/admin/group-list.php
 
-echo "-----------------------------------------------------------"
-echo "| Add the following newsgroup:"
-echo "| Name                          : alt.binaries.nl"
-echo "| Backfill Days                 : 1"
-echo "-----------------------------------------------------------"
-open http://localhost/newznab/admin/group-edit.php
-
-echo "-----------------------------------------------------------"
-echo "| Add the following RegEx:"
-echo "| Group                         : alt.binaries.nl"
-echo "| RegEx                         : /^.*?"(?P<name>.*?)\.(sample|mkv|Avi|mp4|vol|ogm|par|rar|sfv|nfo|nzb|web|rmvb|srt|ass|mpg|txt|zip|wmv|ssa|r\d{1,3}|7z|tar|cbr|cbz|mov|divx|m2ts|rmvb|iso|dmg|sub|idx|rm|t\d{1,2}|u\d{1,3})/iS""
-echo "| Ordinal                       : 5"
-echo "-----------------------------------------------------------"
-http://localhost/newznab/admin/regex-edit.php?action=add
-
-source ../config.sh
-if [[ $INST_NEWZNAB_KEY_API == "" ]]; then
-    echo "| Main Site Settings, API:"
-    echo "| Please add the NewzNAB API key to config.sh"
-    echo "-----------------------------------------------------------"
-    subl ../config.sh
-    open  http://localhost/newznab/admin/site-edit.php
-    while ( [[ $INST_NEWZNAB_KEY_API == "" ]] )
-    do
-        printf 'Waiting for NewzNAB API key to be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
-        sleep 15
-        source ../config.sh
-    done
-fi
-
-if [ -f $DIR/bin/newznab_local.sh ] ; then
-    sudo cp $DIR/bin/newznab_local.sh $INST_NEWZNAB_PATH/misc/update_scripts/nix_scripts/
-else
-    echo "-----------------------------------------------------------"
-    echo "| Update the following:"
-    echo "| export NEWZNAB_PATH="$INST_NEWZNAB_PATH/misc/update_scripts""
-    echo "|"
-    echo "| Modify all PHP5 references"
-    echo "| /usr/bin/php5 ... => php ..."
-    cd $INST_NEWZNAB_PATH/misc/update_scripts/nix_scripts/
-    cp newznab_screen.sh newznab_local.sh
-    chmod +x newznab_local.sh
-    subl newznab_local.sh
-fi
-
-echo "-----------------------------------------------------------"
-echo "| Update file update_parsing.php:"
-echo "| \$echo = true;                 : \$echo = false;"
-echo "-----------------------------------------------------------"
-subl $INST_NEWZNAB_PATH/misc/testing/update_parsing.php
-
-cd $INST_NEWZNAB_PATH/misc/update_scripts/nix_scripts/
-sh ./newznab_local.sh
 
 
 # -----------------------------------------------------------"
