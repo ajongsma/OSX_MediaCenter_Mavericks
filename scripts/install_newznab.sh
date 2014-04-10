@@ -24,11 +24,68 @@ if [[ -z $INST_NEWZNAB_SVN_UID ]] || [[ -z $INST_NEWZNAB_SVN_PW ]] || [[ -z $INS
   printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
 fi
 
-# $INST_MYSQL_PW
-# $INST_NEWZNAB_MYSQL_DB
-# $INST_NEWZNAB_MYSQL_UID
-# $INST_NEWZNAB_MYSQL_PW
+if [[ -z $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW ]] ; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| MySQL Username              : INST_MYSQL_UID"
+    echo "| MySQL Password              : INST_MYSQL_PW"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_MYSQL_UID == "" ]] || [[ $INST_MYSQL_PW == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  fi
+  
+  if [[ -z $INST_NEWZNAB_MYSQL_UID ]] || [[ -z $INST_NEWZNAB_MYSQL_PW ]] || [[ -z $INST_NEWZNAB_MYSQL_DB ]]; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| Spotweb Username            : INST_NEWZNAB_MYSQL_UID"
+    echo "| Spotweb Password            : INST_NEWZNAB_MYSQL_PW"
+    echo "| Spotweb Path                : INST_NEWZNAB_MYSQL_DB"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_NEWZNAB_MYSQL_UID == "" ]] || [[ $INST_NEWZNAB_MYSQL_PW == "" ]] || [[ $INST_NEWZNAB_MYSQL_DB == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  fi
 
+
+  echo "| Server                        : $INST_NEWSSERVER_SERVER"
+  echo "| User Name                     : $INST_NEWSSERVER_SERVER_UID"
+  echo "| Password                      : $INST_NEWSSERVER_SERVER_PW"
+  echo "| Port                          : $INST_NEWSSERVER_SERVER_PORT_SSL"
+  if [[ -z $INST_NEWSSERVER_SERVER ]] || [[ -z $INST_NEWSSERVER_SERVER_UID ]] || [[ -z $INST_NEWSSERVER_SERVER_PW ]] || [[ -z $INST_NEWSSERVER_SERVER_PORT_SSL ]]; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| News Server                 : INST_NEWSSERVER_SERVER_PW"
+    
+    echo "| News Server Username        : INST_NEWSSERVER_SERVER"
+    echo "| News Server Password        : INST_NEWSSERVER_SERVER_UID"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_NEWSSERVER_SERVER == "" ]] || [[ $INST_NEWSSERVER_SERVER_UID == "" ]] || [[ $INST_NEWSSERVER_SERVER_PW == "" ]] || [[ $INST_NEWSSERVER_SERVER_PORT_SSL == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+  fi
+  
 }
 
 
@@ -76,17 +133,17 @@ else
     printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
   fi
   
-  
-  DBEXISTS=$(mysql -u root -p$INST_MYSQL_PW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$INST_NEWZNAB_MYSQL_DB"';" | grep "$INST_SPOTWEB_MYSQL_DB" > /dev/null; echo "$?")
+  MYSQL=`which mysql`
+  DBEXISTS=$(MYSQL -u root -p$INST_MYSQL_PW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$INST_NEWZNAB_MYSQL_DB"';" | grep "$INST_SPOTWEB_MYSQL_DB" > /dev/null; echo "$?")
   if [ $DBEXISTS -eq 0 ]; then
-    printf "$PRINTF_MASK" "Spotweb database $INST_SPOTWEB_MYSQL_DB exists" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" "Spotweb database $INST_NEWZNAB_MYSQL_DB exists" "$GREEN" "[OK]" "$RESET"
   else
-    printf "$PRINTF_MASK" "Spotweb database $INST_SPOTWEB_MYSQL_DB doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    printf "$PRINTF_MASK" "Spotweb database $INST_NEWZNAB_MYSQL_DB doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
   
     DB="create database $INST_NEWZNAB_MYSQL_DB;GRANT ALL PRIVILEGES ON $INST_NEWZNAB_MYSQL_DB.* TO $INST_NEWZNAB_MYSQL_UID@localhost IDENTIFIED BY '$INST_NEWZNAB_MYSQL_PW';FLUSH PRIVILEGES;"
     echo "-> DB: " $DB
     echo "-> PW: " $INST_MYSQL_PW
-    mysql -u root -p$INST_MYSQL_PW -e "$DB"
+    MYSQL -u root -p$INST_MYSQL_PW -e "$DB"
     if [ $? != "0" ]; then
       echo "[Error]: Database creation failed"
       exit 1
@@ -96,13 +153,62 @@ else
       echo "------------------------------------------"
       echo " DB Info: "
       echo ""
-      echo " DB Name: $INST_SPOTWEB_MYSQL_DB"
-      echo " DB User: $INST_SPOTWEB_MYSQL_UID"
-      echo " DB Pass: $INST_SPOTWEB_MYSQL_PW"
+      echo " DB Name: $INST_NEWZNAB_MYSQL_DB"
+      echo " DB User: $INST_NEWZNAB_MYSQL_UID"
+      echo " DB Pass: $INST_NEWZNAB_MYSQL_PW"
       echo ""
       echo "------------------------------------------"
     fi
   fi
+  
+  echo "-----------------------------------------------------------"
+  echo "| Paste the information as seen in the installer:"
+  echo "| Hostname                      : localhost"
+  echo "| Port                          : 3306"
+  echo "| Username                      : $INST_NEWZNAB_MYSQL_UID"
+  echo "| Password                      : $INST_NEWZNAB_MYSQL_PW"
+  echo "| Database                      : $INST_NEWZNAB_MYSQL_DB"
+  echo "| DB Engine                     : MyISAM"
+  echo "-----------------------------------------------------------"
+  echo "| News Server Setup:"
+  echo "| Server                        : $INST_NEWSSERVER_SERVER"
+  echo "| User Name                     : $INST_NEWSSERVER_SERVER_UID"
+  echo "| Password                      : $INST_NEWSSERVER_SERVER_PW"
+  echo "| Port                          : $INST_NEWSSERVER_SERVER_PORT_SSL"
+  echo "| SSL                           : Enable"
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  open http://localhost/newznab/admin/site-edit.php
+  
+  
+  echo "| Caching Setup:"
+  echo "| Caching Type                  : Memcache"
+  echo "-----------------------------------------------------------"
+  echo "| Admin Setup:"
+  echo "-----------------------------------------------------------"
+  echo "| NZB File Path Setup           : $INST_NEWZNAB_PATH/nzbfiles/"
+  echo "-----------------------------------------------------------"
+  echo "| Main Site Settings, HTML Layout, Tags"
+  echo "| newznab ID                    : <nnplus id>"
+  echo "| "
+  echo "| 3rd Party Application Paths"
+  echo "| Unrar Path                    : /usr/local/bin/unrar"
+  echo "| MediaInfo Path                : /usr/local/bin/mediainfo"
+  echo "| FFMPeg Path                   : /usr/local/bin/ffmpeg"
+  echo "| Lame Path                     : /usr/local/bin/lame"
+  echo "| "
+  echo "| Usenet Settings"
+  echo "| Minimum Completion Percent    : 95"
+  echo "| Start new groups              : Days, 1"
+  echo "| "
+  echo "| Check For Passworded Releases : Deep"
+  echo "| Delete Passworded Releases    : Yes"
+  echo "| Show Passworded Releases      : Show everything"
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  #open http://localhost/newznab/admin/site-edit.php
   
 fi
 
@@ -137,62 +243,17 @@ exit 0
 #echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 #read -n 1 -s
 
-
-
 ## Create the NewzNAB MySQL user and DB
-MYSQL=`which mysql`
+#MYSQL=`which mysql`
+#
+#Q1="CREATE DATABASE IF NOT EXISTS $INST_NEWZNAB_MYSQL_DB;"
+#Q2="GRANT USAGE ON *.* TO $INST_NEWZNAB_MYSQL_UID@localhost IDENTIFIED BY '$INST_NEWZNAB_MYSQL_PW';"
+#Q3="GRANT ALL PRIVILEGES ON $INST_NEWZNAB_MYSQL_DB.* TO $INST_NEWZNAB_MYSQL_UID@localhost;"
+#Q4="FLUSH PRIVILEGES;"
+#SQL="${Q1}${Q2}${Q3}${Q4}"
+#
+#MYSQL -u root -p -e "$SQL"
 
-Q1="CREATE DATABASE IF NOT EXISTS $INST_NEWZNAB_MYSQL_DB;"
-Q2="GRANT USAGE ON *.* TO $INST_NEWZNAB_MYSQL_UID@localhost IDENTIFIED BY '$INST_NEWZNAB_MYSQL_PW';"
-Q3="GRANT ALL PRIVILEGES ON $INST_NEWZNAB_MYSQL_DB.* TO $INST_NEWZNAB_MYSQL_UID@localhost;"
-Q4="FLUSH PRIVILEGES;"
-SQL="${Q1}${Q2}${Q3}${Q4}"
-
-MYSQL -u root -p -e "$SQL"
-
-echo "-----------------------------------------------------------"
-echo "| Paste the information as seen in the installer:"
-echo "| Hostname                      : localhost"
-echo "| Port                          : 3306"
-echo "| Username                      : $INST_NEWZNAB_MYSQL_UID"
-echo "| Password                      : $INST_NEWZNAB_MYSQL_PW"
-echo "| Database                      : $INST_NEWZNAB_MYSQL_DB"
-echo "| DB Engine                     : MyISAM"
-echo "-----------------------------------------------------------"
-echo "| News Server Setup:"
-echo "| Server                        : $INST_NEWSSERVER_SERVER"
-echo "| User Name                     : $INST_NEWSSERVER_SERVER_UID"
-echo "| Password                      : $INST_NEWSSERVER_SERVER_PW"
-echo "| Port                          : $INST_NEWSSERVER_SERVER_PORT_SSL"
-echo "| SSL                           : Enable"
-echo "-----------------------------------------------------------"
-echo "| Caching Setup:"
-echo "| Caching Type                  : Memcache"
-echo "-----------------------------------------------------------"
-echo "| Admin Setup:"
-echo "-----------------------------------------------------------"
-echo "| NZB File Path Setup           : $INST_NEWZNAB_PATH/nzbfiles/"
-echo "-----------------------------------------------------------"
-echo "| Main Site Settings, HTML Layout, Tags"
-echo "| newznab ID                    : <nnplus id>"
-echo "| "
-echo "| 3rd Party Application Paths"
-echo "| Unrar Path                    : /usr/local/bin/unrar"
-echo "| MediaInfo Path                : /usr/local/bin/mediainfo"
-echo "| FFMPeg Path                   : /usr/local/bin/ffmpeg"
-echo "| Lame Path                     : /usr/local/bin/lame"
-echo "| "
-echo "| Usenet Settings"
-echo "| Minimum Completion Percent    : 95"
-echo "| Start new groups              : Days, 1"
-echo "| "
-echo "| Check For Passworded Releases : Deep"
-echo "| Delete Passworded Releases    : Yes"
-echo "| Show Passworded Releases      : Show everything"
-echo "-----------------------------------------------------------"
-echo -e "${BLUE} --- press any key to continue --- ${RESET}"
-read -n 1 -s
-open http://localhost/newznab/admin/site-edit.php
 
 ## --- TESTING
 
