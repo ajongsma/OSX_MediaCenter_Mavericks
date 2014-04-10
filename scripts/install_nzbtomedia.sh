@@ -63,10 +63,15 @@ else
     cp $INST_NZBTOMEDIA_PATH/nzbToMedia/autoProcessMedia.cfg.sample ~/Library/Application\ Support/SABnzbd/scripts/autoProcessMedia.cfg
     echo "-----------------------------------------------------------"
     echo "| Modify the following:"
-    echo "| port=8081"
-    echo "| username=couchpotato"
-    echo "| password=<password>"
-    echo "| web_root="
+    echo "-----------------------------------------------------------"
+    echo "| [CouchPotato]"
+    echo "| apikey    =  $INST_COUCHPOTATO_KEY_API"
+    echo "| port      =  $INST_COUCHPOTATO_PORT"
+    echo "| "
+    echo "| [SickBeard]"
+    echo "| port      =  $INST_SICKBEARD_PORT"
+    echo "| username  = $INST_SICKBEARD_UID"
+    echo "| password  = $INST_SICKBEARD_PW"
     echo "-----------------------------------------------------------"
     if [ ! -d /Applications/TextWrangler.app ]; then
       pico ~/Library/Application\ Support/SABnzbd/scripts/autoProcessMedia.cfg
