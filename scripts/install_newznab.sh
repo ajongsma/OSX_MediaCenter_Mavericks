@@ -1,12 +1,72 @@
 #!/usr/bin/env bash
+source config.sh
+
+## http://www.newznab.com/
+## http://www.newznabforums.com/
+
+function check_config_defaults() {
+if [[ -z $INST_NEWZNAB_SVN_UID ]] || [[ -z $INST_NEWZNAB_SVN_PW ]] || [[ -z $INST_NEWZNAB_PATH ]]; then
+  printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+  echo "| NewzNAB Username            : INST_NEWZNAB_SVN_UID"
+  echo "| NewzNAB Password            : INST_NEWZNAB_SVN_PW"
+  echo "| NewzNAB Path                : INST_NEWZNAB_PATH"
+  if [ ! -d /Applications/TextWrangler.app ]; then
+    pico config.sh
+  else
+    open -a /Applications/TextWrangler.app config.sh
+  fi
+  while ( [[ $INST_NEWZNAB_SVN_UID == "" ]] || [[ $INST_NEWZNAB_SVN_PW == "" ]] || [[ $INST_NEWZNAB_PATH == "" ]] )
+  do
+    printf '.'
+    sleep 2
+    source config.sh
+  done
+  printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
+fi
+}
 
 
+#if [ -h $INST_APACHE_SYSTEM_WEB_ROOT/newznab ] ; then
+if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/newznab ] ; then
+  printf "$PRINTF_MASK" "-> NewzNAB detected" "$GREEN" "[OK]" "$RESET"
+  check_config_defaults
+  #check_config_var
+else
+  printf "$PRINTF_MASK" "-> NewzNAB not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+  check_config_defaults
+  
+  if [ ! -d $INST_NEWZNAB_PATH ] ; then
+    printf "$PRINTF_MASK" $INST_NEWZNAB_PATH" does't exists, creating" "$YELLOW" "[WAIT]" "$RESET"
+    sudo mkdir -p $INST_NEWZNAB_PATH
+    sudo chown `whoami` $INST_NEWZNAB_PATH
+  else
+    printf "$PRINTF_MASK" $INST_NEWZNAB_PATH" exists" "$GREEN" "[OK]" "$RESET"
+  fi
+  
+  cd $INST_NEWZNAB_PATH
+  svn co svn://svn.newznab.com/nn/branches/nnplus/ --username $INST_NEWZNAB_SVN_UID --password $INST_NEWZNAB_SVN_PW $INST_NEWZNAB_PATH
 
-
-
-
-
-
+  mkdir $INST_NEWZNAB_PATH/nzbfiles/tmpunrar
+  sudo chmod 777 $INST_NEWZNAB_PATH/www/lib/smarty/templates_c
+  sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/movies
+  sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/anime
+  sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/music
+  sudo chmod 777 $INST_NEWZNAB_PATH/www
+  sudo chmod 777 $INST_NEWZNAB_PATH/www/install
+  sudo chmod 777 $INST_NEWZNAB_PATH/db
+  sudo chmod -R 777 $INST_NEWZNAB_PATH/nzbfiles/
+  
+  if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/newznab ]; then
+    printf "$PRINTF_MASK" "Symbolic link not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    sudo ln -sfv $INST_NEWZNAB_PATH/www $INST_APACHE_SYSTEM_WEB_ROOT/newznab
+    sudo chown `whoami` $INST_APACHE_SYSTEM_WEB_ROOT/newznab
+  else
+    printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
+  fi
+  
+  
+  
+fi
 
 ##### TESTING #####
 exit 0
@@ -16,24 +76,6 @@ exit 0
 # Install NewzNAB
 #------------------------------------------------------------------------------
 ## http://www.newznabforums.com
-
-source ../config.sh
-
-sudo mkdir -p $INST_NEWZNAB_PATH
-sudo chown `whoami` $INST_NEWZNAB_PATH
-cd $INST_NEWZNAB_PATH
-
-svn co svn://svn.newznab.com/nn/branches/nnplus/ --username $INST_NEWZNAB_SVN_UID --password $INST_NEWZNAB_SVN_PW $INST_NEWZNAB_PATH
-
-mkdir $INST_NEWZNAB_PATH/nzbfiles/tmpunrar
-sudo chmod 777 $INST_NEWZNAB_PATH/www/lib/smarty/templates_c
-sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/movies
-sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/anime
-sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/music
-sudo chmod 777 $INST_NEWZNAB_PATH/www
-sudo chmod 777 $INST_NEWZNAB_PATH/www/install
-sudo chmod 777 $INST_NEWZNAB_PATH/db
-sudo chmod -R 777 $INST_NEWZNAB_PATH/nzbfiles/
 
 #echo "-----------------------------------------------------------"
 #echo "Enter the httpd.conf:"
@@ -57,7 +99,7 @@ sudo chmod -R 777 $INST_NEWZNAB_PATH/nzbfiles/
 #echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 #read -n 1 -s
 
-sudo ln -s /Users/Newznab/Sites/newznab/www /Library/Server/Web/Data/Sites/Default/newznab
+
 
 ## Create the NewzNAB MySQL user and DB
 MYSQL=`which mysql`
