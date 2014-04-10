@@ -23,5 +23,5 @@ else
   hdiutil detach /Volumes/Sequel\ Pro/
   
   open /Applications/Sequel\ Pro.app/
-  printf "$PRINTF_MASK" "MAcPAR Deluxe installed" "$GREEN" "[OK]" "$RESET"
+  printf "$PRINTF_MASK" "Sequel Pro installed" "$GREEN" "[OK]" "$RESET"
 fi
