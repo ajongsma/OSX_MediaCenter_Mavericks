@@ -66,7 +66,7 @@ else
   echo "-----------------------------------------------------------"
   echo "| Menu, Config, Categories:"
   echo "| movies, Default, Default, nzbToCouchpotato.py"
-  echo "|----------"
+  echo "-----------------------------------------------------------"
   echo "| Save"
   echo "-----------------------------------------------------------"
   open http://localhost:8080/config/categories/
