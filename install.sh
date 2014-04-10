@@ -152,14 +152,14 @@ fi
 # Check for iTerm 2
 #------------------------------------------------------------------------------
 if [[ $INST_ITERM2 == "true" ]]; then
-      source "$DIR/scripts/install_iterm.sh"
+  source "$DIR/scripts/install_iterm.sh"
 fi
 
 #------------------------------------------------------------------------------
 # Check for iTerm 2
 #------------------------------------------------------------------------------
 if [[ $INST_TEXTWRANGLER == "true" ]]; then
-      source "$DIR/scripts/install_textwrangler.sh"
+  source "$DIR/scripts/install_textwrangler.sh"
 fi
 
 #------------------------------------------------------------------------------
