@@ -61,16 +61,11 @@ if [[ -z $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW ]] ; then
     printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
   fi
 
-
-  echo "| Server                        : $INST_NEWSSERVER_SERVER"
-  echo "| User Name                     : $INST_NEWSSERVER_SERVER_UID"
-  echo "| Password                      : $INST_NEWSSERVER_SERVER_PW"
-  echo "| Port                          : $INST_NEWSSERVER_SERVER_PORT_SSL"
   if [[ -z $INST_NEWSSERVER_SERVER ]] || [[ -z $INST_NEWSSERVER_SERVER_UID ]] || [[ -z $INST_NEWSSERVER_SERVER_PW ]] || [[ -z $INST_NEWSSERVER_SERVER_PORT_SSL ]]; then
     printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
-    echo "| News Server                 : INST_NEWSSERVER_SERVER_PW"
-    
-    echo "| News Server Username        : INST_NEWSSERVER_SERVER"
+    echo "| News Server                 : INST_NEWSSERVER_SERVER"
+    echo "| News Server Port SSL        : INST_NEWSSERVER_SERVER_PORT_SSL"
+    echo "| News Server Username        : INST_NEWSSERVER_SERVER_PW"
     echo "| News Server Password        : INST_NEWSSERVER_SERVER_UID"
     if [ ! -d /Applications/TextWrangler.app ]; then
       pico config.sh
@@ -106,9 +101,15 @@ else
     printf "$PRINTF_MASK" $INST_NEWZNAB_PATH" exists" "$GREEN" "[OK]" "$RESET"
   fi
   
-  cd $INST_NEWZNAB_PATH
-  svn co svn://svn.newznab.com/nn/branches/nnplus/ --username $INST_NEWZNAB_SVN_UID --password $INST_NEWZNAB_SVN_PW $INST_NEWZNAB_PATH
-
+  if [ ! -d $INST_NEWZNAB_PATH/www ] ; then
+    printf "$PRINTF_MASK" " NewzNAB does't exists, downloading" "$YELLOW" "[WAIT]" "$RESET"
+    cd $INST_NEWZNAB_PATH
+    svn co svn://svn.newznab.com/nn/branches/nnplus/ --username $INST_NEWZNAB_SVN_UID --password $INST_NEWZNAB_SVN_PW $INST_NEWZNAB_PATH
+  else
+    printf "$PRINTF_MASK" "NewzNAB exists" "$GREEN" "[OK]" "$RESET"
+  fi
+  
+  
   if [ ! -d $INST_NEWZNAB_PATH/nzbfiles/tmpunrar ] ; then
     printf "$PRINTF_MASK" $INST_NEWZNAB_PATH"/nzbfiles/tmpunrareating doesn't exist, creating" "$YELLOW" "[WAIT]" "$RESET"
     mkdir -p $INST_NEWZNAB_PATH/nzbfiles/tmpunrar
