@@ -23,6 +23,12 @@ if [[ -z $INST_NEWZNAB_SVN_UID ]] || [[ -z $INST_NEWZNAB_SVN_PW ]] || [[ -z $INS
   done
   printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
 fi
+
+# $INST_MYSQL_PW
+# $INST_NEWZNAB_MYSQL_DB
+# $INST_NEWZNAB_MYSQL_UID
+# $INST_NEWZNAB_MYSQL_PW
+
 }
 
 
@@ -71,6 +77,32 @@ else
   fi
   
   
+  DBEXISTS=$(mysql -u root -p$INST_MYSQL_PW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$INST_NEWZNAB_MYSQL_DB"';" | grep "$INST_SPOTWEB_MYSQL_DB" > /dev/null; echo "$?")
+  if [ $DBEXISTS -eq 0 ]; then
+    printf "$PRINTF_MASK" "Spotweb database $INST_SPOTWEB_MYSQL_DB exists" "$GREEN" "[OK]" "$RESET"
+  else
+    printf "$PRINTF_MASK" "Spotweb database $INST_SPOTWEB_MYSQL_DB doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+  
+    DB="create database $INST_NEWZNAB_MYSQL_DB;GRANT ALL PRIVILEGES ON $INST_NEWZNAB_MYSQL_DB.* TO $INST_NEWZNAB_MYSQL_UID@localhost IDENTIFIED BY '$INST_NEWZNAB_MYSQL_PW';FLUSH PRIVILEGES;"
+    echo "-> DB: " $DB
+    echo "-> PW: " $INST_MYSQL_PW
+    mysql -u root -p$INST_MYSQL_PW -e "$DB"
+    if [ $? != "0" ]; then
+      echo "[Error]: Database creation failed"
+      exit 1
+    else
+      echo "------------------------------------------"
+      echo " Database has been created successfully "
+      echo "------------------------------------------"
+      echo " DB Info: "
+      echo ""
+      echo " DB Name: $INST_SPOTWEB_MYSQL_DB"
+      echo " DB User: $INST_SPOTWEB_MYSQL_UID"
+      echo " DB Pass: $INST_SPOTWEB_MYSQL_PW"
+      echo ""
+      echo "------------------------------------------"
+    fi
+  fi
   
 fi
 
