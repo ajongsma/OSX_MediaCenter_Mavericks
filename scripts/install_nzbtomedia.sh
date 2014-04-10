@@ -74,6 +74,8 @@ else
     echo "| username  = $INST_SICKBEARD_UID"
     echo "| password  = $INST_SICKBEARD_PW"
     echo "-----------------------------------------------------------"
+    echo "| Save"
+    echo "-----------------------------------------------------------"
     if [ ! -d /Applications/TextWrangler.app ]; then
       pico ~/Library/Application\ Support/SABnzbd/scripts/autoProcessMedia.cfg
     else
