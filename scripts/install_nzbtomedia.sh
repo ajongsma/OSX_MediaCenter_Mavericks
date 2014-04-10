@@ -22,7 +22,8 @@ function check_config_defaults() {
   fi
 }
 
-if [ -d $INST_NZBTOMEDIA_PATH/nzbToMedia ] ; then
+#if [ -d $INST_NZBTOMEDIA_PATH/nzbToMedia ] ; then
+if [ ! -d $INST_NZBTOMEDIA_PATH/nzbToMedia ] ; then
   printf "$PRINTF_MASK" "nzbToMedia detected" "$GREEN" "[OK]" "$RESET"
   check_config_defaults
 else
