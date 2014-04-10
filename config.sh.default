@@ -193,9 +193,7 @@ INST_COUCHPOTATO_KEY_API=""
 # -----------------------------------------------------------
 # | nzbToMedia
 # -----------------------------------------------------------
-# | Note: /nzbToMedia is appended automatically
-# -----------------------------------------------------------
-INST_NZBTOMEDIA_PATH="/Users"  
+INST_NZBTOMEDIA_PATH="/Users/NzbToMedia"  
 
 # -----------------------------------------------------------
 # | Trakt
