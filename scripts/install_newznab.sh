@@ -46,7 +46,13 @@ else
   cd $INST_NEWZNAB_PATH
   svn co svn://svn.newznab.com/nn/branches/nnplus/ --username $INST_NEWZNAB_SVN_UID --password $INST_NEWZNAB_SVN_PW $INST_NEWZNAB_PATH
 
-  mkdir $INST_NEWZNAB_PATH/nzbfiles/tmpunrar
+  if [ ! -d $INST_NEWZNAB_PATH/nzbfiles/tmpunrar ] ; then
+    printf "$PRINTF_MASK" $INST_NEWZNAB_PATH"/nzbfiles/tmpunrareating doesn't exist, creating" "$YELLOW" "[WAIT]" "$RESET"
+    mkdir -p $INST_NEWZNAB_PATH/nzbfiles/tmpunrar
+  else
+    printf "$PRINTF_MASK" $INST_NEWZNAB_PATH" exists" "$GREEN" "[OK]" "$RESET"
+  fi
+  
   sudo chmod 777 $INST_NEWZNAB_PATH/www/lib/smarty/templates_c
   sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/movies
   sudo chmod 777 $INST_NEWZNAB_PATH/www/covers/anime
