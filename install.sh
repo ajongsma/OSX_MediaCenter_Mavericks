@@ -229,7 +229,7 @@ if [[ $INST_COUCHPOTATO == "true" ]]; then
 fi
 
 #------------------------------------------------------------------------------
-# Install CouchPotato
+# Install SickBeard
 #------------------------------------------------------------------------------
 if [[ $INST_SICKBEARD == "true" ]]; then
   source "$DIR/scripts/install_cheetah.sh"
@@ -238,6 +238,20 @@ if [[ $INST_SICKBEARD == "true" ]]; then
   source "$DIR/scripts/install_sabnzbd_sickbeard.sh"
   source "$DIR/scripts/install_sickbeard_pms.sh"
   source "$DIR/scripts/install_sickbeard_trakttv.sh"
+fi
+
+#------------------------------------------------------------------------------
+# Install nzbToMedia
+#------------------------------------------------------------------------------
+if [[ $INST_NZBTOMEDIA == "true" ]]; then
+  source "$DIR/scripts/install_nzbtomedia.sh"
+fi
+
+#------------------------------------------------------------------------------
+# Install SabNZBD to CouchPotato via nzbToMedia
+#------------------------------------------------------------------------------
+if [[ $INST_SABNZBD == "true" ]] || [[ $INST_COUCHPOTATO == "true" ]] || [[ $INST_NZBTOMEDIA == "true" ]]; then
+  source "$DIR/scripts/install_sabnzbd_couchpotato.sh"
 fi
 
 #------------------------------------------------------------------------------
