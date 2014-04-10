@@ -50,28 +50,34 @@ else
 ##cp -R ~/Github/nzbToMedia/* ~/Library/Application\ Support/SABnzbd/scripts/
 #cp /Applications/Sick-Beard/autoProcessTV/* ~/Library/Application\ Support/SABnzbd/scripts/
 
-if [ ! -f ~/Library/Application\ Support/SABnzbd/scripts/autoProcessMedia.cfg ] ; then
-  printf "$PRINTF_MASK" "autoProcessMedia.cfg not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
-  
-  cp $INST_NZBTOMEDIA_PATH/nzbToMedia/autoProcessMedia.cfg.sample ~/Library/Application\ Support/SABnzbd/scripts/autoProcessMedia.cfg
-
-  echo "-----------------------------------------------------------"
-  echo "| Modify the following:"
-  echo "| port=8081"
-  echo "| username=couchpotato"
-  echo "| password=<password>"
-  echo "| web_root="
-  echo "-----------------------------------------------------------"
-  if [ ! -d /Applications/TextWrangler.app ]; then
-    pico ~/Library/Application\ Support/SABnzbd/scripts/autoProcessMedia.cfg
+  if [ ! -h ~/Library/Application\ Support/SABnzbd/scripts/nzbToCouchPotato.py ]; then
+    printf "$PRINTF_MASK" "Symbolic link nzbToCouchPotato.py not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    sudo ln -sfv $INST_NZBTOMEDIA_PATH/nzbToMedia/nzbToCouchPotato.py ~/Library/Application\ Support/SABnzbd/scripts/nzbToCouchPotato.py
   else
-    open -a /Applications/TextWrangler.app ~/Library/Application\ Support/SABnzbd/scripts/autoProcessMedia.cfg
+    printf "$PRINTF_MASK" "Symbolic link nzbToCouchPotato.py detected" "$GREEN" "[OK]" "$RESET"
   fi
-  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
-  read -n 1 -s
-else
-  printf "$PRINTF_MASK" "autoProcessMedia.cfg detected" "$GREEN" "[OK]" "$RESET"
-fi
+    
+  if [ ! -f ~/Library/Application\ Support/SABnzbd/scripts/autoProcessMedia.cfg ] ; then
+    printf "$PRINTF_MASK" "autoProcessMedia.cfg not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
+    
+    cp $INST_NZBTOMEDIA_PATH/nzbToMedia/autoProcessMedia.cfg.sample ~/Library/Application\ Support/SABnzbd/scripts/autoProcessMedia.cfg
+    echo "-----------------------------------------------------------"
+    echo "| Modify the following:"
+    echo "| port=8081"
+    echo "| username=couchpotato"
+    echo "| password=<password>"
+    echo "| web_root="
+    echo "-----------------------------------------------------------"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico ~/Library/Application\ Support/SABnzbd/scripts/autoProcessMedia.cfg
+    else
+      open -a /Applications/TextWrangler.app ~/Library/Application\ Support/SABnzbd/scripts/autoProcessMedia.cfg
+    fi
+    echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+    read -n 1 -s
+  else
+    printf "$PRINTF_MASK" "autoProcessMedia.cfg detected" "$GREEN" "[OK]" "$RESET"
+  fi
 
 
 
