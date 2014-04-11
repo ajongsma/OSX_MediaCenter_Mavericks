@@ -101,6 +101,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #  source "$DIR/scripts/install_spotweb.sh"
 #fi
 
-if [[ $INST_NZBTOMEDIA == "true" ]]; then
-  source "$DIR/scripts/install_nzbtomedia.sh"
+if [[ $INST_NEWZNAB == "true" ]]; then
+  source "$DIR/scripts/install_newznab.sh"
 fi
