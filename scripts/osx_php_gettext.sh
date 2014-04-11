@@ -22,6 +22,9 @@ sudo cp modules/gettext.so /usr/lib/php/extensions/no-debug-non-zts-20100525/
 
 echo "Don't forget to add 'extension=gettext.so' to /Library/Server/Web/Config/php/php_gettext.ini"
 #sudo touch /Library/Server/Web/Config/php/php_gettext.ini
-#sudo echo "extension=gettext.so" > php_gettext.ini
+
+#sudo echo "extension=gettext.so" > /Library/Server/Web/Config/php/php_gettext.ini
+#sudo touch /Library/Server/Web/Config/php/php_xdebug.ini
+#sudo echo "extension=xdebug.so" > /Library/Server/Web/Config/php/php_xdebug.ini
 
 sudo apachectl graceful
