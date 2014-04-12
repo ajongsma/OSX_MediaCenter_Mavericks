@@ -211,9 +211,21 @@ else
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
 
+#  echo "-----------------------------------------------------------"
+#  echo "| Caching Setup:"
+#  echo "| Caching Type                  : Memcache"
+#  echo "-----------------------------------------------------------"
+
   echo "-----------------------------------------------------------"
-  echo "| Caching Setup:"
-  echo "| Caching Type                  : Memcache"
+  echo "| Caching Setup"
+  echo "-----------------------------------------------------------"
+  echo "| Caching Type                  : APC"
+  echo "-----------------------------------------------------------"
+  echo "| Save configuration file, Step five: Setup admin user"
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+
   echo "-----------------------------------------------------------"
   echo "| Admin Setup:"
   echo "-----------------------------------------------------------"
