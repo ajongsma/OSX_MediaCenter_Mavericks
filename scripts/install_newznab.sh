@@ -7,8 +7,8 @@ source config.sh
 function check_config_defaults() {
 if [[ -z $INST_NEWZNAB_SVN_UID ]] || [[ -z $INST_NEWZNAB_SVN_PW ]] || [[ -z $INST_NEWZNAB_PATH ]]; then
   printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
-  echo "| NewzNAB Username            : INST_NEWZNAB_SVN_UID"
-  echo "| NewzNAB Password            : INST_NEWZNAB_SVN_PW"
+  echo "| NewzNAB SVN Username        : INST_NEWZNAB_SVN_UID"
+  echo "| NewzNAB SVN Password        : INST_NEWZNAB_SVN_PW"
   echo "| NewzNAB Path                : INST_NEWZNAB_PATH"
   if [ ! -d /Applications/TextWrangler.app ]; then
     pico config.sh
