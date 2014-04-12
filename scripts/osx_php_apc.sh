@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 source config.sh
 
+## http://codedmemes.com/lib/php-performance-apc-os-x-server/
+
 brew install pcre
 sudo pecl install apc
 
@@ -31,3 +33,5 @@ else
 fi
 
 sudo apachectl graceful
+
+sudo pecl upgrade apc 
