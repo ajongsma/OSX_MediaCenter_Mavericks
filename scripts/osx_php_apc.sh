@@ -17,7 +17,7 @@ read -n 1 -s
 ## Add "extension=apc.so" to php.ini
 if [ ! -f /Library/Server/Web/Config/php/php_apc.ini ] ; then
   printf "$PRINTF_MASK" "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$YELLOW" "[WAIT]" "$RESET"
-  sudo cp $DIR/config/launchctl/php/php_apc.ini /Library/Server/Web/Config/php/
+  sudo cp $DIR/config/php/php_apc.ini /Library/Server/Web/Config/php/
   if [ "$?" != "0" ]; then
     echo -e "${RED}  ============================================== ${RESET}"
     echo -e "${RED} | ERROR ${RESET}"
