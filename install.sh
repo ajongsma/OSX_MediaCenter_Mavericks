@@ -258,5 +258,6 @@ fi
 # Install Auto-Sub
 #------------------------------------------------------------------------------
 if [[ $INST_AUTOSUB == "true" ]]; then
-  source "$DIR/scripts/install_autosub.sh"
+  source "$DIR/scripts/osx_pear.sh"
+#  source "$DIR/scripts/install_autosub.sh"
 fi
