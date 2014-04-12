@@ -183,14 +183,6 @@ else
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
 
-
-
-##### TESTING #####
-exit 0
-##### TESTING #####
-
-
-
   echo "-----------------------------------------------------------"
   echo "| Paste the information as seen in the installer:"
   echo "| Hostname                      : localhost"
@@ -199,6 +191,13 @@ exit 0
   echo "| Password                      : $INST_NEWZNAB_MYSQL_PW"
   echo "| Database                      : $INST_NEWZNAB_MYSQL_DB"
   echo "| DB Engine                     : MyISAM"
+  echo "-----------------------------------------------------------"
+  echo "| Setup Database"
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
+  
   echo "-----------------------------------------------------------"
   echo "| News Server Setup:"
   echo "| Server                        : $INST_NEWSSERVER_SERVER"
