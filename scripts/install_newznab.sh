@@ -300,15 +300,15 @@ else
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
   
-  echo "-----------------------------------------------------------"
-  echo "| Add the following newsgroup:"
-  echo "| Name                          : alt.binaries.nl"
-  echo "| Backfill Days                 : 1"
-  echo "-----------------------------------------------------------"
-  open http://localhost/newznab/admin/group-edit.php
-  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
-  read -n 1 -s
-  
+#  echo "-----------------------------------------------------------"
+#  echo "| Add the following newsgroup:"
+#  echo "| Name                          : alt.binaries.nl"
+#  echo "| Backfill Days                 : 1"
+#  echo "-----------------------------------------------------------"
+#  open http://localhost/newznab/admin/group-edit.php
+#  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+#  read -n 1 -s
+#  
 #  echo "-----------------------------------------------------------"
 #  echo "| Add the following RegEx:"
 #  echo "| Group                         : alt.binaries.nl"
