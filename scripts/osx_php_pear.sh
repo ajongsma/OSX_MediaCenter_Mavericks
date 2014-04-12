@@ -15,11 +15,7 @@ echo "| Add               : include_path = \".:/usr/lib/php/:/usr/lib/php/pear/\
 echo "-----------------------------------------------------------"
 echo "| Save changes"
 echo "-----------------------------------------------------------"
-if [ ! -d /Applications/TextWrangler.app ]; then
-  sudo pico /etc/php.ini
-else
-  sudo open -a /Applications/TextWrangler.app /etc/php.ini
-fi
+sudo pico /etc/php.ini
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
