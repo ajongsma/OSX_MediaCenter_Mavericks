@@ -231,6 +231,8 @@ else
   echo "| Password                      : $INST_NEWZNAB_PW"
   echo "| Email                         : <Email address>"
   echo "-----------------------------------------------------------"
+  echo "| Create Admin user"
+  echo "-----------------------------------------------------------"
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
 
