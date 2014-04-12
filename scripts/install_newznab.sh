@@ -90,6 +90,7 @@ if [[ -z $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW ]] ; then
 #if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/newznab ] ; then
 if [ -h $INST_APACHE_SYSTEM_WEB_ROOT/newznab ] ; then
   printf "$PRINTF_MASK" "-> NewzNAB detected" "$GREEN" "[OK]" "$RESET"
+  echo "-> $INST_APACHE_SYSTEM_WEB_ROOT/newznab"
   check_config_defaults
   #check_config_var
 else
