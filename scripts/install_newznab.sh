@@ -351,7 +351,7 @@ else
     echo "| export NEWZNAB_PATH="$INST_NEWZNAB_PATH/misc/update_scripts""
     echo "|"
     echo "| Modify all PHP5 references"
-    echo "| /usr/bin/php5 ... => php ..."
+    echo "| /usr/bin/php5 ... => "`which php`
     cd $INST_NEWZNAB_PATH/misc/update_scripts/nix_scripts/
     cp newznab_screen.sh newznab_local.sh
     chmod +x newznab_local.sh
@@ -364,19 +364,19 @@ else
     read -n 1 -s
   fi
   
-  echo "-----------------------------------------------------------"
-  echo "| Update file update_parsing.php:"
-  echo "| \$echo = true;                 : \$echo = false;"
-  echo "-----------------------------------------------------------"
-  if [ ! -d /Applications/TextWrangler.app ]; then
-    pico $INST_NEWZNAB_PATH/misc/testing/update_parsing.php
-  else
-    open -a /Applications/TextWrangler.app $INST_NEWZNAB_PATH/misc/testing/update_parsing.php
-  fi
-  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
-  read -n 1 -s
+#  echo "-----------------------------------------------------------"
+#  echo "| Update file update_parsing.php:"
+#  echo "| \$echo = true;                 : \$echo = false;"
+#  echo "-----------------------------------------------------------"
+#  if [ ! -d /Applications/TextWrangler.app ]; then
+#    pico $INST_NEWZNAB_PATH/misc/testing/update_parsing.php
+#  else
+#    open -a /Applications/TextWrangler.app $INST_NEWZNAB_PATH/misc/testing/update_parsing.php
+#  fi
+#  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+#  read -n 1 -s
   
-  
+  ## /Users/Newznab/Sites/newznab/misc/update_scripts/nix_scripts
   cd $INST_NEWZNAB_PATH/misc/update_scripts/nix_scripts/
 #  osascript -e 'tell app "Terminal"
 #    do script "sh ./newznab_local.sh"
