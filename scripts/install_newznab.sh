@@ -360,6 +360,8 @@ else
     else
       open -a /Applications/TextWrangler.app newznab_local.sh
     fi
+    echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+    read -n 1 -s
   fi
   
   echo "-----------------------------------------------------------"
@@ -371,11 +373,16 @@ else
   else
     open -a /Applications/TextWrangler.app $INST_NEWZNAB_PATH/misc/testing/update_parsing.php
   fi
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
   
   cd $INST_NEWZNAB_PATH/misc/update_scripts/nix_scripts/
+#  osascript -e 'tell app "Terminal"
+#    do script "sh ./newznab_local.sh"
+#  end tell'
+
   sh ./newznab_local.sh
-
-
   cd $DIR
 fi
 
