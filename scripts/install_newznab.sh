@@ -259,10 +259,23 @@ else
   echo "| - newznab ID                  : $INST_NEWZNAB_NNPLUS_ID"
   echo "| "
   echo "| 3rd Party Application Paths"
-  echo "| - Unrar Path                    : /usr/local/bin/unrar"
-  echo "| - MediaInfo Path                : /usr/local/bin/mediainfo"
-  echo "| - FFMPeg Path                   : /usr/local/bin/ffmpeg"
-  echo "| - Lame Path                     : /usr/local/bin/lame"
+
+  UNRAR=`which mysql`
+  if [[ ! -z $UNRAR ]]
+    echo "| - Unrar Path                    : $UNRAR"
+  fi
+  MEDIAINFO=`which mysql`
+  if [[ ! -z MEDIAINFO ]]
+    echo "| - MediaInfo Path                : $MEDIAINFO"
+  fi
+  FFMPEG=`which ffmpeg`
+  if [[ ! -z FFMPEG ]]
+    echo "| - FFMPeg Path                   : $FFMPEG"
+  fi
+  LAME=`which lame`
+  if [[ ! -z LAME ]]
+    echo "| - Lame Path                     : $LAME"
+  fi
   echo "| "
   echo "| Usenet Settings"
   echo "| - Minimum Completion Percent    : 95"
