@@ -256,7 +256,7 @@ else
 #  echo "| NZB File Path Setup           : $INST_NEWZNAB_PATH/nzbfiles/"
   echo "-----------------------------------------------------------"
   echo "| Main Site Settings, HTML Layout, Tags"
-  echo "| - newznab ID                  : $INST_NEWZNAB_NEWZNAB_ID"
+  echo "| - newznab ID                  : $INST_NEWZNAB_NNPLUS_ID"
   echo "| "
   echo "| 3rd Party Application Paths"
   echo "| - Unrar Path                    : /usr/local/bin/unrar"
