@@ -171,7 +171,26 @@ else
       echo "------------------------------------------"
     fi
   fi
+
+  echo "-----------------------------------------------------------"
+  echo "| NewzNAB Installer"
+  echo "-----------------------------------------------------------"
+  echo "| Click                         : Go to step one: Pre flight check"
+  echo "| Check                         : All results should be OK"
   
+  echo "-----------------------------------------------------------"
+  open http://localhost/newznab
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+
+
+
+##### TESTING #####
+exit 0
+##### TESTING #####
+
+
+
   echo "-----------------------------------------------------------"
   echo "| Paste the information as seen in the installer:"
   echo "| Hostname                      : localhost"
