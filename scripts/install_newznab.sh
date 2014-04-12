@@ -188,10 +188,10 @@ else
   echo "| Port                          : $INST_NEWSSERVER_SERVER_PORT_SSL"
   echo "| SSL                           : Enable"
   echo "-----------------------------------------------------------"
+  open http://localhost/newznab/admin/site-edit.php
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
-  open http://localhost/newznab/admin/site-edit.php
-  
+
   echo "-----------------------------------------------------------"
   echo "| Caching Setup:"
   echo "| Caching Type                  : Memcache"
