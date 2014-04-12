@@ -102,5 +102,17 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #fi
 
 if [[ $INST_NEWZNAB == "true" ]]; then
-  source "$DIR/scripts/install_newznab.sh"
+  #  Checking for Pear:
+  #  Cannot find PEAR. To install PEAR follow the instructions at http://pear.php.net/manual/en/installation.php
+    source "$DIR/scripts/osx_pear.sh"
+    
+  #  Checking max_execution_time:
+  #  Your PHP installation's max_execution_time setting is low, please consider increasing it >= 60
+  
+  
+  #  Checking PHP's memory_limit:
+  ##Your PHP installation's memory_limit setting is low, please consider increasing it >= 256MB
+
+
+#  source "$DIR/scripts/install_newznab.sh"
 fi
