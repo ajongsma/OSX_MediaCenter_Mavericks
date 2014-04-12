@@ -207,7 +207,7 @@ else
   echo "-----------------------------------------------------------"
   echo "| Test connection"
   echo "-----------------------------------------------------------"
-  open http://localhost/newznab/admin/site-edit.php
+  #open http://localhost/newznab/admin/site-edit.php
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
 
@@ -246,6 +246,10 @@ else
 
 ## => Note: It is a good idea to remove the www/install directory after setup
 
+
+#### TESTING ######################################
+
+
   echo "-----------------------------------------------------------"
   echo "| Admin Setup:"
 #  echo "-----------------------------------------------------------"
@@ -268,10 +272,10 @@ else
   echo "| Delete Passworded Releases    : Yes"
   echo "| Show Passworded Releases      : Show everything"
   echo "-----------------------------------------------------------"
+  open http://localhost/newznab/admin/site-edit.php
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
-  #open http://localhost/newznab/admin/site-edit.php
-  
+
   echo "-----------------------------------------------------------"
   echo "| Enable categories:"
   echo "| a.b.teevee"
