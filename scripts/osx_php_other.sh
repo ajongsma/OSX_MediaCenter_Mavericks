@@ -11,7 +11,9 @@ echo "| Change            : memory_limit = 256M"
 echo "-----------------------------------------------------------"
 echo "| Save changes"
 echo "-----------------------------------------------------------"
-sudo pico /etc/php.ini
+osascript -e 'tell app "Terminal"
+  do script "sudo pico /etc/php.ini"
+end tell'
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
