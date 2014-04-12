@@ -14,5 +14,19 @@ echo "-----------------------------------------------------------"
 echo " --- press any key to continue ---"
 read -n 1 -s
 
+## Add "extension=apc.so" to php.ini
+if [ ! -f /Library/Server/Web/Config/php/php_apc.ini ] ; then
+  printf "$PRINTF_MASK" "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$YELLOW" "[WAIT]" "$RESET"
+  sudo cp $DIR/config/launchctl/php/php_apc.ini /Library/Server/Web/Config/php/
+  if [ "$?" != "0" ]; then
+    echo -e "${RED}  ============================================== ${RESET}"
+    echo -e "${RED} | ERROR ${RESET}"
+    echo -e "${RED} | Copy failed: ${RESET}"
+    echo -e "${RED}  ============================================== ${RESET}"
+    read -n 1 -s
+    exit 1
+  fi
+else
+  printf "$PRINTF_MASK" "Copying config file php_apc.ini" "$GREEN" "[OK]" "$RESET"
+fi
 
-You should add "extension=apc.so" to php.ini
