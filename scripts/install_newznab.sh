@@ -177,7 +177,7 @@ else
   echo "-----------------------------------------------------------"
   echo "| Click                         : Go to step one: Pre flight check"
   echo "| Check                         : All results should be OK"
-  
+  echo "| Click                         : Go to step two: Set up the database"
   echo "-----------------------------------------------------------"
   open http://localhost/newznab
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
