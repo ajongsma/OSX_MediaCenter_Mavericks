@@ -325,12 +325,12 @@ else
     echo "| Main Site Settings, API:"
     echo "| Please add the NewzNAB API key to config.sh"
     echo "-----------------------------------------------------------"
+    http://localhost/newznab/profile?id=1
     if [ ! -d /Applications/TextWrangler.app ]; then
       pico config.sh
     else
       open -a /Applications/TextWrangler.app config.sh
     fi
-    open  http://localhost/newznab/admin/site-edit.php
     
     printf "$PRINTF_MASK" "NewzNAB API key not detected, please added to config.sh" "$YELLOW" "[WAIT]" "$RESET"
     while ( [[ $INST_NEWZNAB_KEY_API == "" ]] )
