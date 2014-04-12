@@ -192,12 +192,11 @@ else
   echo "| Database                      : $INST_NEWZNAB_MYSQL_DB"
   echo "| DB Engine                     : MyISAM"
   echo "-----------------------------------------------------------"
-  echo "| Setup Database"
+  echo "| Setup Database, Setup three: Setup news server connection"
   echo "-----------------------------------------------------------"
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
-  
-  
+
   echo "-----------------------------------------------------------"
   echo "| News Server Setup:"
   echo "| Server                        : $INST_NEWSSERVER_SERVER"
