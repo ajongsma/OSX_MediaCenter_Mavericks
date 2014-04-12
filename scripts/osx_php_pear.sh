@@ -15,7 +15,9 @@ echo "| Add               : include_path = \".:/usr/lib/php/:/usr/lib/php/pear/\
 echo "-----------------------------------------------------------"
 echo "| Save changes"
 echo "-----------------------------------------------------------"
-sudo pico /etc/php.ini
+osascript -e 'tell app "Terminal"
+      do script "sudo pico /etc/php.ini"
+  end tell'
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
