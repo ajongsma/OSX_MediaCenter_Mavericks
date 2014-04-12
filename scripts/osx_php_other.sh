@@ -7,7 +7,7 @@ echo "| /etc/php.ini"
 echo "| - Section Paths and Directories"
 echo "-----------------------------------------------------------"
 echo "| Change            : max_execution_time = 60"
-echo "| Change            : memory_limit = 256
+echo "| Change            : memory_limit = 256"
 echo "-----------------------------------------------------------"
 echo "| Save changes"
 echo "-----------------------------------------------------------"
