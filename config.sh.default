@@ -140,6 +140,8 @@ INST_NEWSSERVER_RETENTION='876'
 # | NewzNAB
 # -----------------------------------------------------------
 INST_NEWZNAB_PATH="/Users/Newznab/Sites/newznab"
+INST_NEWZNAB_UID="newznab"
+INST_NEWZNAB_PW="mini"
 INST_NEWZNAB_SVN_UID=""
 INST_NEWZNAB_SVN_PW=""
 INST_NEWZNAB_MYSQL_DB="newznab"
