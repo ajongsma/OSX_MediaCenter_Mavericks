@@ -230,15 +230,15 @@ else
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
   
-  echo "-----------------------------------------------------------"
-  echo "| Add the following RegEx:"
-  echo "| Group                         : alt.binaries.nl"
-  echo "| RegEx                         : /^.*?"(?P<name>.*?)\.(sample|mkv|Avi|mp4|vol|ogm|par|rar|sfv|nfo|nzb|web|rmvb|srt|ass|mpg|txt|zip|wmv|ssa|r\d{1,3}|7z|tar|cbr|cbz|mov|divx|m2ts|rmvb|iso|dmg|sub|idx|rm|t\d{1,2}|u\d{1,3})/iS""
-  echo "| Ordinal                       : 5"
-  echo "-----------------------------------------------------------"
-  open http://localhost/newznab/admin/regex-edit.php?action=add
-  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
-  read -n 1 -s
+#  echo "-----------------------------------------------------------"
+#  echo "| Add the following RegEx:"
+#  echo "| Group                         : alt.binaries.nl"
+#  echo "| RegEx                         : /^.*?"(?P<name>.*?)\.(sample|mkv|Avi|mp4|vol|ogm|par|rar|sfv|nfo|nzb|web|rmvb|srt|ass|mpg|txt|zip|wmv|ssa|r\d{1,3}|7z|tar|cbr|cbz|mov|divx|m2ts|rmvb|iso|dmg|sub|idx|rm|t\d{1,2}|u\d{1,3})/iS""
+#  echo "| Ordinal                       : 5"
+#  echo "-----------------------------------------------------------"
+#  open http://localhost/newznab/admin/regex-edit.php?action=add
+#  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+#  read -n 1 -s
 
   source config.sh
   if [[ $INST_NEWZNAB_KEY_API == "" ]]; then
