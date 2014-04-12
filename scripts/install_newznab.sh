@@ -21,6 +21,7 @@ if [[ -z $INST_NEWZNAB_SVN_UID ]] || [[ -z $INST_NEWZNAB_SVN_PW ]] || [[ -z $INS
     sleep 2
     source config.sh
   done
+  printf '.\n'
   printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
 fi
 
@@ -39,6 +40,7 @@ if [[ -z $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW ]] ; then
       sleep 2
       source config.sh
     done
+    printf '.\n'
     printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
   fi
   
@@ -58,6 +60,7 @@ if [[ -z $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW ]] ; then
       sleep 2
       source config.sh
     done
+    printf '.\n'
     printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
   fi
 
@@ -78,9 +81,9 @@ if [[ -z $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW ]] ; then
       sleep 2
       source config.sh
     done
+    printf '.\n'
     printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
   fi
-  
 }
 
 
