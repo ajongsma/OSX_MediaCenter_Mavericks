@@ -185,7 +185,7 @@ else
 
   echo "-----------------------------------------------------------"
   echo "| Paste the information as seen in the installer:"
-  echo "| Hostname                      : localhost"
+  echo "| Hostname                      : 127.0.0.1"
   echo "| Port                          : 3306"
   echo "| Username                      : $INST_NEWZNAB_MYSQL_UID"
   echo "| Password                      : $INST_NEWZNAB_MYSQL_PW"
