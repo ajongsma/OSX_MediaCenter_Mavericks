@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+source config.sh
+
 ### TESTING SUCCESFULL => TODO: CREATE PROPER SCRIPT
 
 # INST_APACHE_SYSTEM_WEB_ROOT   : "/Library/Server/Web/Data/Sites/Default"
