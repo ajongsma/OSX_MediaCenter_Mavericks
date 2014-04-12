@@ -30,3 +30,4 @@ else
   printf "$PRINTF_MASK" "Copying config file php_apc.ini" "$GREEN" "[OK]" "$RESET"
 fi
 
+sudo apachectl graceful
