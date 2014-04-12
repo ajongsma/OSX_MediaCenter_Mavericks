@@ -107,6 +107,7 @@ else
   if [ ! -d $INST_NEWZNAB_PATH/www ] ; then
     printf "$PRINTF_MASK" " NewzNAB does't exists, downloading" "$YELLOW" "[WAIT]" "$RESET"
     cd $INST_NEWZNAB_PATH
+    echo "svn co svn://svn.newznab.com/nn/branches/nnplus/ --username $INST_NEWZNAB_SVN_UID --password $INST_NEWZNAB_SVN_PW $INST_NEWZNAB_PATH"
     svn co svn://svn.newznab.com/nn/branches/nnplus/ --username $INST_NEWZNAB_SVN_UID --password $INST_NEWZNAB_SVN_PW $INST_NEWZNAB_PATH
   
     if [ ! -d $INST_NEWZNAB_PATH/nzbfiles/tmpunrar ] ; then
