@@ -145,7 +145,7 @@ else
   fi
   
   MYSQL=`which mysql`
-  DBEXISTS=$(MYSQL -u root -p$INST_MYSQL_PW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$INST_NEWZNAB_MYSQL_DB"';" | grep "$INST_SPOTWEB_MYSQL_DB" > /dev/null; echo "$?")
+  DBEXISTS=$(MYSQL -u root -p$INST_MYSQL_PW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$INST_NEWZNAB_MYSQL_DB"';" | grep "$INST_NEWZNAB_MYSQL_DB" > /dev/null; echo "$?")
   if [ $DBEXISTS -eq 0 ]; then
     printf "$PRINTF_MASK" "Spotweb database $INST_NEWZNAB_MYSQL_DB exists" "$GREEN" "[OK]" "$RESET"
   else
