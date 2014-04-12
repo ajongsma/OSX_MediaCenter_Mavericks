@@ -227,6 +227,14 @@ else
   read -n 1 -s
 
   echo "-----------------------------------------------------------"
+  echo "| Username                      : $INST_NEWZNAB_UID"
+  echo "| Password                      : $INST_NEWZNAB_PW"
+  echo "| Email                         : <Email address>"
+  echo "-----------------------------------------------------------"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+
+  echo "-----------------------------------------------------------"
   echo "| Admin Setup:"
   echo "-----------------------------------------------------------"
   echo "| NZB File Path Setup           : $INST_NEWZNAB_PATH/nzbfiles/"
