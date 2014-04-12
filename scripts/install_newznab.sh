@@ -236,7 +236,7 @@ else
   echo "| RegEx                         : /^.*?"(?P<name>.*?)\.(sample|mkv|Avi|mp4|vol|ogm|par|rar|sfv|nfo|nzb|web|rmvb|srt|ass|mpg|txt|zip|wmv|ssa|r\d{1,3}|7z|tar|cbr|cbz|mov|divx|m2ts|rmvb|iso|dmg|sub|idx|rm|t\d{1,2}|u\d{1,3})/iS""
   echo "| Ordinal                       : 5"
   echo "-----------------------------------------------------------"
-  http://localhost/newznab/admin/regex-edit.php?action=add
+  open http://localhost/newznab/admin/regex-edit.php?action=add
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
 
@@ -260,6 +260,7 @@ else
       sleep 2
       source config.sh
     done
+    printf '.\n'
     printf "$PRINTF_MASK" "NewzNAB API key detected" "$GREEN" "[OK]" "$RESET"
   fi
 
