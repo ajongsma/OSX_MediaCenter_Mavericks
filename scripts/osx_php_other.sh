@@ -11,11 +11,7 @@ echo "| Change            : memory_limit = 256M"
 echo "-----------------------------------------------------------"
 echo "| Save changes"
 echo "-----------------------------------------------------------"
-if [ ! -d /Applications/TextWrangler.app ]; then
-  sudo pico /etc/php.ini
-else
-  sudo open -a /Applications/TextWrangler.app /etc/php.ini
-fi
+sudo pico /etc/php.ini
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
