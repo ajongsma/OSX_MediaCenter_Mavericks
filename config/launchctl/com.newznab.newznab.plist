@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnableGlobbing</key>
+	<false/>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/usr/local/bin:/usr/local/sbin:/bin:/usr/local/opt/coreutils/libexec/gnubin</string>
+	</dict>
+	<key>Label</key>
+	<string>com.newznab.newznab</string>
+	<key>LowPriorityIO</key>
+	<true/>
+	<key>Nice</key>
+	<integer>1</integer>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/sh</string>
+		<string>/Users/Newznab/Sites/newznab/misc/update_scripts/nix_scripts/newznab_local.sh</string>
+	</array>
+	<key>StandardErrorPath</key>
+	<string>/var/log/newznab/sync.stderr</string>
+	<key>StandardOutPath</key>
+	<string>/var/log/newznab/sync.stdout</string>
+</dict>
+</plist>
