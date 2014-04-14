@@ -1,10 +1,11 @@
 To check:
 =====
+php upgrade-db.php (Synology: /usr/bin/php upgrade-db.php
 pear install --alldeps Net_NNTP
 
 
+Just some notes
 -----
-
 
 Sickbeard
 =====
