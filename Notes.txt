@@ -1,3 +1,11 @@
+To check:
+=====
+pear install --alldeps Net_NNTP
+
+
+-----
+
+
 Sickbeard
 =====
 cp sickbeard.db
