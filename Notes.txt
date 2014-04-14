@@ -55,6 +55,8 @@ service searchd start
 
 SED
 =====
+sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php5/*/php.ini
+
 sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php.ini
 sed -i -r 's/^(memory_limit)\s*=.*$/\1 = 256M/' /etc/php.ini
 
