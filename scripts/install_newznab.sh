@@ -5,27 +5,27 @@ source config.sh
 ## http://www.newznabforums.com/
 
 function check_config_defaults() {
-if [[ -z $INST_NEWZNAB_SVN_UID ]] || [[ -z $INST_NEWZNAB_SVN_PW ]] || [[ -z $INST_NEWZNAB_PATH ]]; then
-  printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
-  echo "| NewzNAB SVN Username        : INST_NEWZNAB_SVN_UID"
-  echo "| NewzNAB SVN Password        : INST_NEWZNAB_SVN_PW"
-  echo "| NewzNAB Path                : INST_NEWZNAB_PATH"
-  if [ ! -d /Applications/TextWrangler.app ]; then
-    pico config.sh
-  else
-    open -a /Applications/TextWrangler.app config.sh
+  if [[ -z $INST_NEWZNAB_SVN_UID ]] || [[ -z $INST_NEWZNAB_SVN_PW ]] || [[ -z $INST_NEWZNAB_PATH ]]; then
+    printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
+    echo "| NewzNAB SVN Username        : INST_NEWZNAB_SVN_UID"
+    echo "| NewzNAB SVN Password        : INST_NEWZNAB_SVN_PW"
+    echo "| NewzNAB Path                : INST_NEWZNAB_PATH"
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    while ( [[ $INST_NEWZNAB_SVN_UID == "" ]] || [[ $INST_NEWZNAB_SVN_PW == "" ]] || [[ $INST_NEWZNAB_PATH == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf '.\n'
+    printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
   fi
-  while ( [[ $INST_NEWZNAB_SVN_UID == "" ]] || [[ $INST_NEWZNAB_SVN_PW == "" ]] || [[ $INST_NEWZNAB_PATH == "" ]] )
-  do
-    printf '.'
-    sleep 2
-    source config.sh
-  done
-  printf '.\n'
-  printf "$PRINTF_MASK" "." "$GREEN" "[OK]" "$RESET"
-fi
 
-if [[ -z $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW ]] ; then
+  if [[ -z $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW ]] ; then
     printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
     echo "| MySQL Username              : INST_MYSQL_UID"
     echo "| MySQL Password              : INST_MYSQL_PW"
