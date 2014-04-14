@@ -23,3 +23,60 @@ mysqldump --opt -u username -p newznab > ~/newznab_backup.sql
 cp defaults.sh
 
 mysql -u username -p newznab < ~/newznab_backup.sql
+
+
+newznab recommended
+=====
+vi /etc/my.cnf
+[mysqld]
+# newznab recommended
+max_allowed_packet      = 12582912
+group_concat_max_len    = 8192
+
+
+Sphinx
+======
+rpm -Uvh sphinx-2.0.6-1.rhel6.x86_64.rpm
+cd /etc/sphinx
+mv sphinx.conf sphinx.conf-old
+ln -s /var/www/html/nnplus/db/sphinxdata/sphinx.conf /etc/sphinx/
+sed -i -r "s/^user=\"sphinx\"/user=\"user\"/" /etc/init.d/searchd
+sed -i -r "s/daemon --user sphinx/daemon --user \$user/" /etc/init.d/searchd
+exit
+
+cd /var/www/html/nnplus/misc/sphinx
+./nnindexer.php daemon
+./nnindexer.php index full all
+./nnindexer.php index delta all
+./nnindexer.php daemon --stop
+
+service searchd start
+
+
+SED
+=====
+sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php.ini
+sed -i -r 's/^(memory_limit)\s*=.*$/\1 = 256M/' /etc/php.ini
+
+sed -i -r 's/^(memory_limit)\s*=.*$/\1 = -1/' /etc/php.ini
+sed -i -r 's/^(max_execution_time)\s*=.*$/\1 = 120/' /etc/php.ini
+sed -i -r 's/^(error_reporting)\s*=.*$/\1 = E_ALL \^ E_STRICT/' /etc/php.ini
+sed -i -r 's/^(register_globals)\s*=(.*)$/\1 = Off/' /etc/php.ini
+sed -i -r 's/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/' /etc/php.ini
+
+sudo sed -i "s/register_globals =.*/register_globals = Off/" /etc/php5/*/php.ini
+sudo sed -i "s/max_execution_time =.*/max_execution_time = 120/" /etc/php5/*/php.ini
+sudo sed -i "s/memory_limit =.*/memory_limit = -1/" /etc/php5/*/php.ini
+sudo sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Zurich/" /etc/php5/*/php.ini
+
+sudo sed -i "s/START=no/START=yes/" /etc/default/sphinxsearch
+sudo sed -i " { /^exec/ i\
+  \\
+  setuid user \\
+
+} " /etc/init/sphinxsearch.conf
+
+
+
+
+
