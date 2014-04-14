@@ -369,6 +369,8 @@ else
       echo -e "${RED}  ============================================== ${RESET}"
       read -n 1 -s
       exit 1
+    else
+      printf "$PRINTF_MASK" "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$GREEN" "[OK]" "$RESET"
     fi
     
     if [ ! -d /var/log/newznab ] ; then
@@ -380,7 +382,7 @@ else
     fi
     launchctl load ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
   else
-    printf "$PRINTF_MASK" "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" "Lauch Agent file: $INST_FILE_LAUNCHAGENT exists" "$GREEN" "[OK]" "$RESET"
   fi
   cd $DIR
 fi
