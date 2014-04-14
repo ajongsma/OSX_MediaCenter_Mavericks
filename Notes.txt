@@ -3,6 +3,8 @@ To check:
 php upgrade-db.php (Synology: /usr/bin/php upgrade-db.php
 pear install --alldeps Net_NNTP
 
+Voor degene die interesse hebben. Ik heb een handleiding geschreven voor spotweb op de mac (maverick). Als je interesse hebt, kun je hem via deze link downloaden/bekijken:
+http://cl.ly/0R2K0j3w0d1q
 
 Just some notes
 -----
