@@ -86,7 +86,6 @@ if [[ -z $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW ]] ; then
   fi
 }
 
-
 #if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/newznab ] ; then
 if [ -h $INST_APACHE_SYSTEM_WEB_ROOT/newznab ] ; then
   printf "$PRINTF_MASK" "-> NewzNAB detected" "$GREEN" "[OK]" "$RESET"
@@ -244,16 +243,8 @@ else
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
 
-## => Note: It is a good idea to remove the www/install directory after setup
-
-
-#### TESTING ######################################
-
-
   echo "-----------------------------------------------------------"
   echo "| Site Edit"
-#  echo "-----------------------------------------------------------"
-#  echo "| NZB File Path Setup           : $INST_NEWZNAB_PATH/nzbfiles/"
   echo "-----------------------------------------------------------"
   echo "| Main Site Settings, HTML Layout, Tags"
   echo "| - newznab ID                  : $INST_NEWZNAB_NNPLUS_ID"
@@ -300,25 +291,6 @@ else
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
   
-#  echo "-----------------------------------------------------------"
-#  echo "| Add the following newsgroup:"
-#  echo "| Name                          : alt.binaries.nl"
-#  echo "| Backfill Days                 : 1"
-#  echo "-----------------------------------------------------------"
-#  open http://localhost/newznab/admin/group-edit.php
-#  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
-#  read -n 1 -s
-#  
-#  echo "-----------------------------------------------------------"
-#  echo "| Add the following RegEx:"
-#  echo "| Group                         : alt.binaries.nl"
-#  echo "| RegEx                         : /^.*?"(?P<name>.*?)\.(sample|mkv|Avi|mp4|vol|ogm|par|rar|sfv|nfo|nzb|web|rmvb|srt|ass|mpg|txt|zip|wmv|ssa|r\d{1,3}|7z|tar|cbr|cbz|mov|divx|m2ts|rmvb|iso|dmg|sub|idx|rm|t\d{1,2}|u\d{1,3})/iS""
-#  echo "| Ordinal                       : 5"
-#  echo "-----------------------------------------------------------"
-#  open http://localhost/newznab/admin/regex-edit.php?action=add
-#  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
-#  read -n 1 -s
-
   source config.sh
   if [[ $INST_NEWZNAB_KEY_API == "" ]]; then
     echo "-----------------------------------------------------------"
@@ -383,17 +355,63 @@ else
 #  end tell'
 
   sh ./newznab_local.sh
+
+  INST_FILE_LAUNCHAGENT="com.newznab.newznab.plist"
+  if [ -f $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
+    printf "$PRINTF_MASK" "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$YELLOW" "[WAIT]" "$RESET"
+    cp $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
+    if [ "$?" != "0" ]; then
+      echo -e "${RED}  ============================================== ${RESET}"
+      echo -e "${RED} | ERROR ${RESET}"
+      echo -e "${RED} | Copy failed: ${RESET}"
+      echo -e "${RED} | $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
+      echo -e "${RED} | --- press any key to continue --- ${RESET}"
+      echo -e "${RED}  ============================================== ${RESET}"
+      read -n 1 -s
+      exit 1
+    fi
+    
+    if [ ! -d /var/log/newznab ] ; then
+      printf "$PRINTF_MASK" "/var/log/newznab doesn't exist, creating" "$YELLOW" "[WAIT]" "$RESET"
+      sudo mkdir -p /var/log/newznab
+      sudo chown `whoami` /var/log/newznab
+    else
+      printf "$PRINTF_MASK" "/var/log/newznab exists" "$GREEN" "[OK]" "$RESET"
+    fi
+    launchctl load ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
+  else
+    printf "$PRINTF_MASK" "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT" "$GREEN" "[OK]" "$RESET"
+  fi
   cd $DIR
 fi
 
-##### TESTING #####
-exit 0
-##### TESTING #####
+##### OLD LEFT OVERS #################################################################
+
+## => Note: It is a good idea to remove the www/install directory after setup
 
 #------------------------------------------------------------------------------
 # Install NewzNAB
 #------------------------------------------------------------------------------
 ## http://www.newznabforums.com
+
+#  echo "-----------------------------------------------------------"
+#  echo "| Add the following newsgroup:"
+#  echo "| Name                          : alt.binaries.nl"
+#  echo "| Backfill Days                 : 1"
+#  echo "-----------------------------------------------------------"
+#  open http://localhost/newznab/admin/group-edit.php
+#  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+#  read -n 1 -s
+#  
+#  echo "-----------------------------------------------------------"
+#  echo "| Add the following RegEx:"
+#  echo "| Group                         : alt.binaries.nl"
+#  echo "| RegEx                         : /^.*?"(?P<name>.*?)\.(sample|mkv|Avi|mp4|vol|ogm|par|rar|sfv|nfo|nzb|web|rmvb|srt|ass|mpg|txt|zip|wmv|ssa|r\d{1,3}|7z|tar|cbr|cbz|mov|divx|m2ts|rmvb|iso|dmg|sub|idx|rm|t\d{1,2}|u\d{1,3})/iS""
+#  echo "| Ordinal                       : 5"
+#  echo "-----------------------------------------------------------"
+#  open http://localhost/newznab/admin/regex-edit.php?action=add
+#  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+#  read -n 1 -s
 
 #echo "-----------------------------------------------------------"
 #echo "Enter the httpd.conf:"
@@ -428,48 +446,15 @@ exit 0
 #
 #MYSQL -u root -p -e "$SQL"
 
-
-## --- TESTING
-
-
-
-
 # -----------------------------------------------------------"
 #| Installing LaunchAgent plus scripts
 # -----------------------------------------------------------"
-[ -d /usr/local/share/newznab ] || mkdir -p /usr/local/share/newznab
-cp /Users/Andries/Github/OSX_NewBox/bin/share/tmux_sync_newznab.sh /usr/local/share/newznab
-cp /Users/Andries/Github/OSX_NewBox/bin/share/newznab_cycle.sh /usr/local/share/newznab
-ln -s /usr/local/share/newznab/tmux_sync_newznab.sh /usr/local/bin/
-
-[ -d /var/log/newznab ] || sudo mkdir -p /var/log/newznab && sudo chown `whoami` /var/log/newznab
-
-INST_FILE_LAUNCHAGENT="com.tmux.newznab.plist"
-if [ -f $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
-    echo "Copying Lauch Agent file: $INST_FILE_LAUNCHAGENT"
-    cp $DIR/launchctl/$INST_FILE_LAUNCHAGENT ~/Library/LaunchAgents/
-    if [ "$?" != "0" ]; then
-        echo -e "${RED}  ============================================== ${RESET}"
-        echo -e "${RED} | ERROR ${RESET}"
-        echo -e "${RED} | Copy failed: ${RESET}"
-        echo -e "${RED} | $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
-        echo -e "${RED} | --- press any key to continue --- ${RESET}"
-        echo -e "${RED}  ============================================== ${RESET}"
-        read -n 1 -s
-        exit 1
-    fi
-    launchctl load ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
-else
-    echo -e "${RED}  ============================================== ${RESET}"
-    echo -e "${RED} | ERROR ${RESET}"
-    echo -e "${RED} | LaunchAgent file not found: ${RESET}"
-    echo -e "${RED} | $DIR/conf/launchctl/$INST_FILE_LAUNCHAGENT  ${RESET}"
-    echo -e "${RED} | --- press any key to continue --- ${RESET}"
-    echo -e "${RED}  ============================================== ${RESET}"
-    read -n 1 -s
-    exit 1
-fi
-
+#[ -d /usr/local/share/newznab ] || mkdir -p /usr/local/share/newznab
+#cp /Users/Andries/Github/OSX_NewBox/bin/share/tmux_sync_newznab.sh /usr/local/share/newznab
+#cp /Users/Andries/Github/OSX_NewBox/bin/share/newznab_cycle.sh /usr/local/share/newznab
+#ln -s /usr/local/share/newznab/tmux_sync_newznab.sh /usr/local/bin/
+#
+#[ -d /var/log/newznab ] || sudo mkdir -p /var/log/newznab && sudo chown `whoami` /var/log/newznab
 
 #------------------------------------------------------------------------------
 # Install NewzNAB - Complete
