@@ -15,7 +15,9 @@ brew install php55 --with-mysql --with-tidy --with-intl --with-gmp
 #/usr/local/etc/php/5.5/php.ini
 
 brew install php55-intl
-
+brew install php55-ssh2
+brew install php55-mcrypt
+brew install php55-memcached
 
 #ln -sfv /usr/local/opt/php55/*.plist ~/Library/LaunchAgents
 #launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php55.plist
