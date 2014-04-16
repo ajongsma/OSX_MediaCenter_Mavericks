@@ -27,5 +27,5 @@ brew install php55-memcached
 ln -sfv /usr/local/opt/memcached/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist
 
-sudo mv /usr/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp54.so
-sudo ln -sv /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp5.so
+#sudo mv /usr/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp54.so
+#sudo ln -sv /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp5.so
