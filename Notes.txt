@@ -1,4 +1,7 @@
 To check:
+
+osx_php_pear.sh
+
 =====
 php upgrade-db.php (Synology: /usr/bin/php upgrade-db.php
 pear install --alldeps Net_NNTP
