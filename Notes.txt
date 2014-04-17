@@ -7,6 +7,21 @@ pear install --alldeps Net_NNTP
 Just some notes
 -----
 
+PHP
+Add Internationalization extension to PHP on Mac OS X 10.9 Mavericks Server
+http://www.gigoblog.com/2013/11/14/add-internationalization-extension-to-php-on-mac-os-x-10-9-mavericks-server/#more-576
+
+Add mcrypt PHP extension to Mac OS X Mavericks server
+http://www.gigoblog.com/2013/11/14/add-mcrypt-php-extension-to-mac-os-x-mavericks-server/
+
+Add the ssh2 extension for PHP on Mac OS X Mavericks server
+http://www.gigoblog.com/2013/11/14/add-the-ssh2-extension-for-php-on-mac-os-x-mavericks-server/
+
+Install memcache and APC on Mavericks Server 3 (Mac OS X 10.9)
+http://www.gigoblog.com/2013/11/14/install-memcache-and-apc-on-mavericks-server-3-mac-os-x-10-9/
+
+
+
 Sickbeard
 =====
 cp sickbeard.db
@@ -86,8 +101,4 @@ sudo sed -i " { /^exec/ i\
   setuid user \\
 
 } " /etc/init/sphinxsearch.conf
-
-
-
-
 
