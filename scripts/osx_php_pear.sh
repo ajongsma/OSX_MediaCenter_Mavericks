@@ -2,9 +2,15 @@
 source config.sh
 
 cd /usr/lib/php
-#sudo php -d detect_unicode=0 go-pear.phar
+
 #sudo php install-pear-nozlib.phar
-sudo php -d detect_unicode=0 install-pear-nozlib.phar
+#sudo php -d detect_unicode=0 install-pear-nozlib.phar
+sudo php install-pear-nozlib.phar
+
+sudo pear channel-update pear.php.net
+sudo pecl channel-update pecl.php.net
+sudo pear upgrade-all
+sudo pear config-set auto_discover 1
 
 # include_path = ".:/usr/lib/php/:/usr/lib/php/pear/"
 echo "-----------------------------------------------------------"
