@@ -84,9 +84,7 @@ Server
 =====
 
 The VPN service typically uses UDP 500, UDP 1701, TCP 1723, and UDP 4500.
-
 - http://blog.macminicolo.net/post/67570761408/setup-a-vpn-server-with-mavericks-server-10-9
-
 - http://arstechnica.com/apple/2013/12/a-power-users-guide-to-os-x-server-mavericks-edition/10/
 
 
