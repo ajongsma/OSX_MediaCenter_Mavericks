@@ -80,6 +80,12 @@ cd /var/www/html/nnplus/misc/sphinx
 service searchd start
 
 
+Server
+=====
+
+http://blog.macminicolo.net/post/67570761408/setup-a-vpn-server-with-mavericks-server-10-9
+
+
 SED
 =====
 sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php5/*/php.ini
