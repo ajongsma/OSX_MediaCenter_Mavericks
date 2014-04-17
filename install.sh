@@ -57,12 +57,39 @@ DEBUG=0
 ## Functions
 ##-----------------------------------------------------------------------------
 function check_system() {
-    # Check for supported system
-    kernel=`uname -s`
-    case $kernel in
-        Darwin) ;;
-        *) fail "Sorry, $kernel is not supported." ;;
-    esac
+#  # Check for supported system
+#  kernel=`uname -s`
+#  case $kernel in
+#      Darwin) ;;
+#      *) fail "Sorry, $kernel is not supported." ;;
+#  esac
+  if [[ $TYPE != "force" ]]; then
+  	OS_VERSION=`sw_vers -productVersion | grep -o 10\..`
+  	if [[ $OS_VERSION == "10.9" ]]; then
+  		echo "Detected OS X Mavericks 10.9. All ok."
+  	elif [[ $OS_VERSION == "10.8" ]]; then
+  		echo "Detected OS X Mountain Lion 10.8. All ok."
+  	elif [[ $OS_VERSION == "10.7" ]]; then
+  		echo "Detected OS X Lion 10.7. All ok."
+  	elif [[ $OS_VERSION == "10.6" ]]; then
+  		echo "Detected OS X Snow Leopard 10.6. All ok."
+  	else
+  		echo "****"
+  		echo "Your version of OS X ($OS_VERSION) is not supported, you need at least 10.6"
+  		echo "Stopping installation..."
+  		echo "****"
+  		exit 2
+  	fi
+  	HAS64BIT=`sysctl -n hw.cpu64bit_capable 2> /dev/null`
+  	if [[ $HAS64BIT != 1 ]]; then
+  		echo "****"
+  		echo "ERROR! 32 BIT NOT SUPPORTED!"
+  		echo "****"
+  		echo "No 64bit capable system found. Your hardware is out of date."
+  		echo "****"
+  		exit 1
+  	fi
+  fi
 }
 
 ##-----------------------------------------------------------------------------
