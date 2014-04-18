@@ -22,8 +22,9 @@ else
   cp /usr/local/etc/php/5.5/php.ini /usr/local/etc/php/5.5/php.ini.org
   sed -i -r 's/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/' /usr/local/etc/php/5.5/php.ini
   
-  
   sudo apachectl graceful
+  
+  sh /usr/local/Cellar/php55/5.5.11/bin/php retrieve.php
   
   #/usr/local/etc/php/5.5/php.ini
   
