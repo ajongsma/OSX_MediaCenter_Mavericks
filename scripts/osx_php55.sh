@@ -16,6 +16,16 @@ else
   
   brew install php55 --with-apache
   
+  export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"
+  
+  brew install php55-intl
+  brew install php55-mcrypt
+  brew install php55-memcached
+  brew install php55-propro
+  brew install php55-raphf
+  brew install php55-http
+  brew install php55-ssh2
+
   sudo mv /usr/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp54.so
   sudo ln -sv /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp5.so
   
@@ -25,6 +35,8 @@ else
   sudo apachectl graceful
   
   sh /usr/local/Cellar/php55/5.5.11/bin/php retrieve.php
+  
+  echo "export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"" >> ~/.bash_profile
   
   #/usr/local/etc/php/5.5/php.ini
   
