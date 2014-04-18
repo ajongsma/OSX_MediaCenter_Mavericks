@@ -91,8 +91,12 @@ The VPN service typically uses UDP 500, UDP 1701, TCP 1723, and UDP 4500.
 SED
 =====
 sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php5/*/php.ini
-
 sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php.ini
+sed -i -r 's/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/' /etc/php.ini
+
+sed -i -r 's/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/' /usr/local/etc/php/5.5/php.ini
+
+
 sed -i -r 's/^(memory_limit)\s*=.*$/\1 = 256M/' /etc/php.ini
 
 sed -i -r 's/^(memory_limit)\s*=.*$/\1 = -1/' /etc/php.ini
