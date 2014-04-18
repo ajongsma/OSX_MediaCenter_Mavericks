@@ -19,7 +19,13 @@ else
   sudo mv /usr/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp54.so
   sudo ln -sv /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp5.so
   
+  cp /usr/local/etc/php/5.5/php.ini /usr/local/etc/php/5.5/php.ini.org
+  sed -i -r 's/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/' /usr/local/etc/php/5.5/php.ini
+  
+  
   sudo apachectl graceful
+  
+  #/usr/local/etc/php/5.5/php.ini
   
   #cp /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so
   
