@@ -7,49 +7,52 @@ if [ ! -e /usr/local/bin/brew ] ; then
   printf "$PRINTF_MASK" "Homebrew not detected" "$RED" "[ERR]" "$RESET"
   exit 1
 else
-  printf "$PRINTF_MASK" "Installing extra utilities" "$RED" "[ERR]" "$RESET"
+  if [ ! -d /usr/local/Cellar/php55 ] ; then
+    printf "$PRINTF_MASK" "PHP 5.5 detected" "$RED" "[ERR]" "$RESET"
+  else
+    printf "$PRINTF_MASK" "PHP 5.5 not detected, installing..." "$RED" "[ERR]" "$RESET"
+    
+    brew tap josegonzalez/homebrew-php
+    brew update
+    brew upgrade
+    
+    brew install php55 --with-apache
+    
+    export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"
+    
+    brew install php55-intl
+    brew install php55-mcrypt
+    brew install php55-memcached
+    brew install php55-propro
+    brew install php55-raphf
+    brew install php55-http
+    brew install php55-ssh2
   
-  brew tap josegonzalez/homebrew-php
-  
-  brew update
-  brew upgrade
-  
-  brew install php55 --with-apache
-  
-  export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"
-  
-  brew install php55-intl
-  brew install php55-mcrypt
-  brew install php55-memcached
-  brew install php55-propro
-  brew install php55-raphf
-  brew install php55-http
-  brew install php55-ssh2
-
-  sudo mv /usr/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp54.so
-  sudo ln -sv /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp5.so
-  
-  cp /usr/local/etc/php/5.5/php.ini /usr/local/etc/php/5.5/php.ini.org
-  sed -i -r 's/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/' /usr/local/etc/php/5.5/php.ini
-  
-  sudo apachectl graceful
-  
-  sh /usr/local/Cellar/php55/5.5.11/bin/php retrieve.php
-  
-  echo "export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"" >> ~/.bash_profile
-  
-  #/usr/local/etc/php/5.5/php.ini
-  
-  #cp /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so
-  
-  ## vim ~/.bash_profile
-  ## export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"
-  ##
-  ## sudo vim /etc/apache2/httpd.conf
-  ## LoadModule php5_module /usr/local/opt/php55/libexec/apache2/libphp5.so
-  ##
-  ## sudo apachectl gracefull
-  ## php -v
+    sudo mv /usr/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp54.so
+    sudo ln -sv /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp5.so
+    
+    cp /usr/local/etc/php/5.5/php.ini /usr/local/etc/php/5.5/php.ini.org
+    sed -i -r 's/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/' /usr/local/etc/php/5.5/php.ini
+    
+    sudo apachectl graceful
+    
+    sh /usr/local/Cellar/php55/5.5.11/bin/php retrieve.php
+    
+    echo "export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"" >> ~/.bash_profile
+    
+    #/usr/local/etc/php/5.5/php.ini
+    
+    #cp /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so
+    
+    ## vim ~/.bash_profile
+    ## export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"
+    ##
+    ## sudo vim /etc/apache2/httpd.conf
+    ## LoadModule php5_module /usr/local/opt/php55/libexec/apache2/libphp5.so
+    ##
+    ## sudo apachectl gracefull
+    ## php -v
+  fi
 fi
 
 
