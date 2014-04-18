@@ -9,10 +9,14 @@ if [ ! -e /usr/local/bin/brew ] ; then
 else
   printf "$PRINTF_MASK" "Installing extra utilities" "$RED" "[ERR]" "$RESET"
   
+  brew tap josegonzalez/homebrew-php
+  
   brew update
   brew upgrade
   
-  brew install php55
+  brew install php55 --with-apache
+  
+  #cp /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so
   
   ## vim ~/.bash_profile
   ## export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"
@@ -22,10 +26,6 @@ else
   ##
   ## sudo apachectl gracefull
   ## php -v
-  
-  
-  
-  
 fi
 
 
