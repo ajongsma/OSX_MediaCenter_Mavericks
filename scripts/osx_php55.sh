@@ -2,7 +2,6 @@
 source config.sh
 
 ## http://thegeekywizard.com/2014/02/how-to-install-php5-5-mysql-mcrypt-phpmyadmin-on-osx-mavericks-using-homebrew/
-
 if [ ! -e /usr/local/bin/brew ] ; then
   printf "$PRINTF_MASK" "Homebrew not detected" "$RED" "[ERR]" "$RESET"
   exit 1
