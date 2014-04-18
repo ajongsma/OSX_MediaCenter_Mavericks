@@ -10,6 +10,20 @@ else
   brew update
   brew upgrade
 
+  if [ -d /usr/local/Cellar/gd/ ] ; then
+    printf "$PRINTF_MASK" "GD detected" "$GREEN" "[OK]" "$RESET"
+    exit 1
+  else
+    printf "$PRINTF_MASK" "GD not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+    brew install gd
+    if [ $? != "0" ]; then
+      printf "$PRINTF_MASK" "Error detected" "$RED" "[ERR]" "$RESET"
+      exit 1
+    else
+      printf "$PRINTF_MASK" "No installation error detected" "$GREEN" "[OK]" "$RESET"
+    fi
+  fi
+
   if [ -e /usr/local/bin/unrar ] ; then
     printf "$PRINTF_MASK" "Unrar detected" "$GREEN" "[OK]" "$RESET"
     exit 1
