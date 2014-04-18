@@ -139,8 +139,7 @@ Unison
 
 nzbdrone
 
-plexwatchdb: /Users/Plex/plexWatch/plexWatch.db
-
+[launchrocket](https://github.com/jimbojsb/launchrocket)
 
 Random info to check and verify
 ===============
