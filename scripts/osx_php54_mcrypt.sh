@@ -3,10 +3,11 @@ source config.sh
 
 ### TESTING SUCCESFULL => TODO: CREATE PROPER SCRIPT
 
-# INST_APACHE_SYSTEM_WEB_ROOT   : "/Library/Server/Web/Data/Sites/Default"
-# extension_dir                 : /usr/lib/php/extensions/no-debug-non-zts-20100525
-# Loaded Configuration File     : /etc/php.ini
-# Additional .ini files parsed  : /Library/Server/Web/Config/php/php.ini
+## http://www.gigoblog.com/2013/11/14/add-mcrypt-php-extension-to-mac-os-x-mavericks-server/
+## INST_APACHE_SYSTEM_WEB_ROOT   : "/Library/Server/Web/Data/Sites/Default"
+## extension_dir                 : /usr/lib/php/extensions/no-debug-non-zts-20100525
+## Loaded Configuration File     : /etc/php.ini
+## Additional .ini files parsed  : /Library/Server/Web/Config/php/php.ini
 
 ## /usr/local/etc/php/5.4/conf.d/ext-mcrypt.ini
 ## extension=/opt/local/lib/php54/extensions/no-debug-non-zts-20100525/mcrypt.so
