@@ -16,6 +16,11 @@ else
   
   brew install php55 --with-apache
   
+  sudo mv /usr/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp54.so
+  sudo ln -sv /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp5.so
+  
+  sudo apachectl graceful
+  
   #cp /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so
   
   ## vim ~/.bash_profile
