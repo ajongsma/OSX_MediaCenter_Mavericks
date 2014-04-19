@@ -98,7 +98,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #if [[ $INST_NEWZNAB == "true" ]]; then
 #  source "$DIR/scripts/osx_php_pear.sh"
 #  source "$DIR/scripts/osx_php_other.sh"
-  source "$DIR/scripts/install_newznab.sh"
+#  source "$DIR/scripts/install_newznab.sh"
 #fi
 
 
