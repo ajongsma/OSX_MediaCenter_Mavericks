@@ -95,10 +95,17 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #------------------------------------------------------------------------------
 # Install testing launcher
 #------------------------------------------------------------------------------
-
-
-if [[ $INST_NEWZNAB == "true" ]]; then
+#if [[ $INST_NEWZNAB == "true" ]]; then
 #  source "$DIR/scripts/osx_php_pear.sh"
 #  source "$DIR/scripts/osx_php_other.sh"
   source "$DIR/scripts/install_newznab.sh"
+#fi
+
+
+#------------------------------------------------------------------------------
+# Install SpotWEB
+#------------------------------------------------------------------------------
+if [[ $INST_SPOTWEB == "true" ]]; then
+  source "$DIR/scripts/osx_php55.sh"
+  source "$DIR/scripts/install_spotweb.sh"
 fi
