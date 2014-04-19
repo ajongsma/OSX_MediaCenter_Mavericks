@@ -286,5 +286,13 @@ fi
 #------------------------------------------------------------------------------
 if [[ $INST_AUTOSUB == "true" ]]; then
   source "$DIR/scripts/osx_pear.sh"
-#  source "$DIR/scripts/install_autosub.sh"
+  source "$DIR/scripts/install_autosub.sh"
+fi
+
+#------------------------------------------------------------------------------
+# Install SpotWEB
+#------------------------------------------------------------------------------
+if [[ $INST_SPOTWEB == "true" ]]; then
+  source "$DIR/scripts/osx_php55.sh"
+  source "$DIR/scripts/install_spotweb.sh"
 fi
