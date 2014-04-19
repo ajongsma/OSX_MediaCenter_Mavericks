@@ -95,11 +95,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #------------------------------------------------------------------------------
 # Install testing launcher
 #------------------------------------------------------------------------------
-### SPOTWEB - Halted due to unresolved error of application
-#if [[ $INST_SPOTWEB == "true" ]]; then
-#  source "$DIR/scripts/osx_php_gettext.sh"
-#  source "$DIR/scripts/install_spotweb.sh"
-#fi
+
 
 if [[ $INST_NEWZNAB == "true" ]]; then
 #  source "$DIR/scripts/osx_php_pear.sh"
