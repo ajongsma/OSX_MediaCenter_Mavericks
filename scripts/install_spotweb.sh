@@ -254,6 +254,14 @@ else
   echo " --- press any key to continue ---"
   read -n 1 -s
 
+  if [ -d /var/log/spotweb ]; then
+    printf "$PRINTF_MASK" "Directory /var/log/spotweb exists" "$GREEN" "[OK]" "$RESET"
+  else
+    printf "$PRINTF_MASK" "Directory /var/log/spotweb does't exists, creating..." "$GREEN" "[OK]" "$RESET"
+    sudo mkdir -p /var/log/spotweb
+    sudo chown `whoami` /var/log/spotweb
+  fi
+  
   #INST_FILE_LAUNCHAGENT="com.tmux.spotweb.plist"
   INST_FILE_LAUNCHAGENT="com.spotweb.spotweb.plist"
   if [ -f $DIR/config/launchctl/$INST_FILE_LAUNCHAGENT ] ; then
@@ -280,6 +288,8 @@ else
 ## PHP Fatal error: Cannot redeclare _() in /Users/Spotweb/Sites/spotweb/lib/SpotTranslation.php on line 34
 ######
 
+
+  
   osascript -e 'tell app "Terminal"
       do script "php '$INST_SPOTWEB_PATH'/spotweb/retrieve.php"
   end tell'
