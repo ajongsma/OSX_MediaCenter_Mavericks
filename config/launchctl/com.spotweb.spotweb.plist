@@ -7,7 +7,7 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/usr/local/bin:/usr/local/sbin:/bin:/usr/local/opt/coreutils/libexec/gnubin</string>
+		<string>/usr/local/Cellar/php55/5.5.11/bin;/usr/local/bin</string>
 	</dict>
 	<key>Label</key>
 	<string>com.spotweb.spotweb</string>
@@ -17,8 +17,8 @@
 	<integer>1</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/bin/sh</string>
-		<string>/Users/Spotweb/bin/sync_spotweb.sh</string>
+		<string>/usr/local/Cellar/php55/5.5.11/bin/php</string>
+		<string>/Users/Spotweb/Sites/spotweb/retrieve.php</string>
 	</array>
 	<key>StandardErrorPath</key>
 	<string>/var/log/spotweb/sync.stderr</string>
