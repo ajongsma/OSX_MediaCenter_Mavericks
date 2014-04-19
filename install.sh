@@ -295,4 +295,5 @@ fi
 if [[ $INST_SPOTWEB == "true" ]]; then
   source "$DIR/scripts/osx_php55.sh"
   source "$DIR/scripts/install_spotweb.sh"
+  source "$DIR/scripts/install_spotweb_sabnzbd.sh"
 fi
