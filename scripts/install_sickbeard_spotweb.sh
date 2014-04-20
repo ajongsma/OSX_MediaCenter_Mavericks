@@ -57,8 +57,8 @@ else
   echo "| Provider Name                           : Spotweb"
   echo "| Site URL                                : http://localhost/spotweb/"
   echo "| API Key                                 : $INST_SPOTWEB_KEY_API_SICKBEARD"
-  echo "-------------------------------"
-  echo "| Save changes"
+  echo "-----------------------------------------------------------"
+  echo "| Add, Save Changes"
   echo "-----------------------------------------------------------"
   open http://localhost:8081/config/providers/
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
