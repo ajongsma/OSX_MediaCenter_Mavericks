@@ -59,7 +59,7 @@ cd OSX_MediaCenter
 
 [Cheetah](http://www.cheetahtemplate.org)
 
-[PHP5.5](http://www.php.net)
+[PHP 5.5](http://www.php.net)
 
 #### Utilities
 [Homebrew](http://brew.sh)
