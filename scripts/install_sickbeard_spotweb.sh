@@ -8,17 +8,24 @@ function check_config_defaults() {
       echo "| API Key                              : INST_SPOTWEB_KEY_API_SICKBEARD <paste value> "
       echo "-----------------------------------------------------------"
       #open http://localhost/newznab/admin/site-edit.php
-      http://localhost/spotweb/?page=render&tplname=usermanagement
-      subl ../config.sh
-  
+      open http://localhost/spotweb/?page=render&tplname=usermanagement
+      if [ ! -d /Applications/TextWrangler.app ]; then
+        pico config.sh
+      else
+        open -a /Applications/TextWrangler.app config.sh
+      fi
+
+      printf 'Waiting for Sickbeard Spotweb API be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
       while ( [[ $INST_SPOTWEB_KEY_API_SICKBEARD == "" ]] )
       do
-          printf 'Waiting for Sickbeard Spotweb API be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
-          sleep 2
-          source ../config.sh
+        printf '.'
+        sleep 2
+        source config.sh
       done
+      printf "$PRINTF_MASK" ".\n" "$GREEN" "[OK]" "$RESET"
   fi
 }
+
 
 if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
   printf "$PRINTF_MASK" "-> Spotweb detected" "$GREEN" "[OK]" "$RESET"
