@@ -297,4 +297,9 @@ if [[ $INST_SPOTWEB == "true" ]]; then
   source "$DIR/scripts/install_spotweb.sh"
   source "$DIR/scripts/install_spotweb_api.sh"
   source "$DIR/scripts/install_spotweb_sabnzbd.sh"
+  if [[ $INST_SICKBEARD == "true" ]]; then
+    source "$DIR/scripts/install_sickbeard_spotweb.sh"
+    source "$DIR/scripts/install_sickbeard_spotweb.sh"
+  fi
 fi
+
