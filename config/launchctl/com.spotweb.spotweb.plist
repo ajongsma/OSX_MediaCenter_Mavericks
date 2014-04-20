@@ -2,12 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>EnableGlobbing</key>
+	<key>Disabled</key>
 	<false/>
+	<key>EnableGlobbing</key>
+	<true/>
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/usr/local/Cellar/php55/5.5.11/bin;/usr/local/bin</string>
+		<string>/usr/local/opt/php55/bin</string>
 	</dict>
 	<key>Label</key>
 	<string>com.spotweb.spotweb</string>
@@ -17,7 +19,7 @@
 	<integer>1</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/local/Cellar/php55/5.5.11/bin/php</string>
+		<string>/usr/local/opt/php55/bin/php</string>
 		<string>/Users/Spotweb/Sites/spotweb/retrieve.php</string>
 	</array>
 	<key>StandardErrorPath</key>
@@ -25,6 +27,8 @@
 	<key>StandardOutPath</key>
 	<string>/var/log/spotweb/sync.stdout</string>
 	<key>StartInterval</key>
-	<integer>1800</integer>
+	<integer>3600</integer>
+	<key>WorkingDirectory</key>
+	<string>/Users/Spotweb/Sites/spotweb/</string>
 </dict>
 </plist>
