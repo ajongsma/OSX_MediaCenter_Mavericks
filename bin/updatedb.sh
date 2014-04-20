@@ -1,4 +1,5 @@
 #!/bin/bash
+
 pushd . > /dev/null
 cd /usr/libexec
 echo "Updating locate database..."
