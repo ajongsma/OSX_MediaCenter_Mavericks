@@ -23,10 +23,11 @@ function check_config_defaults() {
 if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
   printf "$PRINTF_MASK" "-> Spotweb detected" "$GREEN" "[OK]" "$RESET"
   check_config_defaults
-  check_config_var
+  #check_config_var
 else
   printf "$PRINTF_MASK" "-> Configuring Sickbeard to SpotWEB..." "$YELLOW" "[WAIT]" "$RESET"
-
+  check_config_defaults
+  
   echo "-----------------------------------------------------------"
   echo "| Menu, Config, Search Providers:"
   echo "| "
