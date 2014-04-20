@@ -17,7 +17,7 @@ function check_config_defaults() {
     read -n 1 -s
     
     echo "-----------------------------------------------------------"
-    echo "| Login to Spotweb      : $INST_SICKBEARD_UID"
+    echo "| Config, User and Group Management"
     echo "-----------------------------------------------------------"
     echo "| Click Username        : $INST_SICKBEARD_UID"
     echo "| API Key               : INST_SPOTWEB_KEY_API_SICKBEARD <paste api value>"
