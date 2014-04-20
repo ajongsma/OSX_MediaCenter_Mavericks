@@ -3,26 +3,40 @@ source config.sh
 
 function check_config_defaults() {
   if [[ -z $INST_SPOTWEB_KEY_API_SICKBEARD ]]; then
-      echo "-----------------------------------------------------------"
-      echo "| Please add the Sickbeard Spotweb API key to config.sh"
-      echo "| API Key                              : INST_SPOTWEB_KEY_API_SICKBEARD <paste value> "
-      echo "-----------------------------------------------------------"
-      #open http://localhost/newznab/admin/site-edit.php
-      open http://localhost/spotweb/?page=render&tplname=usermanagement
-      if [ ! -d /Applications/TextWrangler.app ]; then
-        pico config.sh
-      else
-        open -a /Applications/TextWrangler.app config.sh
-      fi
-
-      printf 'Waiting for Sickbeard Spotweb API be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
-      while ( [[ $INST_SPOTWEB_KEY_API_SICKBEARD == "" ]] )
-      do
-        printf '.'
-        sleep 2
-        source config.sh
-      done
-      printf "$PRINTF_MASK" ".\n" "$GREEN" "[OK]" "$RESET"
+    echo "-----------------------------------------------------------"
+    echo "| Click                 : Add User"
+    echo "| Username              : $INST_SICKBEARD_UID"
+    echo "| Firstname             : Sick"
+    echo "| Lastname              : Beard"
+    echo "| Email                 : sickbeard@localhost.null"
+    echo "-----------------------------------------------------------"
+    echo "| Click Add"
+    echo "-----------------------------------------------------------"
+    open http://localhost/spotweb
+    echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+    read -n 1 -s
+    
+    echo "-----------------------------------------------------------"
+    echo "| Login to Spotweb      : $INST_SICKBEARD_UID"
+    echo "-----------------------------------------------------------"
+    echo "| Click Username        : $INST_SICKBEARD_UID"
+    echo "| API Key               : INST_SPOTWEB_KEY_API_SICKBEARD <paste api value>"
+    echo "-----------------------------------------------------------"
+    open http://localhost/spotweb/?page=render\&tplname=usermanagement
+    if [ ! -d /Applications/TextWrangler.app ]; then
+      pico config.sh
+    else
+      open -a /Applications/TextWrangler.app config.sh
+    fi
+    
+    printf 'Waiting for Sickbeard Spotweb API be added to config.sh...\n' "YELLOW" $col '[WAIT]' "$RESET"
+    while ( [[ $INST_SPOTWEB_KEY_API_SICKBEARD == "" ]] )
+    do
+      printf '.'
+      sleep 2
+      source config.sh
+    done
+    printf "$PRINTF_MASK" ".\n" "$GREEN" "[OK]" "$RESET"
   fi
 }
 
