@@ -4,11 +4,12 @@ source config.sh
 function check_config_defaults() {
   if [[ -z $INST_SPOTWEB_KEY_API_SICKBEARD ]]; then
     echo "-----------------------------------------------------------"
-    echo "| Click                 : Add User"
-    echo "| Username              : $INST_SICKBEARD_UID"
+    echo "| In the top-right corner, user icon, add user"
+    echo "-----------------------------------------------------------"
+    echo "| Username              : $INST_SICKBEARD_UID""_api"
     echo "| Firstname             : Sick"
     echo "| Lastname              : Beard"
-    echo "| Email                 : sickbeard@localhost.null"
+    echo "| Email                 : sickbeard@localhost.local"
     echo "-----------------------------------------------------------"
     echo "| Click Add"
     echo "-----------------------------------------------------------"
@@ -19,7 +20,7 @@ function check_config_defaults() {
     echo "-----------------------------------------------------------"
     echo "| Config, User and Group Management"
     echo "-----------------------------------------------------------"
-    echo "| Click Username        : $INST_SICKBEARD_UID"
+    echo "| Click Username        : $INST_SICKBEARD_UID""_api"
     echo "| API Key               : INST_SPOTWEB_KEY_API_SICKBEARD <paste api value>"
     echo "-----------------------------------------------------------"
     open http://localhost/spotweb/?page=render\&tplname=usermanagement
