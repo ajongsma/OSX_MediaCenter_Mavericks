@@ -51,8 +51,9 @@ else
   
   echo "-----------------------------------------------------------"
   echo "| Menu, Config, Search Providers:"
-  echo "| "
-  echo "| Configure Custom Newznab Providers:"
+  echo "-----------------------------------------------------------"
+  echo "| Configure Custom Newznab Providers"
+  echo "| Select Provider                         : Add new provider"
   echo "| Provider Name                           : Spotweb"
   echo "| Site URL                                : http://localhost/spotweb/"
   echo "| API Key                                 : $INST_SPOTWEB_KEY_API_SICKBEARD"
