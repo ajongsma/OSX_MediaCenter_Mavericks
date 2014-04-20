@@ -59,6 +59,7 @@ cd OSX_MediaCenter
 
 [Cheetah](http://www.cheetahtemplate.org)
 
+[PHP5](http://www.php.net)
 
 #### Utilities
 [Homebrew](http://brew.sh)
@@ -92,6 +93,7 @@ cd OSX_MediaCenter
 
 [SickBeard](http://sickbeard.com)
 - SABnzbd Integrated
+- SpotWEB Integrated
 - Trakt Integrated
 - Plex Media Server Integrated
 
@@ -99,6 +101,10 @@ cd OSX_MediaCenter
 - SABnzbd to CouchPotato Integrated
 
 [Auto-Sub Bootstrap Bill](https://code.google.com/p/autosub-bootstrapbill)
+
+[SpotWEB](https://github.com/spotweb/spotweb)
+- SABnzbd Integrated
+- SickBeard Integrated
 
 
 ToDo
@@ -108,9 +114,6 @@ Plex Unsupported (as in totally unofficial) Appstore
 https://forums.plex.tv/index.php/topic/25523-unsupported-as-in-totally-unofficial-appstore/
 https://github.com/mikedm139/UnSupportedAppstore.bundle
 ~/Library/Application Support/Plex Media Server/Plug-ins
-
-SpotWEB
-http://gathering.tweakers.net/forum/list_messages/1478602
 
 NewzNAB
 http://forums.sabnzbd.org/viewtopic.php?f=6&t=12557&sid=269049b5a017f34a3329cc9c075b7998
