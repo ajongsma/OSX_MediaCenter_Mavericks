@@ -104,7 +104,6 @@ cd OSX_MediaCenter
 
 [SpotWEB](https://github.com/spotweb/spotweb)
 - SABnzbd Integrated
-- SickBeard Integrated
 
 
 ToDo
