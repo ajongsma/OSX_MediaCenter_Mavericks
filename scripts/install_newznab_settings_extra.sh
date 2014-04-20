@@ -23,6 +23,16 @@ else
   echo -e "${BLUE} --- press any key to continue --- ${RESET}"
   read -n 1 -s
 
+  echo "-----------------------------------------------------------"
+  echo "| Site Edit, Spotnab Settings"
+  echo "-----------------------------------------------------------"
+  echo "| Auto Discovery                : Yes"
+  echo "-----------------------------------------------------------"
+  echo "| Save Settings"
+  echo "-----------------------------------------------------------"
+  open http://pooky.local/NewzNAB/admin/site-edit.php
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
 
 
   printf "$PRINTF_MASK" "-> NewzNAB detected, extra settings - Complete" "$GREEN" "[OK]" "$RESET"
