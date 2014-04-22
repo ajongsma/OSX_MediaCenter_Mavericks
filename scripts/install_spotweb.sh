@@ -253,6 +253,21 @@ else
   open http://localhost/spotweb
   echo " --- press any key to continue ---"
   read -n 1 -s
+  
+  echo "-----------------------------------------------------------"
+  echo "| If required - change to closed system"
+  echo "-----------------------------------------------------------"
+  echo "| Click on the Cogwheel Config top-right, select User and Group Management"
+  echo "| "
+  echo "| Select                                    : Anonymous"
+  echo "| De-select                                 : Anonymous user - open system"
+  echo "| Select                                    : Anonymous user - closed system"
+  echo "-----------------------------------------------------------"
+  echo "| Change"
+  echo "-----------------------------------------------------------"
+  open http://localhost/spotweb
+  echo " --- press any key to continue ---"
+  read -n 1 -s
 
   if [ -d /var/log/spotweb ]; then
     printf "$PRINTF_MASK" "Directory /var/log/spotweb exists" "$GREEN" "[OK]" "$RESET"
