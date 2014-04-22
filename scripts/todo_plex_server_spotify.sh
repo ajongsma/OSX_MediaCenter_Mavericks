@@ -10,6 +10,10 @@ function check_config_defaults() {
   fi
 }
 
+
+#INST_PLEX_SPOTIFY_PATH="/Users/Plex"
+
+
 ## https://github.com/Burgestrand/spotify/wiki
 
 if [ -h /Library/Application Support/Plex Media Server/Plug-ins/Spotify.bundle ] ; then
