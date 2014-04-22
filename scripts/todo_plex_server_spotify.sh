@@ -92,5 +92,3 @@ else
   cd $DIR
   printf "$PRINTF_MASK" "Spotify bundle (symlinked) installed" "$GREEN" "[OK]" "$RESET"
 fi
-
-
