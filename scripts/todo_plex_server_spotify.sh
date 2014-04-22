@@ -37,15 +37,15 @@ function check_config_defaults() {
 
 ## https://github.com/Burgestrand/spotify/wiki
 
-if [ -h /Library/Application Support/Plex Media Server/Plug-ins/Spotify.bundle ] ; then
+if [ -h ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Spotify.bundle ] ; then
   printf "$PRINTF_MASK" "Spotify bundle (symlinked) detected" "$GREEN" "[OK]" "$RESET"
 else
   printf "$PRINTF_MASK" "Spotify bundle (symlinked) not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
   check_config_defaults
   
-  if [ -d /Library/Application Support/Plex Media Server/Plug-ins/Spotify.bundle ] ; then
+  if [ -d ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Spotify.bundle ] ; then
     printf "$PRINTF_MASK" "Old Spotify bundle detected, removing..." "$YELLOW" "[WAIT]" "$RESET"
-    rm -Rf /Library/Application Support/Plex Media Server/Plug-ins/Spotify.bundle
+    rm -Rf ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Spotify.bundle
     if [ $? != 0 ]; then
       echo -e "${BLUE} --- press any key to continue --- ${RESET}"
       read -n 1 -s
@@ -72,7 +72,7 @@ else
     
     #cd $INST_PLEX_SPOTIFY_PATH
     #git clone https://github.com/Tim-B/Spotify.bundle.git
-    #ln -s $INST_PLEX_SPOTIFY_PATH/Spotify.bundle /Library/Application Support/Plex Media Server/Plug-ins/Spotify.bundle
+    #ln -s $INST_PLEX_SPOTIFY_PATH/Spotify.bundle ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Spotify.bundle
     #if [ $? != 0 ]; then
     #  printf "$PRINTF_MASK" "Something went wrong with the symlink" "$RED" "[ERR]" "$RESET"
     #else
