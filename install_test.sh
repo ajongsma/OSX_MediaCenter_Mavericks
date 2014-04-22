@@ -105,12 +105,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #------------------------------------------------------------------------------
 # Install SpotWEB
 #------------------------------------------------------------------------------
-if [[ $INST_SPOTWEB == "true" ]]; then
-  source "$DIR/scripts/osx_php55.sh"
-  source "$DIR/scripts/install_spotweb.sh"
-  source "$DIR/scripts/install_spotweb_api.sh"
-  source "$DIR/scripts/install_spotweb_sabnzbd.sh"
-  if [[ $INST_SICKBEARD == "true" ]]; then
-    source "$DIR/scripts/install_sickbeard_spotweb.sh"
-  fi
+if [[ $INST_PLEX_MEDIA_SERVER_SPOTIFY == "true" ]]; then
+  source "$DIR/scripts/todo_plex_server_spotify.sh"
 fi
