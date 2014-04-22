@@ -76,14 +76,14 @@ else
   if [ ! -d $INST_PLEX_SPOTIFY_PATH/Spotify.bundle ] ; then
     printf "$PRINTF_MASK" "Spotify.bundle doesn't exists, downloading respository..." "$YELLOW" "[WAIT]" "$RESET"
     
-    #cd $INST_PLEX_SPOTIFY_PATH
-    #git clone https://github.com/Tim-B/Spotify.bundle.git
-    #ln -s $INST_PLEX_SPOTIFY_PATH/Spotify.bundle ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Spotify.bundle
-    #if [ $? != 0 ]; then
-    #  printf "$PRINTF_MASK" "Something went wrong with the symlink" "$RED" "[ERR]" "$RESET"
-    #else
-    #  printf "$PRINTF_MASK" "Symlink OK" "$GREEN" "[OK]" "$RESET"
-    #fi
+    cd $INST_PLEX_SPOTIFY_PATH
+    git clone https://github.com/Tim-B/Spotify.bundle.git
+    ln -s $INST_PLEX_SPOTIFY_PATH/Spotify.bundle ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Spotify.bundle
+    if [ $? != 0 ]; then
+      printf "$PRINTF_MASK" "Something went wrong with the symlink" "$RED" "[ERR]" "$RESET"
+    else
+      printf "$PRINTF_MASK" "Symlink OK" "$GREEN" "[OK]" "$RESET"
+    fi
   else
     printf "$PRINTF_MASK" "Spotify.bundle exists" "$GREEN" "[OK]" "$RESET"
   fi
