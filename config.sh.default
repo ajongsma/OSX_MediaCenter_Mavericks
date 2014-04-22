@@ -76,6 +76,9 @@ INST_PLEX_MEDIA_SERVER_APPSTORE="false"
 ## Install Plex Media Server iTV (https://forums.plex.tv/index.php/topic/83028-kpn-itvonline/) - (true/false)
 INST_PLEX_MEDIA_SERVER_ITV="false"
 
+## Install Plex Media Server Spotify (https://forums.plex.tv/index.php/topic/87744-install-spotify) - (true/false)
+INST_PLEX_MEDIA_SERVER_SPOTIFY="false"
+
 ## Install Plex Watch
 #https://github.com/ljunkie/plexWatch
 INST_PLEXWATCH="true"
