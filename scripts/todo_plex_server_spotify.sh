@@ -40,6 +40,7 @@ function check_config_defaults() {
 if [ -h /Library/Application Support/Plex Media Server/Plug-ins/Spotify.bundle ] ; then
   printf "$PRINTF_MASK" "Spotify bundle (symlinked) detected" "$GREEN" "[OK]" "$RESET"
 else
+  printf "$PRINTF_MASK" "Spotify bundle (symlinked) not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
   check_config_defaults
   
   if [ -d /Library/Application Support/Plex Media Server/Plug-ins/Spotify.bundle ] ; then
@@ -57,15 +58,24 @@ else
     printf "$PRINTF_MASK" $INST_PLEX_SPOTIFY_PATH" exists" "$GREEN" "[OK]" "$RESET"
   fi
 
-  cd $INST_PLEX_SPOTIFY_PATH
   if [ ! -d $INST_PLEX_SPOTIFY_PATH/Spotify.bundle ] ; then
     printf "$PRINTF_MASK" "Spotify.bundle doesn't exists, downloading respository..." "$YELLOW" "[WAIT]" "$RESET"
-    #git clone https://github.com/ljunkie/plexWatch.git
+    
+    #cd $INST_PLEX_SPOTIFY_PATH
+    #git clone https://github.com/Tim-B/Spotify.bundle.git
+    #ln -s $INST_PLEX_SPOTIFY_PATH/Spotify.bundle /Library/Application Support/Plex Media Server/Plug-ins/Spotify.bundle
+    #if [ $? != 0 ]; then
+    #  printf "$PRINTF_MASK" "Something went wrong with the symlink" "$RED" "[ERR]" "$RESET"
+    #else
+    #  printf "$PRINTF_MASK" "Symlink OK" "$GREEN" "[OK]" "$RESET"
+    #fi
   else
     printf "$PRINTF_MASK" "Spotify.bundle exists" "$GREEN" "[OK]" "$RESET"
   fi
-  
-  
+
+
+  cd $DIR
+  printf "$PRINTF_MASK" "Spotify bundle (symlinked) installed" "$GREEN" "[OK]" "$RESET"
 fi
 
 
