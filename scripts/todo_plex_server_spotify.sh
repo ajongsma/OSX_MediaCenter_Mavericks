@@ -28,7 +28,13 @@ function check_config_defaults() {
 }
 
 #INST_PLEX_SPOTIFY_PATH="/Users/Plex"
-## http://www.spotify.com/account/set-device-password/
+
+#################################################################################### 
+## ERROR (logkit:22) - There was a problem authenticating, authentication failed
+##  You will need to set a device password at
+##  http://www.spotify.com/account/set-device-password/
+####################################################################################
+
 ## https://github.com/Burgestrand/spotify/wiki
 
 if [ -h /Library/Application Support/Plex Media Server/Plug-ins/Spotify.bundle ] ; then
