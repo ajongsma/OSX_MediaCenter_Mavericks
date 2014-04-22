@@ -44,7 +44,16 @@ else
   check_config_defaults
   
   if [ -d /Library/Application Support/Plex Media Server/Plug-ins/Spotify.bundle ] ; then
-    printf "$PRINTF_MASK" "Old Spotify bundle detected" "$YELLOW" "[WAIT]" "$RESET"
+    printf "$PRINTF_MASK" "Old Spotify bundle detected, removing..." "$YELLOW" "[WAIT]" "$RESET"
+    rm -Rf /Library/Application Support/Plex Media Server/Plug-ins/Spotify.bundle
+    if [ $? != 0 ]; then
+      echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+      read -n 1 -s
+      printf "$PRINTF_MASK" "Old Spotify bundle not removed succesfully" "$RED" "[ERR]" "$RESET"
+      exit 1
+    else
+      printf "$PRINTF_MASK" "Old Spotify bundle removed succesfully" "$GREEN" "[OK]" "$RESET"
+    fi
   else
     printf "$PRINTF_MASK" "Old Spotify bundle not detected" "$GREEN" "[OK]" "$RESET"
   fi
