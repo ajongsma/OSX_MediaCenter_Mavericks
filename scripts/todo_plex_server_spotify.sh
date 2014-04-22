@@ -57,7 +57,13 @@ else
   else
     printf "$PRINTF_MASK" "Old Spotify bundle not detected" "$GREEN" "[OK]" "$RESET"
   fi
-  brew install libspotify
+  
+  if [ -d /usr/local/Cellar/libspotify ] ; then
+    printf "$PRINTF_MASK" "libspotify detected" "$GREEN" "[OK]" "$RESET"
+  else
+    printf "$PRINTF_MASK" "libspotify not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+    brew install libspotify
+  fi
   
   if [ ! -d $INST_PLEX_SPOTIFY_PATH ] ; then
     printf "$PRINTF_MASK" $INST_PLEX_SPOTIFY_PATH" doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
