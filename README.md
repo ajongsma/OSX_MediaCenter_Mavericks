@@ -8,7 +8,7 @@ OSX Media Center - Mavericks Edition
 ![SABnzbd](img/sabnzbd_64x64.png)
 ![SickBeard](img/sickBeard_64x64.png)
 ![CouchPotato](img/couchpotato_64x64.png)
-![Trakt](http://lh5.ggpht.com/HjL_gLtFt5iZwEOMip9XwCjaiSg2WNbFZBDsMffsCDTo5l7Q4weaEV8bxCPIALfxJV4=w128)
+![Trakt](img/trakt_64x64.png)
 
 Note:
 =====
