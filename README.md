@@ -10,6 +10,7 @@ OSX Media Center - Mavericks Edition
 ![CouchPotato](img/couchpotato_64x64.png)
 ![Trakt](img/trakt_64x64.png)
 
+
 Note:
 =====
 A clean install will erase all of the contents on your disk drive. Make sure to back up your important files, settings and apps before proceeding. If needed, upgrade the system to Mavericks (https://itunes.apple.com/us/app/os-x-mavericks/id675248567?mt=12)
