@@ -36,11 +36,11 @@ else
     sudo mkdir -p $INST_MARASCHINO_PATH
     sudo chown `whoami` $INST_MARASCHINO_PATH
   else
-    printf "$PRINTF_MASK" $INST_MARASCHINO_PATH" does't exists, creating" "$GREEN" "[OK]" "$RESET"
+    printf "$PRINTF_MASK" $INST_MARASCHINO_PATH" exists" "$GREEN" "[OK]" "$RESET"
   fi
   
   cd $INST_MARASCHINO_PATH
-  if [ ! -d $INST_MARASCHINO_PATH/spotweb ]; then
+  if [ ! -d $INST_MARASCHINO_PATH/maraschino ]; then
     printf "$PRINTF_MASK" $INST_MARASCHINO_PATH"/spotweb does't exists, downloading..." "$YELLOW" "[WAIT]" "$RESET"
     git clone https://github.com/gugahoi/maraschino.git
   else
