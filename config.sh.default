@@ -87,6 +87,10 @@ INST_PLEXWATCH="true"
 #https://github.com/ljunkie/plexWatch
 INST_PLEXWATCHWEB="true"
 
+## Install Maraschino
+#https://github.com/gugahoi/maraschino
+INST_MARASCHINO="true"
+
 ## Install Plex Home Theater (http://www.plex.tv) - (true/false)
 INST_PLEX_HOME_THEATER="true"
 
@@ -230,6 +234,12 @@ INST_PLEXWATCHWEB_PATH="/Users/Plex"
 # -----------------------------------------------------------
 INST_PLEX_SPOTIFY_PATH="/Users/Plex"
 
+# -----------------------------------------------------------
+# | Plex Media Server - Maraschino
+# -----------------------------------------------------------
+# | Note: /maraschino is appended automatically
+# -----------------------------------------------------------
+INST_PLEX_SPOTIFY_PATH="/Users"
 
 ############################################################
 
