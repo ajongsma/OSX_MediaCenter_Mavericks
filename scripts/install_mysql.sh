@@ -96,6 +96,9 @@ else
   printf "$PRINTF_MASK" "Launch Agent $INST_FILE_LAUNCHAGENT detected" "$GREEN" "[OK]" "$RESET"
 fi
 
+## echo "export PATH=\"\$PATH:/usr/local/mysql/bin\"" >> ~/.bash_profile
+## echo "export DYLD_LIBRARY_PATH=\"/usr/local/mysql/lib:\$DYLD_LIBRARY_PATH\"" >> ~/.bash_profile
+
 ##### NOTES #####
 ## http://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/
 ## http://hivelogic.com/articles/installing-mysql-on-mac-os-x/
