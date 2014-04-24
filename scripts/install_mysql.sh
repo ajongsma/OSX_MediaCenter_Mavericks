@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 source config.sh
 
+## http://silicos-it.com/cookbook/configuring_osx_for_chemoinformatics/configuring_osx_for_chemoinformatics.html
+
 function check_config_var() {
   if [[ -z $INST_MYSQL_UID ]] || [[ -z $INST_MYSQL_PW ]]; then
     printf 'One or more values were not detected in the config.sh, please add the appropriate values:\n' "YELLOW" $col '[WAIT]' "$RESET"
