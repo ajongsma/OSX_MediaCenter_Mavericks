@@ -105,6 +105,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #------------------------------------------------------------------------------
 # Install SpotWEB
 #------------------------------------------------------------------------------
-if [[ $INST_PLEX_MEDIA_SERVER_SPOTIFY == "true" ]]; then
-  source "$DIR/scripts/todo_plex_server_spotify.sh"
+if [[ $INST_MARASCHINO == "true" ]]; then
+  source "$DIR/scripts/install_plex_server_maraschino.sh"
 fi
