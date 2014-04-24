@@ -80,7 +80,8 @@ else
       read -n 1 -s
     else
       printf "$PRINTF_MASK" "Existing bash profile detected, appending..." "$YELLOW" "[WAIT]" "$RESET"
-      echo "export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"" >> ~/.bash_profile
+      echo "export PATH=\"\$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:\$PATH\"" >> ~/.bash_profile
+      #echo "export PATH=\"\$PATH:/usr/local\"" >> ~/.bash_profile
     fi
 
 #################################
