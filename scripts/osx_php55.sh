@@ -4,6 +4,8 @@ source config.sh
 ## http://thegeekywizard.com/2014/02/how-to-install-php5-5-mysql-mcrypt-phpmyadmin-on-osx-mavericks-using-homebrew/
 if [ ! -e /usr/local/bin/brew ] ; then
   printf "$PRINTF_MASK" "Homebrew not detected" "$RED" "[ERR]" "$RESET"
+  echo " --- press any key to continue ---"
+  read -n 1 -s
   exit 1
 else
   if [ ! -d /usr/local/Cellar/php55 ] ; then
@@ -32,12 +34,20 @@ else
     
     cp /usr/local/etc/php/5.5/php.ini /usr/local/etc/php/5.5/php.ini.org
     sed -i -r 's/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/' /usr/local/etc/php/5.5/php.ini
+    sudo apachectl graceful    
+
+    if [ -f ~/.bash_profile ] ; then
+      printf "$PRINTF_MASK" "Existing bash profile not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
+      echo " ==>"
+      echo " ==> TODO"
+      echo " ==>"
+    else
+      printf "$PRINTF_MASK" "Existing bash profile detected, appending..." "$YELLOW" "[WAIT]" "$RESET"
+      echo "export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"" >> ~/.bash_profile
+    fi
     
-    sudo apachectl graceful
-    
+
     sh /usr/local/Cellar/php55/5.5.11/bin/php retrieve.php
-    
-    echo "export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"" >> ~/.bash_profile
     
     #/usr/local/etc/php/5.5/php.ini
     
