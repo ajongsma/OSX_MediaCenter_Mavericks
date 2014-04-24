@@ -39,7 +39,14 @@ else
     printf "$PRINTF_MASK" $INST_MARASCHINO_PATH" does't exists, creating" "$GREEN" "[OK]" "$RESET"
   fi
   
-  
+  cd $INST_MARASCHINO_PATH
+  if [ ! -d $INST_MARASCHINO_PATH/spotweb ]; then
+    printf "$PRINTF_MASK" $INST_MARASCHINO_PATH"/spotweb does't exists, downloading..." "$YELLOW" "[WAIT]" "$RESET"
+    git clone https://github.com/gugahoi/maraschino.git
+  else
+    printf "$PRINTF_MASK" $INST_MARASCHINO_PATH"/spotweb exists, updating..." "$YELLOW" "[WAIT]" "$RESET"
+    git pull https://github.com/gugahoi/maraschino.git
+  fi
   
   
 fi
