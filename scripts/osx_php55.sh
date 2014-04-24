@@ -87,6 +87,21 @@ else
 ############ TESTING ############
 #################################
 
+#################################
+## Hmmm
+#cp $HOMEBREW_PREFIX/Cellar/php55/5.5.11/homebrew.mxcl.php55.plist ~/Library/LaunchAgents/
+#launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php54.plist
+#launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist
+#######
+## Swapping from PHP 5.4 to PHP 5.5
+## export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
+#export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+#######
+## PEAR Extensions
+# export PATH="$(brew --prefix php55)/bin:$PATH"
+#######
+#################################
+
 echo " ==> Checking PEAR's directory"
 pear config-get php_dir
 #pear config-set php_dir /usr/lib/php
