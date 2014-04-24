@@ -22,12 +22,47 @@ else
     export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"
     
     brew install php55-intl
+    if [ ! -d /usr/local/Cellar/php55/todo ] ; then
+      printf "$PRINTF_MASK" "php55-intl not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+    else
+      printf "$PRINTF_MASK" "php55-intl detected" "$GREEN" "[OK]" "$RESET"
+    fi
     brew install php55-mcrypt
+    if [ ! -d /usr/local/Cellar/php55/todo ] ; then
+      printf "$PRINTF_MASK" "php55-mcrypt not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+    else
+      printf "$PRINTF_MASK" "php55-mcrypt detected" "$GREEN" "[OK]" "$RESET"
+    fi
     brew install php55-memcached
+    if [ ! -d /usr/local/Cellar/php55/todo ] ; then
+      printf "$PRINTF_MASK" "php55-memcached not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+    else
+      printf "$PRINTF_MASK" "php55-memcached detected" "$GREEN" "[OK]" "$RESET"
+    fi
     brew install php55-propro
+    if [ ! -d /usr/local/Cellar/php55/todo ] ; then
+      printf "$PRINTF_MASK" "php55-propro not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+    else
+      printf "$PRINTF_MASK" "php55-propro detected" "$GREEN" "[OK]" "$RESET"
+    fi
     brew install php55-raphf
+    if [ ! -d /usr/local/Cellar/php55/todo ] ; then
+      printf "$PRINTF_MASK" "php55-raphf not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+    else
+      printf "$PRINTF_MASK" "php55-raphf detected" "$GREEN" "[OK]" "$RESET"
+    fi
     brew install php55-http
+    if [ ! -d /usr/local/Cellar/php55/todo ] ; then
+      printf "$PRINTF_MASK" "php55-http not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+    else
+      printf "$PRINTF_MASK" "php55-http detected" "$GREEN" "[OK]" "$RESET"
+    fi
     brew install php55-ssh2
+    if [ ! -d /usr/local/Cellar/php55/todo ] ; then
+      printf "$PRINTF_MASK" "php55-ssh2 not detected, installing..." "$YELLOW" "[WAIT]" "$RESET"
+    else
+      printf "$PRINTF_MASK" "php55-ssh2 detected" "$GREEN" "[OK]" "$RESET"
+    fi
   
     sudo mv /usr/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp54.so
     sudo ln -sv /usr/local/Cellar/php55/5.5.11/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp5.so
@@ -47,7 +82,19 @@ else
       printf "$PRINTF_MASK" "Existing bash profile detected, appending..." "$YELLOW" "[WAIT]" "$RESET"
       echo "export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"" >> ~/.bash_profile
     fi
-    
+
+#################################
+############ TESTING ############
+#################################
+
+echo " ==> Checking PEAR's directory"
+pear config-get php_dir
+echo " ==> Check that correct php.ini is used"
+php --ini
+echo " ==> Check include_path in the php.ini"
+php -c /path/to/php.ini -r 'echo get_include_path() . "\n";'
+echo " --- press any key to continue ---"
+read -n 1 -s
 
     sh /usr/local/Cellar/php55/5.5.11/bin/php retrieve.php
     
