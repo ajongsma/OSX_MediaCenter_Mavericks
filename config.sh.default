@@ -239,7 +239,7 @@ INST_PLEX_SPOTIFY_PATH="/Users/Plex"
 # -----------------------------------------------------------
 # | Note: /maraschino is appended automatically
 # -----------------------------------------------------------
-INST_PLEX_SPOTIFY_PATH="/Users"
+INST_MARASCHINO_PATH="/Users"
 
 ############################################################
 
