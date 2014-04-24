@@ -37,6 +37,15 @@ function check_config_defaults() {
 
 ## https://github.com/Burgestrand/spotify/wiki
 
+printf "$PRINTF_MASK" "===================================" "$RED" "[ERR]" "$RESET"
+printf "$PRINTF_MASK" "| Spotify bundle currently broken |" "$RED" "[ERR]" "$RESET"
+printf "$PRINTF_MASK" "| Waiting for source update       |" "$RED" "[ERR]" "$RESET"
+printf "$PRINTF_MASK" "===================================" "$RED" "[ERR]" "$RESET"
+echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+read -n 1 -s
+exit 0
+
+
 if [ -h ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Spotify.bundle ] ; then
   printf "$PRINTF_MASK" "Spotify bundle (symlinked) detected" "$GREEN" "[OK]" "$RESET"
 else
@@ -81,6 +90,8 @@ else
     ln -s $INST_PLEX_SPOTIFY_PATH/Spotify.bundle ~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/Spotify.bundle
     if [ $? != 0 ]; then
       printf "$PRINTF_MASK" "Something went wrong with the symlink" "$RED" "[ERR]" "$RESET"
+      echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+      read -n 1 -s
     else
       printf "$PRINTF_MASK" "Symlink OK" "$GREEN" "[OK]" "$RESET"
     fi
