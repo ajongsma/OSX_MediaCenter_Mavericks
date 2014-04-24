@@ -41,6 +41,8 @@ else
       echo " ==>"
       echo " ==> TODO"
       echo " ==>"
+      echo " --- press any key to continue ---"
+      read -n 1 -s
     else
       printf "$PRINTF_MASK" "Existing bash profile detected, appending..." "$YELLOW" "[WAIT]" "$RESET"
       echo "export PATH="$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:$PATH"" >> ~/.bash_profile
