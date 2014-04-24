@@ -90,7 +90,7 @@ function check_config_var() {
 
 #if [ -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
 if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/spotweb ] ; then
-  printf "$PRINTF_MASK" "-> Spotweb detected" "$GREEN" "[OK]" "$RESET"
+  printf "$PRINTF_MASK" "-> Symoblic link to Spotweb detected" "$GREEN" "[OK]" "$RESET"
   check_config_defaults
   check_config_var
 else
