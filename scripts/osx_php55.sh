@@ -89,10 +89,13 @@ else
 
 echo " ==> Checking PEAR's directory"
 pear config-get php_dir
+#pear config-set php_dir /usr/lib/php
 echo " ==> Check that correct php.ini is used"
 php --ini
 echo " ==> Check include_path in the php.ini"
 php -c /path/to/php.ini -r 'echo get_include_path() . "\n";'
+echo " ==> Add include_path to the php.ini"
+#include_path = ".:/usr/lib/php/pear"
 echo " --- press any key to continue ---"
 read -n 1 -s
 
