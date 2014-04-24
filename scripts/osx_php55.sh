@@ -96,6 +96,7 @@ echo " ==> Check include_path in the php.ini"
 php -c /path/to/php.ini -r 'echo get_include_path() . "\n";'
 echo " ==> Add include_path to the php.ini"
 #include_path = ".:/usr/lib/php/pear"
+#include_path = "/usr/local/PEAR:/php/includes"
 echo " --- press any key to continue ---"
 read -n 1 -s
 
