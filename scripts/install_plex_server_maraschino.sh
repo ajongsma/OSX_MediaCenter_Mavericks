@@ -41,10 +41,11 @@ else
   
   cd $INST_MARASCHINO_PATH
   if [ ! -d $INST_MARASCHINO_PATH/maraschino ]; then
-    printf "$PRINTF_MASK" $INST_MARASCHINO_PATH"/spotweb does't exists, downloading..." "$YELLOW" "[WAIT]" "$RESET"
-    git clone https://github.com/gugahoi/maraschino.git
+    printf "$PRINTF_MASK" $INST_MARASCHINO_PATH"/maraschino does't exists, downloading..." "$YELLOW" "[WAIT]" "$RESET"
+    sudo git clone https://github.com/gugahoi/maraschino.git
+    sudo chown `whoami` $INST_MARASCHINO_PATH/maraschino
   else
-    printf "$PRINTF_MASK" $INST_MARASCHINO_PATH"/spotweb exists, updating..." "$YELLOW" "[WAIT]" "$RESET"
+    printf "$PRINTF_MASK" $INST_MARASCHINO_PATH"/maraschino exists, updating..." "$YELLOW" "[WAIT]" "$RESET"
     git pull https://github.com/gugahoi/maraschino.git
   fi
   
