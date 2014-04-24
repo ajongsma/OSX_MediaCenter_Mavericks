@@ -62,5 +62,6 @@ else
     printf "$PRINTF_MASK" $INST_MARASCHINO_PATH"/maraschino doesn't exists" "$RED" "[ERR]" "$RESET"
   fi
   
+  open http://localhost/maraschino
   
 fi
