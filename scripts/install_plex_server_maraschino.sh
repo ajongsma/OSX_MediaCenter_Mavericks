@@ -24,7 +24,7 @@ function check_config_defaults() {
 
 ## https://github.com/gugahoi/maraschino
 
-if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/maraschino ] ; then
+if [ -h $INST_APACHE_SYSTEM_WEB_ROOT/maraschino ] ; then
   printf "$PRINTF_MASK" "-> Symoblic link to Maraschino detected" "$GREEN" "[OK]" "$RESET"
   check_config_defaults
 else
