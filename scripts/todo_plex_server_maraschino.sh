@@ -49,19 +49,19 @@ else
     git pull https://github.com/gugahoi/maraschino.git
   fi
   
-  if [ -d $INST_MARASCHINO_PATH/maraschino ]; then
-    printf "$PRINTF_MASK" $INST_MARASCHINO_PATH"/maraschino exists" "$GREEN" "[OK]" "$RESET"
-    if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/maraschino ]; then
-      printf "$PRINTF_MASK" "Symbolic link not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
-      sudo ln -sfv $INST_MARASCHINO_PATH/maraschino /Library/Server/Web/Data/Sites/Default/maraschino
-      sudo chown `whoami` /Library/Server/Web/Data/Sites/Default/maraschino
-      #sudo ln -s $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
-    else
-      printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
-    fi
-  else
-    printf "$PRINTF_MASK" $INST_MARASCHINO_PATH"/maraschino doesn't exists" "$RED" "[ERR]" "$RESET"
-  fi
+#  if [ -d $INST_MARASCHINO_PATH/maraschino ]; then
+#    printf "$PRINTF_MASK" $INST_MARASCHINO_PATH"/maraschino exists" "$GREEN" "[OK]" "$RESET"
+#    if [ ! -h $INST_APACHE_SYSTEM_WEB_ROOT/maraschino ]; then
+#      printf "$PRINTF_MASK" "Symbolic link not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
+#      sudo ln -sfv $INST_MARASCHINO_PATH/maraschino /Library/Server/Web/Data/Sites/Default/maraschino
+#      sudo chown `whoami` /Library/Server/Web/Data/Sites/Default/maraschino
+#      #sudo ln -s $INST_SPOTWEB_PATH/Sites/spotweb /Library/Server/Web/Data/Sites/Default/spotweb
+#    else
+#      printf "$PRINTF_MASK" "Symbolic link detected" "$GREEN" "[OK]" "$RESET"
+#    fi
+#  else
+#    printf "$PRINTF_MASK" $INST_MARASCHINO_PATH"/maraschino doesn't exists" "$RED" "[ERR]" "$RESET"
+#  fi
   
   open http://localhost/maraschino
   
