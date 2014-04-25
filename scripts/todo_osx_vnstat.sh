@@ -1,12 +1,11 @@
 
-
 ## http://www.qlambda.com/2013/07/running-vnstat-in-os-x.html
 ## https://forums.plex.tv/index.php/topic/93731-upsboard-usenet-plex-stats/
 
 exit 0
 
 
-brew install install vnstat
+brew install vnstat
 
 nano vnstat.conf
 echo "# default interface"
