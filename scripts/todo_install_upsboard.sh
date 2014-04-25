@@ -17,36 +17,44 @@ else
   printf "$PRINTF_MASK" "Node detected" "$GREEN" "[OK]" "$RESET"
 fi
 
+if [ ! -e /usr/local/bin/npm ] ; then
+  printf "$PRINTF_MASK" "NPM not detected" "$RED" "[ERR]" "$RESET"
+  echo " --- press any key to continue ---"
+  read -n 1 -s
+  exit 1
+else
+  printf "$PRINTF_MASK" "NPM detected, installing required modules..." "$YELLOW" "[WAIT]" "$RESET"
+  npm install express
+  npm install stylus
+  npm install nib
+  npm install when
+  npm install bcrypt
+  npm install express-uglify
+  npm install passport
+  npm install passport-local
+  npm install underscore
+  npm install moment
+  npm install request
+  npm install xml2js
+  npm install ssh2
+  npm install gm
+  npm install body-parser
+  npm install cookie-parser
+  npm install csurf
+  npm install errorhandler
+  npm install method-override
+  npm install morgan
+  npm install response-time
+  npm install cookie-session
+  npm install serve-static
+  npm install static-favicon
+fi
+
 sudo mkdir /Users/Upsboard
 sudo chown `whoami` /Users/Upsboard
 cd /Users/Upsboard
 
 git clone https://github.com/lienma/UpsBoard.git
-
-npm install express
-npm install stylus
-npm install nib
-npm install when
-npm install bcrypt
-npm install express-uglify
-npm install passport
-npm install passport-local
-npm install underscore
-npm install moment
-npm install request
-npm install xml2js
-npm install ssh2
-npm install gm
-npm install body-parser
-npm install cookie-parser
-npm install csurf
-npm install errorhandler
-npm install method-override
-npm install morgan
-npm install response-time
-npm install cookie-session
-npm install serve-static
-npm install static-favicon
 
 cd UpsBoard
 cp config.js-sample config.js
