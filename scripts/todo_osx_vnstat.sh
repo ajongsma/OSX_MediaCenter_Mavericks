@@ -43,7 +43,7 @@ else
       read -n 1 -s
       exit 1
     fi
-    sudo chown root:wheel ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
+    #sudo chown root:wheel ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
     launchctl load ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
     #sudo launchctl unload /Library/LaunchDaemons/local.vnstat.plist
   else
