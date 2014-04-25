@@ -23,9 +23,38 @@ cd /Users/Upsboard
 
 git clone https://github.com/lienma/UpsBoard.git
 
+npm install express
+npm install stylus
+npm install nib
+npm install when
+npm install bcrypt
+npm install express-uglify
+npm install passport
+npm install passport-local
+npm install underscore
+npm install moment
+npm install request
+npm install xml2js
+npm install ssh2
+npm install gm
+npm install body-parser
+npm install cookie-parser
+npm install csurf
+npm install errorhandler
+npm install method-override
+npm install morgan
+npm install response-time
+npm install cookie-session
+npm install serve-static
+npm install static-favicon
+
 cd UpsBoard
 cp config.js-sample config.js
 nano config.js
+
+
+
+
 
 ## Starting it all up
 node app
