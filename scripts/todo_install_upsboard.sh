@@ -81,7 +81,8 @@ echo "mac & linux"
 echo "  os       : mac"
 
 echo "bandwidthServers"
-echo "vnstatPath : /usr/local/bin/vnstat"
+echo "interface   : en0",
+echo "vnstatPath  : /usr/local/bin/vnstat"
 echo "databaseDir : /usr/local/var/db/vnstat"
 
 echo "\"Service Name\": {"
