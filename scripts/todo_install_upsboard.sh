@@ -62,7 +62,23 @@ cd UpsBoard
 cp config.js-sample config.js
 nano config.js
 
-echo "Change:"
+#Command Err: { [Error: Command failed: /bin/sh: free: command not found
+#] killed: false, code: 127, signal: null }
+#{ [Error: Command failed: /bin/sh: free: command not found
+#] killed: false, code: 127, signal: null }
+#Command Err: { [Error: Command failed: /bin/sh: /path/to/vnstat: No such file or directory
+#] killed: false, code: 127, signal: null }
+#Command Err: { [Error: Command failed: /bin/sh: /path/to/vnstat: No such file or directory
+#] killed: false, code: 127, signal: null }
+
+## /usr/local/Cellar/vnstat/1.11/etc/vnstat.conf
+echo "-----------------------------------------"
+echo "| Change:"
+echo "-----------------------------------------"
+echo "bandwidthServers"
+echo "vnstatPath : /usr/local/bin/vnstat"
+echo "databaseDir : /usr/local/var/db/vnstat"
+
 echo "\"Service Name\": {"
 echo "  \"host\": \"google.com\","
 echo "sabnzbd"
