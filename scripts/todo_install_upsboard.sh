@@ -72,12 +72,16 @@ echo "  disabled -> true"
 echo "sickbeard"
 echo "  disabled -> true"
 
+echo "plex"
+echo "  username : $"
+echo "  password : $"
+
 ## apikey -> http://www.openweathermap.com/profile
 ## http://forecast.io
 echo "weather"
-echo "  apiKey : $"
-echo "  lat    : $"
-echo "  long   : $"
+echo "  apiKey   : $"
+echo "  lat      : $"
+echo "  long     : $"
 echo "  useFahrenheit -> false"
 
 
