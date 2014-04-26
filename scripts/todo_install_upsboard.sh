@@ -62,7 +62,23 @@ cd UpsBoard
 cp config.js-sample config.js
 nano config.js
 
+echo "Change:"
+echo "\"Service Name\": {"
+echo "  \"host\": \"google.com\","
+echo "sabnzbd"
+echo "  disabled -> true"
+echo "sickbeard"
+echo "  disabled -> true"
+echo "sickbeard"
+echo "  disabled -> true"
 
+## apikey -> http://www.openweathermap.com/profile
+## http://forecast.io
+echo "weather"
+echo "  apiKey : $"
+echo "  lat    : $"
+echo "  long   : $"
+echo "  useFahrenheit -> false"
 
 
 
