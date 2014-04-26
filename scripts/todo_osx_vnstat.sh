@@ -17,7 +17,7 @@ else
   else
     brew install vnstat
     
-    /usr/local/Cellar/vnstat/1.11/etc/vnstat.conf
+    #/usr/local/Cellar/vnstat/1.11/etc/vnstat.conf
     
     #Interface "eth0"
     echo "# default interface"
@@ -25,6 +25,12 @@ else
     #DatabaseDir "/usr/local/var/db/vnstat"
     echo "# location of the database directory"
     cat /usr/local/Cellar/vnstat/1.11/etc/vnstat.conf | grep DatabaseDir
+    
+    echo "Change listening interface"
+    echo "Interface : en0"
+    nano /usr/local/Cellar/vnstat/1.11/etc/vnstat.conf
+    echo " --- press any key to continue ---"
+    read -n 1 -s
     
     vnstat -u -i en0
   fi
