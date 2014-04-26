@@ -73,10 +73,6 @@ echo "-----------------------------------------"
 #] killed: false, code: 127, signal: null }
 #{ [Error: Command failed: /bin/sh: free: command not found
 #] killed: false, code: 127, signal: null }
-#Command Err: { [Error: Command failed: /bin/sh: /path/to/vnstat: No such file or directory
-#] killed: false, code: 127, signal: null }
-#Command Err: { [Error: Command failed: /bin/sh: /path/to/vnstat: No such file or directory
-#] killed: false, code: 127, signal: null }
 echo "mac & linux"
 echo "  os       : mac"
 
