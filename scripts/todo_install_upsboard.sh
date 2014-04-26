@@ -62,6 +62,13 @@ cd UpsBoard
 cp config.js-sample config.js
 nano config.js
 
+
+
+## /usr/local/Cellar/vnstat/1.11/etc/vnstat.conf
+echo "-----------------------------------------"
+echo "| Change:"
+echo "-----------------------------------------"
+
 #Command Err: { [Error: Command failed: /bin/sh: free: command not found
 #] killed: false, code: 127, signal: null }
 #{ [Error: Command failed: /bin/sh: free: command not found
@@ -70,12 +77,6 @@ nano config.js
 #] killed: false, code: 127, signal: null }
 #Command Err: { [Error: Command failed: /bin/sh: /path/to/vnstat: No such file or directory
 #] killed: false, code: 127, signal: null }
-
-## /usr/local/Cellar/vnstat/1.11/etc/vnstat.conf
-echo "-----------------------------------------"
-echo "| Change:"
-echo "-----------------------------------------"
-
 echo "mac & linux"
 echo "  os       : mac"
 
