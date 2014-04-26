@@ -83,14 +83,14 @@ echo "databaseDir : /usr/local/var/db/vnstat"
 
 echo "\"Service Name\": {"
 echo "  \"host\": \"google.com\","
+
 echo "sabnzbd"
 echo "  port   : $INST_SABNZBD_PORT"
 echo "  apiKey : $INST_SABNZBD_KEY_API"
 
 echo "sickbeard"
-echo "  disabled -> true"
-echo "sickbeard"
-echo "  disabled -> true"
+echo "  port   : $INST_SICKBEARD_PORT"
+echo "  apiKey : $INST_SICKBEARD_KEY_API"
 
 echo "plex"
 echo "  username : $"
