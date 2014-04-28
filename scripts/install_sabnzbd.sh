@@ -244,6 +244,29 @@ else
     done
   fi
 
+  echo "-----------------------------------------------------------"
+  echo "| Tuning SabNZBD (optional) (1/2)"
+  echo "-----------------------------------------------------------"
+  echo "| Config > General > Tuning"
+  echo "| Article cache limit                     : -1"
+  echo "| Cleanup List                            : .nfo, .sfv, .txt, .jpg"
+  echo "-----------------------------------------------------------"
+  open http://pooky.local:8080/config/general/
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+  
+  echo "-----------------------------------------------------------"
+  echo "| Tuning SabNZBD (optional) (2/2)"
+  echo "-----------------------------------------------------------"
+  echo "| Config > Switches > Post processing"
+  echo "| Extra Par2                              : -t0"
+  echo "| Nice Parameters                         : -n10"
+#  echo "| IONice Parameters                       : -c2 -n4"
+  echo "-----------------------------------------------------------"
+  open http://pooky.local:8080/config/switches/
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+
   INST_FILE_LAUNCHAGENT="com.sabnzbd.SABnzbd.plist"
   if [ -f ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT ] ; then
     printf "$PRINTF_MASK" "LaunchAgents $INST_FILE_LAUNCHAGENT exist" "$GREEN" "[OK]" "$RESET"
