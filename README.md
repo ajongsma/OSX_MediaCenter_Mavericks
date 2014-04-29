@@ -1,5 +1,6 @@
 OSX Media Center - Mavericks Edition
 ===============
+![minions](http://www.donankleer.com/wp-content/uploads/2013/05/minions_cheering.gif)
 
 ![OSX_Mavericks](img/osx_mavericks_64x64.jpg)
 ![OSX_Server](img/osx_server_64x64.jpeg)
