@@ -11,6 +11,7 @@ echo PS1=’\[\e[0;33m\]\h:\W \u\$\[\e[m\] ‘ >> ~/.bash_profile
 brew install grc
 echo source "`brew --prefix`/etc/grc.bashrc" >> ~/.bash_profile
 
+## http://noahfrederick.com/blog/2011/lion-terminal-theme-peppermint/
 wget http://noahfrederick.com/get/Peppermint.1.2.terminal.zip >> ~/Downloads/Peppermint.1.2.terminal.zip
 #wget https://github.com/dotzero/iTerm-2-Peppermint
 
