@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 source config.sh
 
+## http://noiseandheat.com/blog/2011/12/os-x-lion-terminal-colours/
+## http://redlinetech.wordpress.com/2013/02/01/how-to-add-colors-to-mac-terminal/
+
 echo "# Add color to the terminal" >> ~/.bash_profile
 echo "export CLICOLOR=1" >> ~/.bash_profile
 echo "export LSCOLORS=ExFxCxDxBxegedabagacad" >> ~/.bash_profile
