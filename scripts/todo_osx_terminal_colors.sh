@@ -12,7 +12,7 @@ brew install grc
 echo source "`brew --prefix`/etc/grc.bashrc" >> ~/.bash_profile
 
 ## http://noahfrederick.com/blog/2011/lion-terminal-theme-peppermint/
-wget http://noahfrederick.com/get/Peppermint.1.2.terminal.zip >> ~/Downloads/Peppermint.1.2.terminal.zip
-#wget https://github.com/dotzero/iTerm-2-Peppermint
+#wget http://noahfrederick.com/get/Peppermint.1.2.terminal.zip >> ~/Downloads/Peppermint.1.2.terminal.zip
+#git clone https://github.com/dotzero/iTerm-2-Peppermint
 
 source ~/.bash_profile
