@@ -147,9 +147,9 @@ nzbdrone
 Random info to check and verify
 ===============
 
-#####MySQL
+##### Randoms
 
-- http://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/
+- https://github.com/sivel/speedtest-cli
 
 #####OS X Server
 
