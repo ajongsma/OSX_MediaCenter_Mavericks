@@ -150,7 +150,7 @@ Random info to check and verify
 ##### Randoms
 
 - https://github.com/sivel/speedtest-cli
-- http://www.pixelbeat.org/scripts/ls_color/
+- http://www.pixelbeat.org/scripts/ls_color/ | http://www.pixelbeat.org/scripts/l
 
 #####OS X Server
 
