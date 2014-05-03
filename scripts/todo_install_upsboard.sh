@@ -48,6 +48,7 @@ else
   npm install cookie-session
   npm install serve-static
   npm install static-favicon
+  npm install bcrypt-nodejs
   
   #npm list -g --depth=1 | awk -F ' ' '{print $2}' | awk -F '@' '{print $1}'  | xargs npm remove -g
 fi
