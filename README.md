@@ -108,7 +108,7 @@ cd OSX_MediaCenter
 - SABnzbd Integrated
 
 
-ToDo
+Some other stuff
 ===============
 
 Plex Unsupported (as in totally unofficial) Appstore
@@ -129,13 +129,9 @@ http://www.soma-zone.com/LaunchControl/
 HandBrake
 http://handbrake.fr
 
-GitHub
-
 DaisyDisk
 
 Path Finder
-
-Xcode
 
 Transmission
 
@@ -145,7 +141,7 @@ nzbdrone
 
 [launchrocket](https://github.com/jimbojsb/launchrocket)
 
-Random info to check and verify
+Random thoughts to check and verify
 ===============
 
 ##### Randoms
