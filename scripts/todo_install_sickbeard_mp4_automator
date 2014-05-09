@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+source config.sh
+
+## https://github.com/mdhiggins/sickbeard_mp4_automator
+
+if [ ! -d $INST_SICKBEARD_MP3_AUTOMATOR_PATH ] ; then
+  printf "$PRINTF_MASK" $INST_SICKBEARD_MP3_AUTOMATOR_PATH" doesn't exists, creating..." "$YELLOW" "[WAIT]" "$RESET"
+  sudo mkdir -p $INST_SICKBEARD_MP3_AUTOMATOR_PATH
+  sudo chown `whoami`:staff $INST_SICKBEARD_MP3_AUTOMATOR_PATH
+else
+  printf "$PRINTF_MASK" $INST_SICKBEARD_MP3_AUTOMATOR_PATH" exists" "$GREEN" "[OK]" "$RESET"
+fi
+
+if [ ! -d $INST_SICKBEARD_MP3_AUTOMATOR_PATH/sickbeard_mp4_automator ] ; then
+  printf "$PRINTF_MASK" "SickBeard MP4 Automator doesn't exists, downloading respository..." "$YELLOW" "[WAIT]" "$RESET"
+  cd $INST_SICKBEARD_MP3_AUTOMATOR_PATH
+  git clone https://github.com/mdhiggins/sickbeard_mp4_automator.git
+  chmod 777 $INST_SICKBEARD_MP3_AUTOMATOR_PATH/plexWatchWeb/config/
+else
+  printf "$PRINTF_MASK" "SickBeard MP4 Automator exists" "$GREEN" "[OK]" "$RESET"
+fi
+
+cd $INST_SICKBEARD_MP3_AUTOMATOR_PATH/sickbeard_mp4_automator
+cp autoProcess.ini.sample autoProcess.ini
+
+echo "-----------------------------------------------------------"
+echo "| Update settings autoProcess.ini:"
+echo "-----------------------------------------------------------"
+
+FFMPEG=`which ffmpeg`
+if [[ ! -z $FFMPEG ]]
+    echo "| FFMPEG Path       : $FFMPEG"
+else
+  printf "$PRINTF_MASK" "FFMPEG not detected" "$RED" "[ERR]" "$RESET"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+fi
+
+FFPROBE=`which ffprobe`
+if [[ ! -z $FFPROBE ]]
+    echo "| FFPROBE Path       : $FFPROBE"
+else
+  printf "$PRINTF_MASK" "FFPROBE not detected" "$RED" "[ERR]" "$RESET"
+  echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+  read -n 1 -s
+fi
+
+echo "-----------------------------------------------------------"
+echo "| Save Changes"
+echo "-----------------------------------------------------------"
+echo -e "${BLUE} --- press any key to continue --- ${RESET}"
+read -n 1 -s
+
+if [ ! -d /Applications/TextWrangler.app ]; then
+  pico autoProcess.ini
+else
+  open -a /Applications/TextWrangler.app autoProcess.ini
+fi
+
+
+cd $DIR
+
