@@ -73,10 +73,8 @@ else
 
     if [ -f ~/.bash_profile ] ; then
       printf "$PRINTF_MASK" "Existing bash profile not detected, creating..." "$YELLOW" "[WAIT]" "$RESET"
-      echo " ==>"
-      echo " ==> TODO"
-      echo " ==>"
-      echo " --- press any key to continue ---"
+      touch ~/.bash_profile
+      echo "export PATH=\"\$(brew --prefix josegonzalez/php/php55)/bin:/usr/local/bin:\$PATH\"" >> ~/.bash_profile
       read -n 1 -s
     else
       printf "$PRINTF_MASK" "Existing bash profile detected, appending..." "$YELLOW" "[WAIT]" "$RESET"
