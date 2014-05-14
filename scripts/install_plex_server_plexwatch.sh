@@ -38,7 +38,7 @@ else
 fi
 
 printf "$PRINTF_MASK" "Modify Variables as needed" "$GREY" "|" "$RESET"
-printf "$PRINTF_MASK" "\$data_dir = '/Users/Plex/plexWatch';" "$GREY" "|" "$RESET"
+printf "$PRINTF_MASK" "\$data_dir = '$INST_PLEXWATCH_PATH/plexwatch';" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "\$server_log = '"$HOME"/Library/Logs/Plex Media Server.log';" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "\$log_client_ip = 1;" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "\$myPlex_user = <Plex Username>';" "$GREY" "|" "$RESET"
