@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
-
-if [ ! -f config.sh ]; then
-  source ../config.sh
-else
-  source config.sh
-fi
+source config.sh
 
 echo "#------------------------------------------------------------------------------"
 echo "# Installing PlexWatch"
