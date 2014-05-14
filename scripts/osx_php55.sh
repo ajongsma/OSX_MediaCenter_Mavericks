@@ -114,7 +114,9 @@ echo " ==> Add include_path to the php.ini"
 echo " --- press any key to continue ---"
 read -n 1 -s
 
-    sh /usr/local/Cellar/php55/5.5.11/bin/php retrieve.php
+    ## spotweb retrieve test
+    #sh /usr/local/Cellar/php55/5.5.11/bin/php retrieve.php
+    
     
     #/usr/local/etc/php/5.5/php.ini
     
