@@ -44,7 +44,12 @@ printf "$PRINTF_MASK" "\$log_client_ip = 1;" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "\$myPlex_user = <Plex Username>';" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "\$myPlex_user = <Plex Password>';" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "-----------------------------------" "$GREY" "|" "$RESET"
-open -a /Applications/TextWrangler.app config.pl
+#open -a /Applications/TextWrangler.app config.pl
+if [ ! -d /Applications/TextWrangler.app ]; then
+  pico config.pl
+else
+  open -a /Applications/TextWrangler.app config.pl
+fi
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
