@@ -157,3 +157,9 @@ Random thoughts to check and verify
 - http://coolestguidesontheplanet.com/install-mcrypt-php-mac-osx-10-9-mavericks-development-server/
 - http://www.gigoblog.com/2013/11/14/rebuilding-php-extensions-to-work-with-mac-os-x-mavericks-server-and-php-5-4/
 - http://computers.tutsplus.com/tutorials/perfect-configurations-with-homebrew-and-cask--cms-20768
+
+#####MKV
+
+- http://www.bunkus.org/videotools/mkvtoolnix/downloads.html
+- https://github.com/BrunoReX/jmkvpropedit
+- 
