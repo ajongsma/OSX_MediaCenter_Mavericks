@@ -161,4 +161,5 @@ Random thoughts to check and verify
 #####MKV
 
 - http://www.bunkus.org/videotools/mkvtoolnix/downloads.html
+- - sudo xattr -r -d com.apple.quarantine MakeMKV.app
 - https://github.com/BrunoReX/jmkvpropedit
