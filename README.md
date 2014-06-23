@@ -139,6 +139,9 @@ Unison
 
 nzbdrone
 
+Archey
+- brew install archey
+
 [launchrocket](https://github.com/jimbojsb/launchrocket)
 
 Random thoughts to check and verify
