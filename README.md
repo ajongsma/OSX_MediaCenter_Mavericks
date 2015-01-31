@@ -166,3 +166,6 @@ Random thoughts to check and verify
 - http://www.bunkus.org/videotools/mkvtoolnix/downloads.html
 - - sudo xattr -r -d com.apple.quarantine MakeMKV.app
 - https://github.com/BrunoReX/jmkvpropedit
+
+#####PMS Bundles
+- https://github.com/mikedm139/YouTube.bundle
