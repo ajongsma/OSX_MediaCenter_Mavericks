@@ -169,3 +169,6 @@ Random thoughts to check and verify
 
 #####PMS Bundles
 - https://github.com/mikedm139/YouTube.bundle
+
+#####URLs
+https://plex.tv/pms/friends/all
