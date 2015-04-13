@@ -171,4 +171,5 @@ Random thoughts to check and verify
 - https://github.com/mikedm139/YouTube.bundle
 
 #####URLs
-https://plex.tv/pms/friends/all
+- https://plex.tv/devices.xml
+- https://plex.tv/pms/friends/all
