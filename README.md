@@ -170,6 +170,7 @@ Random thoughts to check and verify
 #####PMS Bundles
 - https://github.com/mikedm139/YouTube.bundle
 
-#####URLs
+#####Plex Report
+- https://github.com/bstascavage/plexReport
 - https://plex.tv/devices.xml
 - https://plex.tv/pms/friends/all
