@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+source config.sh
+
+## http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/
+
+echo "gem: --no-document" >> ~/.gemrc
+curl -L https://get.rvm.io | bash -s stable --auto-dotfiles --autolibs=enable --ruby
+
+type rvm | head -1
+echo "If you get rvm is a function, that means RVM was successfully installed."
+pause
+
+rvm -v
+echo "You should get rvm 1.26.10 or higher."
+pause
+
+ruby -v
+echo "You should get ruby 2.2.0 or higher. If not, run: rvm reinstall 2.2.0 --disable-binary"
+pause
+
+brew doctor
