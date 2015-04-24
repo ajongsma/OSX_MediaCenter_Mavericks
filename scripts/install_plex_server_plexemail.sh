@@ -2,7 +2,7 @@
 source config.sh
 
 echo "#------------------------------------------------------------------------------"
-echo "# Installing PlexMail"
+echo "# Installing PlexEmail"
 echo "#------------------------------------------------------------------------------"
 ##https://github.com/jakewaldron/PlexEmail
 ##https://github.com/jakewaldron/PlexEmail.git
