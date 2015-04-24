@@ -31,7 +31,12 @@ printf "$PRINTF_MASK" "Modify Variables as needed" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "plex_data_folder = <Plex Username>';" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "plex_username    = <Plex Username>';" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "plex_password    = <Plex Password>';" "$GREY" "|" "$RESET"
+
+printf "$PRINTF_MASK" "email_username   = <GMail Username>';" "$GREY" "|" "$RESET"
+printf "$PRINTF_MASK" "email_password   = <GMail Password>';" "$GREY" "|" "$RESET"
 printf "$PRINTF_MASK" "-----------------------------------" "$GREY" "|" "$RESET"
+
+
 #open -a /Applications/TextWrangler.app config.pl
 if [ ! -d /Applications/TextWrangler.app ]; then
   pico $INST_PLEXEMAIL_PATH/PlexEmail/scripts/config.conf
