@@ -41,6 +41,10 @@ fi
 echo -e "${BLUE} --- press any key to continue --- ${RESET}"
 read -n 1 -s
 
+####sudo ln -s /Users/Plex/PlexEmail/web /Library/Server/Web/Data/Sites/Default/PlexEmail
+##sudo ln -s $INST_PLEXEMAIL_PATH/PlexEmail/web /Library/Server/Web/Data/Sites/Default/PlexEmail
+
+pip install requests
 
 python plexEmail.py -t
 
