@@ -80,7 +80,7 @@ else
     echo " Starting PlexRequest-Meteor"
     echo "------------------------------------------"
     cd $INST_PLEXREQUEST_PATH/plexrequests-meteor
-    meteor
+    sh meteor
     
     echo "------------------------------------------"
     echo " Opening admin page"
