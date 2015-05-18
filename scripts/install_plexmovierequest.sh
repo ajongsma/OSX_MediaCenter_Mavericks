@@ -85,8 +85,17 @@ else
     echo "------------------------------------------"
     echo " Opening admin page"
     echo "------------------------------------------"
-    open http://localhost:3000/admin
+    open http://pooky.local:3000/admin
     
+    echo "------------------------------------------"
+    echo " Opening admin plex connection page"
+    echo "------------------------------------------"
+    http://pooky.local:3000/plex
+    
+    echo "------------------------------------------"
+    echo " Opening admin couchpotato connection page"
+    echo "------------------------------------------"
+    http://pooky.local:3000/couchpotato
   fi
 
 
