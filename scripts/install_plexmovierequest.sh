@@ -125,6 +125,8 @@ else
         read -n 1 -s
       fi
       launchctl load ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
+      launchctl start ~/Library/LaunchAgents/$INST_FILE_LAUNCHAGENT
+
     else
       printf 'LaunchAgent found' "$GREEN" $col '[OK]' "$RESET"
     fi
