@@ -172,5 +172,8 @@ Random thoughts to check and verify
 
 #####Plex Report
 - https://github.com/bstascavage/plexReport
+ 
+#####Plex Information pages
 - https://plex.tv/devices.xml
 - https://plex.tv/pms/friends/all
+- http://pooky.local:32400/status/sessions
